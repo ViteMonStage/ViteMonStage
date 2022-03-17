@@ -18,7 +18,7 @@ h1{ /* Bigger titles font */
     padding: 5%;
 }
 
-.mailtbx{
+.tbx{
     border-radius: 50px;
     border-style: none;
     color: #BEBEBE !important;
@@ -29,6 +29,7 @@ h1{ /* Bigger titles font */
     font-size: 1.2em;
     padding-left: 30px;
 }
+
 
 .tbxindicator{
     padding-left: 10px;
