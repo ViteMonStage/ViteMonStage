@@ -98,7 +98,10 @@
                     <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
                 </div>
                 <div class="f_social">
-                    <i class="fa-brands fa-snapchat"></i>
+                    <i class="fa-brands fa-snapchat big" id="icon"></i>
+                    <i class="fa-brands fa-twitter big" id="icon"></i>
+                    <i class="fa-brands fa-github big" id="icon"></i>
+                    <i class="fa-brands fa-discord big" id="icon"></i>
                 </div>
             </div>
         </div>
