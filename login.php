@@ -18,7 +18,7 @@
             <h1 class="maxi">SIGN IN</h1>
             <label for="mailtbx" class="tbxindicator small">Email</label>
             <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com">
-            <label for="mailtbx" class="tbxindicator small">Password</label>
+            <label for="passtbx" class="tbxindicator small">Password</label>
             <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••">
             <!--Ci-dessous le bouton login-->
             <input type="submit" class="btn-primary btn big" id="logbtn" value="LOGIN">
