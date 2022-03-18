@@ -18,7 +18,7 @@
         <!-- "Applications" square -->
         <div class="container">
             <a href="candidatures.php">
-                <img src="assets\pictures\meeting.png" class="img">
+                <img src="assets/pictures/meeting.png" class="img">
                 <div class="text-block">
                     <h4 class="big">Your applications</h4>
                     <p class="medium">Keep track your applications here.</p>
@@ -28,7 +28,7 @@
         <!-- "Offers" square -->
         <div class="container">
             <a href="companies.php">
-                <img src="assets\pictures\shake.png" class="img">
+                <img src="assets/pictures/shake.png" class="img">
                 <div class="text-block">
                     <h4 class="big">Current offers</h4>
                     <p class="medium">Check out the popular offers right now.</p>
@@ -40,7 +40,7 @@
         <!-- "Companies" square -->
         <div class="container">
             <a href="companies.php">
-                <img src="assets\pictures\Corporations.png" class="img">
+                <img src="assets/pictures/Corporations.png" class="img">
                 <div class="text-block">
                     <h4 class="big">Companies</h4>
                     <p class="medium">Browse the companies here.</p>
@@ -50,7 +50,7 @@
         <!-- "Personnal informations" square -->
         <div class="container">
             <a href="companies.php">
-                <img src="assets\pictures\paper.png" class="img">
+                <img src="assets/pictures/paper.png" class="img">
                 <div class="text-block">
                     <h4 class="big">Personnal informations</h4>
                     <p class="medium">Modify your personnal informations here.</p>
@@ -58,7 +58,35 @@
             </a>
         </div>
     </div>
-
+    <footer>
+        <div class="f_row">
+            <!-- "Services" part of the footer-->
+            <div class="f_serv">
+                <h3 class="medium">Services</h3>
+                <p class="small">Partnerships</p>
+                <p class="small">Blog</p>
+                <p class="small">Contacts</p>
+                <p class="small">FAQ</p>
+            </div>
+            <!-- "About" part of the footer-->
+            <div class="f_about">
+                <h3 class="medium">About</h3>
+                <p class="small">Company</p>
+                <p class="small">Our team</p>
+                <p class="small">Careers</p>
+                <p class="small">Legal terms</p>
+            </div>
+            <div class="f_vtm">
+                <div class="f_lorem">
+                    <h2 class="big">ViteMonStage</h2>
+                    <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+                </div>
+                <div class="f_social">
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 
 </html>
