@@ -1,7 +1,9 @@
 /* Style of the container containing the images and the text */
 .container.offerimg {
     position: relative;
-    background-image : url('assets/pictures/offres.png');
+    max-width: 200%;
+    max-height: 200%;
+
   }
 
   /* Style of the text inside the images" */
@@ -13,3 +15,7 @@
     color: black;
   }
 
+.img{
+    object-fit: fill;
+    width: 100%;
+}

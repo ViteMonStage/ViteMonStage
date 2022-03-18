@@ -32,6 +32,7 @@
         </nav>
     </header>
     <div class="container offerimg">
+        <img src="assets/pictures/offres.png" class="img" alt="offres">
         <div class="text-block">
             <h4 class="big">Offers</h4>
             <p class="medium">Check out the popular offers right now.</p>
