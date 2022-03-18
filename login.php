@@ -24,7 +24,7 @@
             <input type="submit" class="btn-primary btn big" id="logbtn" value="LOGIN">
             <br>
             <div class="margin">
-                <a href="signup.html" class="linkl">No account ? Sign up !</a>
+                <a href="signup.php" class="linkl">No account ? Sign up !</a>
             </div>
         </div>
     </div>
