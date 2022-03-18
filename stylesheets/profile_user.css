@@ -5,6 +5,7 @@ li{
 #dot{
     margin-inline-end: 2px;
     writing-mode: vertical-rl;
+    height: 6px;
 }
 .profile{
     background-color: gainsboro;
@@ -14,4 +15,7 @@ li{
     border: none;
     border-radius: 90px;
     margin-left: 5px;
+}
+.profile img {
+    height:24px;
 }
