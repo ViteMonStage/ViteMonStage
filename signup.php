@@ -48,7 +48,7 @@
                             <!--Ci-dessous le bouton login-->
             <input type="submit" class="btn-primary btn big" id="logbtn" value="LOGIN">
             </div>
-            <a href="signup.html" class="linkl">No account ? Sign up !</a>
+            <a href="login.php" class="linkl">already have an account ? LOGIN !</a>
         </div>
     </div>
     </div>
