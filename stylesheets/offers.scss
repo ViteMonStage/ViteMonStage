@@ -1,0 +1,15 @@
+/* Style of the container containing the images and the text */
+.container.offerimg {
+    position: relative;
+    background-image : url('assets/pictures/offres.png');
+  }
+
+  /* Style of the text inside the images" */
+.text-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+
