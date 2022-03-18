@@ -14,7 +14,22 @@
 </head>
 
 <body>
-    <h1 class="Welcome maxi">Welcome on VMS</h1>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav navbar-align-left navbar-margin">
+                <a class="nav-item nav-link current small" href="#">HOME</a>
+                <a class="nav-item nav-link small" href="#">OFFERS</a>
+                <a class="nav-item nav-link small" href="#">APPLICATIONS</a>
+                <a class="nav-item nav-link small" href="#">COMPANIES</a>
+                <a class="nav-item nav-link small navbar-highlight" href="#">PROFILE</a>
+            </div>
+        </div>
+    </nav>
+    <h1 class="Welcome big">Welcome on VMS</h1>
     <div class="row">
         <!-- "Applications" square -->
         <div class="container">
