@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./stylesheets/global.css">
     <link rel="stylesheet" href="./stylesheets/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 
 <body>
@@ -18,7 +19,7 @@
         <!-- "Applications" square -->
         <div class="container">
             <a href="candidatures.php">
-                <img src="assets/pictures/meeting.png" class="img">
+                <img src="assets/pictures/meeting.png" class="img" alt="meeting">
                 <div class="text-block">
                     <h4 class="big">Your applications</h4>
                     <p class="medium">Keep track your applications here.</p>
@@ -28,7 +29,7 @@
         <!-- "Offers" square -->
         <div class="container">
             <a href="companies.php">
-                <img src="assets/pictures/shake.png" class="img">
+                <img src="assets/pictures/shake.png" class="img" alt="shake">
                 <div class="text-block">
                     <h4 class="big">Current offers</h4>
                     <p class="medium">Check out the popular offers right now.</p>
@@ -40,7 +41,7 @@
         <!-- "Companies" square -->
         <div class="container">
             <a href="companies.php">
-                <img src="assets/pictures/Corporations.png" class="img">
+                <img src="assets/pictures/Corporations.png" class="img" alt="corporations">
                 <div class="text-block">
                     <h4 class="big">Companies</h4>
                     <p class="medium">Browse the companies here.</p>
@@ -50,7 +51,7 @@
         <!-- "Personnal informations" square -->
         <div class="container">
             <a href="companies.php">
-                <img src="assets/pictures/paper.png" class="img">
+                <img src="assets/pictures/paper.png" class="img" alt="paper">
                 <div class="text-block">
                     <h4 class="big">Personnal informations</h4>
                     <p class="medium">Modify your personnal informations here.</p>
@@ -82,6 +83,7 @@
                     <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
                 </div>
                 <div class="f_social">
+                    <i class="fa-brands fa-snapchat"></i>
                 </div>
             </div>
         </div>
