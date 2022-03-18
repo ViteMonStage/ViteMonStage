@@ -6,12 +6,19 @@ body {
     background: linear-gradient(130deg, rgba(0, 255, 117, 1) 0%, rgba(136, 117, 255, 1) 100%);
 }
 
+h1 {
+    /* Bigger titles font */
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    text-align: center;
+}
+
 .mainbox {
     /* Main box of the login form */
     background-color: white;
     border-radius: 50px;
-    width: 60%;
-    padding: 5%;
+    width: 55%;
+    padding: 1%;
 }
 
 .tbx {
@@ -45,11 +52,6 @@ body {
     /* Link style*/
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     color: #84FF4A;
-}
-
-.margin{
-    /* Margin style*/
-    margin-top: 50px;
 }
 
 .tbxindicator {
