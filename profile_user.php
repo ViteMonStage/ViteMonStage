@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Titre de la page</title>
-    <link rel="stylesheet" href="stylesheets/profile_user.css">
-    <link rel="stylesheet" href="stylesheets/global.css">
+    <link rel="stylesheet" href="stylesheets/profile_user.scss">
+    <link rel="stylesheet" href="stylesheets/global.scss">
     <script src="script.js"></script>
 </head>
 <body>
