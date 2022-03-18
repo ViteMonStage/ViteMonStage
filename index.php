@@ -14,6 +14,12 @@
 <body>
     <main>
         <h1>Welcome on VMS</h1>
+        <img src="assets\pictures\meeting.png" width="40%" height="30%" class="img" id="appl"><img src="assets\pictures\meeting.png" width="40%" height="30%" class="img" id="appl">
+        <img src="assets\pictures\meeting.png" width="40%" height="30%" class="img" id="appl"><img src="assets\pictures\meeting.png" width="40%" height="30%" class="img" id="appl">
+
+
+
+
     </main>
 </body>
 
