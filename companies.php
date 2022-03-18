@@ -39,18 +39,31 @@
     </div>
 
     <div class="filter">
+        
         <label for="nametbx" class="tbxindicator small">Name</label>
         <input type="text" class="tbx small" id="nametbx">
+        
+       
         <label for="locationtbx" class="tbxindicator small">Location</label>
         <input type="text" class="tbx small" id="locationtbx">
+        
+       
         <label for="sectortbx" class="tbxindicator small">Sector</label>
         <input type="text" class="tbx small" id="sectortbx">
+      
         <input type="button" class="small btn" id="searchbtn" value="Search">
 
     </div>
     <h2 class="title big">2 Results</h2>
     <div class="result">
-<img src=".\assets\pictures\logo.jpg" alt="Logo 1" class="logoentreprise">
+        <div class="result1">
+            <img src=".\assets\pictures\logo.jpg" alt="Logo 1" class="logoentreprise">
+            <h3 class="medium" >First company</h3>
+        </div>
+        <div class="result2">
+            <img src=".\assets\pictures\logo2.jpg" alt="Logo 2" class="logoentreprise">
+            <h3 class="medium" >First company</h3>
+        </div>
     </div>
 </body>
 
