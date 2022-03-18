@@ -25,3 +25,25 @@
 .Welcome{
     padding-left: 10%;
 }
+
+footer{
+    background-color: rgb(85, 85, 85);
+    color: white;
+    padding: 5%;
+}
+
+.f_serv{
+    display:inline-block;
+    padding-left: 10%;
+
+}
+
+.f_about{
+    display:inline-block;
+    padding-left: 10%;
+}
+
+.f_vtm{
+    display:inline-block;
+    padding-left: 10%;
+}
