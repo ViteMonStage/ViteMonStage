@@ -1,1 +1,17 @@
-.body{}
+li{
+    display: inline;
+	margin: 10px;
+}
+#dot{
+    margin-inline-end: 2px;
+    writing-mode: vertical-rl;
+}
+.profile{
+    background-color: gainsboro;
+}
+#avatar{
+    height: 170px;
+    border: none;
+    border-radius: 90px;
+    margin-left: 5px;
+}
