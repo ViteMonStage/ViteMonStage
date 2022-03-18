@@ -9,21 +9,22 @@
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./stylesheets/login.css">
+    <link rel="stylesheet" href="./stylesheets/global.css">
 </head>
 
 <body>
     <div class="d-flex align-items-center justify-content-center vh-100">
         <div class="mainbox">
-            <h1>SIGN IN</h1>
-            <label for="mailtbx" class="tbxindicator">Email</label>
-            <input type="email" class="form-control tbx" id="mailtbx" placeholder="mail@example.com">
-            <label for="mailtbx" class="tbxindicator">Password</label>
-            <input type="password" class="form-control tbx" id="passtbx">
+            <h1 class="maxi">SIGN IN</h1>
+            <label for="mailtbx" class="tbxindicator small">Email</label>
+            <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com">
+            <label for="mailtbx" class="tbxindicator small">Password</label>
+            <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••">
             <!--Ci-dessous le bouton login-->
-            <input type="submit" class="btn-primary btn" id="logbtn" value="LOGIN">
+            <input type="submit" class="btn-primary btn big" id="logbtn" value="LOGIN">
             <br>
             <div class="margin">
-            <a href="signup.html" class="linkl">No accout ? Sign up !</a>
+                <a href="signup.html" class="linkl">No account ? Sign up !</a>
             </div>
         </div>
     </div>

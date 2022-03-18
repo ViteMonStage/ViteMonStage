@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.mini{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.small{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.medium{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.big{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+}
+
+.maxi{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+}
