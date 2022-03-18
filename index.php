@@ -32,8 +32,8 @@
     <h1 class="Welcome big">Welcome on VMS</h1>
     <div class="row">
         <!-- "Applications" square -->
-        <div class="container">
-            <a href="candidatures.php">
+        <div class="container zoom">
+            <a href="./candidatures.php">
                 <img src="assets/pictures/meeting.png" class="img" alt="meeting">
                 <div class="text-block">
                     <h4 class="big">Your applications</h4>
@@ -42,8 +42,8 @@
             </a>
         </div>
         <!-- "Offers" square -->
-        <div class="container">
-            <a href="companies.php">
+        <div class="container zoom">
+            <a href="./companies.php">
                 <img src="assets/pictures/shake.png" class="img" alt="shake">
                 <div class="text-block">
                     <h4 class="big">Current offers</h4>
@@ -54,8 +54,8 @@
     </div>
     <div class="row">
         <!-- "Companies" square -->
-        <div class="container">
-            <a href="companies.php">
+        <div class="container zoom">
+            <a href="./companies.php">
                 <img src="assets/pictures/Corporations.png" class="img" alt="corporations">
                 <div class="text-block">
                     <h4 class="big">Companies</h4>
@@ -64,8 +64,8 @@
             </a>
         </div>
         <!-- "Personnal informations" square -->
-        <div class="container">
-            <a href="companies.php">
+        <div class="container zoom">
+            <a href="./companies.php">
                 <img src="assets/pictures/paper.png" class="img" alt="paper">
                 <div class="text-block">
                     <h4 class="big">Personnal informations</h4>
