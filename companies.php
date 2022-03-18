@@ -62,7 +62,8 @@
         </div>
         <div class="result2">
             <img src=".\assets\pictures\logo2.jpg" alt="Logo 2" class="logoentreprise">
-            <h3 class="medium" >First company</h3>
+            <h3 class="medium" >Second company</h3>
+            <p></p>
         </div>
     </div>
 </body>

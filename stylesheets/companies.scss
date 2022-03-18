@@ -40,14 +40,23 @@ margin-top: 1%;
 }
 
 .image{
-    filter: drop-shadow(0 0 0.5rem grey) opacity(30%) 
-
-
+    filter: drop-shadow(0 0 0.5rem grey) opacity(30%);
+    object-fit: fill;
+    width: 100%;
 }
 
 .container {
     position: relative;
     text-align: center;
+    max-width: 200%;
+    max-height: 200%;
+   
+    padding-left: 0%;
+    padding-right: 0%;
+
+
+   
+
   }
 
 .centered {
