@@ -32,18 +32,26 @@ footer{
     padding: 5%;
 }
 
+/* Style of "Service" in footer */
 .f_serv{
     display:inline-block;
     padding-left: 10%;
 
 }
 
+/* Style of "About" in footer */
 .f_about{
     display:inline-block;
     padding-left: 10%;
 }
 
+/* Style of "VTM" in footer */
 .f_vtm{
     display:inline-block;
     padding-left: 10%;
+}
+
+/* Style of the icons in the footer */
+#icon{
+    margin-right: 3%;
 }
