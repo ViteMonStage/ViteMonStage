@@ -13,37 +13,49 @@
 </head>
 
 <body>
-    <h1>Welcome on VMS</h1>
+    <h1 class="Welcome maxi">Welcome on VMS</h1>
     <div class="row">
+        <!-- "Applications" square -->
         <div class="container">
-            <img src="assets\pictures\meeting.png" class="img">
-            <div class="text-block">
-                <h4>Your applications</h4>
-                <p>Keep track your applications here.</p>
-            </div>
+            <a href="candidatures.php">
+                <img src="assets\pictures\meeting.png" class="img">
+                <div class="text-block">
+                    <h4 class="big">Your applications</h4>
+                    <p class="medium">Keep track your applications here.</p>
+                </div>
+            </a>
         </div>
+        <!-- "Offers" square -->
         <div class="container">
-            <img src="assets\pictures\shake.png" class="img">
-            <div class="text-block">
-                <h4>Current offers</h4>
-                <p>Check out the popular offers right now.</p>
-            </div>
+            <a href="companies.php">
+                <img src="assets\pictures\shake.png" class="img">
+                <div class="text-block">
+                    <h4 class="big">Current offers</h4>
+                    <p class="medium">Check out the popular offers right now.</p>
+                </div>
+            </a>
         </div>
     </div>
     <div class="row">
+        <!-- "Companies" square -->
         <div class="container">
-            <img src="assets\pictures\Corporations.png" class="img">
-            <div class="text-block">
-                <h4>Companies</h4>
-                <p>Browse the companies here.</p>
-            </div>
+            <a href="companies.php">
+                <img src="assets\pictures\Corporations.png" class="img">
+                <div class="text-block">
+                    <h4 class="big">Companies</h4>
+                    <p class="medium">Browse the companies here.</p>
+                </div>
+            </a>
         </div>
+        <!-- "Personnal informations" square -->
         <div class="container">
-            <img src="assets\pictures\paper.png" class="img">
-            <div class="text-block">
-                <h4>Personnal informations</h4>
-                <p>Modify your personnal informations here.</p>
-            </div>
+            <a href="companies.php">
+                <img src="assets\pictures\paper.png" class="img">
+                <div class="text-block">
+                    <h4 class="big">Personnal informations</h4>
+                    <p class="medium">Modify your personnal informations here.</p>
+                </div>
+            </a>
         </div>
     </div>
 

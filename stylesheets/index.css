@@ -1,21 +1,27 @@
+/* Style of the container containing the images and the text */
 .container {
     position: relative;
     font-family: Arial;
     width: 50%;
-    padding-bottom: 10%;
-
+    padding-bottom: 1%;
   }
 
+  /* Style of the text inside the images" */
 .text-block {
     position: absolute;
-    top: 10%;
-    left: 10%;
-    background-color: black;
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
+    top: 5%;
+    left: 5%;
+    color: black;
   }
 
+/* Style for all 4 images */
 .img{
     width: 100%;
+    border-radius: 30px;
+    filter: drop-shadow(0 0 0.5rem grey) opacity(60%);
+}
+
+/* Style of "Welcome" text */
+.Welcome{
+    padding-left: 10%;
 }
