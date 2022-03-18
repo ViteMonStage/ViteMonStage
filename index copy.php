@@ -9,7 +9,7 @@
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./stylesheets/global.scss">
-    <link rel="stylesheet" href="./stylesheets/index.scss">
+    <link rel="stylesheet" href="./stylesheets/indexc.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 
@@ -32,22 +32,9 @@
         </nav>
     </header>
     <h1 class="Welcome big">Welcome on VMS</h1>
-    <div class="col-xs-row">
-        <div class="col-6">
-            <!-- "Applications" square -->
-            <div class="container zoom">
-                <a href="./candidatures.php">
-                    <img src="assets/pictures/meeting.png" class="img" alt="meeting">
-                    <div class="text-block">
-                        <h4 class="big">Your applications</h4>
-                        <p class="medium">Keep track your applications here.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <!-- "Offers" square -->
-        <div class="col">
-            <div class="container zoom">
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <div>
                 <a href="./offers.php">
                     <img src="assets/pictures/shake.png" class="img" alt="shake">
                     <div class="text-block">
@@ -57,28 +44,13 @@
                 </a>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <!-- "Companies" square -->
-        <div class="col">
+        <div class="col-lg-6 col-sm-12">
             <div class="container zoom">
                 <a href="./companies.php">
                     <img src="assets/pictures/Corporations.png" class="img" alt="corporations">
                     <div class="text-block">
                         <h4 class="big">Companies</h4>
                         <p class="medium">Browse the companies here.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <!-- "Personnal informations" square -->
-        <div class="col">
-            <div class="container zoom">
-                <a href="./companies.php">
-                    <img src="assets/pictures/paper.png" class="img" alt="paper">
-                    <div class="text-block">
-                        <h4 class="big">Personnal informations</h4>
-                        <p class="medium">Modify your personnal informations here.</p>
                     </div>
                 </a>
             </div>
