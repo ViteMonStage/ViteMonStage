@@ -10,7 +10,7 @@ padding: none;
 border-radius: 50px;
 border-style: none;
 height: 2.5em;
-margin-left: 350px;
+margin-left: 3px;
 
 
 }
@@ -33,21 +33,23 @@ margin-left: 20px;
 }
 
 img{
-    filter: drop-shadow(0 0 0.5rem grey) opacity(50%);
+    filter: drop-shadow(0 0 0.5rem grey) opacity(30%);
+    padding-bottom: 1px;
+ 
 }
 
 /* Style of the container containing the images and the text */
 .container {
     position: relative;
     font-family: Arial;
-    
-    padding-bottom: 1%;
+    width: 50%;
+    padding-bottom: 10%;
   }
 
   /* Style of the text inside the images" */
 .text-block {
     position: absolute;
     top: 5%;
-    left: 5%;
+    left: 50%;
     color: black;
   }

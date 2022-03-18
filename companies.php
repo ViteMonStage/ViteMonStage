@@ -13,14 +13,14 @@
 </head>
 
 <body>
-    
-        <div class="container">
-            <img src="bandeau-recrutement-bellvision-esn-informatique-entreprise-services-distribution-web-cloud-saint-nazaire.jpg" class="img">
-            <div class="text-block">
-                <h4>Companies</h4>
-            </div>
-        </div>
-  
+
+        <img src=".\assets\pictures\bandeau.jpg" class="img" alt="Companies">
+        <h1 class="maxi">Companies</h1>
+       
+   
+
+
+
     <div class="filter">
         <label for="nametbx" class="tbxindicator small">Name</label>
         <input type="text" class="tbx small" id="nametbx">
@@ -29,7 +29,7 @@
         <label for="sectortbx" class="tbxindicator small">Sector</label>
         <input type="text" class="tbx small" id="sectortbx">
         <input type="button" class="small btn" id="searchbtn" value="Search">
-        
+
     </div>
 
 </body>
