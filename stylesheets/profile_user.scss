@@ -1,15 +1,33 @@
-li{
+* {
+    margin:0;
+    padding: 0;
+}
+.list li{
     display: inline;
 	margin: 10px;
 }
-#dot{
+#dot1, #dot2{
     margin-inline-end: 2px;
     writing-mode: vertical-rl;
     height: 6px;
+
 }
-.profile{
-    background-color: gainsboro;
+.infos #editbutton{
+    margin-right:5%;
+    margin-bottom: 125px;;
 }
+.infos{
+    display: flex;
+    background-color: #09A129;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.infos li {
+    list-style-type: none;;
+}
+
+
 #avatar{
     height: 170px;
     border: none;
@@ -18,4 +36,60 @@ li{
 }
 .profile img {
     height:24px;
+}
+.wishlist{
+    border-color: black;
+    border-style:solid ;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    // align-items: center;
+    border-radius: 25px;
+    width: 45%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+
+}
+.wishlist .titre{
+    margin: right 40%; ;
+    margin-left:44% ;
+}
+.wishlist .small{
+    margin-left: 85%;
+
+}
+
+.candidatures{
+    border-color:black;
+    border-style:solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    // align-items: center;
+    border-radius: 25px;
+    width:45%;
+    margin-left: 2.5%;
+}
+
+.candidatures .progress-bar
+{
+    width:50%;
+}
+.candidatures .progress{
+    margin-left: 10px;
+    margin-right:10px;
+    
+}
+.menu {
+    display: flex;
+    margin-top: 5%;
+}
+body a{
+    color:#09A129 ;
+    text-decoration: none;
+}
+body a:hover{
+    color:#036D19;
 }
