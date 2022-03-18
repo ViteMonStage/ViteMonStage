@@ -8,6 +8,7 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <img src="#" alt="Profile Picture"
+    <img src="#" alt="Profile Picture">
+    
 </body>
 </html>
