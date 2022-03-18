@@ -38,6 +38,22 @@
             <p class="medium">Check out the popular offers right now.</p>
         </div>
     </div>
+    <div>
+        
+        <label for="nametbx" class="tbxindicator small">Name</label>
+        <input type="text" class="tbx small" id="nametbx">
+        
+       
+        <label for="locationtbx" class="tbxindicator small">Location</label>
+        <input type="text" class="tbx small" id="locationtbx">
+        
+       
+        <label for="sectortbx" class="tbxindicator small">Sector</label>
+        <input type="text" class="tbx small" id="sectortbx">
+      
+        <input type="button" class="small btn" id="searchbtn" value="Search">
+
+    </div>
 
 
 </body>

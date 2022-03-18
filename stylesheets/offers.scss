@@ -20,3 +20,35 @@
     object-fit: fill;
     width: 100%;
 }
+
+.tbx {
+  /* Textboxes style*/
+   
+border-radius: 30px;
+border-style: none;
+color: #BEBEBE !important;
+background-color: #EEEEEE;
+height: 2.5em;
+font-size: 1.2em;  
+margin-top: 1%;
+
+}
+
+.tbxindicator{
+  margin-left: 10px;
+  margin-left: 10vh;
+  padding-left: 10px;
+  
+}
+
+.btn {
+  /* Button style*/
+color: rgb(255, 255, 255);
+background-color: #51B700;
+padding: none;
+border-radius: 50px;
+border-style: none;
+height: 2.5em;
+margin-left: 15vh;
+
+}
