@@ -78,6 +78,14 @@
     margin-left: 2px;
 }
 
+.nav-item.nav-link.navbar-highlight.current{
+    background-color: #51B700;
+    color: rgb(201, 255, 169);
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-left: 2px;
+}
+
 .nav-item.nav-link{
     margin-left: 10px;
 }
@@ -104,3 +112,4 @@
 .navbar-toggler.pad{
     margin-right: 10px;
 }
+
