@@ -39,14 +39,11 @@
         </div>
     </div>
     <div>
-
         <label for="nametbx" class="tbxindicator small">Location</label>
         <input type="text" class="tbx small" id="nametbx">
 
-
         <label for="locationtbx" class="tbxindicator small">Publication date</label>
         <input type="text" class="tbx small" id="locationtbx">
-
 
         <label for="sectortbx" class="tbxindicator small">Domain</label>
         <input type="text" class="tbx small" id="sectortbx">
@@ -61,15 +58,22 @@
 
     </div>
     <h2 class="title big">2 Results</h2>
+
     <div class="result">
         <div class="result1">
-            <img src=".\assets\pictures\logo.jpg" alt="Logo 1" class="logoentreprise">
-            <h3 class="medium">First company</h3>
+            <div class="in_desc">
+                <h3 class="medium">First offer</h3>
+                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+                <h4 class="small">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+            </div>
+            <div class="in_logo">
+                <img src=".\assets\pictures\logo.jpg" alt="Logo 1" class="logoentreprise">
+            </div>
         </div>
+
         <div class="result2">
             <img src=".\assets\pictures\logo2.jpg" alt="Logo 2" class="logoentreprise">
             <h3 class="medium">Second company</h3>
-            <p></p>
         </div>
     </div>
 

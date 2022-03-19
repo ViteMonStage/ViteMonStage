@@ -52,8 +52,8 @@
 }
 
 .logoentreprise {
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
 }
 
 .result1{
@@ -70,4 +70,14 @@
   margin-top: 1%;
   width: 90%;
   margin-left: 10px;
+}
+
+.in_desc{
+  display: inline;
+  margin-left: 1%;
+}
+.in_logo{
+  position: fixed;
+  right:0%;
+  display: inline;
 }
