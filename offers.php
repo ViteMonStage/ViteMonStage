@@ -32,29 +32,50 @@
         </nav>
     </header>
     <div class="container offerimg">
-        <img src="assets/pictures/offres.png" class="img" alt="offres">
+        <img src="assets/pictures/offres.png" class="img img_test" alt="offres">
         <div class="text-block">
             <h4 class="big">Offers</h4>
             <p class="medium">Check out the popular offers right now.</p>
         </div>
     </div>
     <div>
-        
-        <label for="nametbx" class="tbxindicator small">Name</label>
+        <label for="nametbx" class="tbxindicator small">Location</label>
         <input type="text" class="tbx small" id="nametbx">
-        
-       
-        <label for="locationtbx" class="tbxindicator small">Location</label>
+
+        <label for="locationtbx" class="tbxindicator small">Publication date</label>
         <input type="text" class="tbx small" id="locationtbx">
-        
-       
-        <label for="sectortbx" class="tbxindicator small">Sector</label>
+
+        <label for="sectortbx" class="tbxindicator small">Domain</label>
         <input type="text" class="tbx small" id="sectortbx">
-      
+
+        <label for="sectortbx" class="tbxindicator small">Number of places</label>
+        <input type="text" class="tbx small" id="sectortbx">
+
+        <label for="sectortbx" class="tbxindicator small">Duration</label>
+        <input type="text" class="tbx small" id="sectortbx">
+
         <input type="button" class="small btn" id="searchbtn" value="Search">
 
     </div>
+    <h2 class="title big">2 Results</h2>
 
+    <div class="result">
+        <div class="result1">
+            <div class="in_desc">
+                <h3 class="medium">First offer</h3>
+                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+                <h4 class="small">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+            </div>
+            <div class="in_logo">
+                <img src=".\assets\pictures\logo.jpg" alt="Logo 1" class="logoentreprise">
+            </div>
+        </div>
+
+        <div class="result2">
+            <img src=".\assets\pictures\logo2.jpg" alt="Logo 2" class="logoentreprise">
+            <h3 class="medium">Second company</h3>
+        </div>
+    </div>
 
 </body>
 
