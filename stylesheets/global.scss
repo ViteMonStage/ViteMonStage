@@ -75,6 +75,7 @@
     color: white;
     border-radius: 10px;
     padding-left: 10px;
+    margin-left: 2px;
 }
 
 .nav-item.nav-link{
@@ -98,4 +99,8 @@
 
 .navbar-brand.logo{
     margin-left: 10px;
+}
+
+.navbar-toggler.pad{
+    margin-right: 10px;
 }
