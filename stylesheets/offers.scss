@@ -16,60 +16,121 @@
   color: black;
 }
 
-.img.img_test {
+/* Banner's style */
+.img.banner {
   object-fit: fill;
   width: 100%;
   filter: drop-shadow(0 0 0.5rem grey) opacity(30%);
 }
 
+/* Mediaquery for the text on the banner*/
+@media (max-width: 992px) {
+  .t_off.smalltitle {
+    margin-top: 10px;
+    font-size: smaller;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+  }
+  .t_off2.smalltitle {
+    font-size: x-small;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+  }
+}
+@media (min-width: 992px) {
+  .t_off.bigtitle {
+    font-size: xx-large;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 800;
+  }
+  .t_off2.bigtitle {
+    font-size: larger;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 800;
+  }
+}
+
+/* Search textboxes divs */
+.col-lg-2 {
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/* Textboxes style */
 .tbx {
-  /* Textboxes style*/
   border-radius: 30px;
   border-style: none;
   color: #bebebe !important;
   background-color: #eeeeee;
-  width: 11%;
+  width: 10em;
   height: 2.5em;
   font-size: 1.2em;
-  margin-top: 1%;
+  margin-top: 10px;
 }
 
+/* Label style */
 .tbxindicator {
   margin-left: 1vh;
   padding-left: 1px;
+  text-align: center;
+  width: 10em;
 }
 
-.btn {
-  /* Button style*/
+/* Search Button style*/
+.btn.search {
   color: rgb(255, 255, 255);
   background-color: #51b700;
-  padding: none;
   border-radius: 50px;
   border-style: none;
   height: 2.5em;
-  width: 10%;
-  margin-left: 3vh;
-}
-.result1{
-  display: flex;
-  border-style: solid;
-  margin-left: 10px;
-  width: 90%;
-  
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 10px;
 }
 
-.result2 {
+/* See Offer Button style*/
+.btn.see {
+  color: rgb(255, 255, 255);
+  background-color: #51b700;
+  border-radius: 50px;
+  border-style: none;
+  height: 2.5em;
+  width: 100px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+/* Style of the result divs */
+.s_result {
   display: flex;
   border-style: solid;
-  margin-top: 1%;
-  width: 90%;
+  border-color: #51b700;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+/* Description Style */
+.in_desc {
+  margin-top: 10px;
   margin-left: 10px;
 }
 
-.in_desc{
+/* Logo style */
+.logoentreprise {
+  width: 100px;
+  height: 100px;
+}
+
+/* Offer title style */
+.off_name {
   display: inline-block;
-  margin-left: 1%;
+  margin-right: 10px;
 }
-.in_logo{
+
+/* Offer company */
+.off_company {
   display: inline-block;
 }

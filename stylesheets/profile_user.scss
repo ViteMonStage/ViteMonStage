@@ -32,7 +32,7 @@
     height: 170px;
     border: none;
     border-radius: 90px;
-    margin-left: 5px;
+    margin:5px;
 }
 .profile img {
     height:24px;
@@ -50,16 +50,36 @@
     margin-right: 2.5%;
     margin-left: 2.5%;
 
+
 }
 .wishlist .titre{
-    margin: right 40%; ;
-    margin-left:40% ;
+text-align: center;
 }
 .wishlist .small{
- margin-right: 15%;
+    margin: 1em;
+    display: flex;
+    justify-content: flex-end;
 }
 
+.wishlist .bouton {
+    margin-bottom: 2%;
+    margin-top: 10%;
+    
+}
+.small.btn {
+    /* Button style*/
+color: rgb(255, 255, 255);
+background-color: #51B700;
+padding: none;
+border-radius: 50px;
+border-style: none;
+height: 2.25em;
+margin-left: 15vh;
 
+}
+.wishlist .mini{
+    margin: 1em;
+}
 
 .candidatures{
     border-color:black;
@@ -73,6 +93,9 @@
     width:45%;
     margin-left: 2.5%;
 }
+.candidatures .titre{
+    text-align: center;
+}
 
 .candidatures .progress-bar
 {
@@ -83,9 +106,21 @@
     margin-right:10px;
     
 }
+.candidatures .small{
+    margin: 1em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.candidatures .mini{
+    margin: 1em;
+}
+
 .menu {
     display: flex;
+    flex-direction: row;
     margin-top: 5%;
+    margin-bottom: 5%;
 }
 body a{
     color:#09A129 ;
