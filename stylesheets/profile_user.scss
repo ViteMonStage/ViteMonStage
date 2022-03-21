@@ -50,15 +50,20 @@
     margin-right: 2.5%;
     margin-left: 2.5%;
 
+
 }
 .wishlist .titre{
-    margin: right 40%; ;
-    margin-left:40% ;
+text-align: center;
 }
 .wishlist .small{
- margin-right: 15%;
+
+    display: flex;
+    justify-content: flex-end;
 }
 
+.wishlist .bouton {
+    margin-bottom: 2%;
+}
 
 
 .candidatures{
@@ -72,6 +77,9 @@
     border-radius: 25px;
     width:45%;
     margin-left: 2.5%;
+}
+.candidatures .titre{
+    text-align: center;
 }
 
 .candidatures .progress-bar
