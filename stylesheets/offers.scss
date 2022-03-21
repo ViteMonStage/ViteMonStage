@@ -26,18 +26,27 @@
 /* Mediaquery for the text on the banner*/
 @media (max-width: 992px) {
   .t_off.smalltitle {
+    margin-top: 10px;
     font-size: smaller;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 600;
   }
   .t_off2.smalltitle {
     font-size: x-small;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 600;
   }
 }
 @media (min-width: 992px) {
   .t_off.bigtitle {
     font-size: xx-large;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 800;
   }
   .t_off2.bigtitle {
     font-size: larger;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 800;
   }
 }
 
