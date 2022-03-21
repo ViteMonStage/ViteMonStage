@@ -32,7 +32,7 @@
             </div>
         </nav>
     </header>
-    <h1 class="Welcome big">Welcome on VMS</h1>
+    <h1 class="welcome big">Welcome on VMS</h1>
     <div class="row g-0 justify-content-center">
         <!-- "Applications" square -->
         <div class="col-lg-5 col-sm-12">
