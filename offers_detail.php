@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./stylesheets/offers_details.scss">
     <link rel="stylesheet" href="./stylesheets/global.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
