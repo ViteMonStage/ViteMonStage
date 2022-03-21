@@ -46,23 +46,35 @@
         </div>
     </div>
     <div class="menu">
-        <div class="wishlist">
-            <p class="medium titre">Wishlist</p>
-            <div class="offerexample">
-                <a href="" class="medium">Offer example</a>
-                <a href="" class="small">Company</a>
-                <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ex maxime, ipsam maiores itaque sint ab, corporis est,
-                    commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
-                </p>
-                <ul class="list mini">
-                    <li id="city">City</li>
-                    <li id="dot1"><img src="../assets/icons/circle-solid.svg" alt="-"></li>
-                    <li id="publishDate">Publish Date</li>
-                    <li id="dot2"><img src="../assets/icons/circle-solid.svg" alt="-"></li>
-                    <li id="sector">Sector</li>
-                </ul>
-                <button type="button" class="btn btn-outline-success">See more</button>
+    <div class="wishlist">
+    <p class="medium titre">Wishlist</p>
+        <div class="offerexample">
+            <a href="" class="medium">Offer example</a>
+            <a href="" class="small">Company</a>
+            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Ex maxime, ipsam maiores itaque sint ab, corporis est, 
+                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
+            </p>
+            <ul class="list mini">
+                <li id="city">City</li>
+                <li id="dot1"><img src="../assets/icons/circle-solid.svg" alt="-"></li>
+                <li id="publishDate">Publish Date</li>
+                <li id="dot2"><img src="../assets/icons/circle-solid.svg" alt="-"></li>
+                <li id="sector">Sector</li>
+            </ul>
+            <button type="button" class="btn btn-outline-success text-right">See more</button>
+        </div>
+
+    </div>
+
+    <div class="candidatures">
+    <p class="medium">Current candidatures </p>
+        <div class="offerexample">
+            <a href="" class="medium">Offer example</a>
+            <a href="" class="small">Company</a>
+            <p class="mini">Progress : </p>
+            <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
 
         </div>
