@@ -8,7 +8,7 @@
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./stylesheets/companies_detail.scss">
+    <link rel="stylesheet" href="./stylesheets/companies_details.scss">
     <link rel="stylesheet" href="./stylesheets/global.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
@@ -35,6 +35,17 @@
             </div>
         </nav>
     </header>
+        <div class="company">
+            <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
+            <div class="in_desc">
+                <h3 class="medium">Name of the company</h3>
+                <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+                <h4 class="mini">Confiance des pilotes : 8.7/10</h4>
+            </div>
+            <a role="button"  href="./companies_detail.php" class="small btn company" >Postulate</a>
+            <a role="button"  href="./companies_detail.php" class="small btn company" >Invisible </a>
+        </div>
 
     <footer>
         <div class="row g-0 justify-content-center">
