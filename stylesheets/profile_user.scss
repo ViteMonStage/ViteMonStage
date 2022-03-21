@@ -6,12 +6,7 @@
     display: inline;
 	margin: 10px;
 }
-#dot1, #dot2{
-    margin-inline-end: 2px;
-    writing-mode: vertical-rl;
-    height: 6px;
 
-}
 .infos #editbutton{
     margin-right:5%;
     margin-bottom: 125px;;
@@ -43,28 +38,41 @@
     border-width: 1px;
     display: flex;
     flex-direction: column;
-    //justify-content:flex-start;
+    justify-content:space-between;
     // align-items: center;
     border-radius: 25px;
-    width: 45%;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
+    width: 80%;
+    margin: 1%;
 
 
 }
-.wishlist .titre{
-text-align: center;
-}
-.wishlist .small{
-    margin: 1em;
-    display: flex;
-    justify-content: flex-end;
-}
 
-.wishlist .bouton {
-    margin-bottom: 2%;
-    margin-top: 10%;
+.menu .titre {
     
+        text-align: center;
+        margin-left: 1em;
+        margin-right: 1em;
+    
+}
+
+.menu .small{
+    margin-left: 1em;
+    margin-right: 1em;
+    float: right;
+}
+
+.menu .bouton {
+    margin-bottom: 2%;
+    margin-top: 5%;
+    
+}
+
+.menu .mini{
+    margin: 1em;
+}
+
+.menu .offerexample{
+    margin-top: 0%;
 }
 .small.btn {
     /* Button style*/
@@ -77,8 +85,8 @@ height: 2.25em;
 margin-left: 15vh;
 
 }
-.wishlist .mini{
-    margin: 1em;
+.small.btn:hover{
+    background-color: #2a652c;
 }
 
 .candidatures{
@@ -87,15 +95,13 @@ margin-left: 15vh;
     border-width: 1px;
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content:space-between;
     // align-items: center;
     border-radius: 25px;
-    width:45%;
-    margin-left: 2.5%;
+    width:80%;
+    margin: 1%;
 }
-.candidatures .titre{
-    text-align: center;
-}
+
 
 .candidatures .progress-bar
 {
@@ -105,15 +111,6 @@ margin-left: 15vh;
     margin-left: 10px;
     margin-right:10px;
     
-}
-.candidatures .small{
-    margin: 1em;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.candidatures .mini{
-    margin: 1em;
 }
 
 .menu {
@@ -128,4 +125,9 @@ body a{
 }
 body a:hover{
     color:#036D19;
+}
+.space{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
