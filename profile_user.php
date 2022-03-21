@@ -61,7 +61,7 @@
                 <li id="dot2"><img src="../assets/icons/circle-solid.svg" alt="-"></li>
                 <li id="sector">Sector</li>
             </ul>
-            <button type="button" class="btn btn-outline-success">See more</button>
+            <button type="button" class="btn btn-outline-success text-right">See more</button>
         </div>
 
     </div>
