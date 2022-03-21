@@ -14,8 +14,6 @@
 </head>
 
 <body>
-
-
     <!-- Nav bar-->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -35,17 +33,18 @@
             </div>
         </nav>
     </header>
-        <div class="company">
-            <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
-            <div class="in_desc">
-                <h3 class="medium">Name of the company</h3>
-                <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                <h4 class="mini">Confiance des pilotes : 8.7/10</h4>
-            </div>
-            <a role="button"  href="./companies_detail.php" class="small btn company" >Postulate</a>
-            <a role="button"  href="./companies_detail.php" class="small btn company" >Invisible </a>
+    <div class="company">
+        <img src="./assets/pictures/logo4.png" alt="Logo 1" class="logoentreprise">
+        <div class="in_desc">
+            <h3 class="medium">Name of the company</h3>
+            <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+            <h4 class="mini">Confiance des pilotes : 8.7/10</h4>
         </div>
+        <a role="button" href="./companies_detail.php" class="small btn company">Postulate</a>
+        <a role="button" href="./companies_detail.php" class="small btn company">Invisible </a>
+    </div>
+    <h3 class="medium evaluation">Evalutation</h3>
 
     <footer>
         <div class="row g-0 justify-content-center">
