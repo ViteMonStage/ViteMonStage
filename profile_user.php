@@ -83,7 +83,7 @@
                 <div class="bouton">
                     <div class="col-md-12 bg-transparent text-right">
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a role="button" class="btn btn-outline-success me-md-3 "href="wishlist.php">See more</a>
+                            <a role="button" class="small btn" href="wishlist.php">See more</a>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                 <div class="bouton">
                     <div class="col-md-12 bg-transparent text-right">
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a role="button" class="btn btn-outline-success me-md-3" href="candidatures.php">See more</a>
+                            <a role="button" class="small btn" href="candidatures.php" ">See more</a>
                         </div>
                     </div>
                 </div>
