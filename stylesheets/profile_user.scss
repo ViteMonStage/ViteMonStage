@@ -93,6 +93,7 @@ text-align: center;
 }
 .menu {
     display: flex;
+    flex-direction: row;
     margin-top: 5%;
 }
 body a{
