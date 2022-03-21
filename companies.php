@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VMS | Login</title>
+    <title>VMS | Companies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -32,14 +32,14 @@
             </div>
         </nav>
     </header>
-<!-- Head band-->
+    <!-- Head band-->
     <div class="container">
-        <img src=".\assets\pictures\bandeau.jpg" class="img-fluid image" alt="Responsive image">
+        <img src="./assets/pictures/bandeau.jpg" class="img-fluid image" alt="Responsive image">
         <div class="centered">
             <h1 class="maxi">Companies</h1>
         </div>
     </div>
-<!-- Filtre -->
+    <!-- Filtre -->
     <div class="filter">
 
         <label for="nametbx" class="tbxindicator small">Name</label>
@@ -54,23 +54,28 @@
         <input type="text" class="tbx small" id="sectortbx">
 
         <input type="button" class="small btn" id="searchbtn" value="Search">
-    
+
     </div>
     <!-- Resut-->
-    <h2 class="title big">2 Results</h2>
+    <h2 class="results big">2 Results</h2>
     <div class="result">
         <div class="result1">
-            <img src=".\assets\pictures\logo.jpg" alt="Logo 1" class="logoentreprise">
+            <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
             <div class="in_desc">
-            <h3 class="medium">First company</h3>
-                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                <h4 class="small">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+                <h3 class="medium">First company</h3>
+                <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
             </div>
         </div>
         <div class="result2">
-            <img src=".\assets\pictures\logo2.jpg" alt="Logo 2" class="logoentreprise">
-            <h3 class="medium">Second company</h3>
-            <p></p>
+            <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
+            <div class="in_desc">
+                <h3 class="medium">Second company</h3>
+                <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+
+
+            </div>
         </div>
     </div>
 
