@@ -23,20 +23,31 @@
   filter: drop-shadow(0 0 0.5rem grey) opacity(30%);
 }
 
-.t_off{
-
+/* Mediaquery for the text on the banner*/
+@media (max-width: 992px) {
+  .t_off.smalltitle {
+    font-size: smaller;
+  }
+  .t_off2.smalltitle {
+    font-size: x-small;
+  }
+}
+@media (min-width: 992px) {
+  .t_off.bigtitle {
+    font-size: xx-large;
+  }
+  .t_off2.bigtitle {
+    font-size: larger;
+  }
 }
 
-.t_off2{
-
-}
-
-.col-lg-2{
+/* Search textboxes divs */
+.col-lg-2 {
   margin-left: 15px;
   margin-top: 15px;
-  margin-bottom:15px;
+  margin-bottom: 15px;
 }
-  /* Textboxes style */
+/* Textboxes style */
 .tbx {
   border-radius: 30px;
   border-style: none;
@@ -48,7 +59,7 @@
   margin-top: 10px;
 }
 
-  /* Label style */
+/* Label style */
 .tbxindicator {
   margin-left: 1vh;
   padding-left: 1px;
@@ -56,11 +67,10 @@
   width: 10em;
 }
 
-  /* Search Button style*/
+/* Search Button style*/
 .btn.search {
   color: rgb(255, 255, 255);
   background-color: #51b700;
-  padding: none;
   border-radius: 50px;
   border-style: none;
   height: 2.5em;
@@ -69,11 +79,10 @@
   margin-top: 10px;
 }
 
-  /* See Offer Button style*/
+/* See Offer Button style*/
 .btn.see {
   color: rgb(255, 255, 255);
   background-color: #51b700;
-  padding: none;
   border-radius: 50px;
   border-style: none;
   height: 2.5em;

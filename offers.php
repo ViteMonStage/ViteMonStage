@@ -39,8 +39,8 @@
     <div class="container offerimg">
         <img src="assets/pictures/offres.png" class="img banner" alt="offres">
         <div class="text-block">
-            <h4 class="t_off">Offers</h4>
-            <p class="t_off2">Check out the popular offers right now.</p>
+            <h4 class="t_off bigtitle smalltitle">Offers</h4>
+            <p class="t_off2 bigtitle smalltitle">Check out the popular offers right now.</p>
         </div>
     </div>
 
@@ -72,78 +72,76 @@
 
     <h2 class="title big" style="margin-top: 20px; margin-left: 10px;">2 Results</h2>
     <!-- RESULT 1 -->
-    <div>
-        <div class="s_result">
-            <div class="in_desc">
-                <div>
-                    <h3 class="medium off_name">First offer</h3>
-                    <h4 class="small off_company">DC Incorporated</h4>
-                </div>
-                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+    <div class="s_result">
+        <div class="in_desc">
+            <div>
+                <h3 class="medium off_name">First offer</h3>
+                <h4 class="small off_company">DC Incorporated</h4>
             </div>
-            <div class="in_logo">
+            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+        </div>
+        <div class="in_logo">
+            <div>
+                <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
+            </div>
+            <div>
+                <a href="offers_detail.php" role="button" class="small btn see">See Offer</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULT 2 -->
+    <div class="s_result">
+        <div class="in_desc">
+            <div>
+                <h3 class="medium off_name">Second offer</h3>
+                <h4 class="small off_company">RO and Sons</h4>
+            </div>
+            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+            <h4 class="mini">Rouen (76100) - Publication 10/12/2022 - IT</h4>
+        </div>
+        <div class="in_logo">
+            <div>
+                <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
+            </div>
+            <div>
+                <a href="offers_detail.php" role="button" class="small btn see">See Offer</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="row g-0 justify-content-center">
+            <!-- "Services" part of the footer-->
+            <div class="col-lg-4 col-sm-12 maxi">
+                <h3 class="medium">Services</h3>
+                <p class="small">Partnerships</p>
+                <p class="small">Blog</p>
+                <p class="small">Contacts</p>
+                <p class="small">FAQ</p>
+            </div>
+            <!-- "About" part of the footer-->
+            <div class="col-lg-4 col-sm-12">
+                <h3 class="medium">About</h3>
+                <p class="small">Company</p>
+                <p class="small">Our team</p>
+                <p class="small">Careers</p>
+                <p class="small">Legal terms</p>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <h2 class="big">VMS</h2>
+                <p class="small">The french website for internships, but in english</p>
                 <div>
-                    <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                </div>
-                <div>
-                    <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                    <a href="http://snapchat.com/" class="social_link"><i class="fa-brands fa-snapchat big" id="snapchat_icon"></i></a>
+                    <a href="http://twitter.com/" class="social_link"><i class="fa-brands fa-twitter big" id="twitter_icon"></i></a>
+                    <a href="http://github.com/" class="social_link"><i class="fa-brands fa-github big" id="github_icon"></i></a>
+                    <a href="http://discord.com/" class="social_link"><i class="fa-brands fa-discord big" id="discord_icon"></i></a>
                 </div>
             </div>
         </div>
-
-        <!-- RESULT 2 -->
-        <div>
-            <div class="s_result">
-                <div class="in_desc">
-                    <div>
-                        <h3 class="medium off_name">Second offer</h3>
-                        <h4 class="small off_company">RO and Sons</h4>
-                    </div>
-                    <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                    <h4 class="mini">Rouen (76100) - Publication 10/12/2022 - IT</h4>
-                </div>
-                <div class="in_logo">
-                    <div>
-                        <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
-                    </div>
-                    <div>
-                        <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FOOTER -->
-            <footer>
-                <div class="row g-0 justify-content-center">
-                    <!-- "Services" part of the footer-->
-                    <div class="col-lg-4 col-sm-12 maxi">
-                        <h3 class="medium">Services</h3>
-                        <p class="small">Partnerships</p>
-                        <p class="small">Blog</p>
-                        <p class="small">Contacts</p>
-                        <p class="small">FAQ</p>
-                    </div>
-                    <!-- "About" part of the footer-->
-                    <div class="col-lg-4 col-sm-12">
-                        <h3 class="medium">About</h3>
-                        <p class="small">Company</p>
-                        <p class="small">Our team</p>
-                        <p class="small">Careers</p>
-                        <p class="small">Legal terms</p>
-                    </div>
-                    <div class="col-lg-4 col-sm-12">
-                        <h2 class="big">VMS</h2>
-                        <p class="small">The french website for internships, but in english</p>
-                        <div>
-                            <a href="http://snapchat.com/" class="social_link"><i class="fa-brands fa-snapchat big" id="snapchat_icon"></i></a>
-                            <a href="http://twitter.com/" class="social_link"><i class="fa-brands fa-twitter big" id="twitter_icon"></i></a>
-                            <a href="http://github.com/" class="social_link"><i class="fa-brands fa-github big" id="github_icon"></i></a>
-                            <a href="http://discord.com/" class="social_link"><i class="fa-brands fa-discord big" id="discord_icon"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+    </footer>
 </body>
 
 </html>
