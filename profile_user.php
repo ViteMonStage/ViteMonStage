@@ -63,65 +63,68 @@
     <!-- WISHLIST MENU AND CURRENT PROGRESS MENU   -->
     <div class="menu">
 
-
-        <div class="wishlist">
-            <p class="medium titre">Wishlist</p>
-            <div class="offerexample">
-                <p><a href="" class="medium">Offer example</a></p>
-                <p><a href="" class="small">Company</a></p>
-                <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ex maxime, ipsam maiores itaque sint ab, corporis est,
-                    commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
-                </p>
-                <ul class="list mini">
-                    <li id="city">City</li>
-                    <li id="dot1"><img src="../assets/icons/circle-solid.svg" alt="-"></li>
-                    <li id="publishDate">Publish Date</li>
-                    <li id="dot2"><img src="../assets/icons/circle-solid.svg" alt="-"></li>
-                    <li id="sector">Sector</li>
-                </ul>
-                <div class="bouton">
-                    <div class="col-md-12 bg-transparent text-right">
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a role="button" class="small btn" href="wishlist.php">See more</a>
+        <div class="row g-0 ">
+            <div class="col-lg-6 col-sm-12">
+                <div class="wishlist">
+                    <p class="medium titre">Wishlist</p>
+                    <div class="offerexample">
+                        <a href="" class="medium">Offer example</a>
+                        <a href="" class="small">Company</a>
+                        <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ex maxime, ipsam maiores itaque sint ab, corporis est,
+                            commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
+                        </p>
+                        <div class="space">
+                            <ul class="list mini">
+                                <li id="city">City</li>
+                                <li id="dot">-</li>
+                                <li id="publishDate">Publish Date</li>
+                                <li id="dot">-</li>
+                                <li id="sector">Sector</li>
+                            </ul>
+                            <div class="bouton">
+                                <div class="col-md-12 bg-transparent text-right">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <a role="button" class="small btn" href="wishlist.php">See more</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-        <div class="candidatures">
-            <p class="medium titre">Current candidatures </p>
-            <div class="offerexample">
-                <a href="" class="medium">Offer example</a>
-                <a href="" class="small">Company</a>
-                <p class="mini">Progress : </p>
-                <!-- PROGRESS BAR -->
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ex maxime, ipsam maiores itaque sint ab, corporis est,
-                    commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
-                </p>
-                <ul class="list mini">
-                    <li id="city">City</li>
-                    <li id="dot1"><img src="../assets/icons/circle-solid.svg" alt="-"></li>
-                    <li id="publishDate">Publish Date</li>
-                    <li id="dot2"><img src="../assets/icons/circle-solid.svg" alt="-"></li>
-                    <li id="sector">Sector</li>
-                </ul>
-                <div class="bouton">
-                    <div class="col-md-12 bg-transparent text-right">
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a role="button" class="small btn" href="candidatures.php" ">See more</a>
+            <div class="col-lg-6 col-sm-12">
+                <div class="candidatures">
+                    <p class="medium titre">Current candidatures </p>
+                    <div class="offerexample">
+                        <a href="" class="medium">Offer example</a>
+                        <a href="" class="small">Company</a>
+                        <p class="mini">Progress : </p>
+                        <!-- PROGRESS BAR -->
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ex maxime, ipsam maiores itaque sint ab, corporis est,
+                            commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
+                        </p>
+                        <ul class="list mini">
+                            <li id="city">City</li>
+                            <li id="dot">-</li>
+                            <li id="publishDate">Publish Date</li>
+                            <li id="dot">-</li>
+                            <li id="sector">Sector</li>
+                        </ul>
+                        <div class="bouton">
+                            <div class="col-md-12 bg-transparent text-right">
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a role="button" class="small btn" href="candidatures.php">See more</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 
