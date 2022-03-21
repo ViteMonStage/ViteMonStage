@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./stylesheets/companies.scss">
     <link rel="stylesheet" href="./stylesheets/global.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Nav bar-->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
@@ -31,14 +33,14 @@
             </div>
         </nav>
     </header>
-
+<!-- Head band-->
     <div class="container">
         <img src=".\assets\pictures\bandeau.jpg" class="img-fluid image" alt="Responsive image">
         <div class="centered">
             <h1 class="maxi">Companies</h1>
         </div>
     </div>
-
+<!-- Filtre -->
     <div class="filter">
 
         <label for="nametbx" class="tbxindicator small">Name</label>
@@ -53,13 +55,18 @@
         <input type="text" class="tbx small" id="sectortbx">
 
         <input type="button" class="small btn" id="searchbtn" value="Search">
-
+    
     </div>
+    <!-- Resut-->
     <h2 class="title big">2 Results</h2>
     <div class="result">
         <div class="result1">
             <img src=".\assets\pictures\logo.jpg" alt="Logo 1" class="logoentreprise">
+            <div class="in_desc">
             <h3 class="medium">First company</h3>
+                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+                <h4 class="small">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+            </div>
         </div>
         <div class="result2">
             <img src=".\assets\pictures\logo2.jpg" alt="Logo 2" class="logoentreprise">
@@ -67,6 +74,38 @@
             <p></p>
         </div>
     </div>
+
+    <footer>
+        <div class="row g-0 justify-content-center">
+            <!-- "Services" part of the footer-->
+            <div class="col-lg-4 col-sm-12 maxi">
+                <h3 class="medium">Services</h3>
+                <p class="small">Partnerships</p>
+                <p class="small">Blog</p>
+                <p class="small">Contacts</p>
+                <p class="small">FAQ</p>
+            </div>
+            <!-- "About" part of the footer-->
+            <div class="col-lg-4 col-sm-12">
+                <h3 class="medium">About</h3>
+                <p class="small">Company</p>
+                <p class="small">Our team</p>
+                <p class="small">Careers</p>
+                <p class="small">Legal terms</p>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <h2 class="big">VMS</h2>
+                <p class="small">The french website for internships, but in english</p>
+                <div>
+                    <a href="http://snapchat.com/" class="social_link"><i class="fa-brands fa-snapchat big" id="snapchat_icon"></i></a>
+                    <a href="http://twitter.com/" class="social_link"><i class="fa-brands fa-twitter big" id="twitter_icon"></i></a>
+                    <a href="http://github.com/" class="social_link"><i class="fa-brands fa-github big" id="github_icon"></i></a>
+                    <a href="http://discord.com/" class="social_link"><i class="fa-brands fa-discord big" id="discord_icon"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

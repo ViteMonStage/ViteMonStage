@@ -21,7 +21,6 @@ margin-left: 15vh;
 
 .tbx {
     /* Textboxes style*/
-     
 border-radius: 50px;
 border-style: none;
 color: #BEBEBE !important;
@@ -68,8 +67,8 @@ margin-top: 1%;
   }
 
 .logoentreprise{
-    width: 300px;
-    height: 300px;
+    width: 120px;
+    height: 120px;
 }
 
 .result1{
@@ -85,6 +84,14 @@ margin-top: 1%;
     border-style: solid;
     margin-top: 1%;
     width: 90%;
-    margin-left: 10px;
-    
+    margin-left: 10px;   
 }
+
+.in_desc{
+    display: inline;
+    margin-left: 1%;
+  }
+
+  .result{
+      margin-bottom: 20px;
+  }

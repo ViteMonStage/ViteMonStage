@@ -1,4 +1,4 @@
-/* Style of the container containing the images and the text */
+/* Style of the container containing the banner and the text */
 .container.offerimg {
   position: relative;
   max-width: 200%;
@@ -51,16 +51,14 @@
   margin-left: 3vh;
 }
 
-.logoentreprise {
-  width: 150px;
-  height: 150px;
-}
+
 
 .result1{
   display: flex;
   border-style: solid;
   margin-left: 10px;
   width: 90%;
+  justify-content: space-between;
   
 }
 
@@ -73,11 +71,16 @@
 }
 
 .in_desc{
-  display: inline;
+  display: inline-block;
   margin-left: 1%;
 }
 .in_logo{
-  position: fixed;
-  right:0%;
-  display: inline;
+  display : flex;
+  justify-content: flex-end;
+}
+
+.logoentreprise {
+  width: 100px;
+  height: 100px;
+
 }
