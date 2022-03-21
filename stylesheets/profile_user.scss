@@ -32,7 +32,7 @@
     height: 170px;
     border: none;
     border-radius: 90px;
-    margin-left: 5px;
+    margin:5px;
 }
 .profile img {
     height:24px;
@@ -56,15 +56,18 @@
 text-align: center;
 }
 .wishlist .small{
-
+    margin: 1em;
     display: flex;
     justify-content: flex-end;
 }
 
 .wishlist .bouton {
     margin-bottom: 2%;
+    margin-top: 10%;
 }
-
+.wishlist .mini{
+    margin: 1em;
+}
 
 .candidatures{
     border-color:black;
@@ -91,9 +94,21 @@ text-align: center;
     margin-right:10px;
     
 }
+.candidatures .small{
+    margin: 1em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.candidatures .mini{
+    margin: 1em;
+}
+
 .menu {
     display: flex;
+    flex-direction: row;
     margin-top: 5%;
+    margin-bottom: 5%;
 }
 body a{
     color:#09A129 ;
