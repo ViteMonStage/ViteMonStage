@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>My Profile Page</title>
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -48,7 +49,7 @@
                 <li class="medium">SURNAME Name</li>
                 <li class="small">Campus : Rouen</li>
                 <li class="small">Sector : IT</li>
-                <li class="small">name.surname@viacesi.fr</li>
+                <li class="mini">name.surname@viacesi.fr</li>
                 <li class="small">Male, 20 Years Old</li>
             </ul>
 
