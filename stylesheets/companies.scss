@@ -68,22 +68,13 @@ margin-top: 1%;
     margin-left: 1%;
 }
 
-.result1{
+.result{
     display: flex;
     border-style: solid;
     margin-left: 10px;
     width: 90%;
     border-radius: 20px;
-    
-}
-
-.result2{
-    display: flex;
-    border-style: solid;
-    margin-top: 1%;
-    width: 90%;
-    margin-left: 10px;   
-    border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 .in_desc{
@@ -91,6 +82,20 @@ margin-top: 1%;
     margin-left: 1%;
   }
 
-.result{
-     margin-bottom: 20px;
-  }
+.search{
+    margin-left: 10vh;
+}
+
+
+#searchbtn{
+    /* Button style*/
+color: rgb(255, 255, 255);
+background-color: #51B700;
+padding: none;
+border-radius: 50px;
+border-style: none;
+height: 2.5em;
+width:10% ;
+margin-left: 15%;
+margin-top: 5%;
+}

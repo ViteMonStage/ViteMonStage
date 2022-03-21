@@ -54,31 +54,31 @@
         <label for="sectortbx" class="tbxindicator small">Sector</label>
         <input type="text" class="tbx small" id="sectortbx">
 
-        <input type="button" class="small btn" id="searchbtn" value="Search">
+        <input type="button" class="small btn"  value="Search">
 
     </div>
     <!-- Resut-->
     <h2 class="results big">2 Results</h2>
-    <div class="result">
-        <div class="result1">
+        <div class="result">
             <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
             <div class="in_desc">
                 <h3 class="medium">First company</h3>
                 <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
                 <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
             </div>
+            <input type="button" class="small btnsearch" id="searchbtn" value="See company">
         </div>
-        <div class="result2">
+        <div class="result">
             <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
             <div class="in_desc">
                 <h3 class="medium">Second company</h3>
                 <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
                 <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-
-
+                
             </div>
+            <input type="button" class="small btnsearch" id="searchbtn" value="See company">
         </div>
-    </div>
+    
 
     <footer>
         <div class="row g-0 justify-content-center">
