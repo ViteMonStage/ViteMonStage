@@ -45,6 +45,9 @@
             <h4 class="small">Number of candidates</h4>
             <h4 class="small">Offer starting date - Offer ending date</h4>
         </div>
+        <div class="off_wish">
+
+        </div>
 
     </div>
     <!--"Apply" section-->
