@@ -8,9 +8,10 @@
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./stylesheets/global.scss">
     <link rel="stylesheet" href="./stylesheets/index.scss">
+    <link rel="stylesheet" href="./stylesheets/global.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -105,11 +106,11 @@
             <div class="col-lg-4 col-sm-12">
                 <h2 class="big">VMS</h2>
                 <p class="small">The french website for internships, but in english</p>
-                <div class="footer_social">
-                    <i class="fa-brands fa-snapchat big" id="snapchat_icon"></i>
-                    <i class="fa-brands fa-twitter big" id="twitter_icon"></i>
-                    <i class="fa-brands fa-github big" id="github_icon"></i>
-                    <i class="fa-brands fa-discord big" id="discord_icon"></i>
+                <div>
+                    <a href="http://snapchat.com/" class="social_link"><i class="fa-brands fa-snapchat big" id="snapchat_icon"></i></a>
+                    <a href="http://twitter.com/" class="social_link"><i class="fa-brands fa-twitter big" id="twitter_icon"></i></a>
+                    <a href="http://github.com/" class="social_link"><i class="fa-brands fa-github big" id="github_icon"></i></a>
+                    <a href="http://discord.com/" class="social_link"><i class="fa-brands fa-discord big" id="discord_icon"></i></a>
                 </div>
             </div>
         </div>
