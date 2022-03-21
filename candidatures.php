@@ -21,13 +21,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav navbar-align-left navbar-margin">
-        <a class="nav-item nav-link current small" href="#">HOME</a>
-        <a class="nav-item nav-link small" href="#">OFFERS</a>
-        <a class="nav-item nav-link small" href="#">APPLICATIONS</a>
-        <a class="nav-item nav-link small" href="#">COMPANIES</a>
-        <a class="nav-item nav-link small navbar-highlight" href="#">PROFILE</a>
+        <a class="nav-item nav-link small" href="./index.php">HOME</a>
+        <a class="nav-item nav-link small" href="./offers.php">OFFERS</a>
+        <a class="nav-item nav-link small current" href="./candidatures.php">APPLICATIONS</a>
+        <a class="nav-item nav-link small" href="./companies.php">COMPANIES</a>
+        <a class="nav-item nav-link small navbar-highlight" href="./profile_user.php">PROFILE</a>
       </div>
     </div>
   </nav>
 </body>
+
 </html>

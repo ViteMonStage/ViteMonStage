@@ -4,27 +4,35 @@
     padding: 0;
 }
 
-.container {
-    position: relative;
-    font-family: Arial;
-    width: 45%;
-    padding-bottom: 1%;
-  }
-
-  /* Style of the text inside the images" */
+/* Style of the text inside the images" */
 .text-block {
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 0;
+    left: 0;
     color: black;
-  }
+}
 
 /* Style for all 4 images */
 .img{
     width: 100%;
     border-radius: 30px;
-    filter: drop-shadow(0 0 0.5rem grey) opacity(60%);
+    filter: drop-shadow(0 0 0.5rem grey) opacity(50%);
 }
+.zoom {
+    background-color: white;
+    margin: 10px;
+	transition: transform .5s;
+  }
+  
+.zoom:hover {
+    position: relative;
+	transform: scale(1.02);
+	z-index: 1;
+}
+
+.zoom a {
+    position: relative;
+  }
 
 /* Style of "Welcome" text */
 .Welcome{
@@ -55,15 +63,8 @@ footer{
 }
 
 
-.zoom {
-	transition: transform .5s;
-  }
-  
-.zoom:hover {
-	transform: scale(1.1);
-	z-index: 1;
-}
 
 .fa-brands{
     padding-right: 10px;
 }
+
