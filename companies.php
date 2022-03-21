@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VMS | Login</title>
+    <title>VMS | Companies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -23,23 +23,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav navbar-align-left navbar-margin">
-                    <a class="nav-item nav-link small" href="./index.php">HOME</a>
-                    <a class="nav-item nav-link small" href="./offers.php">OFFERS</a>
-                    <a class="nav-item nav-link small" href="./candidatures.php">APPLICATIONS</a>
-                    <a class="nav-item nav-link small current" href="./companies.php">COMPANIES</a>
-                    <a class="nav-item nav-link small navbar-highlight" href="./profile_user.php">PROFILE</a>
+                    <a class="nav-item nav-link small" href="./index.php"><i class="fa-solid fa-house"></i> HOME</a>
+                    <a class="nav-item nav-link small" href="./offers.php"><i class="fa-solid fa-list"></i> OFFERS</a>
+                    <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
+                    <a class="nav-item nav-link small current" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
+                    <a class="nav-item nav-link small navbar-highlight" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
+                    <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
                 </div>
             </div>
         </nav>
     </header>
-<!-- Head band-->
+    <!-- Head band-->
     <div class="container">
-        <img src=".\assets\pictures\bandeau.jpg" class="img-fluid image" alt="Responsive image">
+        <img src="./assets/pictures/bandeau.jpg" class="img-fluid image" alt="Responsive image">
         <div class="centered">
             <h1 class="maxi">Companies</h1>
         </div>
     </div>
-<!-- Filtre -->
+    <!-- Filtre -->
     <div class="filter">
 
         <label for="nametbx" class="tbxindicator small">Name</label>
@@ -53,26 +54,31 @@
         <label for="sectortbx" class="tbxindicator small">Sector</label>
         <input type="text" class="tbx small" id="sectortbx">
 
-        <input type="button" class="small btn" id="searchbtn" value="Search">
-    
+        <input type="button" class="small btn"  value="Search">
+
     </div>
     <!-- Resut-->
-    <h2 class="title big">2 Results</h2>
-    <div class="result">
-        <div class="result1">
-            <img src=".\assets\pictures\logo.jpg" alt="Logo 1" class="logoentreprise">
+    <h2 class="results big">2 Results</h2>
+        <div class="result">
+            <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
             <div class="in_desc">
-            <h3 class="medium">First company</h3>
-                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                <h4 class="small">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+                <h3 class="medium">First company</h3>
+                <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
             </div>
+            <input type="button" class="small btnsearch" id="searchbtn" value="See company">
         </div>
-        <div class="result2">
-            <img src=".\assets\pictures\logo2.jpg" alt="Logo 2" class="logoentreprise">
-            <h3 class="medium">Second company</h3>
-            <p></p>
+        <div class="result">
+            <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
+            <div class="in_desc">
+                <h3 class="medium">Second company</h3>
+                <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+                
+            </div>
+            <input type="button" class="small btnsearch" id="searchbtn" value="See company">
         </div>
-    </div>
+    
 
     <footer>
         <div class="row g-0 justify-content-center">

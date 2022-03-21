@@ -23,16 +23,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav navbar-align-left navbar-margin">
-                    <a class="nav-item nav-link current small" href="./index.php">HOME</a>
-                    <a class="nav-item nav-link small" href="./offers.php">OFFERS</a>
-                    <a class="nav-item nav-link small" href="./candidatures.php">APPLICATIONS</a>
-                    <a class="nav-item nav-link small" href="./companies.php">COMPANIES</a>
-                    <a class="nav-item nav-link small navbar-highlight" href="./profile_user.php">PROFILE</a>
+                    <a class="nav-item nav-link current small" href="./index.php"><i class="fa-solid fa-house"></i> HOME</a>
+                    <a class="nav-item nav-link small" href="./offers.php"><i class="fa-solid fa-list"></i> OFFERS</a>
+                    <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
+                    <a class="nav-item nav-link small" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
+                    <a class="nav-item nav-link small navbar-highlight" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
+                    <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
                 </div>
             </div>
         </nav>
     </header>
-    <h1 class="Welcome big">Welcome on VMS</h1>
+    <h1 class="welcome big">Welcome on VMS</h1>
     <div class="row g-0 justify-content-center">
         <!-- "Applications" square -->
         <div class="col-lg-5 col-sm-12">
