@@ -1,0 +1,70 @@
+/* Style of the container containing the images and the text */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Style of the text inside the images" */
+.text-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+}
+
+/* Style for all 4 images */
+.img{
+    width: 100%;
+    border-radius: 30px;
+    filter: drop-shadow(0 0 0.5rem grey) opacity(50%);
+}
+.zoom {
+    background-color: white;
+    margin: 10px;
+	transition: transform .5s;
+  }
+  
+.zoom:hover {
+    position: relative;
+	transform: scale(1.02);
+	z-index: 1;
+}
+
+.zoom a {
+    position: relative;
+  }
+
+/* Style of "Welcome" text */
+.Welcome{
+    padding-left: 10px;
+}
+
+footer{
+    background-color: rgb(85, 85, 85);
+    color: white;
+    padding: 5%;
+}
+
+/* Style of "Service" in footer */
+.footer_serv{
+    display:inline-block;
+    padding-left: 10%;
+
+}
+
+.footer_about{
+    display:inline-block;
+    padding-left: 10%;
+}
+
+.footer_vtm{
+    display:inline-block;
+    padding-left: 10%;
+}
+
+
+
+.fa-brands{
+    padding-right: 10px;
+}
+

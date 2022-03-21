@@ -1,0 +1,83 @@
+/* Style of the container containing the images and the text */
+.container.offerimg {
+  position: relative;
+  max-width: 200%;
+  max-height: 200%;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+/* Style of the text inside the images" */
+.text-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.img.img_test {
+  object-fit: fill;
+  width: 100%;
+  filter: drop-shadow(0 0 0.5rem grey) opacity(30%);
+}
+
+.tbx {
+  /* Textboxes style*/
+  border-radius: 30px;
+  border-style: none;
+  color: #bebebe !important;
+  background-color: #eeeeee;
+  width: 11%;
+  height: 2.5em;
+  font-size: 1.2em;
+  margin-top: 1%;
+}
+
+.tbxindicator {
+  margin-left: 1vh;
+  padding-left: 1px;
+}
+
+.btn {
+  /* Button style*/
+  color: rgb(255, 255, 255);
+  background-color: #51b700;
+  padding: none;
+  border-radius: 50px;
+  border-style: none;
+  height: 2.5em;
+  width: 10%;
+  margin-left: 3vh;
+}
+
+.logoentreprise {
+  width: 150px;
+  height: 150px;
+}
+
+.result1{
+  display: flex;
+  border-style: solid;
+  margin-left: 10px;
+  width: 90%;
+  
+}
+
+.result2 {
+  display: flex;
+  border-style: solid;
+  margin-top: 1%;
+  width: 90%;
+  margin-left: 10px;
+}
+
+.in_desc{
+  display: inline;
+  margin-left: 1%;
+}
+.in_logo{
+  position: fixed;
+  right:0%;
+  display: inline;
+}

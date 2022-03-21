@@ -1,0 +1,115 @@
+/*
+//...............................................................
+//.FFFFFFFFFF....OOOOOO.....NNNN....NNN..TTTTTTTTTTT..SSSSSS.....
+//.FFFFFFFFFF..OOOOOOOOOO...NNNN....NNN..TTTTTTTTTTTSSSSSSSSS....
+//.FFFFFFFFFF.OOOOOOOOOOOO..NNNNN...NNN..TTTTTTTTTTTSSSSSSSSSS...
+//.FFF........OOOO....OOOO..NNNNN...NNN......TTT....SSS...SSSS...
+//.FFF........OOO......OOO..NNNNNN..NNN......TTT....SSSS.........
+//.FFFFFFFFF.FOOO......OOOO.NNNNNNN.NNN......TTT....SSSSSSS......
+//.FFFFFFFFF.FOOO......OOOO.NNN.NNN.NNN......TTT.....SSSSSSSS....
+//.FFFFFFFFF.FOOO......OOOO.NNN.NNNNNNN......TTT.......SSSSSSS...
+//.FFF........OOO......OOO..NNN..NNNNNN......TTT...........SSSS..
+//.FFF........OOOO....OOOO..NNN..NNNNNN......TTT...TSSS....SSSS..
+//.FFF........OOOOOOOOOOOO..NNN...NNNNN......TTT....SSSSSSSSSS...
+//.FFF.........OOOOOOOOOO...NNN....NNNN......TTT....SSSSSSSSSS...
+//.FFF...........OOOOOO.....NNN....NNNN......TTT......SSSSSS.....
+//...............................................................
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.mini{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.small{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.medium{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.big{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+}
+
+.maxi{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+}
+/*
+//.............................................................................
+//.NNNN....NNN.....AAAA...AAAV.....VVVVVVBBBBBBBB.......AAAA.....AARRRRRRRR....
+//.NNNN....NNN.....AAAAA...AAV.....VVV.VVBBBBBBBBB......AAAA.....AARRRRRRRRR...
+//.NNNNN...NNN.....AAAAA...AAVV....VVV.VVBBBBBBBBBB....AAAAAA....AARRRRRRRRRR..
+//.NNNNN...NNN....AAAAAA...AAVV...VVVV.VVBB....BBBB....AAAAAA....AARR....RRRR..
+//.NNNNNN..NNN....AAAAAAA...AVV...VVV..VVBB....BBBB...AAAAAAA....AARR....RRRR..
+//.NNNNNNN.NNN...AAAA.AAA...AVVV..VVV..VVBBBBBBBBB....AAA.AAAA...AARRRRRRRRRR..
+//.NNN.NNN.NNN...AAA..AAAA..AVVV.VVVV..VVBBBBBBBBB....AAA..AAA...AARRRRRRRRR...
+//.NNN.NNNNNNN...AAAAAAAAA...VVV.VVV...VVBBBBBBBBBB..BAAAAAAAAA..AARRRRRRR.....
+//.NNN..NNNNNN..AAAAAAAAAA...VVVVVVV...VVBB.....BBB..BAAAAAAAAA..AARR..RRRR....
+//.NNN..NNNNNN..AAAAAAAAAAA..VVVVVVV...VVBB.....BBB..BAAAAAAAAA..AARR...RRRR...
+//.NNN...NNNNN..AAA.....AAA...VVVVV....VVBBBBBBBBBB.BBAA....AAAA.AARR...RRRR...
+//.NNN....NNNN.NAAA.....AAAA..VVVVV....VVBBBBBBBBBB.BBA......AAA.AARR....RRRR..
+//.NNN....NNNN.NAA......AAAA..VVVVV....VVBBBBBBBB..BBBA......AAAAAARR.....RRR..
+//.............................................................................
+*/
+
+.navbar-align-left{
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.nav-item.nav-link.navbar-highlight{
+    background-color: #51B700;
+    color: white;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-left: 2px;
+}
+
+.nav-item.nav-link.navbar-highlight.current{
+    background-color: #51B700;
+    color: rgb(201, 255, 169);
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-left: 2px;
+}
+
+.nav-item.nav-link{
+    margin-left: 10px;
+}
+
+.nav-item.nav-link.navbar-highlight:hover {
+    background-color: #2a652c;
+    color: white;
+  }
+
+.nav-item.nav-link.current{
+    color: #51B700;
+    pointer-events: none;
+}
+
+.nav-item.nav-link.current:hover{
+    color: #51B700;
+    pointer-events: none; 
+}
+
+.navbar-brand.logo{
+    margin-left: 10px;
+}
+
+.navbar-toggler.pad{
+    margin-right: 10px;
+}
+
