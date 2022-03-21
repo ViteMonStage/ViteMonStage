@@ -16,34 +16,35 @@
 //...............................................................
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css');
 
-.mini{
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+.mini {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 12px;
 }
 
-.small{
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+.small {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: 600;
     font-size: 16px;
 }
 
-.medium{
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+.medium {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 20px;
 }
 
-.big{
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+.big {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-size: 26px;
 }
 
-.maxi{
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+.maxi {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: 900;
     font-size: 36px;
 }
@@ -65,69 +66,80 @@
 //.............................................................................
 */
 
-.navbar-align-left{
+.navbar-align-left {
     margin-left: auto;
     margin-right: 10px;
 }
 
-.nav-item.nav-link.navbar-highlight{
-    background-color: #51B700;
+.nav-item.nav-link.navbar-highlight {
+    background-color: #51b700;
     color: white;
     border-radius: 10px;
     padding-left: 10px;
     margin-left: 2px;
 }
 
-.nav-item.nav-link.navbar-highlight.current{
-    background-color: #51B700;
+.nav-item.nav-link.navbar-highlight.current {
+    background-color: #51b700;
     color: rgb(201, 255, 169);
     border-radius: 10px;
     padding-left: 10px;
     margin-left: 2px;
 }
 
-.nav-item.nav-link{
+.nav-item.nav-link {
     margin-left: 10px;
 }
 
 .nav-item.nav-link.navbar-highlight:hover {
     background-color: #2a652c;
     color: white;
-  }
+}
 
-.nav-item.nav-link.current{
-    color: #51B700;
+.nav-item.nav-link.current {
+    color: #51b700;
     pointer-events: none;
 }
 
-.nav-item.nav-link.current:hover{
-    color: #51B700;
-    pointer-events: none; 
+.nav-item.nav-link.current:hover {
+    color: #51b700;
+    pointer-events: none;
 }
 
-.navbar-brand.logo{
+.navbar-brand.logo {
     margin-left: 10px;
 }
 
-.navbar-toggler.pad{
+.navbar-toggler.pad {
     margin-right: 10px;
 }
 
+@media (max-width: 992px) {
+    .notification.show-small {
+        display: inline;
+    }
+}
 
-footer{
+@media (min-width: 992px) {
+    .notification.hide-big {
+        display: none;
+    }
+}
+
+footer {
     background-color: rgb(85, 85, 85);
     color: white;
     padding: 5%;
 }
 
-.fa-brands{
+.fa-brands {
     padding-right: 10px;
 }
 
-.social_link{
+.social_link {
     color: white;
 }
 
-.social_link:hover{
+.social_link:hover {
     color: greenyellow;
 }
