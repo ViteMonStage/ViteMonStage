@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./stylesheets/companies.scss">
     <link rel="stylesheet" href="./stylesheets/global.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 
 <body>
@@ -72,10 +73,11 @@
             <p></p>
         </div>
     </div>
+
     <footer>
-        <div class="f_row">
+        <div class="row g-0 justify-content-center">
             <!-- "Services" part of the footer-->
-            <div class="f_serv">
+            <div class="col-lg-4 col-sm-12 maxi">
                 <h3 class="medium">Services</h3>
                 <p class="small">Partnerships</p>
                 <p class="small">Blog</p>
@@ -83,23 +85,22 @@
                 <p class="small">FAQ</p>
             </div>
             <!-- "About" part of the footer-->
-            <div class="f_about">
+            <div class="col-lg-4 col-sm-12">
                 <h3 class="medium">About</h3>
                 <p class="small">Company</p>
                 <p class="small">Our team</p>
                 <p class="small">Careers</p>
                 <p class="small">Legal terms</p>
             </div>
-            <div class="f_vtm">
-                <div class="f_lorem">
-                    <h2 class="big">ViteMonStage</h2>
-                    <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                </div>
-                <div class="f_social">
-                    <i class="fa-brands fa-snapchat big" id="icon"></i>
-                    <i class="fa-brands fa-twitter big" id="icon"></i>
-                    <i class="fa-brands fa-github big" id="icon"></i>
-                    <i class="fa-brands fa-discord big" id="icon"></i>
+            <div class="col-lg-4 col-sm-12">
+                <h2 class="big">VMS</h2>
+                <p class="small">The french website for internships, but in english</p>
+                <div>
+                    <a href="http://snapchat.com/" class="social_link"><i class="fa-brands fa-snapchat big" id="snapchat_icon"></i></a>
+                    <a href="http://twitter.com/" class="social_link"><i class="fa-brands fa-twitter big" id="twitter_icon"></i></a>
+                    <a href="http://github.com/" class="social_link"><i class="fa-brands fa-github big" id="github_icon"></i></a>
+                    <a href="http://discord.com/" class="social_link"><i class="fa-brands fa-discord big" id="discord_icon"></i></a>
+
                 </div>
             </div>
         </div>
