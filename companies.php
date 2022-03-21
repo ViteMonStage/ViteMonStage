@@ -66,7 +66,7 @@
                 <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
                 <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
             </div>
-            <input type="button" class="small btnsearch" id="searchbtn" value="See company">
+            <a role="button"  href="./companies_detail.php" class="small btn company" >See company</a>
         </div>
         <div class="result">
             <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
@@ -76,7 +76,7 @@
                 <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
                 
             </div>
-            <input type="button" class="small btnsearch" id="searchbtn" value="See company">
+            <a role="button" href="./companies_detail.php" class="small btn company" > See company </a>
         </div>
     
 
