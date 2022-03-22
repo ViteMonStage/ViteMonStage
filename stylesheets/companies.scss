@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 .btn {
     /* Button style*/
 color: rgb(255, 255, 255);
@@ -11,8 +12,6 @@ padding: none;
 border-radius: 50px;
 border-style: none;
 height: 2.25em;
-margin-left: 15vh;
-margin-top: 7.3%;
 
 }
 
@@ -24,7 +23,7 @@ color: #BEBEBE !important;
 background-color: #EEEEEE;
 height: 2.5em;
 font-size: 1.2em;  
-margin-top: 1%;
+margin-top: 10px;
 margin-left: 20vh;
 
 }
@@ -45,12 +44,12 @@ margin-left: 20vh;
  /* Head band style*/
 .container {
     position: relative;
-    text-align: center;
     max-width: 200%;
     max-height: 200%;
     padding-left: 0%;
     padding-right: 0%;
   }
+
 
    /* Centered the title*/
    .centered {
@@ -61,37 +60,43 @@ margin-left: 20vh;
     color: rgb(0, 0, 0);
   }
 
-.results{
-      margin-left: 8vh;
-      margin-top: 7vh;
-  }
-
 .logoentreprise{
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     margin-left: 1%;
 }
 
 .result{
     display: flex;
     border-style: solid;
+    border-color: #51b700;
+    border-radius: 10px;
+    margin-right: 10px;
     margin-left: 10px;
-    width: 90%;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    border-color: #51B700;
-}
+    margin-bottom: 15px;
+  }
 
 .in_desc{
     display: inline;
-    margin-left: 1%;
+    margin-left: 10px;
   }
 
 .search{
     margin-left: 10vh;
 }
 
-.company{
-    margin-left: 17%;
-    margin-top: 5%;
+.btn.detail{
+    margin-top: 60px;
+    margin-left: 370px;
+}
+
+
+.btn.search{
+    margin-left: 15vh;
+    margin-top: 30px
+}
+
+.results{
+    margin-top: 20px; 
+    margin-left: 10px;
 }

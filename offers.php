@@ -70,7 +70,7 @@
     <input type="button" class="small btn search" id="searchbtn" value="Search">
 
 
-    <h2 class="title big" style="margin-top: 20px; margin-left: 10px;">2 Results</h2>
+    <h2 class="title big resu">2 Results</h2>
     <!-- RESULT 1 -->
     <div class="s_result">
         <div class="in_desc">
