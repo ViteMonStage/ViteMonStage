@@ -1,83 +1,106 @@
-.current_candidatures{
-    background-color: rgb(238, 238, 238);
-    color: black;
-    margin: 10px;
-    border-radius: 50px;
+.current_candidatures {
+  background-color: rgb(238, 238, 238);
+  color: black;
+  margin: 10px;
+  padding-top: 10px;
+  border-radius: 50px;
 }
 
-.current_candidatures_title{
-    color: black;
-    text-align: center;
+.current_candidatures_title {
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-.application-pb{
-    width: 20%;
-    border-radius: 50px;
+.accepted_candidatures {
+  background-color: rgb(238, 238, 238);
+  color: black;
+  margin: 10px;
+  padding-top: 10px;
+  border-radius: 50px;
 }
 
-.list-group.current{
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    border-radius: 50px;
+.accepted_candidatures_title {
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-.right{
-    float: right;
-    margin-right: 20px;
+.application-pb {
+  width: 20%;
+  border-radius: 50px;
 }
 
-.left{
-    float: left;
-    margin-right: 20px;
+.list-group.current {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 50px;
+}
+
+.right {
+  float: right;
+  margin-right: 20px;
+}
+
+.left {
+  float: left;
+  margin-right: 20px;
 }
 
 .btn.see {
-    color: rgb(255, 255, 255);
-    background-color: #51b700;
-    padding: none;
-    border-radius: 50px;
-    border-style: none;
-    height: 2.5em;
-    width: 100px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-  }
-  
-  /* Style of the result divs */
-  .s_result {
-    display: flex;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 15px;
-    justify-content: space-between;
-  }
-  
-  /* Description Style */
-  .in_desc {
-    margin-top: 10px;
-    margin-left: 10px;
-  }
-  
-  /* Logo style */
-  .logoentreprise {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-  }
-  
-  /* Offer title style */
-  .off_name {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  /* Offer company */
-  .off_company {
-    display: inline-block;
-  }
+  color: rgb(255, 255, 255);
+  background-color: #51b700;
+  padding: none;
+  border-radius: 50px;
+  border-style: none;
+  height: 2.5em;
+  width: 100px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
 
-  .progress{
-      width: 70%;
-      margin-bottom: 10px;
-  }
+/* Style of the result divs */
+.s_result {
+  display: flex;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+/* Description Style */
+.in_desc {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/* Logo style */
+.logoentreprise {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+/* Offer title style */
+.off_name {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Offer company */
+.off_company {
+  display: inline-block;
+}
+
+.progress {
+  width: 70%;
+  margin-bottom: 10px;
+  background-color: rgb(218, 218, 218);
+}
+
+.badge.success{
+  background-color: #67e600;
+}
