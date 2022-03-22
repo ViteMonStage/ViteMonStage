@@ -8,11 +8,13 @@
   margin: 15px;
 }
 
+/* Offer description text style */
 .off_desc_txt {
   display: inline-block;
   margin-left: 15px;
 }
 
+/* Wishlist div style */
 .off_wish {
   display: inline-block;
   width: 300px;
@@ -20,23 +22,26 @@
   vertical-align: top;
 }
 
+/* Wishlist icon style */
 .off_wish_d1 {
   display: inline-block;
   width: 20px;
 }
 
+/* Wishlist text style */
 .off_wish_d2 {
   display: inline-block;
   width: 100px;
 }
 
+/* Apply div style */
 .off_apply {
   padding-top: 40px;
   background-color: gray;
   padding-bottom: 25px;
 }
 
-/* Mediaquery for the text on the banner*/
+/* Mediaquery for the buttons */
 @media (max-width: 992px) {
   .small.btn.app.smalltitle {
     color: rgb(255, 255, 255);
@@ -85,6 +90,7 @@
   }
 }
 
+/* Offer details style */
 .off_det {
   background-color: lightgray;
   margin: 25px;
