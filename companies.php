@@ -37,7 +37,7 @@
     <div class="container">
         <img src="./assets/pictures/bandeau.jpg" class="img-fluid image" alt="Responsive image">
         <div class="centered">
-            <h1 class="maxi">Companies</h1>
+            <h1 class="big title">Companies</h1>
         </div>
     </div>
     <!-- Filtre -->
@@ -53,12 +53,11 @@
             <input type="text" class="tbx small" id="locationtbx">
         </div>
         <div class="col-lg-3 col-sm-12">
-
             <label for="sectortbx" class="tbxindicator small">Sector</label>
             <input type="text" class="tbx small" id="sectortbx">
         </div>
         <div class="col-lg-3 col-sm-12">
-            <input type="button" class="small btn" value="Search">
+            <input type="button" class="small btn search" value="Search">
         </div>
     </div>
     <!-- Resut-->
@@ -70,7 +69,7 @@
             <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
             <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
         </div>
-        <a role="button" href="./companies_detail.php" class="small btn company">See company</a>
+        <a role="button" href="./companies_detail.php" class="small btn detail">See company</a>
     </div>
     <div class="result">
         <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
@@ -80,7 +79,7 @@
             <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
 
         </div>
-        <a role="button" href="./companies_detail.php" class="small btn company"> See company </a>
+        <a role="button" href="./companies_detail.php" class="small btn detail"> See company </a>
     </div>
 
 
