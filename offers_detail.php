@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VMS | Login</title>
+    <title>VMS | Offer details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
@@ -17,7 +17,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+        <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -46,21 +46,26 @@
             <h4 class="small">Offer starting date - Offer ending date</h4>
         </div>
         <div class="off_wish">
-
+            <div class="off_wish_d1">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="off_wish_d2">
+                <h5 class="mini"> Add to wishlist</h5>
+            </div>
         </div>
 
     </div>
     <!--"Apply" section-->
     <div class="off_apply">
-        <a href="offers_detail.php" role="button" class="small btn app ">Apply</a>
-        <a href="companies_detail.php" role="button" class="small btn see">Company detail</a>
+        <a href="offers_detail.php" role="button" class="small btn app smalltitle bigtitle ">Apply</a>
+        <a href="companies_detail.php" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
     </div>
 
     <!--Offer details-->
     <div class="off_det">
         <h3 class="medium">Offer details</h3>
         <h5 class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</h5>
-        
+
 
     </div>
 
