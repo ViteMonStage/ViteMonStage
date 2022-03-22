@@ -54,7 +54,7 @@
                 <li class="small">Male, 20 Years Old</li>
             </ul>
 
-            <img id="editbutton" src="assets/icons/edit-regular.svg" alt="Edit" onclick="openImg()">
+            <a href="edit_user"><img id="editbutton" src="assets/icons/edit-regular.svg" alt="Edit" onclick="openImg()"></a>
         </div>
     </div>
 
