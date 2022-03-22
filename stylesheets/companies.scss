@@ -24,14 +24,13 @@ background-color: #EEEEEE;
 height: 2.5em;
 font-size: 1.2em;  
 margin-top: 10px;
-margin-left: 20vh;
+margin-left: 55px;
 
 }
    /* Label style*/
 .tbxindicator{
-    
-    margin-left: 30vh;
-    padding-left: 10px;
+ 
+    margin-left: 135px;
     width: 10em;
     margin-top: 1%;
     
@@ -50,7 +49,6 @@ margin-left: 20vh;
     padding-right: 0%;
   }
 
-
    /* Centered the title*/
    .centered {
     position: absolute;
@@ -63,7 +61,7 @@ margin-left: 20vh;
 .logoentreprise{
     width: 100px;
     height: 100px;
-    margin-left: 1%;
+    margin-left: 10px;
 }
 
 .result{
@@ -76,24 +74,21 @@ margin-left: 20vh;
     margin-bottom: 15px;
   }
 
-.in_desc{
-    display: inline;
-    margin-left: 10px;
-  }
 
 .search{
     margin-left: 10vh;
 }
 
 .btn.detail{
-    margin-top: 60px;
-    margin-left: 370px;
+    width: 60px;
+    float: right;
 }
 
 
 .btn.search{
     margin-left: 15vh;
-    margin-top: 30px
+    margin-top: 35px
+
 }
 
 .results{

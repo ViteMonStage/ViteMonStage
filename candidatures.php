@@ -42,6 +42,7 @@
           <a class="list-group-item list-group-item-action small" id="current-list-2-list" data-bs-toggle="list" href="#current-list-2" role="tab" aria-controls="current-list-2">Company example 2 - Position 2 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
           <a class="list-group-item list-group-item-action small" id="current-list-3-list" data-bs-toggle="list" href="#current-list-3" role="tab" aria-controls="current-list-3">Company example 3 - Position 3 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
           <a class="list-group-item list-group-item-action small" id="current-list-4-list" data-bs-toggle="list" href="#current-list-4" role="tab" aria-controls="current-list-4">Company example 4 - Position 4 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
+          <a class="list-group-item list-group-item-action small" id="current-list-4-list" data-bs-toggle="list" href="#current-list-4" role="tab" aria-controls="current-list-4">Company example 4 - Position 4 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
         </div>
       </div>
       <div class="col-lg-6 col-sm-12">
