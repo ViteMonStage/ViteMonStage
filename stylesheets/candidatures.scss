@@ -3,7 +3,7 @@
   color: black;
   margin: 10px;
   padding-top: 10px;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .current_candidatures_title {
@@ -14,11 +14,11 @@
 }
 
 .accepted_candidatures {
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(235, 255, 220);
   color: black;
   margin: 10px;
   padding-top: 10px;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .accepted_candidatures_title {
@@ -28,16 +28,44 @@
   margin-top: 20px;
 }
 
+.refused_candidatures {
+  background-color: rgb(255, 226, 220);
+  color: black;
+  margin: 10px;
+  padding-top: 10px;
+  border-radius: 20px;
+}
+
+.refused_candidatures_title {
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
 .application-pb {
   width: 20%;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .list-group.current {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
-  border-radius: 50px;
+  border-radius: 20px;
+}
+.list-group.accepted {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.list-group.refused {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
 }
 
 .right {
@@ -103,4 +131,16 @@
 
 .badge.success{
   background-color: #67e600;
+}
+
+.badge.refused{
+  background-color: #e66800;
+}
+
+.progress-bar.progress-bar.progress-bar.progress-bar-success{
+  background-color: #67e600;
+}
+
+.progress-bar.progress-bar.progress-bar.progress-bar-danger{
+  background-color: #e66800;
 }
