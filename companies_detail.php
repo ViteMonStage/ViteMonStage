@@ -34,7 +34,9 @@
         </nav>
     </header>
     <div class="company">
+        <div class="image">
         <img src="./assets/pictures/logo4.png" alt="Logo 1" class="logoentreprise">
+        </div>
         <div class="in_desc">
             <h3 class="medium">Name of the company</h3>
             <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>

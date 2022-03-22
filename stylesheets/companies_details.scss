@@ -3,23 +3,22 @@
     padding: 0;
 }
 
-
+.image{
+    border-style: solid;
+    border-radius: 20px;
+}
 .logoentreprise{
     width: 120px;
     height: 120px;
-    margin-left: 1%;
-    margin-top: 1%;
-    
+    margin-top: 1%; 
 }
 
 .company{
-    display: flex;
-    width: 98%;
-    margin-top: 20px;
-   margin-bottom: 20px;
-    border-style: solid;
-    margin-left: 1%;
-    border-radius: 20px;
+display: flex;
+width: 98%;
+margin-top: 20px;
+margin-bottom: 20px;
+margin-left: 1%;
 }
 
 .evaluation{
