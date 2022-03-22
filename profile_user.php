@@ -20,19 +20,20 @@
 
     <!-- NAVBAR -->
     <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
-        <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav navbar-align-left navbar-margin">
-                <a class="nav-item nav-link small" href="./index.php"><i class="fa-solid fa-house"></i> HOME</a>
-                <a class="nav-item nav-link small" href="./offers.php"><i class="fa-solid fa-list"></i> OFFERS</a>
-                <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
-                <a class="nav-item nav-link small" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
-                <a class="nav-item nav-link small current navbar-highlight" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
-                <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
+            <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav navbar-align-left navbar-margin">
+                    <a class="nav-item nav-link small" href="./index.php"><i class="fa-solid fa-house"></i> HOME</a>
+                    <a class="nav-item nav-link small" href="./offers.php"><i class="fa-solid fa-list"></i> OFFERS</a>
+                    <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
+                    <a class="nav-item nav-link small" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
+                    <a class="nav-item nav-link small current navbar-highlight" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
+                    <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
+                </div>
             </div>
         </nav>
     </header>
@@ -68,33 +69,67 @@
         <div class="row g-0 ">
             <div class="col-lg-6 col-sm-12">
 
-            <!-- WISHLIST MENU -->
+                <!-- WISHLIST MENU -->
                 <div class="wishlist">
                     <p class="medium titre">Wishlist</p>
-                    <div class="offerexample">
-                        <a href="" class="medium">Offer example</a>
-                        <a href="" class="small">Company</a>
-                        <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Ex maxime, ipsam maiores itaque sint ab, corporis est,
-                            commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
-                        </p>
-                        <div class="space">
-                            <ul class="list mini">
-                                <li id="city">City</li>
-                                <li id="dot">-</li>
-                                <li id="publishDate">Publish Date</li>
-                                <li id="dot">-</li>
-                                <li id="sector">Sector</li>
-                            </ul>
-                            <div class="bouton">
-                                <div class="col-md-12 bg-transparent text-right">
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <a role="button" class="small btn" href="wishlist.php">See more</a>
-                                    </div>
-                                </div>
+                    <div class="scroller">
+                        <div class="offerexample">
+                            <a href="" class="medium">Offer example</a>
+                            <a href="" class="small">Company</a>
+                            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Ex maxime, ipsam maiores itaque sint ab, corporis est,
+                                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
+                            </p>
+                            <div class="space">
+                                <ul class="list mini">
+                                    <li id="wcity">City</li>
+                                    <li class="dot">-</li>
+                                    <li id="wpublishDate">Publish Date</li>
+                                    <li class="dot">-</li>
+                                    <li id="wsector">Sector</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="offerexample">
+                            <a href="" class="medium">Offer example</a>
+                            <a href="" class="small">Company</a>
+                            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Ex maxime, ipsam maiores itaque sint ab, corporis est,
+                                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
+                            </p>
+                            <div class="space">
+                                <ul class="list mini">
+                                    <li id="wcity">City</li>
+                                    <li class="dot">-</li>
+                                    <li id="wpublishDate">Publish Date</li>
+                                    <li class="dot">-</li>
+                                    <li id="wsector">Sector</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="offerexample">
+                            <a href="" class="medium">Offer example</a>
+                            <a href="" class="small">Company</a>
+                            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Ex maxime, ipsam maiores itaque sint ab, corporis est,
+                                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
+                            </p>
+                            <div class="space">
+                                <ul class="list mini">
+                                    <li id="wcity">City</li>
+                                    <li class="dot">-</li>
+                                    <li id="wpublishDate">Publish Date</li>
+                                    <li class="dot">-</li>
+                                    <li id="wsector">Sector</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    <div class="bouton">
+                                <a role="button" class="small btn" href="wishlist.php">See more</a>
+
+                    </div>
+
                 </div>
             </div>
             <div class="col-lg-6 col-sm-12">
@@ -102,7 +137,29 @@
                 <!-- CANDIDATURES MENU -->
                 <div class="candidatures">
                     <p class="medium titre">Current candidatures </p>
-                    <div class="offerexample">
+                    <div class="scroller">
+                        <div class="offerexample">
+                            <a href="" class="medium">Offer example</a>
+                            <a href="" class="small">Company</a>
+                            <p class="mini">Progress : </p>
+                            <!-- PROGRESS BAR -->
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Step 4/8</div>
+                            </div>
+                            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Ex maxime, ipsam maiores itaque sint ab, corporis est,
+                                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
+                            </p>
+                            <ul class="list mini">
+                                <li id="ccity">City</li>
+                                <li class="dot">-</li>
+                                <li id="cpublishDate">Publish Date</li>
+                                <li class="dot">-</li>
+                                <li id="csector">Sector</li>
+                            </ul>
+                            </div>
+                        
+                    <div class="offerexample ">
                         <a href="" class="medium">Offer example</a>
                         <a href="" class="small">Company</a>
                         <p class="mini">Progress : </p>
@@ -115,17 +172,18 @@
                             commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
                         </p>
                         <ul class="list mini">
-                            <li id="city">City</li>
-                            <li id="dot">-</li>
-                            <li id="publishDate">Publish Date</li>
-                            <li id="dot">-</li>
-                            <li id="sector">Sector</li>
+                            <li id="ccity">City</li>
+                            <li class="dot">-</li>
+                            <li id="cpublishDate">Publish Date</li>
+                            <li class="dot">-</li>
+                            <li id="csector">Sector</li>
                         </ul>
-                        <div class="bouton">
-                            <div class="col-md-12 bg-transparent text-right">
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <a role="button" class="small btn" href="candidatures.php">See more</a>
-                                </div>
+                    </div>
+                    </div>
+                    <div class="bouton">
+                        <div class="col-md-12 bg-transparent text-right">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <a role="button" class="small btn" href="candidatures.php">See more</a>
                             </div>
                         </div>
                     </div>
