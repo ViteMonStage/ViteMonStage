@@ -125,6 +125,28 @@
     }
 }
 
+.nav-link.dropdown-toggle.small.admin-list{
+    background-color: #d50000;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.dropdown-menu.dropdown-menu-end.admin-list{
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 15px;
+}
+
+.dropdown-item.admin-list:hover{
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+}
+
 footer {
     background-color: rgb(85, 85, 85);
     color: white;
