@@ -66,20 +66,24 @@
         <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
         <div class="in_desc">
             <h3 class="medium">First company</h3>
-            <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-        </div>
-        <a role="button" href="./companies_detail.php" class="small btn detail">See company</a>
-    </div>
-    <div class="result">
-        <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
-        <div class="in_desc">
-            <h3 class="medium">Second company</h3>
-            <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
             <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
 
         </div>
-        <a role="button" href="./companies_detail.php" class="small btn detail"> See company </a>
+        <a role="button" href="./companies_detail.php" class="small btn detail">See </a>
+    </div>
+
+    <div class="result">
+
+        <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
+        <div class="in_desc">
+            <h3 class="medium">Second company</h3>
+            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+        </div>
+        <a role="button" href="./companies_detail.php" class="small btn detail "> See </a>
+
+
     </div>
 
 
