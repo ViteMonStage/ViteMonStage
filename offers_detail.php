@@ -46,21 +46,26 @@
             <h4 class="small">Offer starting date - Offer ending date</h4>
         </div>
         <div class="off_wish">
-
+            <div class="off_wish_d1">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="off_wish_d2">
+                <h5 class="mini"> Add to wishlist</h5>
+            </div>
         </div>
 
     </div>
     <!--"Apply" section-->
     <div class="off_apply">
-        <a href="offers_detail.php" role="button" class="small btn app ">Apply</a>
-        <a href="companies_detail.php" role="button" class="small btn see">Company detail</a>
+        <a href="offers_detail.php" role="button" class="small btn app smalltitle bigtitle ">Apply</a>
+        <a href="companies_detail.php" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
     </div>
 
     <!--Offer details-->
     <div class="off_det">
         <h3 class="medium">Offer details</h3>
         <h5 class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</h5>
-        
+
 
     </div>
 
