@@ -21,7 +21,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+        <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
