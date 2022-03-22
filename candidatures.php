@@ -38,7 +38,7 @@
     <div class="row g-0">
       <div class="col-lg-6 col-sm-12">
         <div class="list-group current" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action small" id="current-list-1-list" data-bs-toggle="list" href="#current-list-1" role="tab" aria-controls="current-list-1">Company example 1 - Position 1 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
+          <a class="list-group-item list-group-item-action small active" id="current-list-1-list" data-bs-toggle="list" href="#current-list-1" role="tab" aria-controls="current-list-1">Company example 1 - Position 1 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
           <a class="list-group-item list-group-item-action small" id="current-list-2-list" data-bs-toggle="list" href="#current-list-2" role="tab" aria-controls="current-list-2">Company example 2 - Position 2 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
           <a class="list-group-item list-group-item-action small" id="current-list-3-list" data-bs-toggle="list" href="#current-list-3" role="tab" aria-controls="current-list-3">Company example 3 - Position 3 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
           <a class="list-group-item list-group-item-action small" id="current-list-4-list" data-bs-toggle="list" href="#current-list-4" role="tab" aria-controls="current-list-4">Company example 4 - Position 4 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
@@ -46,7 +46,7 @@
       </div>
       <div class="col-lg-6 col-sm-12">
         <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade small" id="current-list-1" role="tabpanel" aria-labelledby="current-list-1-list">
+          <div class="tab-pane fade small active show" id="current-list-1" role="tabpanel" aria-labelledby="current-list-1-list">
             <div class="s_result">
               <div class="in_desc">
                 <div>
@@ -149,7 +149,7 @@
         <div class="row g-0">
           <div class="col-lg-6 col-sm-12">
             <div class="list-group accepted" id="list-tab" role="tablist">
-              <a class="list-group-item list-group-item-action small" id="accepted-list-1-list" data-bs-toggle="list" href="#accepted-list-1" role="tab" aria-controls="accepted-list-1">Company example 1 - Position 1 <span id="notifAmount" class="badge success right">Accepted</span></a>
+              <a class="list-group-item list-group-item-action small active" id="accepted-list-1-list" data-bs-toggle="list" href="#accepted-list-1" role="tab" aria-controls="accepted-list-1">Company example 1 - Position 1 <span id="notifAmount" class="badge success right">Accepted</span></a>
               <a class="list-group-item list-group-item-action small" id="accepted-list-2-list" data-bs-toggle="list" href="#accepted-list-2" role="tab" aria-controls="accepted-list-2">Company example 2 - Position 2 <span id="notifAmount" class="badge success right">Accepted</span></a>
               <a class="list-group-item list-group-item-action small" id="accepted-list-3-list" data-bs-toggle="list" href="#accepted-list-3" role="tab" aria-controls="accepted-list-3">Company example 3 - Position 3 <span id="notifAmount" class="badge success right">Accepted</span></a>
               <a class="list-group-item list-group-item-action small" id="accepted-list-4-list" data-bs-toggle="list" href="#accepted-list-4" role="tab" aria-controls="accepted-list-4">Company example 4 - Position 4 <span id="notifAmount" class="badge success right">Accepted</span></a>
@@ -157,7 +157,7 @@
           </div>
           <div class="col-lg-6 col-sm-12">
             <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade small" id="accepted-list-1" role="tabpanel" aria-labelledby="list-1-list">
+              <div class="tab-pane fade small active show" id="accepted-list-1" role="tabpanel" aria-labelledby="list-1-list">
                 <div class="s_result">
                   <div class="in_desc">
                     <div>
@@ -260,7 +260,7 @@
         <div class="row g-0">
           <div class="col-lg-6 col-sm-12">
             <div class="list-group refused" id="list-tab" role="tablist">
-              <a class="list-group-item list-group-item-action small" id="refused-list-1-list" data-bs-toggle="list" href="#refused-list-1" role="tab" aria-controls="refused-list-1">Company example 1 - Position 1 <span id="notifAmount" class="badge refused right">Refused</span></a>
+              <a class="list-group-item list-group-item-action small active" id="refused-list-1-list" data-bs-toggle="list" href="#refused-list-1" role="tab" aria-controls="refused-list-1">Company example 1 - Position 1 <span id="notifAmount" class="badge refused right">Refused</span></a>
               <a class="list-group-item list-group-item-action small" id="refused-list-2-list" data-bs-toggle="list" href="#refused-list-2" role="tab" aria-controls="refused-list-2">Company example 2 - Position 2 <span id="notifAmount" class="badge refused right">Refused</span></a>
               <a class="list-group-item list-group-item-action small" id="refused-list-3-list" data-bs-toggle="list" href="#refused-list-3" role="tab" aria-controls="refused-list-3">Company example 3 - Position 3 <span id="notifAmount" class="badge refused right">Refused</span></a>
               <a class="list-group-item list-group-item-action small" id="refused-list-4-list" data-bs-toggle="list" href="#refused-list-4" role="tab" aria-controls="refused-list-4">Company example 4 - Position 4 <span id="notifAmount" class="badge refused right">Refused</span></a>
@@ -268,7 +268,7 @@
           </div>
           <div class="col-lg-6 col-sm-12">
             <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade small" id="refused-list-1" role="tabpanel" aria-labelledby="list-1-list">
+              <div class="tab-pane fade small active show" id="refused-list-1" role="tabpanel" aria-labelledby="list-1-list">
                 <div class="s_result">
                   <div class="in_desc">
                     <div>
