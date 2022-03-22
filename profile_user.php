@@ -19,22 +19,24 @@
 
 
     <!-- NAVBAR -->
+    <header>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav navbar-align-left navbar-margin">
-                <a class="nav-item nav-link small" href="./index.php"><i class="fa-solid fa-house"></i> HOME</a>
-                <a class="nav-item nav-link small" href="./offers.php"><i class="fa-solid fa-list"></i> OFFERS</a>
-                <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
-                <a class="nav-item nav-link small" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
-                <a class="nav-item nav-link small current navbar-highlight" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
-                <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
+            <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav navbar-align-left navbar-margin">
+                    <a class="nav-item nav-link small" href="./index.php"><i class="fa-solid fa-house"></i> HOME</a>
+                    <a class="nav-item nav-link small " href="./offers.php"><i class="fa-solid fa-list"></i> OFFERS</a>
+                    <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
+                    <a class="nav-item nav-link small" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
+                    <a class="nav-item nav-link small navbar-highlight current" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
+                    <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
 
 
@@ -66,6 +68,8 @@
 
         <div class="row g-0 ">
             <div class="col-lg-6 col-sm-12">
+
+            <!-- WISHLIST MENU -->
                 <div class="wishlist">
                     <p class="medium titre">Wishlist</p>
                     <div class="offerexample">
@@ -95,6 +99,8 @@
                 </div>
             </div>
             <div class="col-lg-6 col-sm-12">
+
+                <!-- CANDIDATURES MENU -->
                 <div class="candidatures">
                     <p class="medium titre">Current candidatures </p>
                     <div class="offerexample">
@@ -103,7 +109,7 @@
                         <p class="mini">Progress : </p>
                         <!-- PROGRESS BAR -->
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Step 4/8</div>
                         </div>
                         <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Ex maxime, ipsam maiores itaque sint ab, corporis est,
