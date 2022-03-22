@@ -34,17 +34,73 @@
         </nav>
     </header>
     <div class="company">
-        <img src="./assets/pictures/logo4.png" alt="Logo 1" class="logoentreprise">
+        <div class="image">
+            <img src="./assets/pictures/logo4.png" alt="Logo 1" class="logoentreprise">
+        </div>
         <div class="in_desc">
             <h3 class="medium">Name of the company</h3>
             <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
             <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
             <h4 class="mini">Confiance des pilotes : 8.7/10</h4>
         </div>
-        <a role="button" href="./companies_detail.php" class="small btn company">Postulate</a>
-        <a role="button" href="./companies_detail.php" class="small btn company">Invisible </a>
     </div>
-    <h3 class="medium evaluation">Evalutation</h3>
+    <div class="interact">
+    <a role="button" href="./companies_detail.php" class="small btn company">Postulate</a>
+    <a role="button" href="./companies_detail.php" class="small btn company">Invisible </a>
+    </div>
+    <h3 class="medium evaluation">Evaluate the company </h3>
+    <div class="evaluate">
+        <p class="criteria mini">Working environnement : </p>
+        <div class="rate">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
+    </div>
+    <div class="evaluate">
+        <p class="criteria mini">Working conditions : </p>
+        <div class="rate">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
+    </div>
+    <div class="evaluate">
+        <p class="criteria mini">Wage : </p>
+        <div class="rate">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
+    </div>
+    <div class="evaluate">
+        <p class="criteria mini">Acquired experience : </p>
+        <div class="rate">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
+    </div>
+    <div class="evaluate">
+        <p class="criteria mini">Supervision quality : </p>
+        <div class="rate">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
+    </div>
+    <input type="button" class="small btn submit" value="Submit">
+
 
     <footer>
         <div class="row g-0 justify-content-center">

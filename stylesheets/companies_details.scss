@@ -2,28 +2,63 @@
     margin: 0;
     padding: 0;
 }
-
-
-.logoentreprise{
-    width: 120px;
-    height: 120px;
-    margin-left: 1%;
-    margin-top: 1%;
+ .btn {
+    /* Button style*/
+    color: rgb(255, 255, 255);
+    background-color: #51B700;
+    padding: none;
+    border-radius: 50px;
+    border-style: none;
+    height: 2.25em;
     
+    }
+
+.image{
+    border-style: solid;
+    border-radius: 20px;
 }
 
+/* Logo style */
+.logoentreprise {
+    width: 230px;
+    height: 230px;
+  }
+
+
 .company{
-    display: flex;
-    width: 98%;
-    margin-top: 20px;
-   margin-bottom: 20px;
-    border-style: solid;
-    margin-left: 1%;
-    border-radius: 20px;
+display: flex;
+width: 98%;
+margin-top: 20px;
+margin-bottom: 20px;
+margin-left: 1%;
+}
+.in_desc{
+    margin-left: 5px;
+}
+
+.evaluate{
+margin-top: 40px;
+margin-left: 20px;
+display: flex;
+justify-content: space-between;
+
 }
 
 .evaluation{
    text-align: center;
+}
+
+.btn.company{
+    width: 100px;
+    margin-left: 50px;
+}
+
+.interact{
+    display: flex;
+}
+
+.rate{
+    margin-right: 50px;
 }
 
 
