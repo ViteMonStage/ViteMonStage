@@ -9,6 +9,14 @@
 }
 
 /* Offer description text style */
+.off_desc{
+  background-color: rgba(211, 211, 211, 0.5);
+  border-radius: 50px;
+  padding: 30px;
+  margin: 25px;
+
+}
+/* Offer description text style */
 .off_desc_txt {
   display: inline-block;
   margin-left: 15px;
@@ -92,7 +100,7 @@
 
 /* Offer details style */
 .off_det {
-  background-color: lightgray;
+  background-color: rgba(211, 211, 211, 0.5);
   margin: 25px;
   padding: 30px;
   border-radius: 50px;
