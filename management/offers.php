@@ -15,7 +15,9 @@
 </head>
 
 <body>
-    
+    <?php
+    include "../phpscripts/footer.php"
+    ?>
 </body>
 
 

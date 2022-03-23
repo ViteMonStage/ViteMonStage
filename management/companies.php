@@ -61,6 +61,9 @@
         </div>
     </div>
     </div>
+    <?php
+    include "../phpscripts/footer.php"
+    ?>
 </body>
 
 
