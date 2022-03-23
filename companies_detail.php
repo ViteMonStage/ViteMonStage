@@ -49,7 +49,7 @@
         </div>
         <div class="in_desc">
             <h3 class="medium">Name of the company</h3>
-            <p class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
             <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
             <h4 class="mini">Confiance des pilotes : 8.7/10</h4>
         </div>
@@ -109,7 +109,9 @@
             <span class="fa fa-star"></span>
         </div>
     </div>
-    <input type="button" class="small btn submit" value="Submit">
+    <input type="button" class="small btn submit pull-right" value="Submit">
+
+    
 
 
     <footer>
