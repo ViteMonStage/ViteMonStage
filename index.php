@@ -31,9 +31,9 @@
                     <li class="dropdown">
                         <a class="nav-link dropdown-toggle small admin-list" href="#" data-bs-toggle="dropdown" id="admin-list"><i class="fa-solid fa-gear"></i> ADMINISTRATION</a>
                         <div class="dropdown-menu dropdown-menu-end admin-list">
-                            <a href="#" class="dropdown-item admin-list">Manage company</a>
-                            <a href="#" class="dropdown-item admin-list">Manage offer</a>
-                            <a href="#" class="dropdown-item admin-list">Manage user</a>
+                            <a href="./management/companies.php" class="dropdown-item admin-list">Manage companies</a>
+                            <a href="./management/offers.php" class="dropdown-item admin-list">Manage offers</a>
+                            <a href="./management/users.php" class="dropdown-item admin-list">Manage users</a>
                             <div class="dropdown-divider"></div>
                             <a href="#" class="dropdown-item">Search user</a>
                         </div>
