@@ -24,6 +24,10 @@
         <div class="mainbox row">
             <!-- this is the white box -->
             <h1 class="big">USER CREATION</h1>
+    <div class="d-flex align-items-center justify-content-center vh-100 ">
+        <div class="mainbox row">
+            <!-- this is the white box -->
+            <h1 class="maxi">USER CREATION</h1>
             <div class="col-sm-6">
                 <label for="mailtbx" class="tbxindicator small">Email</label>
                 <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
@@ -60,7 +64,10 @@
             </div>
         </div>
     </div>
-    </div>
+    <?php
+    include "../phpscripts/footer.php"
+    ?>
+
 </body>
 
 
