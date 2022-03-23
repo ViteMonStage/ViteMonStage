@@ -28,8 +28,8 @@
                     <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
                     <a class="nav-item nav-link small" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
                     <a class="nav-item nav-link small navbar-highlight" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle small admin-list" data-bs-toggle="dropdown" id="admin-list">ADMINISTRATION</a>
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle small admin-list" href="#" data-bs-toggle="dropdown" id="admin-list"><i class="fa-solid fa-gear"></i> ADMINISTRATION</a>
                         <div class="dropdown-menu dropdown-menu-end admin-list">
                             <a href="#" class="dropdown-item admin-list">Manage company</a>
                             <a href="#" class="dropdown-item admin-list">Manage offer</a>
@@ -40,6 +40,7 @@
                     </li>
                     <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
                 </div>
+            </div>
         </nav>
     </header>
     <h1 class="welcome big">Welcome on VMS</h1>
