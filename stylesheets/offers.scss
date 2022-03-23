@@ -67,6 +67,7 @@
   border-style: none;
   color: #bebebe !important;
   background-color: #eeeeee;
+  padding-left: 10px;
   width: 10em;
   height: 2.5em;
   font-size: 1.2em;
@@ -103,14 +104,14 @@
   width: 100px;
   margin-bottom: 10px;
   margin-right: 10px;
+  margin-top: 10px;
 }
 
 /* Style of the result divs */
 .s_result {
   display: flex;
-  border-style: solid;
-  border-color: #51b700;
-  border-radius: 10px;
+  background-color: rgba(211, 211, 211, 0.50);
+  border-radius: 20px;
   margin-right: 10px;
   margin-left: 10px;
   margin-bottom: 15px;
@@ -125,6 +126,7 @@
 
 /* Logo style */
 .logoentreprise {
+  margin-top: 10px;
   width: 100px;
   height: 100px;
 }
@@ -138,4 +140,9 @@
 /* Offer company */
 .off_company {
   display: inline-block;
+}
+
+#navbar-offers-btn {
+  color: #51b700;
+  pointer-events: none;
 }

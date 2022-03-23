@@ -54,7 +54,7 @@
   margin-bottom: 20px;
   border-radius: 20px;
   overflow-y: scroll;
-  max-height: 75%;
+  overflow: auto;
 }
 .list-group.accepted {
   margin-left: 20px;
@@ -62,7 +62,7 @@
   margin-bottom: 20px;
   border-radius: 20px;
   overflow-y: scroll;
-  max-height: 75%;
+  overflow: auto;
 }
 
 .list-group.refused {
@@ -71,7 +71,7 @@
   margin-bottom: 20px;
   border-radius: 20px;
   overflow-y: scroll;
-  max-height: 75%;
+  overflow: auto;
 }
 
 .right {
@@ -149,4 +149,9 @@
 
 .progress-bar.progress-bar.progress-bar.progress-bar-danger{
   background-color: #e66800;
+}
+
+#navbar-candidatures-btn {
+  color: #51b700;
+  pointer-events: none;
 }

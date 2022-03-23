@@ -16,32 +16,9 @@
 <body>
     <!-- Nav bar-->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
-            <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav navbar-align-left navbar-margin">
-                    <a class="nav-item nav-link small" href="./index.php"><i class="fa-solid fa-house"></i> HOME</a>
-                    <a class="nav-item nav-link small" href="./offers.php"><i class="fa-solid fa-list"></i> OFFERS</a>
-                    <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
-                    <a class="nav-item nav-link small current" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
-                    <a class="nav-item nav-link small navbar-highlight" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
-                    <li class="dropdown">
-                        <a class="nav-link dropdown-toggle small admin-list" href="#" data-bs-toggle="dropdown" id="admin-list"><i class="fa-solid fa-gear"></i> ADMINISTRATION</a>
-                        <div class="dropdown-menu dropdown-menu-end admin-list">
-                            <a href="#" class="dropdown-item admin-list">Manage company</a>
-                            <a href="#" class="dropdown-item admin-list">Manage offer</a>
-                            <a href="#" class="dropdown-item admin-list">Manage user</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">Search user</a>
-                        </div>
-                    </li>
-                    <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
-                </div>
-            </div>
-        </nav>
+        <?php
+        include "./phpscripts/navbar.php"
+        ?>
     </header>
     <!-- Head band-->
     <div class="container">
@@ -51,22 +28,22 @@
         </div>
     </div>
     <!-- Filtre -->
-    <div class="row g-0 justify-content-center">
-        <div class="col-lg-3 col-sm-12">
+    <div class="row g-0 justify-content-center filt smalltitle bigtitle">
+        <div class="col-lg-3 col-sm-12 colo">
             <label for="nametbx" class="tbxindicator small">Name</label>
 
             <input type="text" class="tbx small" id="nametbx">
         </div>
 
-        <div class="col-lg-3 col-sm-12">
+        <div class="col-lg-3 col-sm-12 colo">
             <label for="locationtbx" class="tbxindicator small">Location</label>
             <input type="text" class="tbx small" id="locationtbx">
         </div>
-        <div class="col-lg-3 col-sm-12">
+        <div class="col-lg-3 col-sm-12 colo">
             <label for="sectortbx" class="tbxindicator small">Sector</label>
             <input type="text" class="tbx small" id="sectortbx">
         </div>
-        <div class="col-lg-3 col-sm-12">
+        <div class="col-lg-3 col-sm-12 colo">
             <input type="button" class="small btn search" value="Search">
         </div>
     </div>
@@ -77,23 +54,19 @@
         <div class="in_desc">
             <h3 class="medium">First company</h3>
             <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-
+            <h4 class="mini loca">Evreux (27000) - Publication 04/05/2022 - IT</h4>
         </div>
         <a role="button" href="./companies_detail.php" class="small btn detail">See </a>
     </div>
 
     <div class="result">
-
         <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
         <div class="in_desc">
             <h3 class="medium">Second company</h3>
             <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+            <h4 class="mini loca">Evreux (27000) - Publication 04/05/2022 - IT</h4>
         </div>
         <a role="button" href="./companies_detail.php" class="small btn detail "> See </a>
-
-
     </div>
 
 

@@ -1,69 +1,79 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-
 .btn {
     /* Button style*/
-color: rgb(255, 255, 255);
-background-color: #51B700;
-padding: none;
-border-radius: 50px;
-border-style: none;
-height: 2.25em;
+    color: rgb(255, 255, 255);
+    background-color: #51b700;
+    border-radius: 50px;
+    border-style: none;
+    height: 2.25em;
 }
 
 .tbx {
     /* Textboxes style*/
-border-radius: 50px;
-border-style: none;
-color: #BEBEBE !important;
-background-color: #EEEEEE;
-height: 2.5em;
-font-size: 1.2em;  
-margin-top: 10px;
-margin-left: 55px;
-
+    border-radius: 50px;
+    border-style: none;
+    color: #bebebe !important;
+    background-color: #eeeeee;
+    height: 2.5em;
+    font-size: 1.2em;
+    margin-top: 10px;
+    width: 14em;
 }
-   /* Label style*/
-.tbxindicator{
- 
-    margin-left: 135px;
+/* Label style*/
+.tbxindicator {
     width: 10em;
     margin-top: 1%;
-    
+    text-align: center;
+    width: 14em;
 }
 
-.image{
+/* Banner style */
+.image {
     filter: drop-shadow(0 0 0.5rem grey) opacity(30%);
     object-fit: fill;
 }
- /* Head band style*/
+
+/* Head band style*/
 .container {
     position: relative;
     max-width: 200%;
     max-height: 200%;
     padding-left: 0%;
     padding-right: 0%;
-  }
+}
 
-   /* Centered the title*/
-   .centered {
+/* Centered the title*/
+.centered {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(0, 0, 0);
-  }
+}
 
-.logoentreprise{
+/* Main "filter" div style */
+.filt{
+    justify-content: space-evenly;
+}
+
+/* "Filter" columns style */
+.colo{
+    width: 15em;
+}
+
+/* Logo style */
+.logoentreprise {
     width: 100px;
     height: 100px;
     margin-left: 10px;
 }
 
-.result{
+/* "Result" div style */
+.result {
     display: flex;
     border-style: solid;
     border-color: #51b700;
@@ -71,26 +81,37 @@ margin-left: 55px;
     margin-right: 10px;
     margin-left: 10px;
     margin-bottom: 15px;
-  }
-
-
-.search{
-    margin-left: 10vh;
+    position: relative;
 }
 
-.btn.detail{
+/* "Search" button style */
+.search {
+    margin-top: 35px;
+    margin-left: 4em;
+}
+
+/* Location and publication text style*/
+.loca {
+    margin-right: 5em;
+}
+
+/* "See" button style */
+.btn.detail {
     width: 60px;
-    float: right;
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 15px;
 }
 
-
-.btn.search{
-    margin-left: 15vh;
-    margin-top: 35px
-
-}
-
-.results{
-    margin-top: 20px; 
+/* "Results" text style */
+.results {
+    margin-top: 20px;
     margin-left: 10px;
+}
+
+#navbar-companies-btn {
+    color: #51b700;
+    pointer-events: none;
 }
