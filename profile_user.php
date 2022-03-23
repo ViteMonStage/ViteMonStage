@@ -32,6 +32,16 @@
                     <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
                     <a class="nav-item nav-link small" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
                     <a class="nav-item nav-link small current navbar-highlight" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle small admin-list" href="#" data-bs-toggle="dropdown" id="admin-list"><i class="fa-solid fa-gear"></i> ADMINISTRATION</a>
+                        <div class="dropdown-menu dropdown-menu-end admin-list">
+                            <a href="#" class="dropdown-item admin-list">Manage company</a>
+                            <a href="#" class="dropdown-item admin-list">Manage offer</a>
+                            <a href="#" class="dropdown-item admin-list">Manage user</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">Search user</a>
+                        </div>
+                    </li>
                     <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
                 </div>
             </div>
@@ -126,7 +136,7 @@
                         </div>
                     </div>
                     <div class="bouton">
-                                <a role="button" class="small btn" href="wishlist.php">See more</a>
+                        <a role="button" class="small btn" href="wishlist.php">See more</a>
 
                     </div>
 
@@ -157,28 +167,48 @@
                                 <li class="dot">-</li>
                                 <li id="csector">Sector</li>
                             </ul>
-                            </div>
-                        
-                    <div class="offerexample ">
-                        <a href="" class="medium">Offer example</a>
-                        <a href="" class="small">Company</a>
-                        <p class="mini">Progress : </p>
-                        <!-- PROGRESS BAR -->
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Step 4/8</div>
                         </div>
-                        <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Ex maxime, ipsam maiores itaque sint ab, corporis est,
-                            commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
-                        </p>
-                        <ul class="list mini">
-                            <li id="ccity">City</li>
-                            <li class="dot">-</li>
-                            <li id="cpublishDate">Publish Date</li>
-                            <li class="dot">-</li>
-                            <li id="csector">Sector</li>
-                        </ul>
-                    </div>
+
+                        <div class="offerexample ">
+                            <a href="" class="medium">Offer example</a>
+                            <a href="" class="small">Company</a>
+                            <p class="mini">Progress : </p>
+                            <!-- PROGRESS BAR -->
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Step 4/8</div>
+                            </div>
+                            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Ex maxime, ipsam maiores itaque sint ab, corporis est,
+                                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
+                            </p>
+                            <ul class="list mini">
+                                <li id="ccity">City</li>
+                                <li class="dot">-</li>
+                                <li id="cpublishDate">Publish Date</li>
+                                <li class="dot">-</li>
+                                <li id="csector">Sector</li>
+                            </ul>
+                        </div>
+                        <div class="offerexample ">
+                            <a href="" class="medium">Offer example</a>
+                            <a href="" class="small">Company</a>
+                            <p class="mini">Progress : </p>
+                            <!-- PROGRESS BAR -->
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Step 4/8</div>
+                            </div>
+                            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Ex maxime, ipsam maiores itaque sint ab, corporis est,
+                                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
+                            </p>
+                            <ul class="list mini">
+                                <li id="ccity">City</li>
+                                <li class="dot">-</li>
+                                <li id="cpublishDate">Publish Date</li>
+                                <li class="dot">-</li>
+                                <li id="csector">Sector</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="bouton">
                         <div class="col-md-12 bg-transparent text-right">
