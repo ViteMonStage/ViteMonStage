@@ -103,10 +103,16 @@
     display: flex;
     align-self: flex-end;
     margin-bottom: 15px;
+    background-color: rgb(0, 255, 0);
 }
 
 /* "Results" text style */
 .results {
     margin-top: 20px;
     margin-left: 10px;
+}
+
+#navbar-companies-btn {
+    color: #51b700;
+    pointer-events: none;
 }
