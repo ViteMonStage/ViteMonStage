@@ -76,6 +76,7 @@
     border-radius: 10px;
     padding-left: 10px;
     margin-left: 2px;
+    margin-bottom: 5px;
 }
 
 .nav-item.nav-link.navbar-highlight.current {
@@ -84,6 +85,7 @@
     border-radius: 10px;
     padding-left: 10px;
     margin-left: 2px;
+    margin-bottom: 10px;
 }
 
 .nav-item.nav-link {
@@ -131,14 +133,14 @@
     border-radius: 10px;
     padding-left: 10px;
     margin-left: 2px;
-    margin-bottom: 10px;
-    margin-top: 10px;
 }
 
 .dropdown-menu.dropdown-menu-end.admin-list{
     background-color: #f3f3f3;
     border: none;
     border-radius: 15px;
+    margin-top: 10px;
+    margin-left: 2px;
 }
 
 .dropdown-item.admin-list:hover{
@@ -146,6 +148,23 @@
     border: none;
     border-radius: 15px;
 }
+/*
+//............................................................................
+//.FFFFFFFFFF...OOOOOOO.......OOOOOOO.....TTTTTTTTTTTEEEEEEEEEEE.RRRRRRRRRR...
+//.FFFFFFFFFF..OOOOOOOOOO....OOOOOOOOOO...TTTTTTTTTTTEEEEEEEEEEE.RRRRRRRRRRR..
+//.FFFFFFFFFF.OOOOOOOOOOOO..OOOOOOOOOOOO..TTTTTTTTTTTEEEEEEEEEEE.RRRRRRRRRRR..
+//.FFFF.......OOOOO..OOOOO..OOOOO..OOOOO.....TTTT....EEEE........RRRR...RRRR..
+//.FFFF......FOOOO....OOOOOOOOOO....OOOOO....TTTT....EEEE........RRRR...RRRR..
+//.FFFFFFFFF.FOOO......OOOOOOOO......OOOO....TTTT....EEEEEEEEEE..RRRRRRRRRRR..
+//.FFFFFFFFF.FOOO......OOOOOOOO......OOOO....TTTT....EEEEEEEEEE..RRRRRRRRRRR..
+//.FFFFFFFFF.FOOO......OOOOOOOO......OOOO....TTTT....EEEEEEEEEE..RRRRRRRR.....
+//.FFFF......FOOOO....OOOOOOOOOO....OOOOO....TTTT....EEEE........RRRR.RRRR....
+//.FFFF.......OOOOO..OOOOO..OOOOO..OOOOO.....TTTT....EEEE........RRRR..RRRR...
+//.FFFF.......OOOOOOOOOOOO..OOOOOOOOOOOO.....TTTT....EEEEEEEEEEE.RRRR..RRRRR..
+//.FFFF........OOOOOOOOOO....OOOOOOOOOO......TTTT....EEEEEEEEEEE.RRRR...RRRR..
+//.FFFF..........OOOOOO........OOOOOO........TTTT....EEEEEEEEEEE.RRRR....RRR..
+//............................................................................
+*/
 
 footer {
     background-color: rgb(85, 85, 85);
@@ -166,23 +185,24 @@ footer {
 }
 
 ::-webkit-scrollbar{
-    width: 5px;
+    width: 7px;
+    
     
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: transparent; 
   border-radius: 100px;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #2a652cb6; 
+  background: #3a3838a9; 
   border-radius: 100px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #3e413ec9; 
 }

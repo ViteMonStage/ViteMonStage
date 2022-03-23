@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./stylesheets/global.scss">
-    <link rel="stylesheet" href="./stylesheets/serch_user.scss">
+    <link rel="stylesheet" href="./stylesheets/user_list.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
     <!--  Body -->
@@ -29,6 +29,16 @@
                     <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
                     <a class="nav-item nav-link small" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
                     <a class="nav-item nav-link small navbar-highlight" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle small admin-list" href="#" data-bs-toggle="dropdown" id="admin-list"><i class="fa-solid fa-gear"></i> ADMINISTRATION</a>
+                        <div class="dropdown-menu dropdown-menu-end admin-list">
+                            <a href="#" class="dropdown-item admin-list">Manage company</a>
+                            <a href="#" class="dropdown-item admin-list">Manage offer</a>
+                            <a href="#" class="dropdown-item admin-list">Manage user</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">Search user</a>
+                        </div>
+                    </li>
                     <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
             </div>
         </div>
