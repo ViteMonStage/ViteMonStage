@@ -12,7 +12,7 @@
     height: 2.25em;
     
     }
-
+/* Bordure autout de l'image*/
 .image{
     border-style: solid;
     border-radius: 20px;
@@ -24,7 +24,7 @@
     height: 230px;
   }
 
-
+/* Company informations */
 .company{
 display: flex;
 width: 98%;
@@ -32,25 +32,33 @@ margin-top: 20px;
 margin-bottom: 20px;
 margin-left: 1%;
 }
+
+/* Description */
 .in_desc{
     margin-left: 5px;
 }
 
+/* Evaluate style */
 .evaluate{
 margin-top: 40px;
 margin-left: 20px;
 display: flex;
 justify-content: space-between;
-
 }
 
 .evaluation{
-   text-align: center;
+    text-align: center;
 }
 
+/* Button invisble and postulate style and positionning  */
 .btn.company{
     width: 100px;
     margin-left: 50px;
+}
+
+.btn.submit{
+    margin-bottom: 20px;
+    
 }
 
 .interact{
