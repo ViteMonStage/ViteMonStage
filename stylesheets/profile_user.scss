@@ -35,22 +35,7 @@
 .profile img {
     height:24px;
 }
-.wishlist{
-    border-color: black;
-    border-style:solid ;
-    border-width: 1px;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-    // align-items: center;
-    border-radius: 25px;
-    width: 90%;
-    height: 100%;
-    margin: 3%;
-    margin-left: 5%;
 
-
-}
 
 .menu {
     display: flex;
@@ -85,19 +70,19 @@
 .menu .offerexample{
     margin-top: 0%;
 }
-.small.btn {
-    /* Button style*/
-color: rgb(255, 255, 255);
-background-color: #51B700;
-padding: none;
-border-radius: 50px;
-border-style: none;
-height: 2.25em;
-margin-left: 15vh;
-
-}
-.small.btn:hover{
-    background-color: #2a652c;
+.wishlist{
+    border-color: black;
+    border-style:solid ;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    // align-items: center;
+    border-radius: 25px;
+    width: 90%;
+    height: 100%;
+    margin: 3%;
+    margin-left: 5%;
 }
 
 .candidatures{
@@ -125,7 +110,20 @@ margin-left: 15vh;
     margin-right:10px;
     
 }
+.small.btn {
+    /* Button style*/
+color: rgb(255, 255, 255);
+background-color: #51B700;
+padding: none;
+border-radius: 50px;
+border-style: none;
+height: 2.25em;
+margin-left: 15vh;
 
+}
+.small.btn:hover{
+    background-color: #2a652c;
+}
 
 body a{
     color:#09A129 ;
@@ -145,8 +143,69 @@ body a:hover{
     overflow-y: scroll;
     scrollbar-width: thin;
   }
+label{
+    margin-left: 7%;
+    vertical-align: middle;
+}
+label.switch {
+    text-align: left;
+    width: 50px;
+    height: calc(50px/2);
+    border-radius: 75px;
+    background-color: dodgerblue;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+label.switch > span {
+    display:block;
+    width: 100%;
+    height: 100%;
+}
 
+label.switch > input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+  } 
+
+  label.switch > span:before, label.switch > span:after {
+    content: "";
+    cursor: pointer;
+    position: absolute;
+  }
+
+  label.switch > span {
+    border-radius: 60px;    
+  }
+  label.switch > span:before {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #f1f1f1;
+    border-radius: 75px;
+    transition: opacity .2s ease-out .1s, transform .2s ease-out .1s;
+    transform: scale(1);
+    opacity: 1;
+  }
+  label.switch > span:after{
+    top: 50%;
+    z-index: 3;
+    transition: transform .4s cubic-bezier(0.44,-0.12, 0.07, 1.15);
+    width: calc(50px / 2);
+    height: calc(50px / 2);
+    transform: translate3d(0, -50%, 0);
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);  
+  }
+  label.switch > input[type="checkbox"]:checked ~ span:before {
+    transform: scale(0);
+    opacity: .7;
+  }
+  label.switch > input[type="checkbox"]:checked ~ span:after {
+    transform: translate3d(100%, -50%, 0);
+  }
 #navbar-profile-btn {
-    color: #51b700;
+    color: #b8ffb1;
     pointer-events: none;
 }

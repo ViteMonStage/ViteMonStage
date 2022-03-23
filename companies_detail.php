@@ -114,6 +114,7 @@
         </div>
         <input type="button" class="small btn submit" value="Submit">
     </div>
+<<<<<<< HEAD
 
     
     <div class="profile_results row">
@@ -126,6 +127,21 @@
             <h3 class="medium">Paul</h3>
             <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
         </div>
+=======
+    <div class="company">
+        <div class="image">
+            <img src=".\assets\pictures\bg.jpg" alt="Logo 1" class="logoentreprise">
+        </div>
+        <div class="company_desc">
+            <h3 class="medium">Name of the company</h3>
+            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+            <h4 class="mini">Confiance des pilotes : 8.7/10</h4>
+        </div>
+    </div>
+    <div class="profile">
+
+>>>>>>> c8309fe9552c59bff566c00bff08dec1020f3395
     </div>
     <div class="results col-md-3">
         <div class="results_criteria">
@@ -179,6 +195,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     </div>
     <footer>
         <div class="row g-0 justify-content-center">
@@ -211,5 +228,10 @@
             </div>
         </div>
     </footer>
+=======
+    <?php
+    include "./phpscripts/footer.php"
+    ?>
+>>>>>>> c8309fe9552c59bff566c00bff08dec1020f3395
 
 </body>
