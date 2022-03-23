@@ -54,7 +54,7 @@
   margin-bottom: 20px;
   border-radius: 20px;
   overflow-y: scroll;
-  max-height: 75%;
+  overflow: auto;
 }
 .list-group.accepted {
   margin-left: 20px;
@@ -62,7 +62,7 @@
   margin-bottom: 20px;
   border-radius: 20px;
   overflow-y: scroll;
-  max-height: 75%;
+  overflow: auto;
 }
 
 .list-group.refused {
@@ -71,7 +71,7 @@
   margin-bottom: 20px;
   border-radius: 20px;
   overflow-y: scroll;
-  max-height: 75%;
+  overflow: auto;
 }
 
 .right {
