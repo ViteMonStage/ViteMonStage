@@ -65,24 +65,24 @@
             <form class="form-horizontal" role="form">
             <div class="form-group">
                 <label class="col-lg-3 control-label small">First name:</label>
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                 <input class="form-control small" type="text" placeholder="John">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-3 control-label small">Last name:</label>
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                 <input class="form-control small" type="text" placeholder="Doe">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-3 control-label small">Email:</label>
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                 <input class="form-control small" type="text" value="johndoe@viacesi.fr" readonly>
                 </div>
             </div>
-            <div class="col-push-3 col-md-3">
-            <a class="nav-item nav-link small navbar-highlight" href="#"><i class="fa-solid fa-user"></i> Confirm </a>
+            <div>
+            <a class="col-lg-4 nav-item nav-link small navbar-highlight butconf" href="#"><i class="fa-solid fa-user"></i> Confirm </a>
             </div>
             </div>
             </form>
