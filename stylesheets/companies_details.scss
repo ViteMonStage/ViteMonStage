@@ -11,17 +11,16 @@
     height: 2.25em;
     }
 
-/* Bordure autour de l'image*/
-.image{
-    border-style: solid;
-    border-radius: 20px;
-}
-
-/* Logo style */
+ /* Logo style */
 .logoentreprise {
     width: 230px;
     height: 230px;
   }
+/* Bordure autour du logo*/
+.image{
+    border-style: solid;
+    
+}
 
 /* Position des éléments lié à la company  */
 .company{
@@ -42,30 +41,14 @@ margin-left: 20px;
     margin-top: 10px;
 }
 
-/* Position des critère d'évaluation */
-.evaluate_criteria{
-margin-top: 40px;
-margin-left: 20px;
-display: flex;
-justify-content: space-between;
-}
-
-/* Centrer le titre evaluation */
-.evaluation{
-    text-align: center;
-}
-
 /* Button invisble postulate modify delete positionning  */
 .btn.company{
     margin-left: 20px;
 }
 
-.btn.submit{
-    margin: 4px;
-}
-/* Décaler les étoiles à gauche */
-.rate{
-    margin-right: 50px;
+/* Centrer le titre evaluation */
+.evaluate_title{
+    text-align: center;
 }
 
 /* Div principale mise en flex et en colonne ainsi que style de la bordure */
@@ -76,6 +59,56 @@ justify-content: space-between;
     flex-direction: column;
     background-color: lightgray;
 }
+/* Espacement des élémenents */
+.evaluate_criteria{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
 
+.btn.submit{
+    margin: 4px;
+}
+
+ /* Bordure autour de l'avatar */
+.avatar{
+    border-style: solid;
+}
+
+ /* Taille de l'avatar */
+ .avatar_size {
+    width: 150px;
+    height: 150px;
+  }
+
+   /* Description de l'avatar */
+.avatar_desc{
+margin-left: 5px;
+}
+
+.results_title{
+    text-align: center;
+}
+.results{
+    margin-top: 15px;
+}
+.profile {
+    display: flex;
+margin-top: 20px;
+margin-bottom: 20px;
+margin-left: 20px;
+}
+
+.results_criteria{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_results{
+    border-radius: 20px;
+    margin: 20px;
+    background-color: lightgray;
+
+}
 
 
