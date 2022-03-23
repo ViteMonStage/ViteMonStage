@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
 </head>
-<header>
-    <?php
-    include "../phpscripts/navbar.php"
-    ?>
-</header>
+
 
 <body>
+    <header>
+        <?php
+        include "../phpscripts/navbar.php"
+        ?>
+    </header>
     <div class="d-flex align-items-center justify-content-center vh-100 ">
         <div class="mainbox row">
             <!-- this is the white box -->
-            <h1 class="maxi">COMPANY CREATION</h1>
+            <h1 class="big">COMPANY CREATION</h1>
             <div class="col-sm-6">
                 <label for="mailtbx" class="tbxindicator small">Company name</label>
                 <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com"> <!-- e-mail field -->

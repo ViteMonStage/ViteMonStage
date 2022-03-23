@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>VMS | User creation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
-    <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/management/users.scss">
     <link rel="stylesheet" href="/stylesheets/global.scss">
@@ -15,11 +15,17 @@
 </head>
 
 <body>
-<div class="d-flex align-items-center justify-content-center vh-100 ">
-        <div class="mainbox row"> <!-- this is the white box -->
-            <h1 class="maxi">USER CREATION</h1>
+    <header>
+        <?php
+        include "../phpscripts/navbar.php"
+        ?>
+    </header>
+    <div class="d-flex align-items-center justify-content-center vh-100 madiv ">
+        <div class="mainbox row">
+            <!-- this is the white box -->
+            <h1 class="big">USER CREATION</h1>
             <div class="col-sm-6">
-                <label for="mailtbx" class="tbxindicator small">Email</label> 
+                <label for="mailtbx" class="tbxindicator small">Email</label>
                 <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
                 <label for="mailtbx" class="tbxindicator small">Password</label>
                 <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••"> <!-- password field -->
@@ -31,14 +37,16 @@
                 <input type="lastname" class="form-control tbx medium" id="lastname" placeholder="John"> <!-- name field -->
                 <label for="mailtbx" class="tbxindicator small">Firstname</label>
                 <input type="firstname" class="form-control tbx medium" id="firstname" placeholder="Doe"> <!-- surname  field -->
-                <div class="col-sm-7"> <!-- date of birth field -->
-                    <label for="mailtbx" class="tbxindicator small" style="margin-top:28.12%;">Birthday</label> 
+                <div class="col-sm-7">
+                    <!-- date of birth field -->
+                    <label for="mailtbx" class="tbxindicator small" style="margin-top:28.12%;">Birthday</label>
                     <div class="md-form md-outline input-with-post-icon datepicker">
                         <input placeholder="Select date" type="date" id="example" class="form-control tbx medium">
                     </div>
                 </div>
-                <div class="col-sm-5"> <!-- gender field -->
-                <label for="mailtbx" class="tbxindicator small" style="margin-top:40.91%;">Gender</label>
+                <div class="col-sm-5">
+                    <!-- gender field -->
+                    <label for="mailtbx" class="tbxindicator small" style="margin-top:40.91%;">Gender</label>
                     <select class="form-control tbx medium" name="gender" id="gender">
                         <option value="gen_male" selected>Male</option>
                         <option value="gen-female">Female</option>
@@ -47,8 +55,8 @@
                 </div>
             </div>
             <div>
-                            <!--Ci-dessous le bouton login-->
-            <input type="submit" class="btn-primary btn big" id="logbtn" value="CREATE AN ACCOUNT">
+                <!--Ci-dessous le bouton login-->
+                <input type="submit" class="btn-primary btn big" id="logbtn" value="CREATE AN ACCOUNT">
             </div>
         </div>
     </div>
