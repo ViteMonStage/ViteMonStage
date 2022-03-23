@@ -17,7 +17,7 @@
                     <a href="/management/offers.php" class="dropdown-item admin-list">Manage offers</a>
                     <a href="/management/users.php" class="dropdown-item admin-list">Manage users</a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">Search users</a>
+                    <a href="/search_user.php" class="dropdown-item admin-list">Search users</a>
                 </div>
             </li>
             <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
