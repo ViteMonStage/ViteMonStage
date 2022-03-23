@@ -188,15 +188,18 @@
                         </div>
                     </div>
                     <div class="bouton">
-                        <div class="col-md-12 bg-transparent text-right">
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                 <a role="button" class="small btn" href="candidatures.php">See more</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="taskbox">
+    <ul>
+        <li>Search a company <label class="switch"><input type="checkbox"><span></span></label></li>
+        <li>Search a company <label class="switch"><input type="checkbox"><span></span></label></li>
+    </ul>
     </div>
 
 
