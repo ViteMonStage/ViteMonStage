@@ -269,6 +269,9 @@
             </div>
         </div>
     </footer>
+    <?php
+    include "./phpscripts/footer.php"
+    ?>
 </body>
 
 </html>

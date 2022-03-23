@@ -1,9 +1,3 @@
-<script src="/assets/vendors/jquery/jquery-3.6.0.min.js"></script>
-<script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/stylesheets/global.scss">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand maxi logo" href="/index.php">VMS</a>
     <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
@@ -23,7 +17,7 @@
                     <a href="/management/offers.php" class="dropdown-item admin-list">Manage offers</a>
                     <a href="/management/users.php" class="dropdown-item admin-list">Manage users</a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">Search users</a>
+                    <a href="/search_user.php" class="dropdown-item admin-list">Search users</a>
                 </div>
             </li>
             <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>

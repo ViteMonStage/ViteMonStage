@@ -213,6 +213,7 @@ label.switch > input[type="checkbox"] {
   label.switch > input[type="checkbox"]:checked ~ span:after {
     transform: translate3d(100%, -50%, 0);
   }
+<<<<<<< HEAD
 
   .taskbox li {
       list-style: none;
@@ -239,3 +240,9 @@ label.switch > input[type="checkbox"] {
 
  }
 
+=======
+#navbar-profile-btn {
+    color: #b8ffb1;
+    pointer-events: none;
+}
+>>>>>>> 2669da920348cf7a477fc89db316f42a6996f529
