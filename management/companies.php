@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VMS | Homepage</title>
+    <title>VMS | Company creation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -53,15 +53,6 @@
                         <option value="gen-other">other</option>
                     </select>
                 </div>
-
-            </div>
-            <div class="col-sm-6">
-                <label for="mailtbx" class="tbxindicator small">Company name</label>
-                <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
-                <label for="mailtbx" class="tbxindicator small">Password</label>
-                <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••"> <!-- password field -->
-                <label for="mailtbx" class="tbxindicator small">Password (repeat)</label>
-                <input type="password" class="form-control tbx medium" id="passtbx_rep" placeholder="••••••••••"> <!-- password repeat field -->
             </div>
             <div>
                 <!--Ci-dessous le bouton login-->
