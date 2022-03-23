@@ -61,7 +61,7 @@
         <input type="button" class="small btn company" value="Delete">
     </div>
     <div class="evaluate">
-        <h3 class="medium evaluation">Evaluate the company </h3>
+        <h3 class="medium evaluate_title">Evaluate the company </h3>
         <div class="evaluate_criteria">
             <p class="criteria mini">Working environnement : </p>
             <div class="rate">
@@ -114,25 +114,23 @@
         </div>
         <input type="button" class="small btn submit" value="Submit">
     </div>
-    <div class="company">
-        <div class="image">
-            <img src=".\assets\pictures\bg.jpg" alt="Logo 1" class="logoentreprise">
-        </div>
-        <div class="company_desc">
-            <h3 class="medium">Name of the company</h3>
-            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-            <h4 class="mini">Confiance des pilotes : 8.7/10</h4>
-        </div>
-    </div>
-    <div class="profile">
+
     
+    <div class="profile_results row">
+    <h3 class="medium results_title">Evaluations</h3>
+    <div class="profile col-md-8">
+        <div class="avatar">
+            <img src=".\assets\pictures\avatar.jpg" alt="Avatar" class="avatar_size">
+        </div>
+        <div class="avatar_desc">
+            <h3 class="medium">Paul</h3>
+            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+        </div>
     </div>
-    <div class="results">
-        <h3 class="medium results_title">Evaluations</h3>
+    <div class="results col-md-3">
         <div class="results_criteria">
             <p class="criteria mini">Working environnement : </p>
-            <div class="rate">
+            <div class="results_rate">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -142,7 +140,7 @@
         </div>
         <div class="results_criteria">
             <p class="criteria mini">Working conditions : </p>
-            <div class="rate">
+            <div class="results_rate">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -152,7 +150,7 @@
         </div>
         <div class="results_criteria">
             <p class="criteria mini">Wage : </p>
-            <div class="rate">
+            <div class="results_rate">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -162,7 +160,7 @@
         </div>
         <div class="results_criteria">
             <p class="criteria mini">Acquired experience : </p>
-            <div class="rate">
+            <div class="results_rate">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -172,7 +170,7 @@
         </div>
         <div class="results_criteria">
             <p class="criteria mini">Supervision quality : </p>
-            <div class="rate">
+            <div class="results_rate">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -180,6 +178,7 @@
                 <span class="fa fa-star"></span>
             </div>
         </div>
+    </div>
     </div>
     <footer>
         <div class="row g-0 justify-content-center">
