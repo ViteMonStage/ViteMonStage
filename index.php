@@ -15,11 +15,9 @@
 </head>
 
 <body>
-    <header>
-        <?php 
-            include "./phpscripts/navbar.php"
-        ?>
-    </header>
+    <?php
+    include "./phpscripts/navbar.php"
+    ?>
     <h1 class="welcome big">Welcome on VMS</h1>
     <div class="row g-0">
         <!-- "Applications" square -->
