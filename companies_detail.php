@@ -156,9 +156,9 @@
                 </div>
             </div>
         </div>
-    </div>
-    <?php
-    include "./php/footer.php"
-    ?>
+
+        <?php
+        include "./php/footer.php"
+        ?>
 
 </body>
