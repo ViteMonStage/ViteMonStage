@@ -20,7 +20,7 @@
         include "../phpscripts/navbar.php"
         ?>
     </header>
-    <div class="d-flex align-items-center justify-content-center vh-100 madiv ">
+    <div class="d-flex align-items-center justify-content-center madiv ">
         <div class="mainbox row">
             <!-- this is the white box -->
             <h1 class="big">USER CREATION</h1>
@@ -31,8 +31,19 @@
                 <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••"> <!-- password field -->
                 <label for="mailtbx" class="tbxindicator small">Password (repeat)</label>
                 <input type="password" class="form-control tbx medium" id="passtbx_rep" placeholder="••••••••••"> <!-- password repeat field -->
-                <label for="mailtbx" class="tbxindicator small">Campus</label>
-                <input type="campus" class="form-control tbx medium" id="campus" placeholder="ROUEN"> <!-- campus field -->
+                <label for="mailtbx" class="tbxindicator small" style="margin-top:40.91%;">Campus</label> <!-- Campus field -->
+                <select class="form-control tbx medium" name="campus" id="campus">
+                    <option value="sel_rou" selected>Rouen</option>
+                    <option value="sel_cae">Caen</option>
+                    <option value="sel-nan">Nanterre</option>
+                </select>
+                <label class="custom-file-label tbxindicator">Profile picture</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input fil1" id="customFile">
+                    <label class="custom-file-label filelabel medium" for="customFile">Choose file</label>
+                </div>
+
+
             </div>
             <div class="col-sm-6 row">
                 <label for="mailtbx" class="tbxindicator small">Lastname</label>
@@ -54,10 +65,15 @@
                         <option value="gen-female">Female</option>
                         <option value="gen-other">Other</option>
                     </select>
-                   
                 </div>
-                <label for="mailtbx" class="tbxindicator small">Promotion</label>
-                    <input type="promo" class="form-control tbx medium" id="promo" placeholder="CPIA2"> <!-- promotion field -->
+                <label for="mailtbx" class="tbxindicator small" style="margin-top:40.91%;">Promotion</label> <!-- promotion field -->
+                <select class="form-control tbx medium" name="promo" id="promo">
+                    <option value="sel-A1" selected>A1</option>
+                    <option value="sel-A2INF">A2 INFO</option>
+                    <option value="sel-A2GEN">A2 GENERALISTE</option>
+                    <option value="sel-A2BTP">A2 BTP</option>
+                    <option value="sel-A2S3E">A2 S3E</option>
+                </select> <!-- promotion field -->
             </div>
             <div>
                 <!--Ci-dessous le bouton login-->
