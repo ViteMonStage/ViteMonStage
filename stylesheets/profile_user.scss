@@ -219,8 +219,8 @@ label.switch > input[type="checkbox"]:checked ~ span:after {
     border-width: 1px;
     display: flex;
     flex-direction: column;
-    margin-right: 8%;
-    margin-left: 8%;
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 8%;
     width: fit-content;
 }
