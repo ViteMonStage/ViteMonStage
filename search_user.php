@@ -174,7 +174,7 @@
     </div>
     <!-- Footer -->
     <?php
-    include "./phpscripts/footer.php"
+    include "./php/footer.php"
     ?>
 </body>
 

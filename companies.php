@@ -17,7 +17,7 @@
     <!-- Nav bar-->
     <header>
         <?php
-        include "./phpscripts/navbar.php"
+        include "./php/navbar.php"
         ?>
     </header>
     <!-- Head band-->
@@ -71,7 +71,7 @@
 
 
     <?php
-    include "./phpscripts/footer.php"
+    include "./php/footer.php"
     ?>
 </body>
 

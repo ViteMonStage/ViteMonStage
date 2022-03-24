@@ -21,7 +21,7 @@
     <!-- NAVBAR -->
     <header>
         <?php
-        include "./phpscripts/navbar.php"
+        include "./php/navbar.php"
         ?>
     </header>
 
@@ -241,7 +241,7 @@
 
     <footer>
     <?php
-    include "./phpscripts/footer.php"
+    include "./php/footer.php"
     ?>
     </footer>
 
