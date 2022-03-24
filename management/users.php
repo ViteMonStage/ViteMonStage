@@ -17,7 +17,7 @@
 <body>
     <header>
         <?php
-        include "../phpscripts/navbar.php"
+        include "../php/navbar.php"
         ?>
     </header>
     <div class="d-flex align-items-center justify-content-center madiv ">
@@ -82,7 +82,7 @@
         </div>
     </div>
     <?php
-    include "../phpscripts/footer.php"
+    include "../php/footer.php"
     ?>
 
 </body>

@@ -34,12 +34,12 @@
 #avatar{
     height: 140px;
     border-style: solid;
-    border-radius: 90px;
-    border-color: white;
+    border-radius: 90px;   
 }
 
 .profile img  {
     margin-left:5px;
+    border-color: black;
 }
 #editbutton {
     height:24px;
@@ -154,7 +154,7 @@ body a:hover{
     scrollbar-width: thin;
   }
 
-
+//The styling for the switch
 label.switch {
     text-align: left;
     width: 50px;
@@ -206,6 +206,7 @@ label.switch > input[type="checkbox"] {
     border-radius: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .3);  
   }
+  //Animate the switch when checked.
   label.switch > input[type="checkbox"]:checked ~ span:before {
     transform: scale(0);
     opacity: .7;
@@ -213,7 +214,6 @@ label.switch > input[type="checkbox"] {
   label.switch > input[type="checkbox"]:checked ~ span:after {
     transform: translate3d(100%, -50%, 0);
   }
-<<<<<<< HEAD
 
   .taskbox li {
       list-style: none;
@@ -240,9 +240,7 @@ label.switch > input[type="checkbox"] {
 
  }
 
-=======
 #navbar-profile-btn {
     color: #b8ffb1;
     pointer-events: none;
 }
->>>>>>> 2669da920348cf7a477fc89db316f42a6996f529

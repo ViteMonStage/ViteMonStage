@@ -16,32 +16,9 @@
 <body>
     <!-- Nav bar-->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand maxi logo" href="./index.php">VMS</a>
-            <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav navbar-align-left navbar-margin">
-                    <a class="nav-item nav-link small" href="./index.php"><i class="fa-solid fa-house"></i> HOME</a>
-                    <a class="nav-item nav-link small" href="./offers.php"><i class="fa-solid fa-list"></i> OFFERS</a>
-                    <a class="nav-item nav-link small" href="./candidatures.php"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
-                    <a class="nav-item nav-link small current" href="./companies.php"><i class="fa-solid fa-building"></i> COMPANIES</a>
-                    <a class="nav-item nav-link small navbar-highlight" href="./profile_user.php"><i class="fa-solid fa-user"></i> PROFILE</a>
-                    <li class="dropdown">
-                        <a class="nav-link dropdown-toggle small admin-list" href="#" data-bs-toggle="dropdown" id="admin-list"><i class="fa-solid fa-gear"></i> ADMINISTRATION</a>
-                        <div class="dropdown-menu dropdown-menu-end admin-list">
-                            <a href="#" class="dropdown-item admin-list">Manage company</a>
-                            <a href="#" class="dropdown-item admin-list">Manage offer</a>
-                            <a href="#" class="dropdown-item admin-list">Manage user</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">Search user</a>
-                        </div>
-                    </li>
-                    <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
-                </div>
-            </div>
-        </nav>
+        <?php
+        include "./php/navbar.php"
+        ?>
     </header>
     <div class="company">
         <div class="image">
@@ -115,107 +92,73 @@
         <input type="button" class="small btn submit" value="Submit">
     </div>
 
-    
-    <div class="profile_results row">
-    <h3 class="medium results_title">Evaluations</h3>
-    <div class="profile col-md-8">
-        <div class="avatar">
-            <img src=".\assets\pictures\avatar.jpg" alt="Avatar" class="avatar_size">
-        </div>
-        <div class="avatar_desc">
-            <h3 class="medium">Paul</h3>
-            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-        </div>
-    </div>
-    <div class="results col-md-3">
-        <div class="results_criteria">
-            <p class="criteria mini">Working environnement : </p>
-            <div class="results_rate">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-        </div>
-        <div class="results_criteria">
-            <p class="criteria mini">Working conditions : </p>
-            <div class="results_rate">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-        </div>
-        <div class="results_criteria">
-            <p class="criteria mini">Wage : </p>
-            <div class="results_rate">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-        </div>
-        <div class="results_criteria">
-            <p class="criteria mini">Acquired experience : </p>
-            <div class="results_rate">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-        </div>
-        <div class="results_criteria">
-            <p class="criteria mini">Supervision quality : </p>
-            <div class="results_rate">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-        </div>
-    </div>
-<<<<<<< HEAD
-    </div>
-    <footer>
-        <div class="row g-0 justify-content-center">
-            <!-- "Services" part of the footer-->
-            <div class="col-lg-4 col-sm-12 maxi">
-                <h3 class="medium">Services</h3>
-                <p class="small">Partnerships</p>
-                <p class="small">Blog</p>
-                <p class="small">Contacts</p>
-                <p class="small">FAQ</p>
-            </div>
-            <!-- "About" part of the footer-->
-            <div class="col-lg-4 col-sm-12">
-                <h3 class="medium">About</h3>
-                <p class="small">Company</p>
-                <p class="small">Our team</p>
-                <p class="small">Careers</p>
-                <p class="small">Legal terms</p>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <h2 class="big">VMS</h2>
-                <p class="small">The french website for internships, but in english</p>
-                <div>
-                    <a href="http://snapchat.com/" class="social_link"><i class="fa-brands fa-snapchat big" id="snapchat_icon"></i></a>
-                    <a href="http://twitter.com/" class="social_link"><i class="fa-brands fa-twitter big" id="twitter_icon"></i></a>
-                    <a href="http://github.com/" class="social_link"><i class="fa-brands fa-github big" id="github_icon"></i></a>
-                    <a href="http://discord.com/" class="social_link"><i class="fa-brands fa-discord big" id="discord_icon"></i></a>
 
+    <div class="profile_results row">
+        <h3 class="medium results_title">Evaluations</h3>
+        <div class="profile col-md-8">
+            <div class="avatar">
+                <img src=".\assets\pictures\avatar.jpg" alt="Avatar" class="avatar_size">
+            </div>
+            <div class="avatar_desc">
+                <h3 class="medium">Paul</h3>
+                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+            </div>
+        </div>
+        <div class="results col-md-3">
+            <div class="results_criteria">
+                <p class="criteria mini">Working environnement : </p>
+                <div class="results_rate">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            </div>
+            <div class="results_criteria">
+                <p class="criteria mini">Working conditions : </p>
+                <div class="results_rate">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            </div>
+            <div class="results_criteria">
+                <p class="criteria mini">Wage : </p>
+                <div class="results_rate">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            </div>
+            <div class="results_criteria">
+                <p class="criteria mini">Acquired experience : </p>
+                <div class="results_rate">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            </div>
+            <div class="results_criteria">
+                <p class="criteria mini">Supervision quality : </p>
+                <div class="results_rate">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
                 </div>
             </div>
         </div>
-    </footer>
-=======
+    </div>
     <?php
-    include "./phpscripts/footer.php"
+    include "./php/footer.php"
     ?>
->>>>>>> c8309fe9552c59bff566c00bff08dec1020f3395
 
 </body>

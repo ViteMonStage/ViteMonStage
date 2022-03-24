@@ -144,7 +144,13 @@
 }
 
 .dropdown-item.admin-list:hover{
-    background-color: #ffffff;
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 15px;
+}
+
+.dropdown-item.admin-list:active{
+    background-color: rgb(106, 177, 0);
     border: none;
     border-radius: 15px;
 }
