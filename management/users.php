@@ -24,10 +24,6 @@
         <div class="mainbox row">
             <!-- this is the white box -->
             <h1 class="big">USER CREATION</h1>
-    <div class="d-flex align-items-center justify-content-center vh-100 ">
-        <div class="mainbox row">
-            <!-- this is the white box -->
-            <h1 class="maxi">USER CREATION</h1>
             <div class="col-sm-6">
                 <label for="mailtbx" class="tbxindicator small">Email</label>
                 <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
@@ -35,6 +31,8 @@
                 <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••"> <!-- password field -->
                 <label for="mailtbx" class="tbxindicator small">Password (repeat)</label>
                 <input type="password" class="form-control tbx medium" id="passtbx_rep" placeholder="••••••••••"> <!-- password repeat field -->
+                <label for="mailtbx" class="tbxindicator small">Campus</label>
+                <input type="campus" class="form-control tbx medium" id="campus" placeholder="ROUEN"> <!-- campus field -->
             </div>
             <div class="col-sm-6 row">
                 <label for="mailtbx" class="tbxindicator small">Lastname</label>
@@ -54,9 +52,12 @@
                     <select class="form-control tbx medium" name="gender" id="gender">
                         <option value="gen_male" selected>Male</option>
                         <option value="gen-female">Female</option>
-                        <option value="gen-other">other</option>
+                        <option value="gen-other">Other</option>
                     </select>
+                   
                 </div>
+                <label for="mailtbx" class="tbxindicator small">Promotion</label>
+                    <input type="promo" class="form-control tbx medium" id="promo" placeholder="CPIA2"> <!-- promotion field -->
             </div>
             <div>
                 <!--Ci-dessous le bouton login-->

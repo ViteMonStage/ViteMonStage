@@ -2,6 +2,11 @@
     margin:0;
     padding: 0;
 }
+#navbar-profile-btn {
+    color: rgba(255, 255, 255, 0.842);
+    background-color: #086b1e;
+    pointer-events: none;
+}
 
 .list li{
     display: inline;
@@ -27,12 +32,16 @@
 
 
 #avatar{
-    height: 130px;
-    border: none;
-    border-radius: 90px;
-    margin:4px;
+    height: 140px;
+    border-style: solid;
+    border-radius: 90px;   
 }
-.profile img {
+
+.profile img  {
+    margin-left:5px;
+    border-color: black;
+}
+#editbutton {
     height:24px;
 }
 
@@ -69,6 +78,7 @@
 
 .menu .offerexample{
     margin-top: 0%;
+    margin-left: 1em;
 }
 .wishlist{
     border-color: black;
@@ -143,10 +153,8 @@ body a:hover{
     overflow-y: scroll;
     scrollbar-width: thin;
   }
-label{
-    margin-left: 7%;
-    vertical-align: middle;
-}
+
+
 label.switch {
     text-align: left;
     width: 50px;
@@ -205,6 +213,32 @@ label.switch > input[type="checkbox"] {
   label.switch > input[type="checkbox"]:checked ~ span:after {
     transform: translate3d(100%, -50%, 0);
   }
+
+  .taskbox li {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 1em;
+  }
+  .taskbox li label {
+      margin-right: 2em;
+  }
+ .column{
+    border-color:black;
+    border-style:solid;
+    border-radius: 25px;
+    border-width: 1px;
+     display: flex;
+     flex-direction: column;
+    margin-right: 8%;
+    margin-left: 8%;
+    margin-bottom: 8%;
+    
+    width: fit-content;
+
+ }
+
 #navbar-profile-btn {
     color: #b8ffb1;
     pointer-events: none;
