@@ -32,7 +32,9 @@
         </div>
     </div>
     <div class="company_btn">
-        <a role="button" href="./companies_detail.php" class="small btn company">Postulate</a>
+        <button type="button" class="small btn company" data-bs-toggle="modal" data-bs-target="#postulate">
+            Postulate
+        </button>
         <input type="button" class="small btn company" value="Invisible">
         <input type="button" class="small btn company" value="Modify">
         <input type="button" class="small btn company" value="Delete">
@@ -157,6 +159,32 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="postulate" tabindex="-1" aria-labelledby="postulatelabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title small" id="postulatelabel">Postulate to this intership</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="resumeFile" class="form-label small">Select your resume *</label>
+                        <input class="form-control small" type="file" id="resumeFile">
+                    </div>
+                    <div class="mb-3">
+                        <label for="motivationLetterFile" class="form-label small">Select your motivation letter *</label>
+                        <input class="form-control small" type="file" id="motivationLetterFile">
+                    </div>
+                    <p class="mini">* These fields are required</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn small" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn small">Send application</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <?php
     include "./php/footer.php"
     ?>
