@@ -20,7 +20,13 @@
         include "./php/navbar.php"
         ?>
     </header>
-    <h1 class="maxi title">Your wishlist ! </h1>
+    <div class="container">
+        <img src="./assets/pictures/bandeau.jpg" class="img-fluid image" alt="Responsive image">
+        <div class="centered">
+            <h1 class="big title">Wishlist</h1>
+        </div>
+    </div>
+
     <div class="wish">
         <div class="image">
             <img src="./assets/pictures/logo4.png" alt="Logo 1" class="logoentreprise">
