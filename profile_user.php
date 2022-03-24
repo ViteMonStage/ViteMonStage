@@ -21,7 +21,7 @@
     <!-- NAVBAR -->
     <header>
         <?php
-        include "./php/navbar.php"
+        include "./php/navbar.php";
         ?>
     </header>
 
@@ -53,7 +53,7 @@
     <!-- WISHLIST MENU AND CURRENT PROGRESS MENU   -->
     <div class="menu">
 
-        <div class="row g-0 ">
+        <div class="row g-3 ">
             <div class="col-lg-6 col-sm-12">
 
                 <!-- WISHLIST MENU -->
@@ -231,19 +231,18 @@
 
 
     </div>
-    </div>
-    </div>
-
-
-
+    
     <!-- FOOTER -->
 
 
-    <footer>
+
     <?php
-    include "./php/footer.php"
+    include "./php/footer.php";
     ?>
-    </footer>
+
+
+
+
 
 </body>
 
