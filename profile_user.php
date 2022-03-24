@@ -32,7 +32,7 @@
     <!-- BANNIERE PROFIL -->
     <div class="profile">
         <div class="infos">
-            <img id="avatar" src="/assets/pictures/bg.jpg" alt="Profile Picture">
+            <img id="avatar" src="/assets/pictures/default_avatar.png" alt="Profile Picture">
 
             <ul>
                 <li class="medium">SURNAME Name</li>
