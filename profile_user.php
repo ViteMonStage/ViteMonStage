@@ -53,7 +53,7 @@
     <!-- WISHLIST MENU AND CURRENT PROGRESS MENU   -->
     <div class="menu">
 
-        <div class="row g-0 ">
+        <div class="row g-3 ">
             <div class="col-lg-6 col-sm-12">
 
                 <!-- WISHLIST MENU -->
