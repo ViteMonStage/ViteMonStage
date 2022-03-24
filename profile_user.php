@@ -21,7 +21,7 @@
     <!-- NAVBAR -->
     <header>
         <?php
-        include "./php/navbar.php"
+        include "./php/navbar.php";
         ?>
     </header>
 
@@ -231,19 +231,18 @@
 
 
     </div>
-    </div>
-    </div>
-
-
-
+    
     <!-- FOOTER -->
 
 
-    <footer>
+
     <?php
-    include "./php/footer.php"
+    include "./php/footer.php";
     ?>
-    </footer>
+
+
+
+
 
 </body>
 

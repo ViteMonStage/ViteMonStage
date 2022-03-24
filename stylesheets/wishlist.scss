@@ -1,0 +1,30 @@
+.logoentreprise{
+    width: 120px;
+    height: 120px;
+}
+
+.wish{
+    display: flex;
+}
+
+.wish_title{
+    text-align: center;
+}
+
+/* Head band style*/
+.container {
+    position: relative;
+    max-width: 200%;
+    max-height: 200%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+/* Centered the title*/
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+}
