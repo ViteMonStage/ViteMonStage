@@ -169,13 +169,13 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="resumeFile" class="form-label small">Select your resume *</label>
-                        <input class="form-control small" type="file" id="resumeFile">
+                        <input class="form-control small" type="file" id="resumeFile" accept=".jpg,.docx,.png,.pdf">
                     </div>
                     <div class="mb-3">
                         <label for="motivationLetterFile" class="form-label small">Select your motivation letter *</label>
-                        <input class="form-control small" type="file" id="motivationLetterFile">
+                        <input class="form-control small" type="file" id="motivationLetterFile" accept=".jpg,.docx,.png,.pdf">
                     </div>
-                    <p class="mini">* These fields are required</p>
+                    <p class="mini">* Field required, only .jpg, .docx, .png, .pdf accepted</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn small" data-bs-dismiss="modal">Cancel</button>
