@@ -20,7 +20,7 @@
         include "../php/navbar.php"
         ?>
     </header>
-    <div class="d-flex align-items-center justify-content-center vh-100 madiv ">
+    <div class="d-flex align-items-center justify-content-center madiv">
         <div class="mainbox row">
             <!-- this is the white box -->
             <h1 class="big">USER CREATION</h1>
