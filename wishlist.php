@@ -27,17 +27,25 @@
         </div>
     </div>
 
-    <div class="wish">
-        <div class="image">
-            <img src="./assets/pictures/logo4.png" alt="Logo 1" class="logoentreprise">
-        </div>
-        <div class="company_desc">
-            <h3 class="medium">Name of the company</h3>
+    <div class="result">
+        <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
+        <div class="in_desc">
+            <h3 class="medium">First wish</h3>
             <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-            <h4 class="mini">Confiance des pilotes : 8.7/10</h4>
+            <h4 class="mini loca">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+        </div>
+      
+    </div>
+
+    <div class="result">
+        <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
+        <div class="in_desc">
+            <h3 class="medium">Second wish</h3>
+            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+            <h4 class="mini loca">Evreux (27000) - Publication 04/05/2022 - IT</h4>
         </div>
     </div>
+
 
     <?php
     include "./php/footer.php"

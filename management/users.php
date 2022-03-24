@@ -23,7 +23,7 @@
     <div class="d-flex align-items-center justify-content-center madiv ">
         <div class="mainbox row">
             <!-- this is the white box -->
-            <h1 class="big">USER CREATION</h1>
+            <h1 class="big titl">USER CREATION</h1>
             <div class="col-sm-6 divg">
                 <div class="orga">
                     <label for="mailtbx" class="tbxindicator small">Email</label>
@@ -51,7 +51,6 @@
                         <option value="sel_cae">Caen</option>
                         <option value="sel-nan">Nanterre</option>
                     </select>
-                    <input type="submit" class="btn-primary btn2 small" id="logbtn" value="Add a campus">
                 </div>
 
 
@@ -65,38 +64,32 @@
                     <label for="mailtbx" class="tbxindicator small">Firstname</label>
                     <input type="firstname" class="form-control tbx medium" id="firstname" placeholder="Doe"> <!-- surname  field -->
                 </div>
-                <div class="col-sm-7">
-                    <div class="orga">
-                        <div class="birthday">
-                            <!-- date of birth field -->
-                            <label for="mailtbx" class="tbxindicator small">Birthday</label>
-                            <div class="md-form md-outline input-with-post-icon datepicker">
-                                <input placeholder="Select date" type="date" id="example" class="form-control tbx medium">
-                            </div>
+                <div class="col-sm-7 orga">
+                    <div class="birthday">
+                        <!-- date of birth field -->
+                        <label for="mailtbx" class="tbxindicator small">Birthday</label>
+                        <div class="md-form md-outline input-with-post-icon datepicker">
+                            <input placeholder="Select date" type="date" id="example" class="form-control tbx medium">
                         </div>
-
                     </div>
                 </div>
-                <div class="col-sm-5">
-                    <div class="orga">
-                        <div class="gender">
+                <div class="col-sm-5 orga">
+                    <div class="gender">
 
-                            <!-- gender field -->
-                            <label for="mailtbx" class="tbxindicator small">Gender</label>
-                            <select class="form-control tbx medium" name="gender" id="gender">
-                                <option value="gen_male" selected>Male</option>
-                                <option value="gen-female">Female</option>
-                                <option value="gen-other">Other</option>
-                            </select>
-                        </div>
-
+                        <!-- gender field -->
+                        <label for="mailtbx" class="tbxindicator small">Gender</label>
+                        <select class="form-control tbx medium" name="gender" id="gender">
+                            <option value="gen_male" selected>Male</option>
+                            <option value="gen-female">Female</option>
+                            <option value="gen-other">Other</option>
+                        </select>
                     </div>
+
                 </div>
                 <div class="orga">
                     <label for="mailtbx" class="tbxindicator small">Role</label> <!-- promotion field -->
-                    <select class="form-control tbx medium" name="promo" id="promo">
+                    <select class="form-control tbx medium" name="role" id="role">
                         <option value="sel-A1" selected>Student</option>
-                        <option value="sel-A2INF">Student</option>
                         <option value="sel-A2GEN">Delegate</option>
                         <option value="sel-A2BTP">Pilot</option>
                         <option value="sel-A2S3E">Admin</option>
@@ -112,15 +105,15 @@
                         <option value="sel-A2BTP">A2 BTP</option>
                         <option value="sel-A2S3E">A2 S3E</option>
                     </select>
-                    <input type="submit" class="btn-primary btn2 small" id="logbtn" value="Add a promotion">
                 </div>
             </div>
             <div>
                 <!--Ci-dessous le bouton login-->
-                <input type="submit" class="btn-primary btn big" id="logbtn" value="CREATE AN ACCOUNT">
+                <input type="submit" class="btn-primary btn Medium" id="logbtn" value="NEW ACCOUNT">
             </div>
         </div>
     </div>
+
     <?php
     include "../php/footer.php"
     ?>
