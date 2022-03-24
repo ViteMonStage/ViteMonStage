@@ -23,7 +23,7 @@
     <div class="d-flex align-items-center justify-content-center madiv ">
         <div class="mainbox row">
             <!-- this is the white box -->
-            <h1 class="big">USER CREATION</h1>
+            <h1 class="big titl">USER CREATION</h1>
             <div class="col-sm-6 divg">
                 <div class="orga">
                     <label for="mailtbx" class="tbxindicator small">Email</label>
@@ -90,7 +90,6 @@
                     <label for="mailtbx" class="tbxindicator small">Role</label> <!-- promotion field -->
                     <select class="form-control tbx medium" name="role" id="role">
                         <option value="sel-A1" selected>Student</option>
-                        <option value="sel-A2INF">Student</option>
                         <option value="sel-A2GEN">Delegate</option>
                         <option value="sel-A2BTP">Pilot</option>
                         <option value="sel-A2S3E">Admin</option>

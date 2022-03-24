@@ -3,13 +3,9 @@
     background: linear-gradient(130deg, rgba(0, 255, 117, 1) 0%, rgba(136, 117, 255, 1) 100%);
 }
 
-h1 {
-    /* Bigger titles font */
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    font-weight: 900;
+.titl{
     text-align: center;
 }
-
 .mainbox {
     /* Main box of the login form */
     background-color: white;
@@ -25,7 +21,7 @@ h1 {
     /* Textboxes style*/
     border-radius: 50px;
     border-style: none;
-    color: #BEBEBE !important;
+    color: #777777 !important;
     background-color: #EEEEEE;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -80,8 +76,9 @@ h1 {
     z-index: 1;
     padding-top: 0.5em;
     text-align: center;
-    color: #BEBEBE !important;
+    color: #777777 !important;
     vertical-align: middle;
+    
 
 }
 
