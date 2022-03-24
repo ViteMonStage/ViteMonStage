@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serch for a user</title>
+    <title>Search for a user</title>
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -50,7 +50,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-12">
                 <div class="card p-3 py-4">
-                    <h5>Serch a User</h5>
+                    <h5>Search a User</h5>
                     <div class="row g-3 mt-2">
                         <div class="col-md-2">
                             <select class="form-select frm-slc" aria-label="Default select example">
@@ -59,8 +59,8 @@
                                 <option class="frm-slc" value="3">Pilot</option>
                             </select>
                         </div>
-                        <div class="col-md-8"> <input type="text" class="form-control" placeholder="search for someone"> </div>
-                        <div class="col-md-2"> <button class="btn btn-secondary btn-block">Serch Results</button> </div>
+                        <div class="col-md-8"> <input type="text" class="form-control" placeholder="Search for someone"> </div>
+                        <div class="col-md-2"> <button class="btn btn-secondary btn-block">Search Results</button> </div>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                                 <p class="description"> description</p>
                             </div>
                             <div class="col-sm-3 text-align-center">
-                                <a class="col-sm-10 btn btn-secondary" href="#">see profile</a>
+                                <a class="col-sm-10 btn btn-secondary" href="#">See profile</a>
                                 <a class="col-sm-10 btn btn-secondary" href="#">Manage rights</a>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                                 <p class="description"> description</p>
                             </div>
                             <div class="col-sm-3 text-align-center">
-                                <a class="col-sm-10 btn btn-secondary " href="#">see profile</a>
+                                <a class="col-sm-10 btn btn-secondary " href="#">See profile</a>
                                 <a class="col-sm-10 btn btn-secondary" href="#">Manage rights</a>
                             </div>
                         </div>
@@ -116,7 +116,7 @@
                                 <p class="description"> description</p>
                             </div>
                             <div class="col-sm-3 text-align-center">
-                                <a class="col-sm-10 btn btn-secondary" href="#">see profile</a>
+                                <a class="col-sm-10 btn btn-secondary" href="#">See profile</a>
                                 <a class="col-sm-10 btn btn-secondary" href="#">Manage rights</a>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                                 <p class="description"> description</p>
                             </div>
                             <div class="col-sm-3 text-align-center">
-                                <a class="col-sm-10 btn btn-secondary" href="#">see profile</a>
+                                <a class="col-sm-10 btn btn-secondary" href="#">See profile</a>
                                 <a class="col-sm-10 btn btn-secondary" href="#">Manage rights</a>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                                 <p class="description"> description</p>
                             </div>
                             <div class="col-sm-3 text-align-center">
-                                <a class="col-sm-10 btn btn-secondary" href="#">see profile</a>
+                                <a class="col-sm-10 btn btn-secondary" href="#">See profile</a>
                                 <a class="col-sm-10 btn btn-secondary" href="#">Manage rights</a>
                             </div>
                         </div>
