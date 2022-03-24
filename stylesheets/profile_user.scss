@@ -154,7 +154,7 @@ body a:hover{
     scrollbar-width: thin;
   }
 
-
+//The styling for the switch
 label.switch {
     text-align: left;
     width: 50px;
@@ -206,6 +206,7 @@ label.switch > input[type="checkbox"] {
     border-radius: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .3);  
   }
+  //Animate the switch when checked.
   label.switch > input[type="checkbox"]:checked ~ span:before {
     transform: scale(0);
     opacity: .7;
