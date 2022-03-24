@@ -32,9 +32,6 @@
         </div>
     </div>
     <div class="company_btn">
-        <button type="button" class="small btn company" data-bs-toggle="modal" data-bs-target="#postulate">
-            Postulate
-        </button>
         <input type="button" class="small btn company" value="Invisible">
         <input type="button" class="small btn company" value="Modify">
         <input type="button" class="small btn company" value="Delete">
@@ -155,31 +152,6 @@
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="postulate" tabindex="-1" aria-labelledby="postulatelabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title small" id="postulatelabel">Postulate to this intership</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="resumeFile" class="form-label small">Select your resume *</label>
-                        <input class="form-control small" type="file" id="resumeFile" accept=".jpg,.docx,.png,.pdf">
-                    </div>
-                    <div class="mb-3">
-                        <label for="motivationLetterFile" class="form-label small">Select your motivation letter *</label>
-                        <input class="form-control small" type="file" id="motivationLetterFile" accept=".jpg,.docx,.png,.pdf">
-                    </div>
-                    <p class="mini">* Field required, only .jpg, .docx, .png, .pdf accepted</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn small" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn small">Send application</button>
                 </div>
             </div>
         </div>
