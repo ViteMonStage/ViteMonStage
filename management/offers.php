@@ -34,18 +34,11 @@
                     <textarea type="text" class="form-control ltbx medium" id="desctbx" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
                 </div>
                 <div class="orga">
-                    <label class="custom-file-label tbxindicator">Profile picture</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input fil1" id="customFile">
-                        <label class="custom-file-label filelabel medium" for="customFile">Choose file</label>
-                    </div>
-                </div>
-                <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Campus</label> <!-- Campus field -->
-                    <select class="form-control tbx medium" name="campus" id="campus">
-                        <option value="sel_rou" selected>Rouen</option>
-                        <option value="sel_cae">Caen</option>
-                        <option value="sel-nan">Nanterre</option>
+                    <label for="comptbx" class="tbxindicator small">Company</label>
+                    <select class="form-control tbx medium" name="company" id="comptbx">
+                        <option selected>VTS Incorporated</option> <!-- company field -->
+                        <option>COMPANY 1</option>
+                        <option>COMPANY 2</option>
                     </select>
                 </div>
             </div>
@@ -60,7 +53,7 @@
                 </div>
                 <div class="orga2">
                     <div class="col-sm-7 orga3">
-                        <!-- date of birth field -->
+                        <!-- starting date field -->
                         <label for="starttbx" class="tbxindicator small">Starting date</label>
                         <div class="md-form md-outline input-with-post-icon datepicker">
                             <input placeholder="Select date" type="date" id="starttbx" class="form-control tbx medium">
@@ -68,7 +61,7 @@
                     </div>
                     <div class="col-sm-5 orga3">
 
-                        <!-- gender field -->
+                        <!-- ending date field -->
                         <label for="endtbx" class="tbxindicator small">Ending date</label>
                         <div class="md-form md-outline input-with-post-icon datepicker">
                             <input placeholder="Select date" type="date" id="endtbx" class="form-control tbx medium">
@@ -77,28 +70,41 @@
                     </div>
                 </div>
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Role</label> <!-- promotion field -->
-                    <select class="form-control tbx medium" name="role" id="role">
-                        <option value="sel-A1" selected>Student</option>
-                        <option value="sel-A2GEN">Delegate</option>
-                        <option value="sel-A2BTP">Pilot</option>
-                        <option value="sel-A2S3E">Admin</option>
-                    </select>
-                </div>
-
-                <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Promotion</label> <!-- promotion field -->
-                    <select class="form-control tbx medium" name="promo" id="promo">
-                        <option value="sel-A1" selected>A1</option>
-                        <option value="sel-A2INF">A2 INFO</option>
-                        <option value="sel-A2GEN">A2 GENERALISTE</option>
-                        <option value="sel-A2BTP">A2 BTP</option>
-                        <option value="sel-A2S3E">A2 S3E</option>
+                    <label for="nbrtbx" class="tbxindicator small">Number of Interns</label>
+                    <input type="number" class="form-control tbx medium" id="nbrtbx" placeholder="1"> <!-- number of interns field -->
                     </select>
                 </div>
             </div>
+            <label for="divpromo" class="tbxindicator Medium promotex">Promotions concerned</label>
+            <div class="orga5" id="divpromo">
+                <!-- Promotions concerned field -->
+                <div class="checkb">
+                    <input type="checkbox" class="medium" id="promtbx1">
+                    <label for="promtbx1" class="tbxindicator mini">CPIA1</label>
+                </div>
+                <div class="checkb">
+                    <input type="checkbox" class="medium" id="promtbx2">
+                    <label for="promtbx2" class="tbxindicator mini">CPIA2 INFO</label>
+                </div>
+                <div class="checkb">
+                    <input type="checkbox" class="medium" id="promtbx3">
+                    <label for="promtbx3" class="tbxindicator mini">CPIA2 GEN</label>
+                </div>
+                <div class="checkb">
+                    <input type="checkbox" class="medium" id="promtbx4">
+                    <label for="promtbx4" class="tbxindicator mini">CPIA2 S3E</label>
+                </div>
+                <div class="checkb">
+                    <input type="checkbox" class="medium" id="promtbx5">
+                    <label for="promtbx5" class="tbxindicator mini">CPIA2 BTP</label>
+                </div>
+                <div class="checkb">
+                    <input type="checkbox" class="medium" id="promtbx6">
+                    <label for="promtbx6" class="tbxindicator mini">CPIA3</label>
+                </div>
+            </div>
             <div>
-                <!--Ci-dessous le bouton login-->
+                <!--Ci-dessous le bouton submit-->
                 <input type="submit" class="btn-primary btn Medium" id="logbtn" value="NEW OFFER">
             </div>
         </div>

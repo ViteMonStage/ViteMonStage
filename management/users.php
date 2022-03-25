@@ -41,15 +41,15 @@
                     <label class="custom-file-label tbxindicator">Profile picture</label>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input fil1" id="customFile">
-                        <label class="custom-file-label filelabel medium" for="customFile">Choose file</label>
+                        <label class="custom-file-label filelabel medium" for="customFile">Choose file</label>  <!-- Profile picture field -->
                     </div>
                 </div>
                 <div class="orga">
                     <label for="campustbx" class="tbxindicator small">Campus</label> <!-- Campus field -->
                     <select class="form-control tbx medium" name="campus" id="campustbx">
-                        <option value="sel_rou" selected>Rouen</option>
-                        <option value="sel_cae">Caen</option>
-                        <option value="sel-nan">Nanterre</option>
+                        <option selected>Rouen</option>
+                        <option>Caen</option>
+                        <option>Nanterre</option>
                     </select>
                 </div>
 
@@ -77,35 +77,35 @@
                         <!-- gender field -->
                         <label for="gendertbx" class="tbxindicator small">Gender</label>
                         <select class="form-control tbx medium" name="gender" id="gendertbx">
-                            <option value="gen_male" selected>Male</option>
-                            <option value="gen-female">Female</option>
-                            <option value="gen-other">Other</option>
+                            <option selected>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
                         </select>
                     </div>
                 </div>
                 <div class="orga">
                     <label for="roletbx" class="tbxindicator small">Role</label> <!-- promotion field -->
                     <select class="form-control tbx medium" name="role" id="roletbx">
-                        <option value="sel-A1" selected>Student</option>
-                        <option value="sel-A2GEN">Delegate</option>
-                        <option value="sel-A2BTP">Pilot</option>
-                        <option value="sel-A2S3E">Admin</option>
+                        <option selected>Student</option>
+                        <option>Delegate</option>
+                        <option>Pilot</option>
+                        <option>Admin</option>
                     </select>
                 </div>
 
                 <div class="orga">
                     <label for="promotbx" class="tbxindicator small">Promotion</label> <!-- promotion field -->
                     <select class="form-control tbx medium" name="promo" id="promotbx">
-                        <option value="sel-A1" selected>A1</option>
-                        <option value="sel-A2INF">A2 INFO</option>
-                        <option value="sel-A2GEN">A2 GENERALISTE</option>
-                        <option value="sel-A2BTP">A2 BTP</option>
-                        <option value="sel-A2S3E">A2 S3E</option>
+                        <option selected>A1</option>
+                        <option>A2 INFO</option>
+                        <option>A2 GENERALISTE</option>
+                        <option>A2 BTP</option>
+                        <option>A2 S3E</option>
                     </select>
                 </div>
             </div>
             <div>
-                <!--Ci-dessous le bouton login-->
+                <!--Ci-dessous le bouton submit-->
                 <input type="submit" class="btn-primary btn Medium" id="logbtn" value="NEW ACCOUNT">
             </div>
         </div>
