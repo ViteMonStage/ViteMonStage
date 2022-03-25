@@ -115,22 +115,29 @@
 }
 
 .orga2{
+    display: flex;
+    justify-content: space-between;
+}
+.orga3{
+    width: 50%;
+    height: 10em;
+    padding-top: 10.5%;
+}
+
+.orga4{
     height: 20em;
     padding:0;
 }
 
-.orga3{
-    width: 200px;
+.orga5{
+    width: 330px;
+    background-color:#EEEEEE;
+    border-radius: 50px;
+    padding-bottom: 50px;
 }
 
-.gender{
-    padding-top: 45px;
-    width:200px;
-}
-.birthday{
-    padding-top: 45px;
-    width:200px;
-
-    
+.promotex{
+    text-align: center;
+    justify-content: space-between;
 }
 

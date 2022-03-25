@@ -100,14 +100,12 @@
     padding:0;
 }
 
+.orga2{
+    display: flex;
+    justify-content: space-between;
+}
 .orga3{
-    width: 200px;
-}
-
-.gender{
-    padding-top: 45px;
-}
-.birthday{
-    padding-top: 33px;
-    
+    width: 50%;
+    height: 10em;
+    padding-top: 8%;
 }
