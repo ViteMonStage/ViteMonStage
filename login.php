@@ -18,6 +18,11 @@
         <div class="d-flex align-items-center justify-content-center vh-100">
             <div class="mainbox">
                 <h1 class="maxi">SIGN IN</h1>
+                <?php
+                if (isset($_GET["erreur"]) && $_GET["erreur"] == "1") {
+                    echo '<p class="small erreur1">Wrong e-mail or password, try again.</p>';
+                }
+                ?>
                 <label for="mailtbx" class="tbxindicator small">Email</label>
                 <input type="name" class="form-control tbx medium" id="mailtbx" name="email" placeholder="mail@example.com">
                 <label for="passtbx" class="tbxindicator small">Password</label>
