@@ -88,12 +88,27 @@
     margin-bottom: 10px;
 }
 
+.nav-item.nav-link.navbar-highlight-logout {
+    background-color: #d50000;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-left: 2px;
+    margin-bottom: 5px;
+}
+
+
 .nav-item.nav-link {
     margin-left: 10px;
 }
 
 .nav-item.nav-link.navbar-highlight:hover {
     background-color: #2a652c;
+    color: white;
+}
+
+.nav-item.nav-link.navbar-highlight-logout:hover {
+    background-color: #ab0000;
     color: white;
 }
 
