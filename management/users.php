@@ -21,11 +21,10 @@
         ?>
     </header>
     <div class="d-flex align-items-center justify-content-center madiv ">
+        <!-- this is the white box -->
         <div class="mainbox row">
-            <!-- this is the white box -->
+            <!--USER CREATION-->
             <div class="mantitl">
-
-                            <!--USER CREATION-->
                 <h1 class="big titl">USER CREATION</h1>
             </div>
             <div class="col-sm-6 divg">
@@ -113,7 +112,7 @@
 
 
 
-                <!--USER DELETION-->
+            <!--USER DELETION-->
             <div class="mantitl">
                 <h1 class="big titl">USER DELETION</h1>
             </div>
@@ -127,7 +126,7 @@
             </div>
 
 
-                <!--USER MODIFICATION FIELD-->
+            <!--USER MODIFICATION FIELD-->
             <div class="mantitl">
                 <h1 class="big titl">USER MODIFICATION</h1>
             </div>
