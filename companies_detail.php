@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VMS | Companies</title>
+    <title>VMS | Company detail</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>

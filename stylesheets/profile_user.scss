@@ -242,3 +242,21 @@ label.switch > input[type="checkbox"]:checked ~ span:after {
     color: #ffffff;
     pointer-events: none;
 }
+
+.list-group{
+    flex-direction: row;
+}
+
+.useracc {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 25px;
+    width: 90%;
+    height: 100%;
+    margin: 3%;
+    margin-left: 5%;
+}
