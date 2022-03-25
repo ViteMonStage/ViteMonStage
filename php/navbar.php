@@ -20,7 +20,15 @@
                     <a href="/search_user.php" class="dropdown-item admin-list">Search users</a>
                 </div>
             </li>
-            <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
+            <div class="dropdown show">
+                <a class=" nav-item nav-link dropdown-toggle small" href="#" role="button" id="navbar-notif-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
+                <div class="dropdown-menu dropdown-menu-end " >
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
         </div>
+
     </div>
 </nav>
