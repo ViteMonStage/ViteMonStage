@@ -29,6 +29,20 @@
     font-size: 1.2em;
 }
 
+.ltbx{
+    border-radius: 50px;
+    border-style: none;
+    color: #777777 !important;
+    background-color: #EEEEEE;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    height: 11em;
+    font-size: 1.2em;
+    padding-right: 15px;
+    padding-left: 15px;
+    resize: none;
+}
+
 .btn {
     /* Button style*/
     border-radius: 50px;
@@ -100,10 +114,23 @@
     padding:0;
 }
 
+.orga2{
+    height: 20em;
+    padding:0;
+}
+
+.orga3{
+    width: 200px;
+}
+
 .gender{
     padding-top: 45px;
+    width:200px;
 }
 .birthday{
-    padding-top: 33px;
+    padding-top: 45px;
+    width:200px;
+
     
 }
+
