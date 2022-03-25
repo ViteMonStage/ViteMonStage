@@ -29,7 +29,7 @@
                     <label for="nametbx" class="tbxindicator small">Name</label>
                     <input type="text" class="form-control tbx medium" id="nametbx" placeholder="WEB IT Internship"> <!-- name field -->
                 </div>
-                <div class="orga2">
+                <div class="orga4">
                     <label for="desctbx" class="tbxindicator small">Description</label>
                     <textarea type="text" class="form-control ltbx medium" id="desctbx" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
                 </div>
@@ -48,8 +48,6 @@
                         <option value="sel-nan">Nanterre</option>
                     </select>
                 </div>
-
-
             </div>
             <div class="col-sm-6 row divd">
                 <div class="orga">
@@ -60,25 +58,23 @@
                     <label for="salartbx" class="tbxindicator small">Estimated salary (per month)</label>
                     <input type="text" class="form-control tbx medium" id="salartbx" placeholder="650€"> <!-- salary  field -->
                 </div>
-                <div class="col-sm-7 orga3">
-                    <div class="birthday">
+                <div class="orga2">
+                    <div class="col-sm-7 orga3">
                         <!-- date of birth field -->
                         <label for="starttbx" class="tbxindicator small">Starting date</label>
                         <div class="md-form md-outline input-with-post-icon datepicker">
                             <input placeholder="Select date" type="date" id="starttbx" class="form-control tbx medium">
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-5 orga3">
-                    <div class="gender">
+                    <div class="col-sm-5 orga3">
 
                         <!-- gender field -->
                         <label for="endtbx" class="tbxindicator small">Ending date</label>
                         <div class="md-form md-outline input-with-post-icon datepicker">
                             <input placeholder="Select date" type="date" id="endtbx" class="form-control tbx medium">
                         </div>
+                        </select>
                     </div>
-
                 </div>
                 <div class="orga">
                     <label for="mailtbx" class="tbxindicator small">Role</label> <!-- promotion field -->
