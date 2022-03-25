@@ -1,5 +1,5 @@
 <?php
-include "./php/login_check.php";
+include dirname(__FILE__) . "/login_check.php";
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light">
