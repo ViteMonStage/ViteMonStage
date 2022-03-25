@@ -30,7 +30,6 @@
 
 
     <!-- BANNIERE PROFIL -->
-    <div class="profile">
         <div class="infos">
             <img id="avatar" src="/assets/pictures/default_avatar.png" alt="Profile Picture">
 
@@ -44,7 +43,6 @@
 
             <a href="edit_user"><img id="editbutton" src="assets/icons/edit-regular.svg" alt="Edit" onclick="openImg()"></a>
         </div>
-    </div>
 
 
 
@@ -200,29 +198,30 @@
 
                 <div class="column">
                     <ul>
-                        <li> <label class='switch'><input type='checkbox' id="c_search"><span></span></label>Search a company</li>
-                        <li> <label class='switch'><input type='checkbox' id="c_modify"><span></span></label>Modify a company</li>
-                        <li> <label class='switch'><input type='checkbox' id="c_rate"><span></span></label>Evaluate a company</li>
-                        <li> <label class='switch'><input type='checkbox' id="c_delete"><span></span></label>Delete a company</li>
-                        <li> <label class='switch'><input type='checkbox' id="c_stats"><span></span></label>See company stats</li>
-                        <li> <label class='switch'><input type='checkbox' id="o_search"><span></span></label>Search an offer</li>
-                        <li> <label class='switch'><input type='checkbox' id="o_create"><span></span></label>Create an offer</li>
-                        <li> <label class='switch'><input type='checkbox' id="o_modify"><span></span></label>Modify an offer</li>
-                        <li> <label class='switch'><input type='checkbox' id="o_delete"><span></span></label>Delete an offer</li>
-                        <li> <label class='switch'><input type='checkbox' id="o_stats"><span></span></label>See offer stats</li>
-                        <li> <label class='switch'><input type='checkbox' id="p_search"><span></span></label>Search a pilot</li>
-                        <li> <label class='switch'><input type='checkbox' id="p_create"><span></span></label>Create a pilot</li>
-                        <li> <label class='switch'><input type='checkbox' id="p_modify"><span></span></label>Modify pilot</li>
-                        <li> <label class='switch'><input type='checkbox' id="p_delete"><span></span></label>Delete pilot</li>
-                        <li> <label class='switch'><input type='checkbox' id="d_search"><span></span></label>Search delegate</li>
-                        <li> <label class='switch'><input type='checkbox' id="d_create"><span></span></label>Create a delegate</li>
-                        <li> <label class='switch'><input type='checkbox' id="d_modify"><span></span></label>Modify delegate</li>
-                        <li> <label class='switch'><input type='checkbox' id="d_delete"><span></span></label>Delete delegate</li>
-                        <li> <label class='switch'><input type='checkbox' id="st_search"><span></span></label>Search student</li>
-                        <li> <label class='switch'><input type='checkbox' id="st_create"><span></span></label>Create a student</li>
-                        <li> <label class='switch'><input type='checkbox' id="st_modify"><span></span></label>Modify a student</li>
-                        <li> <label class='switch'><input type='checkbox' id="st_delete"><span></span></label>Delete a student</li>
-                        <li> <label class='switch'><input type='checkbox' id="st_stats"><span></span></label>See students stats</li>
+                        
+                        <li> <label class='switch'><input type='checkbox' id="c_search"><span></span></label><label for="c_search">Search a company</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="c_modify"><span></span></label><label for="c_modify">Modify a company</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="c_rate"><span></span></label><label for="c_rate">Evaluate a company</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="c_delete"><span></span></label><label for="c_delete">Delete a company</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="c_stats"><span></span></label><label for="c_stats">See company stats</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="o_search"><span></span></label><label for="o_search">Search an offer</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="o_create"><span></span></label><label for="o_create">Create an offer</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="o_modify"><span></span></label><label for="o_modify">Modify an offer</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="o_delete"><span></span></label><label for="o_delete">Delete an offer</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="o_stats"><span></span></label><label for="o_stats">See offer stats</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="p_search"><span></span></label><label for="p_search">Search a pilot</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="p_create"><span></span></label><label for="p_create">Create a pilot</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="p_modify"><span></span></label><label for="p_modify">Modify pilot</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="p_delete"><span></span></label><label for="p_delete">Delete pilot</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="d_search"><span></span></label><label for="d_search">Search delegate</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="d_create"><span></span></label><label for="d_create">Create a delegate</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="d_modify"><span></span></label><label for="d_modify">Modify delegate</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="d_delete"><span></span></label><label for="d_delete">Delete delegate</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="st_search"><span></span></label><label for="st_search">Search student</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="st_create"><span></span></label><label for="st_create">Create a student</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="st_modify"><span></span></label><label for="st_modify">Modify a student</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="st_delete"><span></span></label><label for="st_delete">Delete a student</label></li>
+                        <li> <label class='switch'><input type='checkbox' id="st_stats"><span></span></label><label for="st_stats">See students stats</label></li>
 
                     </ul>
                 </div>
