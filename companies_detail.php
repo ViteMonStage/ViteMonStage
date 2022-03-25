@@ -20,7 +20,7 @@
         include "./php/navbar.php"
         ?>
     </header>
-    <div class="company">
+    <div class="company_cadre">
         <div class="image">
             <img src="./assets/pictures/logo4.png" alt="Logo 1" class="logoentreprise">
         </div>
