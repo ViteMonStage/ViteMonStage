@@ -31,7 +31,7 @@
                 </div>
                 <div class="orga4">
                     <label for="desctbx" class="tbxindicator small">Description</label>
-                    <textarea type="text" class="form-control ltbx medium" id="desctbx" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
+                    <textarea class="form-control ltbx medium" id="desctbx" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
                 </div>
                 <div class="orga">
                     <label for="comptbx" class="tbxindicator small">Company</label>
@@ -56,27 +56,24 @@
                         <!-- starting date field -->
                         <label for="starttbx" class="tbxindicator small">Starting date</label>
                         <div class="md-form md-outline input-with-post-icon datepicker">
-                            <input placeholder="Select date" type="date" id="starttbx" class="form-control tbx medium">
+                            <input type="date" id="starttbx" class="form-control tbx medium">
                         </div>
                     </div>
                     <div class="col-sm-5 orga3">
-
                         <!-- ending date field -->
                         <label for="endtbx" class="tbxindicator small">Ending date</label>
                         <div class="md-form md-outline input-with-post-icon datepicker">
-                            <input placeholder="Select date" type="date" id="endtbx" class="form-control tbx medium">
+                            <input type="date" id="endtbx" class="form-control tbx medium">
                         </div>
-                        </select>
                     </div>
                 </div>
                 <div class="orga">
                     <label for="nbrtbx" class="tbxindicator small">Number of Interns</label>
                     <input type="number" class="form-control tbx medium" id="nbrtbx" placeholder="1"> <!-- number of interns field -->
-                    </select>
                 </div>
             </div>
-            <label for="divpromo" class="tbxindicator Medium promotex">Promotions concerned</label>
-            <div class="orga5" id="divpromo">
+            <label class="tbxindicator Medium promotex">Promotions concerned</label>
+            <div class="orga5">
                 <!-- Promotions concerned field -->
                 <div class="checkb">
                     <input type="checkbox" class="medium" id="promtbx1">
