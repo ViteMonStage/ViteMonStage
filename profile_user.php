@@ -111,7 +111,7 @@
                         </div>
                     </div>
                     <div class="bouton">
-                        <a role="button" class="small btn" href="wishlist.php">See more</a>
+                        <a role="button" class="small btn" href="wishlist.php" alt="Wishlist">See more</a>
 
                     </div>
 
@@ -186,7 +186,7 @@
                         </div>
                     </div>
                     <div class="bouton">
-                        <a role="button" class="small btn" href="candidatures.php">See more</a>
+                        <a role="button" class="small btn" href="candidatures.php" alt="Candidatures">See more</a>
                     </div>
                 </div>
             </div>
