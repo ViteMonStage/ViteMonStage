@@ -26,16 +26,12 @@
             <h1 class="big titl">OFFER CREATION</h1>
             <div class="col-sm-6 divg">
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Email</label>
-                    <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
+                    <label for="nametbx" class="tbxindicator small">Name</label>
+                    <input type="text" class="form-control tbx medium" id="nametbx" placeholder="WEB IT Internship"> <!-- name field -->
                 </div>
-                <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Password</label>
-                    <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••"> <!-- password field -->
-                </div>
-                <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Password (repeat)</label>
-                    <input type="password" class="form-control tbx medium" id="passtbx_rep" placeholder="••••••••••"> <!-- password repeat field -->
+                <div class="orga2">
+                    <label for="desctbx" class="tbxindicator small">Description</label>
+                    <textarea type="text" class="form-control ltbx medium" id="desctbx" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
                 </div>
                 <div class="orga">
                     <label class="custom-file-label tbxindicator">Profile picture</label>
@@ -57,32 +53,30 @@
             </div>
             <div class="col-sm-6 row divd">
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Lastname</label>
-                    <input type="text" class="form-control tbx medium" id="lastname" placeholder="John"> <!-- name field -->
+                    <label for="skilltbx" class="tbxindicator small">Skills</label>
+                    <input type="text" class="form-control tbx medium" id="skilltbx" placeholder="Databases, HTML, CSS, PHP"> <!-- skills field -->
                 </div>
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Firstname</label>
-                    <input type="text" class="form-control tbx medium" id="firstname" placeholder="Doe"> <!-- surname  field -->
+                    <label for="salartbx" class="tbxindicator small">Estimated salary (per month)</label>
+                    <input type="text" class="form-control tbx medium" id="salartbx" placeholder="650€"> <!-- salary  field -->
                 </div>
-                <div class="col-sm-7 orga">
+                <div class="col-sm-7 orga3">
                     <div class="birthday">
                         <!-- date of birth field -->
-                        <label for="mailtbx" class="tbxindicator small">Birthday</label>
+                        <label for="starttbx" class="tbxindicator small">Starting date</label>
                         <div class="md-form md-outline input-with-post-icon datepicker">
-                            <input placeholder="Select date" type="date" id="example" class="form-control tbx medium">
+                            <input placeholder="Select date" type="date" id="starttbx" class="form-control tbx medium">
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-5 orga">
+                <div class="col-sm-5 orga3">
                     <div class="gender">
 
                         <!-- gender field -->
-                        <label for="mailtbx" class="tbxindicator small">Gender</label>
-                        <select class="form-control tbx medium" name="gender" id="gender">
-                            <option value="gen_male" selected>Male</option>
-                            <option value="gen-female">Female</option>
-                            <option value="gen-other">Other</option>
-                        </select>
+                        <label for="endtbx" class="tbxindicator small">Ending date</label>
+                        <div class="md-form md-outline input-with-post-icon datepicker">
+                            <input placeholder="Select date" type="date" id="endtbx" class="form-control tbx medium">
+                        </div>
                     </div>
 
                 </div>
@@ -117,4 +111,5 @@
     include "../php/footer.php"
     ?>
 </body>
+
 </html>

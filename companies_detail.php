@@ -96,7 +96,7 @@
         <h3 class="medium results_title">Evaluations</h3>
         <div class="profile col-md-8">
             <div class="avatar">
-                <img src=".\assets\pictures\avatar.jpg" alt="Avatar" class="avatar_size">
+                <img src="./assets/pictures/avatar.jpg" alt="Avatar" class="avatar_size">
             </div>
             <div class="avatar_desc">
                 <h3 class="medium">Paul</h3>

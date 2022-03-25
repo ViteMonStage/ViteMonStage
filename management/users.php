@@ -64,16 +64,16 @@
                     <label for="firstnametbx" class="tbxindicator small">Firstname</label>
                     <input type="text" class="form-control tbx medium" id="firstnametbx" placeholder="Doe"> <!-- surname  field -->
                 </div>
-                <div class="col-sm-7 orga">
+                <div class="col-sm-7 orga3">
                     <div class="birthday">
                         <!-- date of birth field -->
-                        <label class="tbxindicator small">Birthday</label>
+                        <label for="birthtbx" class="tbxindicator small">Birthday</label>
                         <div class="md-form md-outline input-with-post-icon datepicker">
-                            <input placeholder="Select date" type="date" id="example" class="form-control tbx medium">
+                            <input placeholder="Select date" type="date" id="birthtbx" class="form-control tbx medium">
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-5 orga">
+                <div class="col-sm-5 orga3">
                     <div class="gender">
 
                         <!-- gender field -->
