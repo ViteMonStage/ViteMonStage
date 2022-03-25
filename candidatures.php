@@ -24,16 +24,16 @@
     <h1 class="big current_candidatures_title"><i class="fa-solid fa-clock"></i> Your current applications</h1>
     <div class="row g-0">
       <div class="col-lg-6 col-sm-12">
-        <div class="list-group current" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action small active" id="current-list-1-list" data-bs-toggle="list" href="#current-list-1" role="tab" aria-controls="current-list-1">Company example 1 - Position 1 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
-          <a class="list-group-item list-group-item-action small" id="current-list-2-list" data-bs-toggle="list" href="#current-list-2" role="tab" aria-controls="current-list-2">Company example 2 - Position 2 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
-          <a class="list-group-item list-group-item-action small" id="current-list-3-list" data-bs-toggle="list" href="#current-list-3" role="tab" aria-controls="current-list-3">Company example 3 - Position 3 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
-          <a class="list-group-item list-group-item-action small" id="current-list-4-list" data-bs-toggle="list" href="#current-list-4" role="tab" aria-controls="current-list-4">Company example 4 - Position 4 <span id="notifAmount" class="badge bg-secondary right">In progress...</span></a>
+        <div class="list-group current" id="list-tab-1" role="tablist">
+          <a class="list-group-item list-group-item-action small active" id="current-list-1-list" data-bs-toggle="list" href="#current-list-1" role="tab" aria-controls="current-list-1">Company example 1 - Position 1 <span class="badge bg-secondary right">In progress...</span></a>
+          <a class="list-group-item list-group-item-action small" id="current-list-2-list" data-bs-toggle="list" href="#current-list-2" role="tab" aria-controls="current-list-2">Company example 2 - Position 2 <span class="badge bg-secondary right">In progress...</span></a>
+          <a class="list-group-item list-group-item-action small" id="current-list-3-list" data-bs-toggle="list" href="#current-list-3" role="tab" aria-controls="current-list-3">Company example 3 - Position 3 <span class="badge bg-secondary right">In progress...</span></a>
+          <a class="list-group-item list-group-item-action small" id="current-list-4-list" data-bs-toggle="list" href="#current-list-4" role="tab" aria-controls="current-list-4">Company example 4 - Position 4 <span class="badge bg-secondary right">In progress...</span></a>
         </div>
       </div>
       <div class="col-lg-6 col-sm-12">
-        <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade small active show" id="current-list-1" role="tabpanel" aria-labelledby="current-list-1-list">
+        <div class="tab-content" id="nav-tabContent-1">
+          <div class="tab-pane fade small active show" id="current-list-1" role="tabpanel">
             <div class="s_result">
               <div class="in_desc">
                 <div>
@@ -51,12 +51,12 @@
                   <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                 </div>
                 <div>
-                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff1">See Offer</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-pane fade small" id="current-list-2" role="tabpanel" aria-labelledby="current-list-2-list">
+          <div class="tab-pane fade small" id="current-list-2" role="tabpanel">
             <div class="s_result">
               <div class="in_desc">
                 <div>
@@ -74,12 +74,12 @@
                   <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                 </div>
                 <div>
-                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff2">See Offer</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-pane fade small" id="current-list-3" role="tabpanel" aria-labelledby="current-list-3-list">
+          <div class="tab-pane fade small" id="current-list-3" role="tabpanel">
             <div class="s_result">
               <div class="in_desc">
                 <div>
@@ -97,12 +97,12 @@
                   <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                 </div>
                 <div>
-                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff3">See Offer</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-pane fade small" id="current-list-4" role="tabpanel" aria-labelledby="current-list-3-list">
+          <div class="tab-pane fade small" id="current-list-4" role="tabpanel">
             <div class="s_result">
               <div class="in_desc">
                 <div>
@@ -120,7 +120,7 @@
                   <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                 </div>
                 <div>
-                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff4">See Offer</a>
                 </div>
               </div>
             </div>
@@ -135,16 +135,16 @@
         <h1 class="big accepted_candidatures_title"><i class="fa-solid fa-circle-check"></i> Your accepted applications</h1>
         <div class="row g-0">
           <div class="col-lg-6 col-sm-12">
-            <div class="list-group accepted" id="list-tab" role="tablist">
-              <a class="list-group-item list-group-item-action small active" id="accepted-list-1-list" data-bs-toggle="list" href="#accepted-list-1" role="tab" aria-controls="accepted-list-1">Company example 1 - Position 1 <span id="notifAmount" class="badge success right">Accepted</span></a>
-              <a class="list-group-item list-group-item-action small" id="accepted-list-2-list" data-bs-toggle="list" href="#accepted-list-2" role="tab" aria-controls="accepted-list-2">Company example 2 - Position 2 <span id="notifAmount" class="badge success right">Accepted</span></a>
-              <a class="list-group-item list-group-item-action small" id="accepted-list-3-list" data-bs-toggle="list" href="#accepted-list-3" role="tab" aria-controls="accepted-list-3">Company example 3 - Position 3 <span id="notifAmount" class="badge success right">Accepted</span></a>
-              <a class="list-group-item list-group-item-action small" id="accepted-list-4-list" data-bs-toggle="list" href="#accepted-list-4" role="tab" aria-controls="accepted-list-4">Company example 4 - Position 4 <span id="notifAmount" class="badge success right">Accepted</span></a>
+            <div class="list-group accepted" id="list-tab-2" role="tablist">
+              <a class="list-group-item list-group-item-action small active" id="accepted-list-1-list" data-bs-toggle="list" href="#accepted-list-1" role="tab" aria-controls="accepted-list-1">Company example 1 - Position 1 <span class="badge success right">Accepted</span></a>
+              <a class="list-group-item list-group-item-action small" id="accepted-list-2-list" data-bs-toggle="list" href="#accepted-list-2" role="tab" aria-controls="accepted-list-2">Company example 2 - Position 2 <span class="badge success right">Accepted</span></a>
+              <a class="list-group-item list-group-item-action small" id="accepted-list-3-list" data-bs-toggle="list" href="#accepted-list-3" role="tab" aria-controls="accepted-list-3">Company example 3 - Position 3 <span class="badge success right">Accepted</span></a>
+              <a class="list-group-item list-group-item-action small" id="accepted-list-4-list" data-bs-toggle="list" href="#accepted-list-4" role="tab" aria-controls="accepted-list-4">Company example 4 - Position 4 <span class="badge success right">Accepted</span></a>
             </div>
           </div>
           <div class="col-lg-6 col-sm-12">
-            <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade small active show" id="accepted-list-1" role="tabpanel" aria-labelledby="list-1-list">
+            <div class="tab-content" id="nav-tabContent-2">
+              <div class="tab-pane fade small active show" id="accepted-list-1" role="tabpanel">
                 <div class="s_result">
                   <div class="in_desc">
                     <div>
@@ -162,12 +162,12 @@
                       <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                     </div>
                     <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff5">See Offer</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade small" id="accepted-list-2" role="tabpanel" aria-labelledby="list-2-list">
+              <div class="tab-pane fade small" id="accepted-list-2" role="tabpanel">
                 <div class="s_result">
                   <div class="in_desc">
                     <div>
@@ -185,12 +185,12 @@
                       <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                     </div>
                     <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff6">See Offer</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade small" id="accepted-list-3" role="tabpanel" aria-labelledby="list-3-list">
+              <div class="tab-pane fade small" id="accepted-list-3" role="tabpanel">
                 <div class="s_result">
                   <div class="in_desc">
                     <div>
@@ -208,12 +208,12 @@
                       <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                     </div>
                     <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff7">See Offer</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade small" id="accepted-list-4" role="tabpanel" aria-labelledby="list-3-list">
+              <div class="tab-pane fade small" id="accepted-list-4" role="tabpanel">
                 <div class="s_result">
                   <div class="in_desc">
                     <div>
@@ -231,7 +231,7 @@
                       <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                     </div>
                     <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff8">See Offer</a>
                     </div>
                   </div>
                 </div>
@@ -246,16 +246,16 @@
         <h1 class="big refused_candidatures_title"><i class="fa-solid fa-circle-xmark"></i> Your refused applications</h1>
         <div class="row g-0">
           <div class="col-lg-6 col-sm-12">
-            <div class="list-group refused" id="list-tab" role="tablist">
-              <a class="list-group-item list-group-item-action small active" id="refused-list-1-list" data-bs-toggle="list" href="#refused-list-1" role="tab" aria-controls="refused-list-1">Company example 1 - Position 1 <span id="notifAmount" class="badge refused right">Refused</span></a>
-              <a class="list-group-item list-group-item-action small" id="refused-list-2-list" data-bs-toggle="list" href="#refused-list-2" role="tab" aria-controls="refused-list-2">Company example 2 - Position 2 <span id="notifAmount" class="badge refused right">Refused</span></a>
-              <a class="list-group-item list-group-item-action small" id="refused-list-3-list" data-bs-toggle="list" href="#refused-list-3" role="tab" aria-controls="refused-list-3">Company example 3 - Position 3 <span id="notifAmount" class="badge refused right">Refused</span></a>
-              <a class="list-group-item list-group-item-action small" id="refused-list-4-list" data-bs-toggle="list" href="#refused-list-4" role="tab" aria-controls="refused-list-4">Company example 4 - Position 4 <span id="notifAmount" class="badge refused right">Refused</span></a>
+            <div class="list-group refused" id="list-tab-3" role="tablist">
+              <a class="list-group-item list-group-item-action small active" id="refused-list-1-list" data-bs-toggle="list" href="#refused-list-1" role="tab" aria-controls="refused-list-1">Company example 1 - Position 1 <span class="badge refused right">Refused</span></a>
+              <a class="list-group-item list-group-item-action small" id="refused-list-2-list" data-bs-toggle="list" href="#refused-list-2" role="tab" aria-controls="refused-list-2">Company example 2 - Position 2 <span class="badge refused right">Refused</span></a>
+              <a class="list-group-item list-group-item-action small" id="refused-list-3-list" data-bs-toggle="list" href="#refused-list-3" role="tab" aria-controls="refused-list-3">Company example 3 - Position 3 <span class="badge refused right">Refused</span></a>
+              <a class="list-group-item list-group-item-action small" id="refused-list-4-list" data-bs-toggle="list" href="#refused-list-4" role="tab" aria-controls="refused-list-4">Company example 4 - Position 4 <span class="badge refused right">Refused</span></a>
             </div>
           </div>
           <div class="col-lg-6 col-sm-12">
-            <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade small active show" id="refused-list-1" role="tabpanel" aria-labelledby="list-1-list">
+            <div class="tab-content" id="nav-tabContent-3">
+              <div class="tab-pane fade small active show" id="refused-list-1" role="tabpanel">
                 <div class="s_result">
                   <div class="in_desc">
                     <div>
@@ -273,12 +273,12 @@
                       <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                     </div>
                     <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff9">See Offer</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade small" id="refused-list-2" role="tabpanel" aria-labelledby="list-2-list">
+              <div class="tab-pane fade small" id="refused-list-2" role="tabpanel">
                 <div class="s_result">
                   <div class="in_desc">
                     <div>
@@ -296,12 +296,12 @@
                       <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                     </div>
                     <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff10">See Offer</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade small" id="refused-list-3" role="tabpanel" aria-labelledby="list-3-list">
+              <div class="tab-pane fade small" id="refused-list-3" role="tabpanel">
                 <div class="s_result">
                   <div class="in_desc">
                     <div>
@@ -319,12 +319,12 @@
                       <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                     </div>
                     <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff11">See Offer</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade small" id="refused-list-4" role="tabpanel" aria-labelledby="list-3-list">
+              <div class="tab-pane fade small" id="refused-list-4" role="tabpanel">
                 <div class="s_result">
                   <div class="in_desc">
                     <div>
@@ -342,7 +342,7 @@
                       <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                     </div>
                     <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff">See Offer</a>
+                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff12">See Offer</a>
                     </div>
                   </div>
                 </div>
