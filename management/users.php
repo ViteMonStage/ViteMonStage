@@ -30,11 +30,11 @@
                     <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
                 </div>
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Password</label>
+                    <label for="passtbx" class="tbxindicator small">Password</label>
                     <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••"> <!-- password field -->
                 </div>
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Password (repeat)</label>
+                    <label for="passtbx_rep" class="tbxindicator small">Password (repeat)</label>
                     <input type="password" class="form-control tbx medium" id="passtbx_rep" placeholder="••••••••••"> <!-- password repeat field -->
                 </div>
                 <div class="orga">
@@ -45,8 +45,8 @@
                     </div>
                 </div>
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Campus</label> <!-- Campus field -->
-                    <select class="form-control tbx medium" name="campus" id="campus">
+                    <label for="campustbx" class="tbxindicator small">Campus</label> <!-- Campus field -->
+                    <select class="form-control tbx medium" name="campus" id="campustbx">
                         <option value="sel_rou" selected>Rouen</option>
                         <option value="sel_cae">Caen</option>
                         <option value="sel-nan">Nanterre</option>
@@ -57,17 +57,17 @@
             </div>
             <div class="col-sm-6 row divd">
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Lastname</label>
-                    <input type="lastname" class="form-control tbx medium" id="lastname" placeholder="John"> <!-- name field -->
+                    <label for="lastnametbx" class="tbxindicator small">Lastname</label>
+                    <input type="text" class="form-control tbx medium" id="lastnametbx" placeholder="John"> <!-- name field -->
                 </div>
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Firstname</label>
-                    <input type="firstname" class="form-control tbx medium" id="firstname" placeholder="Doe"> <!-- surname  field -->
+                    <label for="firstnametbx" class="tbxindicator small">Firstname</label>
+                    <input type="text" class="form-control tbx medium" id="firstnametbx" placeholder="Doe"> <!-- surname  field -->
                 </div>
                 <div class="col-sm-7 orga">
                     <div class="birthday">
                         <!-- date of birth field -->
-                        <label for="mailtbx" class="tbxindicator small">Birthday</label>
+                        <label class="tbxindicator small">Birthday</label>
                         <div class="md-form md-outline input-with-post-icon datepicker">
                             <input placeholder="Select date" type="date" id="example" class="form-control tbx medium">
                         </div>
@@ -77,8 +77,8 @@
                     <div class="gender">
 
                         <!-- gender field -->
-                        <label for="mailtbx" class="tbxindicator small">Gender</label>
-                        <select class="form-control tbx medium" name="gender" id="gender">
+                        <label for="gendertbx" class="tbxindicator small">Gender</label>
+                        <select class="form-control tbx medium" name="gender" id="gendertbx">
                             <option value="gen_male" selected>Male</option>
                             <option value="gen-female">Female</option>
                             <option value="gen-other">Other</option>
@@ -87,8 +87,8 @@
 
                 </div>
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Role</label> <!-- promotion field -->
-                    <select class="form-control tbx medium" name="role" id="role">
+                    <label for="roletbx" class="tbxindicator small">Role</label> <!-- promotion field -->
+                    <select class="form-control tbx medium" name="role" id="roletbx">
                         <option value="sel-A1" selected>Student</option>
                         <option value="sel-A2GEN">Delegate</option>
                         <option value="sel-A2BTP">Pilot</option>
@@ -97,8 +97,8 @@
                 </div>
 
                 <div class="orga">
-                    <label for="mailtbx" class="tbxindicator small">Promotion</label> <!-- promotion field -->
-                    <select class="form-control tbx medium" name="promo" id="promo">
+                    <label for="promotbx" class="tbxindicator small">Promotion</label> <!-- promotion field -->
+                    <select class="form-control tbx medium" name="promo" id="promotbx">
                         <option value="sel-A1" selected>A1</option>
                         <option value="sel-A2INF">A2 INFO</option>
                         <option value="sel-A2GEN">A2 GENERALISTE</option>
@@ -113,12 +113,8 @@
             </div>
         </div>
     </div>
-
     <?php
     include "../php/footer.php"
     ?>
-
 </body>
-
-
 </html>
