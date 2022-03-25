@@ -30,7 +30,6 @@
 
 
     <!-- BANNIERE PROFIL -->
-    <div class="profile">
         <div class="infos">
             <img id="avatar" src="/assets/pictures/default_avatar.png" alt="Profile Picture">
 
@@ -44,7 +43,6 @@
 
             <a href="edit_user"><img id="editbutton" src="assets/icons/edit-regular.svg" alt="Edit" onclick="openImg()"></a>
         </div>
-    </div>
 
 
 

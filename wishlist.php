@@ -21,7 +21,7 @@
         ?>
     </header>
     <div class="container">
-        <img src="./assets/pictures/bandeau.jpg" class="img-fluid image" alt="Responsive image">
+        <img src="./assets/pictures/wishlist.jpg" class="img-fluid image" alt="Responsive image">
         <div class="centered">
             <h1 class="big title">Wishlist</h1>
         </div>
