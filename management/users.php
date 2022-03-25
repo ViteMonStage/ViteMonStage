@@ -58,11 +58,11 @@
             <div class="col-sm-6 row divd">
                 <div class="orga">
                     <label for="mailtbx" class="tbxindicator small">Lastname</label>
-                    <input type="lastname" class="form-control tbx medium" id="lastname" placeholder="John"> <!-- name field -->
+                    <input type="text" class="form-control tbx medium" id="lastname" placeholder="John"> <!-- name field -->
                 </div>
                 <div class="orga">
                     <label for="mailtbx" class="tbxindicator small">Firstname</label>
-                    <input type="firstname" class="form-control tbx medium" id="firstname" placeholder="Doe"> <!-- surname  field -->
+                    <input type="text" class="form-control tbx medium" id="firstname" placeholder="Doe"> <!-- surname  field -->
                 </div>
                 <div class="col-sm-7 orga">
                     <div class="birthday">
@@ -113,12 +113,8 @@
             </div>
         </div>
     </div>
-
     <?php
     include "../php/footer.php"
     ?>
-
 </body>
-
-
 </html>
