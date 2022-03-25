@@ -21,9 +21,23 @@
 .infos {
     display: flex;
     background-color: #09a129;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    height: auto;
+}
+@media (max-width: 368px) {
+    .infos {
+        flex-direction: column;
+        height: 280px;
+    }
+}
+
+@media (min-width: 368px) {
+    .infos {
+        display:flex;
+        justify-content: flex-start;
+    }
 }
 .infos li {
     list-style-type: none;
@@ -33,12 +47,10 @@ img#avatar {
     height: 140px;
     border-style: solid;
     border-radius: 90px;
-}
-
-.profile img {
     margin-left: 5px;
     border-color: black;
 }
+
 #editbutton {
     height: 24px;
 }
