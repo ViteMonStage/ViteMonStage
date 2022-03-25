@@ -47,6 +47,7 @@
   padding-top: 40px;
   background-color: gray;
   padding-bottom: 25px;
+  padding-left: 30px;
 }
 
 /* Mediaquery for the buttons */
@@ -110,3 +111,12 @@
   color: #51b700;
   pointer-events: none;
 }
+
+.btn {
+  /* Button style*/
+  color: rgb(255, 255, 255);
+  background-color: #51B700;
+  border-radius: 50px;
+  border-style: none;
+  height: 2.25em;
+  }

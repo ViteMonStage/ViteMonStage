@@ -21,46 +21,141 @@
         include "../php/navbar.php"
         ?>
     </header>
-    <div class="d-flex align-items-center justify-content-center vh-100 ">
+    <div class="d-flex align-items-center justify-content-center madiv ">
+        <!-- this is the white box -->
         <div class="mainbox row">
-            <!-- this is the white box -->
-            <h1 class="big">COMPANY CREATION</h1>
-            <div class="col-sm-6">
-                <label for="mailtbx" class="tbxindicator small">Company name</label>
-                <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
-                <label for="mailtbx" class="tbxindicator small">Password</label>
-                <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••"> <!-- password field -->
-                <label for="mailtbx" class="tbxindicator small">Password (repeat)</label>
-                <input type="password" class="form-control tbx medium" id="passtbx_rep" placeholder="••••••••••"> <!-- password repeat field -->
+
+            <!-- COMPANY CREATION -->
+            <div class="mantitl">
+                <h1 class="big titl">COMPANY CREATION</h1>
             </div>
-            <div class="col-sm-6 row">
-                <label for="mailtbx" class="tbxindicator small">Lastname</label>
-                <input type="lastname" class="form-control tbx medium" id="lastname" placeholder="John"> <!-- name field -->
-                <label for="mailtbx" class="tbxindicator small">Firstname</label>
-                <input type="firstname" class="form-control tbx medium" id="firstname" placeholder="Doe"> <!-- surname  field -->
-                <div class="col-sm-7">
-                    <!-- date of birth field -->
-                    <label for="mailtbx" class="tbxindicator small" style="margin-top:28.12%;">Birthday</label>
-                    <div class="md-form md-outline input-with-post-icon datepicker">
-                        <input placeholder="Select date" type="date" id="example" class="form-control tbx medium">
-                    </div>
+            <div class="col-sm-6 divg">
+                <div class="orga">
+                    <label for="nametbx" class="tbxindicator small">Name</label>
+                    <input type="text" class="form-control tbx medium" id="nametbx" placeholder="VTM Incorporated"> <!-- name field -->
                 </div>
-                <div class="col-sm-5">
-                    <!-- gender field -->
-                    <label for="mailtbx" class="tbxindicator small" style="margin-top:40.91%;">Gender</label>
-                    <select class="form-control tbx medium" name="gender" id="gender">
-                        <option value="gen_male" selected>Male</option>
-                        <option value="gen-female">Female</option>
-                        <option value="gen-other">other</option>
+                <div class="orga">
+                    <label for="mailtbx" class="tbxindicator small">Email</label>
+                    <input type="text" class="form-control tbx medium" id="mailtbx" placeholder="VTM.Incorporated@vtm.com"> <!-- email field -->
+                </div>
+                <div class="orga">
+                    <label for="stnametbx" class="tbxindicator small">Street Name</label>
+                    <input type="text" class="form-control tbx medium" id="stnametbx" placeholder="Garry Vignot boulevard"> <!-- street name field -->
+                </div>
+                <div class="orga">
+                    <label for="bnametbx" class="tbxindicator small">Building Name</label>
+                    <input type="text" class="form-control tbx medium" id="bnametbx" placeholder="Almas Tower"> <!-- building name field -->
+                </div>
+                <div class="orga">
+                    <label for="citytbx" class="tbxindicator small">City</label>
+                    <input type="text" class="form-control tbx medium" id="citytbx" placeholder="Florianopolis"> <!-- city name field -->
+                </div>
+
+            </div>
+            <div class="col-sm-6 row divd">
+                <div class="orga">
+                    <label for="sectortbx" class="tbxindicator small">Sector</label> <!-- sector field -->
+                    <select class="form-control tbx medium" name="company" id="sectortbx">
+                        <option selected>SECTOR</option>
+                        <option>SECTOR 1</option>
+                        <option>SECTOR 2</option>
                     </select>
+                </div>
+                <div class="orga">
+                </div>
+                <div class="orga">
+                    <label for="stnumbtbx" class="tbxindicator small">Street Name</label>
+                    <input type="text" class="form-control tbx medium" id="stnumbtbx" placeholder="22 bis"> <!-- street number field -->
+                </div>
+                <div class="orga">
+                    <label for="floortbx" class="tbxindicator small">Floor</label>
+                    <input type="number" class="form-control tbx medium" id="floortbx" placeholder="57"> <!-- floor number field -->
+                </div>
+                <div class="orga">
+                    <label for="ziptbx" class="tbxindicator small">ZIP code</label>
+                    <input type="text" class="form-control tbx medium" id="ziptbx" placeholder="92800"> <!-- zip code field -->
+                </div>
+            </div>
+
+            <div>
+                <!--Ci-dessous le bouton submit-->
+                <input type="submit" class="btn-primary btn Medium" id="logbtn" value="NEW COMPANY">
+            </div>
+
+
+            <!-- COMPANY DELETION -->
+            <div class="mantitl">
+                <h1 class="big titl">COMPANY DELETION</h1>
+            </div>
+            <div class="col-sm-6 divg">
+                <div class="orga">
+                    <label for="dnametbx" class="tbxindicator small">Enter the name of the company to be deleted</label>
+                    <input type="text" class="form-control tbx medium" id="dnametbx" placeholder="VTM Incorporated"> <!-- name field -->
                 </div>
             </div>
             <div>
-                <!--Ci-dessous le bouton login-->
-                <input type="submit" class="btn-primary btn big" id="logbtn" value="CREATE A COMPANY">
+                <!--Ci-dessous le bouton submit-->
+                <input type="submit" class="btn-primary btn Medium" id="dlogbtn" value="DELETE COMPANY">
             </div>
+
+            <!-- COMPANY MODIFICATION -->
+            <div class="mantitl">
+                <h1 class="big titl">COMPANY MODIFICATION</h1>
+            </div>
+            <div class="col-sm-6 divg">
+                <div class="orga">
+                    <label for="mnametbx" class="tbxindicator small">Name</label>
+                    <input type="text" class="form-control tbx medium" id="mnametbx" placeholder="VTM Incorporated"> <!-- name field -->
+                </div>
+                <div class="orga">
+                    <label for="mmailtbx" class="tbxindicator small">Email</label>
+                    <input type="text" class="form-control tbx medium" id="mmailtbx" placeholder="VTM.Incorporated@vtm.com"> <!-- email field -->
+                </div>
+                <div class="orga">
+                    <label for="mstnametbx" class="tbxindicator small">Street Name</label>
+                    <input type="text" class="form-control tbx medium" id="mstnametbx" placeholder="Garry Vignot boulevard"> <!-- street name field -->
+                </div>
+                <div class="orga">
+                    <label for="mbnametbx" class="tbxindicator small">Building Name</label>
+                    <input type="text" class="form-control tbx medium" id="mbnametbx" placeholder="Almas Tower"> <!-- building name field -->
+                </div>
+                <div class="orga">
+                    <label for="mcitytbx" class="tbxindicator small">City</label>
+                    <input type="text" class="form-control tbx medium" id="mcitytbx" placeholder="Florianopolis"> <!-- city name field -->
+                </div>
+
+            </div>
+            <div class="col-sm-6 row divd">
+                <div class="orga">
+                    <label for="msectortbx" class="tbxindicator small">Sector</label> <!-- sector field -->
+                    <select class="form-control tbx medium" name="company" id="msectortbx">
+                        <option selected>SECTOR</option>
+                        <option>SECTOR 1</option>
+                        <option>SECTOR 2</option>
+                    </select>
+                </div>
+                <div class="orga">
+                </div>
+                <div class="orga">
+                    <label for="mstnumbtbx" class="tbxindicator small">Street Name</label>
+                    <input type="text" class="form-control tbx medium" id="mstnumbtbx" placeholder="22 bis"> <!-- street number field -->
+                </div>
+                <div class="orga">
+                    <label for="mfloortbx" class="tbxindicator small">Floor</label>
+                    <input type="number" class="form-control tbx medium" id="mfloortbx" placeholder="57"> <!-- floor number field -->
+                </div>
+                <div class="orga">
+                    <label for="mziptbx" class="tbxindicator small">ZIP code</label>
+                    <input type="text" class="form-control tbx medium" id="mziptbx" placeholder="92800"> <!-- zip code field -->
+                </div>
+            </div>
+
+            <div>
+                <!--Ci-dessous le bouton submit-->
+                <input type="submit" class="btn-primary btn Medium" id="mlogbtn" value="MODIFY COMPANY">
+            </div>
+
         </div>
-    </div>
     </div>
     <?php
     include "../php/footer.php"

@@ -1,3 +1,7 @@
+<?php
+include dirname(__FILE__) . "/login_check.php";
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand maxi logo" href="/index.php">VMS</a>
     <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
@@ -10,6 +14,7 @@
             <a class="nav-item nav-link small" href="/candidatures.php" id="navbar-candidatures-btn"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
             <a class="nav-item nav-link small" href="/companies.php" id="navbar-companies-btn"><i class="fa-solid fa-building"></i> COMPANIES</a>
             <a class="nav-item nav-link small navbar-highlight" href="/profile_user.php" id="navbar-profile-btn"><i class="fa-solid fa-user"></i> PROFILE</a>
+            <a class="nav-item nav-link small navbar-highlight-logout" href="./php/disconnect.php" id="navbar-logout-btn"><i class="fa-solid fa-lock"></i> LOG OUT</a>
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle small admin-list" href="#" data-bs-toggle="dropdown" id="navbar-admin-btn"><i class="fa-solid fa-gear" aria-expanded="false"></i> ADMINISTRATION</a>
                 <div class="dropdown-menu dropdown-menu-end admin-list">
@@ -20,7 +25,15 @@
                     <a href="/search_user.php" class="dropdown-item admin-list">Search users</a>
                 </div>
             </li>
-            <a class="nav-item nav-link small" href="#"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
+            <div class="dropdown show">
+                <a class=" nav-item nav-link dropdown-toggle small" href="#" role="button" id="navbar-notif-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
+                <div class="dropdown-menu dropdown-menu-end " >
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
         </div>
+
     </div>
 </nav>

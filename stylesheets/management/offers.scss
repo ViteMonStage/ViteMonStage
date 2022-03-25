@@ -1,28 +1,53 @@
-h1 {
-    /* Bigger titles font */
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    font-weight: 900;
-    text-align: center;
+.madiv{
+    background: rgb(0, 255, 117);
+    background: linear-gradient(130deg, rgba(0, 255, 117, 1) 0%, rgba(136, 117, 255, 1) 100%);
 }
 
+.mantitl{
+    background-color: gray;
+    color: white;
+    padding: 50px;
+    border-radius: 50px;
+}
+
+.titl{
+    text-align: center;
+}
 .mainbox {
     /* Main box of the login form */
     background-color: white;
     border-radius: 50px;
-    width: 55%;
+    width: 75%;
     padding: 1%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    justify-content: space-evenly;
 }
 
 .tbx {
     /* Textboxes style*/
     border-radius: 50px;
     border-style: none;
-    color: #BEBEBE !important;
+    color: #777777 !important;
     background-color: #EEEEEE;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: 600;
     height: 2.5em;
     font-size: 1.2em;
+}
+
+.ltbx{
+    border-radius: 50px;
+    border-style: none;
+    color: #777777 !important;
+    background-color: #EEEEEE;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    height: 11em;
+    font-size: 1.2em;
+    padding-right: 15px;
+    padding-left: 15px;
+    resize: none;
 }
 
 .btn {
@@ -34,10 +59,11 @@ h1 {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: bolder;
     height: 2em;
-    width: 50%;
+    width: 85%;
     font-size: 1.5em;
-    margin-left: 25%;
-    margin-top: 20%;
+    margin-top: 5em;
+    margin-left: 7.5%;
+    margin-bottom: 50px;
 }
 
 .linkl {
@@ -53,3 +79,73 @@ h1 {
     font-weight: 600;
     margin-top: 15%;
 }
+
+/* This part allow to hide the mandatory "browse" button */
+.custom-file-input.fil1{
+    filter: opacity(0);
+    height: 2.5em;
+}
+
+/* This part emulate the file button but can be styled */
+.filelabel{
+    background-color: #EEEEEE;
+    width: 100%;
+    height: 2.5em;
+    border-radius: 50px;
+    position:relative;
+    bottom:40px;
+    right:0;
+    z-index: 1;
+    padding-top: 0.5em;
+    text-align: center;
+    color: #777777 !important;
+    vertical-align: middle;
+}
+
+/* "Add x" buttons style */
+.btn2{
+    border-radius: 50px;
+    border-style: none;
+    color: #ffffff !important;
+    background-color: #84FF4A;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    height: 2em;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+/* This part allows to organize the textboxes modules together */
+.orga{
+    height: 10em;
+    padding:0;
+}
+
+.orga2{
+    display: flex;
+    justify-content: space-between;
+}
+.orga3{
+    width: 50%;
+    height: 10em;
+    padding-top: 10.5%;
+}
+
+.orga4{
+    height: 20em;
+    padding:0;
+}
+
+.orga5{
+    width: 330px;
+    background-color:#EEEEEE;
+    border-radius: 50px;
+    padding-bottom: 50px;
+}
+
+.promotex{
+    text-align: center;
+    justify-content: space-between;
+}
+

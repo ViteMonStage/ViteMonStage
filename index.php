@@ -16,7 +16,7 @@
 
 <body>
     <?php
-    include "./php/navbar.php"
+    include "./php/navbar.php";
     ?>
     <h1 class="welcome big">Welcome on VMS</h1>
     <div class="row g-0">
@@ -61,7 +61,7 @@
         <!-- "Personnal informations" square -->
         <div class="col-lg-6 col-sm-12">
             <div class="zoom">
-                <a href="./companies.php">
+                <a href="./profile_user.php">
                     <img src="assets/pictures/paper.png" class="img" alt="paper">
                     <div class="text-block">
                         <h4 class="big">Personnal informations</h4>

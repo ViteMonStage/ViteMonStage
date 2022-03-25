@@ -3,28 +3,32 @@
     background: linear-gradient(130deg, rgba(0, 255, 117, 1) 0%, rgba(136, 117, 255, 1) 100%);
 }
 
-h1 {
-    /* Bigger titles font */
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    font-weight: 900;
-    text-align: center;
+.mantitl{
+    background-color: gray;
+    color: white;
+    padding: 50px;
+    border-radius: 50px;
 }
 
+.titl{
+    text-align: center;
+}
 .mainbox {
     /* Main box of the login form */
     background-color: white;
     border-radius: 50px;
-    width: 55%;
+    width: 75%;
     padding: 1%;
     margin-top: 40px;
     margin-bottom: 40px;
+    justify-content: space-evenly;
 }
 
 .tbx {
     /* Textboxes style*/
     border-radius: 50px;
     border-style: none;
-    color: #BEBEBE !important;
+    color: #777777 !important;
     background-color: #EEEEEE;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -41,10 +45,11 @@ h1 {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: bolder;
     height: 2em;
-    width: 70%;
+    width: 85%;
     font-size: 1.5em;
-    margin-top: 20%;
-    margin-left: 15%;
+    margin-top: 5em;
+    margin-left: 7.5%;
+    margin-bottom: 50px;
 }
 
 .linkl {
@@ -61,12 +66,13 @@ h1 {
     margin-top: 15%;
 }
 
+/* This part allow to hide the mandatory "browse" button */
 .custom-file-input.fil1{
     filter: opacity(0);
     height: 2.5em;
-
 }
 
+/* This part emulate the file button but can be styled */
 .filelabel{
     background-color: #EEEEEE;
     width: 100%;
@@ -78,7 +84,22 @@ h1 {
     z-index: 1;
     padding-top: 0.5em;
     text-align: center;
-    color: #BEBEBE !important;
+    color: #777777 !important;
     vertical-align: middle;
+}
 
+/* This part allows to organize the textboxes modules together */
+.orga{
+    height: 10em;
+    padding:0;
+}
+
+.orga2{
+    display: flex;
+    justify-content: space-between;
+}
+.orga3{
+    width: 50%;
+    height: 10em;
+    padding-top: 8%;
 }

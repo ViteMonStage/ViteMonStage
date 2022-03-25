@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VMS | Companies</title>
+    <title>VMS | Company detail</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -20,7 +20,7 @@
         include "./php/navbar.php"
         ?>
     </header>
-    <div class="company">
+    <div class="company_cadre">
         <div class="image">
             <img src="./assets/pictures/logo4.png" alt="Logo 1" class="logoentreprise">
         </div>
@@ -32,9 +32,6 @@
         </div>
     </div>
     <div class="company_btn">
-        <button type="button" class="small btn company" data-bs-toggle="modal" data-bs-target="#postulate">
-            Postulate
-        </button>
         <input type="button" class="small btn company" value="Invisible">
         <input type="button" class="small btn company" value="Modify">
         <input type="button" class="small btn company" value="Delete">
@@ -99,7 +96,7 @@
         <h3 class="medium results_title">Evaluations</h3>
         <div class="profile col-md-8">
             <div class="avatar">
-                <img src=".\assets\pictures\avatar.jpg" alt="Avatar" class="avatar_size">
+                <img src="./assets/pictures/avatar.jpg" alt="Avatar" class="avatar_size">
             </div>
             <div class="avatar_desc">
                 <h3 class="medium">Paul</h3>
@@ -155,31 +152,6 @@
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="postulate" tabindex="-1" aria-labelledby="postulatelabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title small" id="postulatelabel">Postulate to this intership</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="resumeFile" class="form-label small">Select your resume *</label>
-                        <input class="form-control small" type="file" id="resumeFile">
-                    </div>
-                    <div class="mb-3">
-                        <label for="motivationLetterFile" class="form-label small">Select your motivation letter *</label>
-                        <input class="form-control small" type="file" id="motivationLetterFile">
-                    </div>
-                    <p class="mini">* These fields are required</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn small" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn small">Send application</button>
                 </div>
             </div>
         </div>

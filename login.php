@@ -14,22 +14,28 @@
 </head>
 
 <body>
-    <div class="d-flex align-items-center justify-content-center vh-100">
-        <div class="mainbox">
-            <h1 class="maxi">SIGN IN</h1>
-            <label for="mailtbx" class="tbxindicator small">Email</label>
-            <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com">
-            <label for="passtbx" class="tbxindicator small">Password</label>
-            <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••">
-            <!--Ci-dessous le bouton login-->
-            <input type="submit" class="btn-primary btn big" id="logbtn" value="LOGIN">
-            <br>
-            <div class="margin">
-                <a href="signup.php" class="linkl">No account ? Sign up !</a>
+    <form action="/php/login.php" method="POST">
+        <div class="d-flex align-items-center justify-content-center vh-100">
+            <div class="mainbox">
+                <h1 class="maxi">SIGN IN</h1>
+                <?php
+                if (isset($_GET["erreur"]) && $_GET["erreur"] == "1") {
+                    echo '<p class="small erreur1">Wrong e-mail or password, try again.</p>';
+                }
+                ?>
+                <label for="mailtbx" class="tbxindicator small">Email</label>
+                <input type="name" class="form-control tbx medium" id="mailtbx" name="email" placeholder="mail@example.com">
+                <label for="passtbx" class="tbxindicator small">Password</label>
+                <input type="password" class="form-control tbx medium" id="passtbx" name="password" placeholder="••••••••••">
+                <!--Ci-dessous le bouton login-->
+                <input type="submit" class="btn-primary btn big" id="submit" value="LOGIN">
+                <br>
+                <div class="margin">
+                    <a href="signup.php" class="linkl">No account ? Sign up !</a>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
+    </form>
 </body>
 
 </html>

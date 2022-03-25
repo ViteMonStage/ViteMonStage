@@ -30,7 +30,6 @@
 
 
     <!-- BANNIERE PROFIL -->
-    <div class="profile">
         <div class="infos">
             <img id="avatar" src="/assets/pictures/default_avatar.png" alt="Profile Picture">
 
@@ -44,7 +43,6 @@
 
             <a href="edit_user"><img id="editbutton" src="assets/icons/edit-regular.svg" alt="Edit" onclick="openImg()"></a>
         </div>
-    </div>
 
 
 
@@ -53,7 +51,7 @@
     <!-- WISHLIST MENU AND CURRENT PROGRESS MENU   -->
     <div class="menu">
 
-        <div class="row g-0 ">
+        <div class="row g-3 ">
             <div class="col-lg-6 col-sm-12">
 
                 <!-- WISHLIST MENU -->
@@ -113,7 +111,7 @@
                         </div>
                     </div>
                     <div class="bouton">
-                        <a role="button" class="small btn" href="wishlist.php">See more</a>
+                        <a role="button" class="small btn" href="wishlist.php" alt="Wishlist">See more</a>
 
                     </div>
 
@@ -188,7 +186,7 @@
                         </div>
                     </div>
                     <div class="bouton">
-                        <a role="button" class="small btn" href="candidatures.php">See more</a>
+                        <a role="button" class="small btn" href="candidatures.php" alt="Candidatures">See more</a>
                     </div>
                 </div>
             </div>
@@ -197,7 +195,7 @@
     <div class="row g-0">
         <div class="col-lg-12 col-sm-12">
             <div class="taskbox">
-
+                
                 <div class="useracc row">
                     <ul class="row col-md-12 list-group list-group-horizontal flex">
                         <li class="col-md-2"> <label class='switch'><input type='checkbox' id="c_search"><span></span></label>Search a company</li>
@@ -223,7 +221,6 @@
                         <li class="col-md-2"> <label class='switch'><input type='checkbox' id="st_modify"><span></span></label>Modify a student</li>
                         <li class="col-md-2"> <label class='switch'><input type='checkbox' id="st_delete"><span></span></label>Delete a student</li>
                         <li class="col-md-2"> <label class='switch'><input type='checkbox' id="st_stats"><span></span></label>See students stats</li>
-
                     </ul>
                 </div>
             </div>
