@@ -48,8 +48,6 @@
                         <option value="sel-nan">Nanterre</option>
                     </select>
                 </div>
-
-
             </div>
             <div class="col-sm-6 row divd">
                 <div class="orga">
