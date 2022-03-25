@@ -16,7 +16,9 @@
 
 <body>
     <?php
-    include "./php/navbar.php"
+    include "./php/navbar.php";
+    include "./php/db.php";
+    echo "echo".getVersion($pdo);
     ?>
     <h1 class="welcome big">Welcome on VMS</h1>
     <div class="row g-0">
