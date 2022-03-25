@@ -2,6 +2,9 @@
 include "./db.php";
 session_start();
 if (isset($_POST['email']) && isset($_POST['password'])) {
+    if($_POST['email'] == '' || isset($_POST['password'])){
+        header('Location: ../login.php?erreur=2');
+    } 
     $email = $_POST['email'];
     $password = $_POST['password'];
     try {
@@ -22,6 +25,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         echo "   ";
         echo (int)$e->getCode();
     }
+}else if(!isset($_POST['email']) || !isset($_POST['password'])){
+    header('Location: ../login.php?erreur=2');
 }
 
 

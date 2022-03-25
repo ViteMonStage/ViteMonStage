@@ -19,8 +19,12 @@
             <div class="mainbox">
                 <h1 class="maxi">SIGN IN</h1>
                 <?php
-                if (isset($_GET["erreur"]) && $_GET["erreur"] == "1") {
-                    echo '<p class="small erreur1">Wrong e-mail or password, try again.</p>';
+                if (isset($_GET["erreur"])) {
+                    if ($_GET["erreur"] == "1") {
+                        echo '<p class="small erreur1">Wrong e-mail or password, try again.</p>';
+                    }if ($_GET["erreur"] == "2") {
+                        echo '<p class="small erreur1">Please, fill all fields.</p>';
+                    }
                 }
                 ?>
                 <label for="mailtbx" class="tbxindicator small">Email</label>
@@ -29,10 +33,6 @@
                 <input type="password" class="form-control tbx medium" id="passtbx" name="password" placeholder="••••••••••">
                 <!--Ci-dessous le bouton login-->
                 <input type="submit" class="btn-primary btn big" id="submit" value="LOGIN">
-                <br>
-                <div class="margin">
-                    <a href="signup.php" class="linkl">No account ? Sign up !</a>
-                </div>
             </div>
         </div>
     </form>
