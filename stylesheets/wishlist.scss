@@ -7,6 +7,25 @@
     padding-right: 0%;
 }
 
+.btn {
+    /* Button style*/
+    color: rgb(255, 255, 255);
+    background-color: #51B700;
+    border-radius: 50px;
+    border-style: none;
+    height: 2.25em;
+    }
+
+.btn.offer{
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 15px;
+    background-color: #51b700;
+}
+
+
 /* Centered the title*/
 .centered {
     position: absolute;
