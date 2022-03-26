@@ -19,11 +19,11 @@
             <div class="mainbox">
                 <h1 class="maxi">SIGN IN</h1>
                 <?php
-                if (isset($_GET["erreur"])) {
-                    if ($_GET["erreur"] == "1") {
-                        echo '<p class="small erreur1">Wrong e-mail or password, try again.</p>';
-                    }if ($_GET["erreur"] == "2") {
-                        echo '<p class="small erreur1">Please, fill all fields.</p>';
+                if (isset($_GET["error"])) {
+                    if ($_GET["error"] == "1") {
+                        echo '<p class="small erreur">Wrong e-mail or password, try again.</p>';
+                    }if ($_GET["error"] == "2") {
+                        echo '<p class="small erreur">Please, fill all fields.</p>';
                     }
                 }
                 ?>
