@@ -1,114 +1,118 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
- .btn {
+
+.btn {
     /* Button style*/
     color: rgb(255, 255, 255);
-    background-color: #51B700;
+    background-color: #51b700;
     border-radius: 50px;
     border-style: none;
     height: 2.25em;
-    }
+}
 
- /* Logo style */
+/* Logo style */
 .logoentreprise {
-    width: 230px;
-    height: 230px;
-  }
+    width: 100px;
+    height: 100px;
+}
 /* Bordure autour du logo*/
-.image{
-    border-style: solid;
-    
+.image {
+    padding-right: 20px;
 }
 
 /* Position des éléments lié à la company  */
-.company{
-display: flex;
-margin-top: 20px;
-margin-bottom: 20px;
-margin-left: 20px;
+.company_cadre {
+    display: flex;
+    margin: 20px;
+    background-color: rgba(211, 211, 211, 0.50);
+    padding: 50px;
+    border-radius: 50px;
+
 }
 
 /* Company description */
-.company_desc{
+.company_desc {
     margin-left: 5px;
 }
 
 /* Position des boutons  */
-.company_btn  {
+.company_btn {
     display: flex;
     margin-top: 10px;
+    background-color: gray ;
+    padding: 30px;
 }
 
 /* Button invisble postulate modify delete positionning  */
-.btn.company{
+.btn.company {
     margin-left: 20px;
 }
 
 /* Centrer le titre evaluation */
-.evaluate_title{
+.evaluate_title {
     text-align: center;
 }
 
 /* Div principale mise en flex et en colonne ainsi que style de la bordure */
-.evaluate{
+.evaluate {
     border-radius: 20px;
     margin: 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.50);
+
 }
 /* Espacement des élémenents */
-.evaluate_criteria{
+.evaluate_criteria {
     display: flex;
     justify-content: space-between;
     margin: 10px;
 }
 
-.btn.submit{
+.btn.submit {
     margin: 4px;
 }
 
- /* Bordure autour de l'avatar */
-.avatar{
+/* Bordure autour de l'avatar */
+.avatar {
     border-style: solid;
 }
 
- /* Taille de l'avatar */
- .avatar_size {
+/* Taille de l'avatar */
+.avatar_size {
     width: 150px;
     height: 150px;
-  }
-
-   /* Description de l'avatar */
-.avatar_desc{
-margin-left: 5px;
 }
 
-.results_title{
+/* Description de l'avatar */
+.avatar_desc {
+    margin-left: 5px;
+}
+
+.results_title {
     text-align: center;
 }
-.results{
+.results {
     margin-top: 15px;
 }
 .profile {
     display: flex;
-margin-top: 20px;
-margin-bottom: 20px;
-margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 
-.results_criteria{
+.results_criteria {
     display: flex;
     justify-content: space-between;
 }
 
-.profile_results{
+.profile_results {
     border-radius: 20px;
     margin: 20px;
-    background-color: lightgray;
-
+    background-color: rgba(211, 211, 211, 0.50);
+    padding: 20px;
 }
-
-

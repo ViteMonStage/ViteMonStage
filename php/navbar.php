@@ -1,4 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<?php
+include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to check if user is logged in. If not : redirects immediately in login page
+?>
+
+<nav class="navbar navbar-expand-lg navbar-light"> <!-- Navbar that will be displayed in each regular page -->
     <a class="navbar-brand maxi logo" href="/index.php">VMS</a>
     <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
@@ -10,6 +14,7 @@
             <a class="nav-item nav-link small" href="/candidatures.php" id="navbar-candidatures-btn"><i class="fa-solid fa-circle-info"></i> CANDIDATURES</a>
             <a class="nav-item nav-link small" href="/companies.php" id="navbar-companies-btn"><i class="fa-solid fa-building"></i> COMPANIES</a>
             <a class="nav-item nav-link small navbar-highlight" href="/profile_user.php" id="navbar-profile-btn"><i class="fa-solid fa-user"></i> PROFILE</a>
+            <a class="nav-item nav-link small navbar-highlight-logout" href="/php/disconnect.php" id="navbar-logout-btn"><i class="fa-solid fa-lock"></i> LOG OUT</a>
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle small admin-list" href="#" data-bs-toggle="dropdown" id="navbar-admin-btn"><i class="fa-solid fa-gear" aria-expanded="false"></i> ADMINISTRATION</a>
                 <div class="dropdown-menu dropdown-menu-end admin-list">

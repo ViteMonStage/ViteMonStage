@@ -69,19 +69,23 @@
 .logoentreprise {
     width: 100px;
     height: 100px;
-    margin-left: 10px;
+    margin: 20px;
 }
 
 /* "Result" div style */
 .result {
     display: flex;
-    border-style: solid;
-    border-color: #51b700;
+    background-color: rgba(211, 211, 211, 0.50);
     border-radius: 10px;
     margin-right: 10px;
     margin-left: 10px;
     margin-bottom: 15px;
     position: relative;
+}
+
+/* Text style inside the result */
+.in_desc{
+    margin: 20px;
 }
 
 /* "Search" button style */
