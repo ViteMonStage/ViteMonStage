@@ -1,8 +1,8 @@
 <?php
-include dirname(__FILE__) . "/login_check.php";
+include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to check if user is logged in. If not : redirects immediately in login page
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light"> <!-- Navbar that will be displayed in each regular page -->
     <a class="navbar-brand maxi logo" href="/index.php">VMS</a>
     <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
