@@ -16,6 +16,15 @@ if(isset($_POST['c_user'])){
     $lastname = $_POST['c_lastname'];
     $birthday = $_POST['c_birthday'];
     $gender = $_POST['c_gender'];
+    $stm = $pdo->prepare('SELECT id_role FROM user WHERE role = ?'); //prepared statement to get role id
+    $stm->bindParam(1, $email);
+    $stm->execute();
+    $row = $stm->fetchAll();
+    $id_role = $row[0][1];
+    //PAS FINI A PARTIR D'ICI
+    $id_promotion;
+    $id_permission;
+    $id_campus;
     try {
         $stm = $pdo->prepare('INSERT INTO user VALUES (?,?,?,?,?,?,?,?,?,?)'); //prepared statement to verify email and password
         $stm->bindParam(1, $email);
