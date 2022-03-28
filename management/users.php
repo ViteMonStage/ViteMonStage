@@ -52,12 +52,6 @@ include_once "../php/navbar.php";
                     <div class="orga">
                         <label for="campustbx" class="tbxindicator small">Campus</label> <!-- Campus field -->
                         <select class="form-control tbx medium" name="c_campus" id="campustbx">
-                            <?php
-                            include_once "../db.php"; //Used to get global pdo
-                            $stm = $pdo->prepare('SELECT campus_name FROM campus'); //prepared statement to get role id
-                            $stm->execute();
-                            $row = $stm->fetchAll();
-                            ?>
                             <option selected>Rouen</option>
                             <option>Caen</option>
                             <option>Nanterre</option>
@@ -71,7 +65,7 @@ include_once "../php/navbar.php";
                     </div>
                     <div class="orga">
                         <label for="firstnametbx" class="tbxindicator small">Firstname</label>
-                        <input type="text" class="form-control tbx medium" id="firstnametbx" placeholder="Doe"name="c_lastname"> <!-- surname  field -->
+                        <input type="text" class="form-control tbx medium" id="firstnametbx" placeholder="Doe" name="c_lastname"> <!-- surname  field -->
                     </div>
                     <div class="orga2">
                         <div class="col-sm-7 orga3">
