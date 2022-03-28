@@ -16,9 +16,9 @@
 <body>
     <header>
         <?php
-        include "./php/db.php"; //Used to get global pdo
-        include "./php/offers_sql.php";
-        include "./php/navbar.php";
+        include_once "./php/db.php"; //Used to get global pdo
+        include_once "./php/offers_sql.php";
+        include_once "./php/navbar.php";
         ?>
     </header>
 
@@ -58,23 +58,35 @@
 
 
     <h2 class="title big resu">
-    <?php
-        $sql = ('SELECT * FROM 8aah0fCXko.offers;'); //prepared statement to verify email and password
+        <?php
+        $sql = ('SELECT count(id_offer) FROM 8aah0fCXko.offers;'); //prepared statement to verify email and password
         $res = $pdo->query($sql);
-        $count = $res->fetchColumn() + 1;
-        echo "$count résults";
-    ?>
+        $count = $res->fetchColumn();
+        echo "$count Results";
+        ?>
     </h2>
 
     <!-- RESULT 1 -->
     <div class="s_result">
         <div class="in_desc">
             <div>
-                <h3 class="medium off_name">First offer</h3>
-                <h4 class="small off_company">DC Incorporated</h4>
+                <h3 class="medium off_name"><?php
+                                            try {
+                                                $sql = $pdo->prepare('SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,sector_activity from offers
+    INNER JOIN company on offers.id_company = company.id_company
+    INNER JOIN address on company.id_company = address.id_company
+    INNER JOIN city on address.id_city = city.id_city');
+                                                $sql->execute();
+                                                $row = $sql->fetchAll();
+                                                print_r($row[0][0]);
+                                            } catch (Exception $e) {
+                                                echo 'Erreur ahi $e';
+                                            }
+                                            ?></h3>
+                <h4 class="small off_company"><?php print_r($row[0][1]); ?> </h4>
             </div>
-            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
+            <p class="mini"><?php print_r($row[0][2]); ?></p>
+            <h4 class="mini"><?php print_r($row[0][3]); ?>(<?php print_r($row[0][4]); ?>) - <?php print_r($row[0][5]); ?> - <?php print_r($row[0][6]); ?></h4>
         </div>
         <div class="in_logo">
             <div>
@@ -90,11 +102,11 @@
     <div class="s_result">
         <div class="in_desc">
             <div>
-                <h3 class="medium off_name">Second offer</h3>
-                <h4 class="small off_company">RO and Sons</h4>
+                <h3 class="medium off_name"><?php print_r($row[1][0]); ?></h3>
+                <h4 class="small off_company"><?php print_r($row[1][1]); ?></h4>
             </div>
-            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini">Rouen (76100) - Publication 10/12/2022 - IT</h4>
+            <p class="mini"><?php print_r($row[1][2]); ?></p>
+            <h4 class="mini"><?php print_r($row[1][3]); ?> (<?php print_r($row[1][4]); ?>) - <?php print_r($row[1][5]); ?> - <?php print_r($row[1][6]); ?></h4>
         </div>
         <div class="in_logo">
             <div>
