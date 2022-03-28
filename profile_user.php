@@ -42,8 +42,8 @@
                 <li class="small">Male, 20 Years Old</li>
             </ul>
 
-            <img id="editbutton" src="assets/icons/edit-regular.svg" alt="Edit" role="button" onclick="edit()">
-            <button type="submit" id="end-editing" class="mini">Done</button>
+            <img id="editbutton" src="assets/icons/edit-white.svg" alt="Edit" role="button" onclick="edit()">
+            <img role="button" alt="done" src="assets/icons/check-white.svg" type="submit" id="end-editing">
         </div>
 
 
