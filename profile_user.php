@@ -22,10 +22,9 @@
     <header>
         <?php
         include "./php/navbar.php";
+        include "./php/profile.php";
         ?>
     </header>
-
-
 
 
 
@@ -34,14 +33,15 @@
             <img id="avatar" src="/assets/pictures/default_avatar.png" alt="Profile Picture">
 
             <ul id="listinfo">
-                <li class="medium">SURNAME</li>
-                <li class="medium">Name</li>
-                <li class="small">Campus : Rouen</li>
-                <li class="small">Sector : IT</li>
-                <li class="mini">name.surname@viacesi.fr</li>
-                <li class="small">Male, 20 Years Old</li>
+                <li class="medium"><?php print_r($row[0][0]); ?></li>
+                <li class="medium"><?php print_r($row[0][1]); ?></li>
+                <li class="small"><?php print_r($row[0][2]); ?></li>
+                <li class="small"><?php print_r($row[0][3]); ?></li>
+                <li class="mini"><?php print_r($row[0][4]); ?></li>
+                <li class="mini"><?php print_r($row[0][5]); ?></li>
+                <li class="mini"><?php print_r($row[0][6]); ?></li>
+                <li class="mini"><?php print_r($row[0][7]); ?></li>
             </ul>
-
             <img id="editbutton" src="assets/icons/edit-white.svg" alt="Edit" role="button" onclick="edit()">
             <img role="button" alt="done" src="assets/icons/check-white.svg" type="submit" id="end-editing">
         </div>
