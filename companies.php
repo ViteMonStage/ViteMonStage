@@ -11,15 +11,13 @@
     <link rel="stylesheet" href="./stylesheets/companies.scss">
     <link rel="stylesheet" href="./stylesheets/global.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-
 </head>
 
 <body>
     <!-- Nav bar-->
     <header>
         <?php
-        include_once "./php/db.php";
-        include_once "./php/navbar.php";
+        include_once "./php/navbar.php"
         ?>
     </header>
     <!-- Head band-->
@@ -50,24 +48,19 @@
         </div>
     </div>
     <!-- Resut-->
-    <h2 class="results big"> <?php
-                                $sql = ('SELECT count(id_company) FROM company;');
-                                $res = $pdo->query($sql);
-                                $count = $res->fetchColumn() ;
-                                echo "$count Results";
-                                ?></h2>
+    <h2 class="results big">2 Results</h2>
     <div class="result">
         <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
         <div class="in_desc">
             <h3 class="medium"><?php
-                                
+                                include_once "./php/db.php"; //Used to get global pdo
                                 try {
-                                    $sql = $pdo->prepare('SELECT company_name,company.description,cityname,zipcode,sector_activity from company 
+                                    $stm = $pdo->prepare('SELECT company_name,company.description,cityname,zipcode,sector_activity from company 
                                     INNER JOIN  address on company.id_company = address.id_company
                                     INNER JOIN city on address.id_city = city.id_city
                                     ');
-                                    $sql->execute();
-                                    $row = $sql->fetchAll();
+                                    $stm->execute();
+                                    $row = $stm->fetchAll();
                                     print_r($row[0][0]);
                                 } catch (Exception $e) {
                                     echo 'Erreur ahi $e';
