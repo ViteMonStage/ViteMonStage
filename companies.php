@@ -17,7 +17,7 @@
     <!-- Nav bar-->
     <header>
         <?php
-        include_once "./php/navbar.php"
+        include "./php/navbar.php"
         ?>
     </header>
     <!-- Head band-->
@@ -53,7 +53,7 @@
         <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
         <div class="in_desc">
             <h3 class="medium"><?php
-                                include_once "./php/db.php"; //Used to get global pdo
+                                include "./php/db.php"; //Used to get global pdo
                                 try {
                                     $stm = $pdo->prepare('SELECT company_name,company.description,cityname,zipcode,sector_activity from company 
                                     INNER JOIN  address on company.id_company = address.id_company

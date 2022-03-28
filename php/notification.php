@@ -1,7 +1,7 @@
 <?php
 function displayNotification(){
     try {
-        include_once dirname(__FILE__) . "/db.php"; //Used to get global pdo
+        include dirname(__FILE__) . "/db.php"; //Used to get global pdo
         $stm = $pdo->prepare('SELECT * FROM notification WHERE id_user=?');
         $stm->bindParam(1, $_SESSION['id_user']);
         $stm->execute();
@@ -30,11 +30,4 @@ function displayNotification(){
         echo "   ";
         echo (int)$e->getCode();
     }
-}
-
-
-function disconnect()
-{
-    session_destroy();
-    header('Location: ../login.php');
 }

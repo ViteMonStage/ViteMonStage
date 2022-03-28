@@ -16,10 +16,10 @@
 <body>
     <header>
         <?php
-        include_once "./php/navbar.php";
+        include "./php/navbar.php";
         ?>
-        <?php include_once "./php/db.php"; //Used to get global pdo ?>
-        <?php include_once "./php/offers_sql.php"; ?>
+        <?php include "./php/db.php"; //Used to get global pdo ?>
+        <?php include "./php/offers_sql.php"; ?>
     </header>
 
     <!-- BANNER -->
@@ -120,7 +120,7 @@
 
     <!-- FOOTER -->
     <?php
-    include_once "./php/footer.php"
+    include "./php/footer.php"
     ?>
 </body>
 
