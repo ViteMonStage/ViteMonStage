@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
 </head>
-    
+
 <body>
     <!-- Nav bar-->
     <header>
@@ -49,44 +49,9 @@
         </div>
     </div>
     <!-- Resut-->
-    <?php try {
 
-$sql = $pdo->prepare('SELECT company_name,company.description,cityname,zipcode,sector_activity from company 
-INNER JOIN  address on company.id_company = address.id_company
-INNER JOIN city on address.id_city = city.id_city
-');
-$sql->execute();
-$row = $sql->fetchAll();
-}
-
-catch (\PDOException $e) {
-    echo $e->getMessage();
-    echo "   ";
-    echo (int)$e->getCode();
-}?>
     <h2 class="results big"> </h2>
-    <?php include_once dirname(__FILE__) . "/php/companie.php"; displayCompanie();?>
-    <div class="result">
-        <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
-        <div class="in_desc">
-            <h3 class="medium"><?php   print_r($row[0][0]); ?></h3>
-            <p class="mini"><?php print_r($row[0][1]); ?></p>
-            <h4 class="mini loca"><?php print_r($row[0][2]) ?> (<?php print_r($row[0][3]); ?>) - <?php print_r($row[0][4]); ?></h4>
-        </div>
-        <a role="button" href="./companies_detail.php" class="small btn detail">See </a>
-    </div>
-
-    <div class="result">
-        <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
-        <div class="in_desc">
-            <h3 class="medium"><?php print_r($row[1][0]) ?></h3>
-            <p class="mini"><?php print_r($row[1][1]) ?></p>
-            <h4 class="mini loca"><?php print_r($row[1][2]) ?> (<?php print_r($row[1][3]) ?>) - <?php print_r($row[1][4]) ?> </h4>
-        </div>
-        <a role="button" href="./companies_detail.php" class="small btn detail "> See </a>
-    </div>
-
-
+    <?php include_once dirname(__FILE__) . "/php/companie.php";displayCompanie(); ?>
     <?php
     include "./php/footer.php"
     ?>
