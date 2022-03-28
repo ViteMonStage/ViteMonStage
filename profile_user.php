@@ -30,9 +30,9 @@
 
     <!-- PROFILE BANNER -->
         <div class="infos">
-            <div class="border">
+            
             <img id="avatar" src=<?php echo"/assets/user_data/avatar/$id.png"?> alt="Profile Picture">
-            </div>
+           
             <ul id="listinfo">
                 <li class="medium"><?php print_r($row[0][0]); ?></li>
                 <li class="medium"><?php print_r($row[0][1]); ?></li>
