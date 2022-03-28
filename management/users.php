@@ -121,6 +121,10 @@ include "../php/navbar.php";
                 <div class="col-sm-6 orga">
                     <label for="maildtbx" class="tbxindicator small">Enter the email of the user to be deleted</label>
                     <input type="email" class="form-control tbx medium" id="maildtbx" placeholder="mail@example.com" name="d_email"> <!-- e-mail field -->
+                </div>
+                <div>
+                    <!--Ci-dessous le bouton delete-->
+                    <input type="submit" class="btn-primary btn Medium" id="delbtn" value="DELETE ACCOUNT" name="d_user">
                     <?php
                     if (isset($_GET["d_error"])) {
                         if ($_GET["d_error"] == "1") {
@@ -129,14 +133,10 @@ include "../php/navbar.php";
                     }
                     if (isset($_GET["d_good"])) {
                         if ($_GET["d_good"] == "1") {
-                            echo'<p class="small error">User successfuly deleted.</p>';
+                            echo '<p class="small error">User successfuly deleted.</p>';
                         }
                     }
                     ?>
-                </div>
-                <div>
-                    <!--Ci-dessous le bouton delete-->
-                    <input type="submit" class="btn-primary btn Medium" id="delbtn" value="DELETE ACCOUNT" name="d_user">
                 </div>
 
 
