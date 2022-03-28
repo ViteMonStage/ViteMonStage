@@ -57,14 +57,11 @@ ul{
     margin-top: 10px;
     padding-left: 0;
 }
-.infos img {
+
+ #avatar {
     height: 140px;
     width: 140px;
-    object-fit: contain;
-}
-.border {
-    height: 140px;
-    width: 140px;
+    object-fit: cover;
     border-style: solid;
     border-radius: 75px;
     margin: 5px ;
