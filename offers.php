@@ -66,57 +66,11 @@
         ?>
     </h2>
 
-    <!-- RESULT 1 -->
-    <div class="s_result">
-        <div class="in_desc">
-            <div>
-                <h3 class="medium off_name"><?php
-                                            try {
-                                                $sql = $pdo->prepare('SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,sector_activity from offers
-    INNER JOIN company on offers.id_company = company.id_company
-    INNER JOIN address on company.id_company = address.id_company
-    INNER JOIN city on address.id_city = city.id_city');
-                                                $sql->execute();
-                                                $row = $sql->fetchAll();
-                                                print_r($row[0][0]);
-                                            } catch (Exception $e) {
-                                                echo 'Erreur ahi $e';
-                                            }
-                                            ?></h3>
-                <h4 class="small off_company"><?php print_r($row[0][1]); ?> </h4>
-            </div>
-            <p class="mini"><?php print_r($row[0][2]); ?></p>
-            <h4 class="mini"><?php print_r($row[0][3]); ?>(<?php print_r($row[0][4]); ?>) - <?php print_r($row[0][5]); ?> - <?php print_r($row[0][6]); ?></h4>
-        </div>
-        <div class="in_logo">
-            <div>
-                <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-            </div>
-            <div>
-                <a href="offers_detail.php" role="button" class="small btn see">See Offer</a>
-            </div>
-        </div>
-    </div>
+    <!-- RESULTS -->
+    <?php include_once dirname(__FILE__) . "/php/offer.php";displayOffers(); ?>
 
-    <!-- RESULT 2 -->
-    <div class="s_result">
-        <div class="in_desc">
-            <div>
-                <h3 class="medium off_name"><?php print_r($row[1][0]); ?></h3>
-                <h4 class="small off_company"><?php print_r($row[1][1]); ?></h4>
-            </div>
-            <p class="mini"><?php print_r($row[1][2]); ?></p>
-            <h4 class="mini"><?php print_r($row[1][3]); ?> (<?php print_r($row[1][4]); ?>) - <?php print_r($row[1][5]); ?> - <?php print_r($row[1][6]); ?></h4>
-        </div>
-        <div class="in_logo">
-            <div>
-                <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
-            </div>
-            <div>
-                <a href="offers_detail.php" role="button" class="small btn see">See Offer</a>
-            </div>
-        </div>
-    </div>
+
+ 
 
     <!-- FOOTER -->
     <?php
