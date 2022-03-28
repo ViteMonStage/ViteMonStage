@@ -9,9 +9,12 @@ function edit(){
     for(i = 0 ; i < list.length; i++)
 {
         list[i].contentEditable = true;
-        list[i].style.backgroundColor =  "#ffffff";
+        list[i].style.backgroundColor =  "#fff";
         list[i].style.color = "Black";
-        list[i].style.margin = "1px";
+        list[i].style.margin = "2px";
+        list[i].style.borderRadius = "4px";
+        list[i].style.paddingLeft = "5px";
+        list[i].style.paddingRight = "3px";        
 }
     done_button.style.display = "Block";
 };

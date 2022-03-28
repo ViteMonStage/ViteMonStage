@@ -17,6 +17,7 @@ try {
     if (isset($row[0]) == 1) {
         header('Location: ../index.php');
         $_SESSION['email'] = $email; //if password and mail are a valid couple, grant access by setting session email value
+        $_SESSION['role'] = $row[0][1];
     } else { //if password and mail are not a valid couple, returns error code 1
         header('Location: ../login.php?error=1');
     }
