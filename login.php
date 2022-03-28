@@ -32,9 +32,9 @@ if (isset($_SESSION['email'])) {
                     }
                 }
                 ?>
-                <label for="mailtbx" class="tbxindicator small">Email</label>
+                <label for="mailtbx" class="tbxindicator small">Email <span class="mail-not-set">• Please fill this field</span></label>
                 <input type="name" class="form-control tbx medium" id="mailtbx" name="email" placeholder="mail@example.com">
-                <label for="passtbx" class="tbxindicator small">Password</label>
+                <label for="passtbx" class="tbxindicator small">Password <span class="password-not-set">• Please fill this field</span></label>
                 <input type="password" class="form-control tbx medium" id="passtbx" name="password" placeholder="••••••••••">
                 <!--Ci-dessous le bouton login-->
                 <input type="submit" class="btn-primary btn big" id="submit" value="LOGIN">
