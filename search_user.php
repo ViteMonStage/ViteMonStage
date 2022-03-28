@@ -20,7 +20,7 @@
 <body>
     <!--  Navbar -->
     <?php
-    include_once "./php/navbar.php"
+    include "./php/navbar.php"
     ?>
     <!-- User serch bar -->
     <div class="container mt-5">
@@ -151,7 +151,7 @@
     </div>
     <!-- Footer -->
     <?php
-    include_once "./php/footer.php"
+    include "./php/footer.php"
     ?>
 </body>
 

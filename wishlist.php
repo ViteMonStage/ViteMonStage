@@ -17,7 +17,7 @@
     <!-- Nav bar-->
     <header>
         <?php
-        include_once "./php/navbar.php"
+        include "./php/navbar.php"
         ?>
     </header>
     <div class="container">
@@ -47,10 +47,11 @@
         </div>
         <a href="offers_detail.php" role="button" class="small btn offer">See offer</a>
     </div>
-
-
-
     <?php
-    include_once "./php/footer.php"
+    include dirname(__FILE__) . "/php/wishlist.php";
+    displayWishlist(6);
+    ?>
+    <?php
+    include "./php/footer.php"
     ?>
 </body>
