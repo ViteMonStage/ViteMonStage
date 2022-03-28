@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="stylesheets/profile_user.scss">
     <link rel="stylesheet" href="stylesheets/global.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-    <script src="script.js"></script>
+    
 </head>
 
 <body>
@@ -29,19 +29,21 @@
 
 
 
-    <!-- BANNIERE PROFIL -->
+    <!-- PROFILE BANNER -->
         <div class="infos">
             <img id="avatar" src="/assets/pictures/default_avatar.png" alt="Profile Picture">
 
-            <ul>
-                <li class="medium">SURNAME Name</li>
+            <ul id="listinfo">
+                <li class="medium">SURNAME</li>
+                <li class="medium">Name</li>
                 <li class="small">Campus : Rouen</li>
                 <li class="small">Sector : IT</li>
                 <li class="mini">name.surname@viacesi.fr</li>
                 <li class="small">Male, 20 Years Old</li>
             </ul>
 
-            <a href="edit_user"><img id="editbutton" src="assets/icons/edit-regular.svg" alt="Edit" onclick="openImg()"></a>
+            <img id="editbutton" src="assets/icons/edit-regular.svg" alt="Edit" role="button" onclick="edit()">
+            <button type="submit" id="end-editing" class="mini">Done</button>
         </div>
 
 
@@ -197,30 +199,41 @@
             <div class="taskbox">
                 
                 <div class="useracc row">
-                    <ul class="row col-md-12 list-group list-group-horizontal flex">
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="c_search"><span></span></label>Search a company</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="c_modify"><span></span></label>Modify a company</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="c_rate"><span></span></label>Evaluate a company</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="c_delete"><span></span></label>Delete a company</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="c_stats"><span></span></label>See company stats</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="o_search"><span></span></label>Search an offer</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="o_create"><span></span></label>Create an offer</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="o_modify"><span></span></label>Modify an offer</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="o_delete"><span></span></label>Delete an offer</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="o_stats"><span></span></label>See offer stats</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="p_search"><span></span></label>Search a pilot</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="p_create"><span></span></label>Create a pilot</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="p_modify"><span></span></label>Modify pilot</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="p_delete"><span></span></label>Delete pilot</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="d_search"><span></span></label>Search delegate</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="d_create"><span></span></label>Create a delegate</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="d_modify"><span></span></label>Modify delegate</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="d_delete"><span></span></label>Delete delegate</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="st_search"><span></span></label>Search student</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="st_create"><span></span></label>Create a student</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="st_modify"><span></span></label>Modify a student</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="st_delete"><span></span></label>Delete a student</li>
-                        <li class="col-md-2"> <label class='switch'><input type='checkbox' id="st_stats"><span></span></label>See students stats</li>
+                    <ul class="row col-lg-12 list-group list-group-horizontal flex">
+                        <div class="col-lg-3">
+                        <li> <label class='switch mini'><input type='checkbox' id="c_search"><span></span></label><span class="mini">Search a company</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="c_modify"><span></span></label><span class="mini">Modify a company</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="c_rate"><span></span></label><span class="mini">Evaluate a company</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="c_delete"><span></span></label><span class="mini">Delete a company</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="c_stats"><span></span></label><span class="mini">See company stats</span></li>
+                        </div>
+                        <div class="col-lg-3">
+                        <li> <label class='switch mini'><input type='checkbox' id="o_search"><span></span></label><span class="mini">Search an offer</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="o_create"><span></span></label><span class="mini">Create an offer</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="o_modify"><span></span></label><span class="mini">Modify an offer</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="o_delete"><span></span></label><span class="mini">Delete an offer</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="o_stats"><span></span></label><span class="mini">See offer stats</span></li>
+                        </div>
+                        <div class="col-lg-3">
+                        <li> <label class='switch mini'><input type='checkbox' id="p_search"><span></span></label><span class="mini">Search a pilot</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="p_create"><span></span></label><span class="mini">Create a pilot</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="p_modify"><span></span></label><span class="mini">Modify pilot</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="p_delete"><span></span></label><span class="mini">Delete pilot</span></li>
+                        </div>
+                        <div class="col-lg-3">
+                        <li> <label class='switch mini'><input type='checkbox' id="d_search"><span></span></label><span class="mini">Search delegate</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="d_create"><span></span></label><span class="mini">Create a delegate</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="d_modify"><span></span></label><span class="mini">Modify delegate</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="d_delete"><span></span></label><span class="mini">Delete delegate</span></li>
+                        </div>
+                        <div class="col-lg-3">
+                        <li> <label class='switch mini'><input type='checkbox' id="st_search"><span></span></label><span class="mini">Search student</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="st_create"><span></span></label><span class="mini">Create a student</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="st_modify"><span></span></label><span class="mini">Modify a student</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="st_delete"><span></span></label><span class="mini">Delete a student</span></li>
+                        <li> <label class='switch mini'><input type='checkbox' id="st_stats"><span></span></label><span class="mini">See students stats</span></li>
+                        </div>
+                            
                     </ul>
                 </div>
             </div>
@@ -240,7 +253,7 @@
 
 
 
-
+<script src="./js/profile_user.js"></script>
 </body>
 
 </html>

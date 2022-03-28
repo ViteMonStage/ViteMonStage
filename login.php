@@ -11,7 +11,14 @@
     <link rel="stylesheet" href="./stylesheets/login.scss">
     <link rel="stylesheet" href="./stylesheets/global.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <script src="/js/login.js"></script>
 </head>
+<?php //Checks if email is set in session and if not, instantly redirects to login page (imported in navbar which is imported in each regular page itself)
+session_start();
+if (isset($_SESSION['email'])) {
+    header('Location: ../login.php');
+}
+?>
 
 <body>
     <form action="/php/login.php" method="POST">
@@ -21,9 +28,7 @@
                 <?php
                 if (isset($_GET["error"])) {
                     if ($_GET["error"] == "1") {
-                        echo '<p class="small erreur">Wrong e-mail or password, try again.</p>';
-                    }if ($_GET["error"] == "2") {
-                        echo '<p class="small erreur">Please, fill all fields.</p>';
+                        echo '<p class="small error">Wrong e-mail or password, try again.</p>';
                     }
                 }
                 ?>
