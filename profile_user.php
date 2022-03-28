@@ -21,8 +21,8 @@
     <!-- NAVBAR -->
     <header>
         <?php
-        include "./php/navbar.php";
-        include "./php/profile.php";
+        include_once "./php/navbar.php";
+        include_once "./php/profile.php";
         ?>
     </header>
 
@@ -248,7 +248,7 @@
 
 
     <?php
-    include "./php/footer.php";
+    include_once "./php/footer.php";
     ?>
 
 
