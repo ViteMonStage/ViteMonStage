@@ -17,7 +17,7 @@
     <!-- Nav bar-->
     <header>
         <?php
-        include "./php/navbar.php"
+        include_once "./php/navbar.php"
         ?>
     </header>
     <!-- Head band-->
@@ -53,12 +53,12 @@
         <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
         <div class="in_desc">
             <h3 class="medium"><?php
-                                include "./php/db.php"; //Used to get global pdo
+                                include_once "./php/db.php"; //Used to get global pdo
                                 try {
                                     $stm = $pdo->prepare('SELECT company_name,company.description,cityname,zipcode,sector_activity from company 
                                     INNER JOIN  address on company.id_company = address.id_company
                                     INNER JOIN city on address.id_city = city.id_city
-                                    '); 
+                                    ');
                                     $stm->execute();
                                     $row = $stm->fetchAll();
                                     print_r($row[0][0]);
@@ -68,7 +68,7 @@
 
                                 ?> </h3>
             <p class="mini"><?php print_r($row[0][1]); ?></p>
-            <h4 class="mini loca"><?php print_r($row[0][2])?> (<?php print_r($row[0][3]); ?>) - <?php print_r($row[0][4]);?></h4>
+            <h4 class="mini loca"><?php print_r($row[0][2]) ?> (<?php print_r($row[0][3]); ?>) - <?php print_r($row[0][4]); ?></h4>
         </div>
         <a role="button" href="./companies_detail.php" class="small btn detail">See </a>
     </div>
@@ -76,9 +76,9 @@
     <div class="result">
         <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
         <div class="in_desc">
-            <h3 class="medium"><?php print_r($row[1][0])?></h3>
-            <p class="mini"><?php print_r($row[1][1])?></p>
-            <h4 class="mini loca"><?php print_r($row[1][2])?> (<?php print_r($row[1][3])?>) - <?php print_r($row[1][4])?> </h4>
+            <h3 class="medium"><?php print_r($row[1][0]) ?></h3>
+            <p class="mini"><?php print_r($row[1][1]) ?></p>
+            <h4 class="mini loca"><?php print_r($row[1][2]) ?> (<?php print_r($row[1][3]) ?>) - <?php print_r($row[1][4]) ?> </h4>
         </div>
         <a role="button" href="./companies_detail.php" class="small btn detail "> See </a>
     </div>
