@@ -5,7 +5,7 @@ if (!isset($_SESSION)){
 }
 //Get email value stored in the session
 $email=$_SESSION['email']; 
-include_once "db.php";
+include "db.php";
 //Preparing the request to get the infos from the table with the corresponding email address
 $sql = $pdo->prepare("SELECT 
                             lastname,

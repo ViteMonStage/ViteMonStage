@@ -1,5 +1,5 @@
 <?php
-include_once "./db.php"; //Used to get global pdo
+include "./db.php"; //Used to get global pdo
 
 session_start();
 if (empty($_POST['email']) == true || empty($_POST['password']) == true) { //if password or mail not set, returns error code 2
