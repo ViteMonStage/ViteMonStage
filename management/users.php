@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="/stylesheets/management/users.scss">
     <link rel="stylesheet" href="/stylesheets/global.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-
 </head>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
+?>
 
 <body>
     <header>
@@ -131,8 +133,8 @@
                 <h1 class="big titl">USER MODIFICATION</h1>
             </div>
             <div class="col-sm-6 orga">
-                    <label for="mmailtbx" class="tbxindicator small">Enter user email and edit his page</label>
-                    <input type="email" class="form-control tbx medium" id="mmailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
+                <label for="mmailtbx" class="tbxindicator small">Enter user email and edit his page</label>
+                <input type="email" class="form-control tbx medium" id="mmailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
             </div>
             <div>
                 <!--Ci-dessous le bouton submit-->
