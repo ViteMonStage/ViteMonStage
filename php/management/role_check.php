@@ -1,9 +1,10 @@
 <?php
-if(isset ($_SESSION['email']))
-{
-    echo 'prout';
+if(!isset($_SESSION)) { 
+    session_start(); 
 }
-echo $_SESSION['role'];
+print_r($_SESSION['email']);
+print_r($_SESSION['role']);
+
 if(($_SESSION['role'])==1 || ($_SESSION['role']==5))
 {
     header('HTTP/1.0 403 Forbidden');

@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="/stylesheets/global.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
-<?php
-include $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
-?>
 
 <body>
     <header>
         <?php
         include "../php/navbar.php"
+        ?>
+        <?php
+        include $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
         ?>
     </header>
     <div class="d-flex align-items-center justify-content-center madiv ">
