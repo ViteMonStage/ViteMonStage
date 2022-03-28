@@ -58,11 +58,12 @@ ul{
     padding-left: 0;
 }
 
-img#avatar {
+ #avatar {
     height: 140px;
     width: 140px;
+    object-fit: cover;
     border-style: solid;
-    border-radius: 20px;
+    border-radius: 75px;
     margin: 5px ;
     border-color: black;
 }
