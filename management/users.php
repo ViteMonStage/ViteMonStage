@@ -20,16 +20,15 @@ include "../php/navbar.php";
 ?>
 
 <body>
-    <header>
-    </header>
-    <div class="d-flex align-items-center justify-content-center madiv ">
-        <!-- this is the white box -->
-        <form method="post">
+    <form action="../php/management/users.php" method="post">
+        <div class="d-flex align-items-center justify-content-center madiv ">
+            <!-- this is the white box -->
             <div class="mainbox row">
                 <!--USER CREATION-->
                 <div class="mantitl">
                     <h1 class="big titl">USER CREATION</h1>
                 </div>
+
                 <div class="col-sm-6 divg">
                     <div class="orga">
                         <label for="mailtbx" class="tbxindicator small">Email</label>
@@ -109,7 +108,7 @@ include "../php/navbar.php";
                 </div>
                 <div>
                     <!--Ci-dessous le bouton submit-->
-                    <input type="submit" class="btn-primary btn Medium" id="newbtn" value="NEW ACCOUNT">
+                    <input type="submit" class="btn-primary btn Medium" id="newbtn" value="NEW ACCOUNT" name="c_user">
                 </div>
 
 
@@ -121,11 +120,23 @@ include "../php/navbar.php";
                 </div>
                 <div class="col-sm-6 orga">
                     <label for="maildtbx" class="tbxindicator small">Enter the email of the user to be deleted</label>
-                    <input type="email" class="form-control tbx medium" id="maildtbx" placeholder="mail@example.com"> <!-- e-mail field -->
+                    <input type="email" class="form-control tbx medium" id="maildtbx" placeholder="mail@example.com" name="d_email"> <!-- e-mail field -->
+                    <?php
+                    if (isset($_GET["d_error"])) {
+                        if ($_GET["d_error"] == "1") {
+                            echo '<p class="small error">E-mail incorrect, please try again.</p>';
+                        }
+                    }
+                    if (isset($_GET["d_good"])) {
+                        if ($_GET["d_good"] == "1") {
+                            echo'<p class="small error">User successfuly deleted.</p>';
+                        }
+                    }
+                    ?>
                 </div>
                 <div>
                     <!--Ci-dessous le bouton delete-->
-                    <input type="submit" class="btn-primary btn Medium" id="delbtn" value="DELETE ACCOUNT">
+                    <input type="submit" class="btn-primary btn Medium" id="delbtn" value="DELETE ACCOUNT" name="d_user">
                 </div>
 
 
@@ -139,14 +150,14 @@ include "../php/navbar.php";
                 </div>
                 <div>
                     <!--Ci-dessous le bouton submit-->
-                    <input type="submit" class="btn-primary btn Medium" id="modbtn" value="MODIFY ACCOUNT">
+                    <input type="submit" class="btn-primary btn Medium" id="modbtn" value="MODIFY ACCOUNT" name="m_user">
                 </div>
             </div>
-        </form>
-    </div>
-    <?php
-    include "../php/footer.php"
-    ?>
+        </div>
+        <?php
+        include "../php/footer.php"
+        ?>
+    </form>
 </body>
 
 </html>
