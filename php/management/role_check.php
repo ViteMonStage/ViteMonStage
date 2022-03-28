@@ -1,10 +1,12 @@
 <?php
-if(isset ($_SESSION['email']))
-{
-    echo 'prout';
+if(session_id() == '') {
+    session_start();
 }
-echo $_SESSION['role'];
+print_r($_SESSION['email']);
+print_r($_SESSION['role']);
+
 if(($_SESSION['role'])==1 || ($_SESSION['role']==5))
 {
+    echo"proutax";
     header('HTTP/1.0 403 Forbidden');
 }
