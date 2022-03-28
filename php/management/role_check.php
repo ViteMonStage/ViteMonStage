@@ -1,6 +1,6 @@
 <?php
-if(session_id() == '') {
-    session_start();
+if(!isset($_SESSION)) { 
+    session_start(); 
 }
 print_r($_SESSION['email']);
 print_r($_SESSION['role']);
