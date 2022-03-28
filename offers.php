@@ -16,10 +16,10 @@
 <body>
     <header>
         <?php
-        include_once "./php/navbar.php";
+        include "./php/navbar.php";
         ?>
-        <?php include_once "./php/db.php"; //Used to get global pdo ?>
-        <?php include_once "./php/offers_sql.php"; ?>
+        <?php include "./php/db.php"; //Used to get global pdo ?>
+        <?php include "./php/offers_sql.php"; ?>
     </header>
 
     <!-- BANNER -->
@@ -58,57 +58,23 @@
 
 
     <h2 class="title big resu">
-    <?php
-        $sql = ('SELECT * FROM 8aah0fCXko.offers;'); //prepared statement to verify email and password
+        <?php
+        $sql = ('SELECT count(id_offer) FROM 8aah0fCXko.offers;'); //prepared statement to verify email and password
         $res = $pdo->query($sql);
-        $count = $res->fetchColumn() + 1;
-        echo "$count résults";
-    ?>
+        $count = $res->fetchColumn();
+        echo "$count Results";
+        ?>
     </h2>
 
-    <!-- RESULT 1 -->
-    <div class="s_result">
-        <div class="in_desc">
-            <div>
-                <h3 class="medium off_name">First offer</h3>
-                <h4 class="small off_company">DC Incorporated</h4>
-            </div>
-            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-        </div>
-        <div class="in_logo">
-            <div>
-                <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-            </div>
-            <div>
-                <a href="offers_detail.php" role="button" class="small btn see">See Offer</a>
-            </div>
-        </div>
-    </div>
+    <!-- RESULTS -->
+    <?php include_once dirname(__FILE__) . "/php/offer.php";displayOffers(); ?>
 
-    <!-- RESULT 2 -->
-    <div class="s_result">
-        <div class="in_desc">
-            <div>
-                <h3 class="medium off_name">Second offer</h3>
-                <h4 class="small off_company">RO and Sons</h4>
-            </div>
-            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini">Rouen (76100) - Publication 10/12/2022 - IT</h4>
-        </div>
-        <div class="in_logo">
-            <div>
-                <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
-            </div>
-            <div>
-                <a href="offers_detail.php" role="button" class="small btn see">See Offer</a>
-            </div>
-        </div>
-    </div>
+
+ 
 
     <!-- FOOTER -->
     <?php
-    include_once "./php/footer.php"
+    include "./php/footer.php"
     ?>
 </body>
 

@@ -23,7 +23,7 @@
 }
 
 /* Wishlist div style */
-.off_wish {
+.wish {
   display: inline-block;
   width: 300px;
   margin-left: 20px;
@@ -31,13 +31,13 @@
 }
 
 /* Wishlist icon style */
-.off_wish_d1 {
+.wish_d1 {
   display: inline-block;
   width: 20px;
 }
 
 /* Wishlist text style */
-.off_wish_d2 {
+.wish_d2 {
   display: inline-block;
   width: 100px;
 }
@@ -107,11 +107,6 @@
   border-radius: 50px;
 }
 
-#navbar-offers-btn {
-  color: #51b700;
-  pointer-events: none;
-}
-
 .btn {
   /* Button style*/
   color: rgb(255, 255, 255);
@@ -120,3 +115,13 @@
   border-style: none;
   height: 2.25em;
   }
+
+a.addlink{
+  color: rgb(62, 213, 62);
+  text-decoration: none;
+}
+
+a.removelink{
+  color: rgb(213, 62, 62);
+  text-decoration: none;
+}
