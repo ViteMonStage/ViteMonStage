@@ -99,11 +99,11 @@ include_once "../php/navbar.php";
                     <div class="orga">
                         <label for="promotbx" class="tbxindicator small">Promotion</label> <!-- promotion field -->
                         <select class="form-control tbx medium" id="promotbx" name="c_promo">
-                            <option selected>A1</option>
-                            <option>A2 INFO</option>
-                            <option>A2 GENERALISTE</option>
-                            <option>A2 BTP</option>
-                            <option>A2 S3E</option>
+                            <option selected>CPIA1</option>
+                            <option>CPIA2 IT</option>
+                            <option>CPIA2 GEN</option>
+                            <option>CPIA2 BTP</option>
+                            <option>CPIA2 S3E</option>
                         </select>
                     </div>
                 </div>
