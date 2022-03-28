@@ -1,7 +1,7 @@
 <?php
 function displayCompanie(){
     try {
-        include "/db.php"; //Used to get global pdo
+        include dirname(__FILE__) . "/db.php"; //Used to get global pdo
         $sql = $pdo->prepare('SELECT company_name,company.description,cityname,zipcode,sector_activity from company 
         INNER JOIN  address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city
@@ -36,8 +36,3 @@ function displayCompanie(){
 }
 
 
-function disconnect()
-{
-    session_destroy();
-    header('Location: ../login.php');
-}
