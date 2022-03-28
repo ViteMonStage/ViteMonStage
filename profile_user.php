@@ -30,9 +30,24 @@
 
     <!-- PROFILE BANNER -->
         <div class="infos">
-            
-            <img id="avatar" src=<?php echo"/assets/user_data/avatar/$id.png"?> alt="Profile Picture">
-           
+            <div class="profile-pic">
+               
+            <img  src=<?php 
+            if(is_file('assets/user_data/avatar/'.$id.'.png'))
+            {
+                echo'/assets/user_data/avatar/'.$id.'.png';
+            }
+            else{
+                echo"/assets/pictures/default_avatar.png";
+            }
+            ?> id="avatar" alt="Profile Picture">
+             
+                <input id="file" type="file" onchange="loadFile(event)"/>
+                <label id="uploadbtn" for="file">
+                    <span class="fa-solid fa-camera"></span>
+                    <span>Change Image</span>
+                </label>
+            </div>
             <ul id="listinfo">
                 <li class="medium"><?php print_r($row[0][0]); ?></li>
                 <li class="medium"><?php print_r($row[0][1]); ?></li>

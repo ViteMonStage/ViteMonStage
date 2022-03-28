@@ -1,5 +1,6 @@
 const edit_button = document.getElementById("editbutton");
 const done_button = document.getElementById("end-editing");
+const edit_profile = document.getElementById("uploadbtn");
 var list = document.querySelectorAll(".infos li");
 var i;
 
@@ -17,6 +18,7 @@ function edit(){
         list[i].style.paddingRight = "3px";        
 }
     done_button.style.display = "Block";
+    edit_profile.style.display = "flex";
 };
 
 done_button.addEventListener("click",function(){
@@ -28,4 +30,11 @@ done_button.addEventListener("click",function(){
         list[i].style.margin = "0px";
     }
     done_button.style.display = "none";
+    edit_profile.style.display = "none";
 })
+
+var loadFile = function (event) {
+    var image = document.getElementById("avatar");
+    image.src = URL.createObjectURL(event.target.files[0]);
+  };
+  
