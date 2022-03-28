@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="./stylesheets/global.scss">
     <link rel="stylesheet" href="./stylesheets/offers.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-
 </head>
 
 <body>
     <header>
         <?php
-        include "./php/navbar.php"
+        include "./php/db.php"; //Used to get global pdo
+        include "./php/offers_sql.php";
+        include "./php/navbar.php";
         ?>
     </header>
 
@@ -56,7 +57,15 @@
     <input type="button" class="small btn search" id="searchbtn" value="Search">
 
 
-    <h2 class="title big resu">2 Results</h2>
+    <h2 class="title big resu">
+    <?php
+        $sql = ('SELECT * FROM 8aah0fCXko.offers;'); //prepared statement to verify email and password
+        $res = $pdo->query($sql);
+        $count = $res->fetchColumn() + 1;
+        echo "$count résults";
+    ?>
+    </h2>
+
     <!-- RESULT 1 -->
     <div class="s_result">
         <div class="in_desc">

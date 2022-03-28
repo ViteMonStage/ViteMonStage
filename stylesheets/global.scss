@@ -226,3 +226,21 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background: #3e413ec9; 
 }
+
+.small.btn {
+    /* Button style*/
+    color: rgb(255, 255, 255);
+    background-color: #51b700;
+    border-radius: 50px;
+    border-style: none;
+    height: 2.25em;
+}
+
+.small.btn:hover {
+    /* Button style*/
+    color: rgb(255, 255, 255);
+    background-color: #419100;
+    border-radius: 50px;
+    border-style: none;
+    height: 2.25em;
+}

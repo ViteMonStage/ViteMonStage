@@ -2,7 +2,10 @@
 include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to check if user is logged in. If not : redirects immediately in login page
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light"> <!-- Navbar that will be displayed in each regular page -->
+<script src="/js/notification.js"></script>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <!-- Navbar that will be displayed in each regular page -->
     <a class="navbar-brand maxi logo" href="/index.php">VMS</a>
     <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
@@ -25,15 +28,24 @@ include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to
                     <a href="/search_user.php" class="dropdown-item admin-list">Search users</a>
                 </div>
             </li>
-            <div class="dropdown show">
-                <a class=" nav-item nav-link dropdown-toggle small" href="#" role="button" id="navbar-notif-btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
-                <div class="dropdown-menu dropdown-menu-end " >
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+            <a class="nav-item nav-link small" href="#" role="button" id="navbar-notif-btn" data-bs-toggle="modal" data-bs-target="#notification-modal" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
+        </div>
+    </div>
+</nav>
+<div class="modal fade" id="notification-modal" tabindex="-1" aria-labelledby="notification-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title small" id="notification-modal">Notifications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small no-new">No new notification</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn small" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn small">Mark all as read</button>
                 </div>
             </div>
         </div>
-
     </div>
-</nav>
