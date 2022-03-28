@@ -112,9 +112,6 @@ include "../php/navbar.php";
                     <input type="submit" class="btn-primary btn Medium" id="newbtn" value="NEW ACCOUNT">
                 </div>
 
-
-
-
                 <!--USER DELETION-->
                 <div class="mantitl">
                     <h1 class="big titl">USER DELETION</h1>
@@ -127,7 +124,6 @@ include "../php/navbar.php";
                     <!--Ci-dessous le bouton delete-->
                     <input type="submit" class="btn-primary btn Medium" id="delbtn" value="DELETE ACCOUNT">
                 </div>
-
 
                 <!--USER MODIFICATION FIELD-->
                 <div class="mantitl">
