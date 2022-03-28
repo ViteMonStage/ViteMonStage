@@ -16,7 +16,9 @@
 <header>
     <!-- NAVBAR -->
     <?php
-    include "./php/navbar.php"
+    include "./php/offer_detail.php";
+    include "./php/navbar.php";
+    include "./php/wishlist.php";
     ?>
 </header>
 
@@ -32,14 +34,31 @@
             <h4 class="small">Number of candidates</h4>
             <h4 class="small">Offer starting date - Offer ending date</h4>
         </div>
-        <div class="off_wish">
-            <div class="off_wish_d1">
+        <?php
+        if(!isInWishlist($_SESSION["id_user"],$_GET["offer_id"])){
+            echo '<div class="wish">
+            <a class="addlink" href="/php/wishlist.php?add='.$_GET["offer_id"].'">
+                <div class="wish_d1">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="wish_d2">
+                    <h5 class="mini"> Add to wishlist</h5>
+                </div>
+            </a>
+            </div>';
+        }else{
+            echo '<div class="wish">
+            <a class="removelink" href="/php/wishlist.php?remove='.$_GET["offer_id"].'">
+            <div class="wish_d1">
                 <i class="fa-solid fa-star"></i>
             </div>
-            <div class="off_wish_d2">
-                <h5 class="mini"> Add to wishlist</h5>
+            <div class="wish_d2">
+                <h5 class="mini"> Remove from wishlist</h5>
             </div>
-        </div>
+            </a>
+            </div>';
+        }
+        ?>
 
     </div>
     <!--"Apply" section-->

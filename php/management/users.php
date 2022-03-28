@@ -50,7 +50,7 @@ if(isset($_POST['c_user'])){
     $row = $stm->fetchAll();
     $id_campus = $row[0][0];
     try {
-        $stm = $pdo->prepare('INSERT INTO user VALUES (?,?,?,?,?,?,?,?,NULL,?)'); //prepared statement to verify email and password
+        $stm = $pdo->prepare('INSERT INTO user VALUES (?,?,?,?,?,?,?,?,NULL,?, NULL)'); //prepared statement to verify email and password
         $stm->bindParam(1, $email);
         print_r($email);
         echo('<br>');

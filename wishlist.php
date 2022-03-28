@@ -26,30 +26,9 @@
             <h1 class="big title">Wishlist</h1>
         </div>
     </div>
-
-
-    <div class="result">
-        <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
-        <div class="in_desc">
-            <h3 class="medium">First wish</h3>
-            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini loca">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-        </div>
-        <a href="offers_detail.php" role="button" class="small btn offer">See offer</a>
-    </div>
-
-    <div class="result">
-        <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
-        <div class="in_desc">
-            <h3 class="medium">Second wish</h3>
-            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini loca">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-        </div>
-        <a href="offers_detail.php" role="button" class="small btn offer">See offer</a>
-    </div>
     <?php
     include dirname(__FILE__) . "/php/wishlist.php";
-    displayWishlist(6);
+    displayWishlist($_SESSION["id_user"]);
     ?>
     <?php
     include "./php/footer.php"

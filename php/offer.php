@@ -3,7 +3,7 @@ function displayOffers()
 {
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
-        $sql = $pdo->prepare('SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,sector_activity from offers
+        $sql = $pdo->prepare('SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,sector_activity,offers.id_offer from offers
         INNER JOIN company on offers.id_company = company.id_company
         INNER JOIN address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city
@@ -26,7 +26,7 @@ function displayOffers()
                 <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
             </div>
             <div>
-                <a href="offers_detail.php" role="button" class="small btn see">See Offer</a>
+                <a href="offers_detail.php?offer_id='. $value[7].'" role="button" class="small btn see">See Offer</a>
             </div>
         </div>
     </div>
