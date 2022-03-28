@@ -16,7 +16,7 @@
 
 <body>
     <?php
-    include "./php/navbar.php";
+    include_once "./php/navbar.php";
     ?>
     <h1 class="welcome big">Welcome on VMS</h1>
     <div class="row g-0">
@@ -72,7 +72,7 @@
         </div>
     </div>
     <?php
-    include "./php/footer.php"
+    include_once "./php/footer.php"
     ?>
 </body>
 

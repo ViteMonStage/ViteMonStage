@@ -1,8 +1,6 @@
 <?php
-include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to check if user is logged in. If not : redirects immediately in login page
+include_once dirname(__FILE__) . "/login_check.php"; //import login_check.php file to check if user is logged in. If not : redirects immediately in login page
 ?>
-
-<script src="/js/notification.js"></script>
 
 <nav class="navbar navbar-expand-lg navbar-light">
     <!-- Navbar that will be displayed in each regular page -->
@@ -33,19 +31,17 @@ include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to
     </div>
 </nav>
 <div class="modal fade" id="notification-modal" tabindex="-1" aria-labelledby="notification-modal-label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title small" id="notification-modal">Notifications</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="small no-new">No new notification</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn small" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn small">Mark all as read</button>
-                </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title small" id="notification-modal">Notifications</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <?php include_once dirname(__FILE__) . "/notification.php"; displayNotification();?>
+            <div class="modal-footer">
+                <button type="button" class="btn-notification small" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn-notification small">Mark all as read</button>
             </div>
         </div>
     </div>
+</div>

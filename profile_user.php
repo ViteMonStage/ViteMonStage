@@ -21,8 +21,8 @@
     <!-- NAVBAR -->
     <header>
         <?php
-        include "./php/navbar.php";
-        include "./php/profile.php";
+        include_once "./php/navbar.php";
+        include_once "./php/profile.php";
         ?>
     </header>
 
@@ -30,8 +30,9 @@
 
     <!-- PROFILE BANNER -->
         <div class="infos">
-            <img id="avatar" src="/assets/pictures/default_avatar.png" alt="Profile Picture">
-
+            
+            <img id="avatar" src=<?php echo"/assets/user_data/avatar/$id.png"?> alt="Profile Picture">
+           
             <ul id="listinfo">
                 <li class="medium"><?php print_r($row[0][0]); ?></li>
                 <li class="medium"><?php print_r($row[0][1]); ?></li>
@@ -247,7 +248,7 @@
 
 
     <?php
-    include "./php/footer.php";
+    include_once "./php/footer.php";
     ?>
 
 

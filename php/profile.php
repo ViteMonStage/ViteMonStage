@@ -5,7 +5,7 @@ if (!isset($_SESSION)){
 }
 //Get email value stored in the session
 $email=$_SESSION['email']; 
-include "db.php";
+include_once "db.php";
 //Preparing the request to get the infos from the table with the corresponding email address
 $sql = $pdo->prepare("SELECT 
                             lastname,
@@ -15,7 +15,8 @@ $sql = $pdo->prepare("SELECT
                             timestampdiff(year,birthday,now())as age ,
                             promotion_name,
                             campus_name,
-                            promotion_type
+                            promotion_type,
+                            id_user
                             from user
                             INNER JOIN campus on user.id_campus = campus.id_campus
                             INNER JOIN promotion on user.id_promotion = promotion.id_promotion 
@@ -25,5 +26,6 @@ $email = $_SESSION['email'];
 $sql->bindParam(':email', $email);
 $sql->execute();
 $row = $sql->fetchAll();
+$id = $row[0][8];
 
 ?>

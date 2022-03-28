@@ -111,9 +111,6 @@ include_once "../php/navbar.php";
                     <input type="submit" class="btn-primary btn Medium" id="newbtn" value="NEW ACCOUNT" name="c_user">
                 </div>
 
-
-
-
                 <!--USER DELETION-->
                 <div class="mantitl">
                     <h1 class="big titl">USER DELETION</h1>
@@ -138,7 +135,6 @@ include_once "../php/navbar.php";
                     }
                     ?>
                 </div>
-
 
                 <!--USER MODIFICATION FIELD-->
                 <div class="mantitl">
