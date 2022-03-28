@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
+include_once $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
 ?>
 <?php
-include "../php/navbar.php";
+include_once "../php/navbar.php";
 ?>
 
 <body>
@@ -32,26 +32,26 @@ include "../php/navbar.php";
                 <div class="col-sm-6 divg">
                     <div class="orga">
                         <label for="mailtbx" class="tbxindicator small">Email</label>
-                        <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
+                        <input type="email" class="form-control tbx medium" id="mailtbx" placeholder="mail@example.com" name="c_email"> <!-- e-mail field -->
                     </div>
                     <div class="orga">
                         <label for="passtbx" class="tbxindicator small">Password</label>
-                        <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••"> <!-- password field -->
+                        <input type="password" class="form-control tbx medium" id="passtbx" placeholder="••••••••••" name="c_password"> <!-- password field -->
                     </div>
                     <div class="orga">
                         <label for="passtbx_rep" class="tbxindicator small">Password (repeat)</label>
-                        <input type="password" class="form-control tbx medium" id="passtbx_rep" placeholder="••••••••••"> <!-- password repeat field -->
+                        <input type="password" class="form-control tbx medium" id="passtbx_rep" placeholder="••••••••••" name="c_password_r"> <!-- password repeat field -->
                     </div>
                     <div class="orga">
                         <label class="custom-file-label tbxindicator">Profile picture</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input fil1" id="customFile">
+                            <input type="file" class="custom-file-input fil1" id="customFile" name="c_profilepic">
                             <label class="custom-file-label filelabel medium" for="customFile">Choose file</label> <!-- Profile picture field -->
                         </div>
                     </div>
                     <div class="orga">
                         <label for="campustbx" class="tbxindicator small">Campus</label> <!-- Campus field -->
-                        <select class="form-control tbx medium" name="campus" id="campustbx">
+                        <select class="form-control tbx medium" name="c_campus" id="campustbx">
                             <option selected>Rouen</option>
                             <option>Caen</option>
                             <option>Nanterre</option>
@@ -61,25 +61,25 @@ include "../php/navbar.php";
                 <div class="col-sm-6 row divd">
                     <div class="orga">
                         <label for="lastnametbx" class="tbxindicator small">Lastname</label>
-                        <input type="text" class="form-control tbx medium" id="lastnametbx" placeholder="John"> <!-- name field -->
+                        <input type="text" class="form-control tbx medium" id="lastnametbx" placeholder="John" name="c_firstname"> <!-- name field -->
                     </div>
                     <div class="orga">
                         <label for="firstnametbx" class="tbxindicator small">Firstname</label>
-                        <input type="text" class="form-control tbx medium" id="firstnametbx" placeholder="Doe"> <!-- surname  field -->
+                        <input type="text" class="form-control tbx medium" id="firstnametbx" placeholder="Doe"name="c_lastname"> <!-- surname  field -->
                     </div>
                     <div class="orga2">
                         <div class="col-sm-7 orga3">
                             <!-- date of birth field -->
                             <label for="birthtbx" class="tbxindicator small">Birthday</label>
                             <div class="md-form md-outline input-with-post-icon datepicker">
-                                <input placeholder="Select date" type="date" id="birthtbx" class="form-control tbx medium">
+                                <input placeholder="Select date" type="date" id="birthtbx" class="form-control tbx medium" name="c_birthday">
                             </div>
                         </div>
                         <div class="col-sm-5 orga3">
 
                             <!-- gender field -->
                             <label for="gendertbx" class="tbxindicator small">Gender</label>
-                            <select class="form-control tbx medium" name="gender" id="gendertbx">
+                            <select class="form-control tbx medium" id="gendertbx" name="c_gender">
                                 <option selected>Male</option>
                                 <option>Female</option>
                                 <option>Other</option>
@@ -88,7 +88,7 @@ include "../php/navbar.php";
                     </div>
                     <div class="orga">
                         <label for="roletbx" class="tbxindicator small">Role</label> <!-- promotion field -->
-                        <select class="form-control tbx medium" name="role" id="roletbx">
+                        <select class="form-control tbx medium" id="roletbx" name="c_role">
                             <option selected>Student</option>
                             <option>Delegate</option>
                             <option>Pilot</option>
@@ -97,7 +97,7 @@ include "../php/navbar.php";
                     </div>
                     <div class="orga">
                         <label for="promotbx" class="tbxindicator small">Promotion</label> <!-- promotion field -->
-                        <select class="form-control tbx medium" name="promo" id="promotbx">
+                        <select class="form-control tbx medium" id="promotbx" name="c_promo">
                             <option selected>A1</option>
                             <option>A2 INFO</option>
                             <option>A2 GENERALISTE</option>
@@ -155,7 +155,7 @@ include "../php/navbar.php";
             </div>
         </div>
         <?php
-        include "../php/footer.php"
+        include_once "../php/footer.php"
         ?>
     </form>
 </body>
