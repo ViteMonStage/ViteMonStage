@@ -57,12 +57,16 @@ ul{
     margin-top: 10px;
     padding-left: 0;
 }
-
-img#avatar {
+.infos img {
+    height: 140px;
+    width: 140px;
+    object-fit: contain;
+}
+.border {
     height: 140px;
     width: 140px;
     border-style: solid;
-    border-radius: 20px;
+    border-radius: 75px;
     margin: 5px ;
     border-color: black;
 }
