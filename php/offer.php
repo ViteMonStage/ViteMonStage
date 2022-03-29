@@ -11,27 +11,26 @@ function displayOffers()
         $sql->execute();
         $row = $sql->fetchAll();
         if (isset($row[0]) == 1) {
-            foreach ($row as $value) {
-                echo '<div class="s_result">';
-                echo '<div class="in_desc">
-            <div>
-                <h3 class="medium off_name">' . $value[0] . '</h3>
-                <h4 class="small off_company">' . $value[1] . '</h4>
+            foreach ($row as $value) : ?>
+                <div class="s_result">
+                    <div class="in_desc">
+                        <div>
+                            <h3 class="medium off_name"><?php echo  $value[0] ?> </h3>
+                            <h4 class="small off_company"><?php echo  $value[1] ?></h4>
+                        </div>
+                        <p class="mini"><?php echo  $value[2] ?></p>
+                        <h4 class="mini"> <?php echo  $value[3] ?> (<?php echo  $value[4] ?>) - <?php echo  $value[5] ?> - <?php echo  $value[6] ?></h4>
+                    </div>
+                    <div class="in_logo">
+                        <div>
+                            <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
+                        </div>
+                        <div>
+                            <a href="offers_detail.php?id_offer=<?php echo  $value[7] ?>" role="button" class="small btn see">See Offer</a>
+                        </div>
+                    </div>
                 </div>
-                <p class="mini">' . $value[2] . '</p>
-                <h4 class="mini"> ' . $value[3] . '(' . $value[4] . ') - ' . $value[5] . ' - '. $value[6]. '</h4>
-            </div>  
-            <div class="in_logo">
-            <div>
-                <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
-            </div>
-            <div>
-                <a href="offers_detail.php?id_offer='. $value[7].'" role="button" class="small btn see">See Offer</a>
-            </div>
-        </div>
-    </div>
-        ';
-            }
+<?php endforeach;
         }
     } catch (\PDOException $e) {
         echo $e->getMessage();
@@ -39,14 +38,3 @@ function displayOffers()
         echo (int)$e->getCode();
     }
 }
-
-
-
-        
-           
-       
-        
-          
-          
-       
-       
