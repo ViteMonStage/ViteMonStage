@@ -157,9 +157,19 @@ include "../php/navbar.php";
                             echo '<p class="small error">Error, please try again.</p>';
                         }
                     }
+                    if (isset($_GET["c_error"])) {
+                        if ($_GET["c_error"] == "2") {
+                            echo '<p class="small error">Invid character detected, please try again.</p>';
+                        }
+                    }
                     if (isset($_GET["c_good"])) {
                         if ($_GET["c_good"] == "1") {
                             echo '<p class="small error">User successfuly created.</p>';
+                        }
+                    }
+                    if (isset($_GET["c_error"])) {
+                        if ($_GET["c_error"] == "3") {
+                            echo '<p class="small error">Please fill all textboxes.</p>';
                         }
                     }
                     ?>
