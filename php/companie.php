@@ -28,4 +28,6 @@ function displayCompanie()
         echo (int)$e->getCode(); 
         }
     }
+
+
     
