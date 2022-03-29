@@ -117,11 +117,11 @@ include "../php/navbar.php";
                         <select class="form-control tbx medium" id="promotbx" name="c_promo">
                             <?php
                             include "../db.php"; //Used to get global pdo
-                            $stm = $pdo->prepare('SELECT promotion_name, promotion_type FROM promotion INNER JOIN promotion_type ON promotion.id_promotion_type = promotion_type.id_promotion_type'); //query to get promotions and their type
+                            $stm = $pdo->prepare('SELECT id_promotion, promotion_name, promotion_type FROM promotion INNER JOIN promotion_type ON promotion.id_promotion_type = promotion_type.id_promotion_type'); //query to get promotions and their type
                             $stm->execute();
                             $row = $stm->fetchAll();
                             foreach ($row as $value) {
-                                echo '<option>' . $value[0] . ' ' . $value[1] . '</option>';
+                                echo '<option value='."$value[0]".'>' . $value[1] . ' - ' . $value[2] . '</option>';
                             }
                             ?>
                         </select>

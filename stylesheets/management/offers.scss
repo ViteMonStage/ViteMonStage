@@ -54,6 +54,11 @@
     resize: none;
 }
 
+.txbx{
+    margin-left: 30px;
+    width: 15px;
+    height: 15px;
+}
 .btn {
     /* Button style*/
     border-radius: 50px;
@@ -90,18 +95,20 @@
     height: 2.5em;
 }
 
-/* "Add x" buttons style */
-.btn2{
-    border-radius: 50px;
-    border-style: none;
-    color: #ffffff !important;
-    background-color: #84FF4A;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    height: 2em;
+/* This part emulate the file button but can be styled */
+.filelabel{
+    background-color: #EEEEEE;
     width: 100%;
-    margin-top: 10px;
-    font-size: 1.5em;
+    height: 2.5em;
+    border-radius: 50px;
+    position:relative;
+    bottom:40px;
+    right:0;
+    z-index: 1;
+    padding-top: 0.5em;
+    text-align: center;
+    color: black !important;
+    vertical-align: middle;
 }
 
 .error{

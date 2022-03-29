@@ -3,7 +3,9 @@ const done_button = document.getElementById("end-editing");
 const edit_profile = document.getElementById("uploadbtn");
 const file = document.querySelector("#file");
 var list = document.querySelectorAll(".infos li input");
-const li = document.getElementById("")
+const birthday = document.querySelector(".infos .datepicker");
+const age = document.getElementById("calendar");
+const promo = document.getElementById("listboxpromo")
 var i;
 
 
@@ -21,8 +23,14 @@ function edit(){
         list[i].style.paddingLeft = "5px";
         list[i].style.paddingRight = "3px";        
 }
+    list[4].style.display = "None";
+    list[6].style.display = "none";
+    age.style.display = "block";
     done_button.style.display = "Block";
     edit_profile.style.display = "flex";
+    age.style.margintop = "2.5px";
+    age.style.marginbottom= "2.5px";
+    promo.style.display = "block";
 };
 
 done_button.addEventListener("click",function(){
@@ -31,8 +39,9 @@ done_button.addEventListener("click",function(){
         list[i].setAttribute("readonly", "readonly");
         list[i].style.backgroundColor =  "transparent";
         list[i].style.color = "White";
-        list[i].style.margin = "0px";
+        list[i].style.margin = "2px";
     }
+    
     done_button.style.display = "none";
     edit_profile.style.display = "none";
 })

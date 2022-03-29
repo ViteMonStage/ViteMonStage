@@ -53,7 +53,31 @@
 .infos li {
     list-style: none;
 
+
 }
+.listbox{
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: 70%;
+    transform: translateX(20%);
+    outline: none;
+}
+.listbox{
+    display: none;
+}
+
+.infos li .md-form {
+    display: none;
+}
+.infos input[type=submit] {
+
+    background:url("../assets/icons/check-white.svg");
+    border:0;
+    outline:0;
+    background-size: cover;
+    
+    }
 .infos li input {
     background-color: transparent;
     color: white;
