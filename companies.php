@@ -29,17 +29,16 @@
         </div>
     </div>
     <!-- Filtre -->
+    <form action="/php/searchcompany.php" method="POST">
     <div class="row g-0 justify-content-center filt smalltitle bigtitle">
         <div class="col-lg-3 col-sm-12 colo">
             <label for="nametbx" class="tbxindicator small">Name</label>
 
-            <input type="text" class="tbx small" id="nametbx">
+            <input type="text" class="tbx small" id="nametbx" name="company_name">
         </div>
-
-
         <div class="col-lg-3 col-sm-12 colo">
             <label for="locationtbx" class="tbxindicator small">Location</label>
-            <select class="form-control tbx small"  id="nametbx">
+            <select class="form-control tbx small"  id="nametbx" name="location">
                             <?php
                             include "../db.php"; //Used to get global pdo
                             try {
@@ -61,8 +60,8 @@
                         </select>
         </div>
         <div class="col-lg-3 col-sm-12 colo">
-            <label for="sectortbx" class="tbxindicator small">Sector</label>
-            <select class="form-control tbx small"  id="sectortbx">
+            <label for="sectortbx" class="tbxindicator small" >Sector</label>
+            <select class="form-control tbx small"  id="sectortbx" name="sector_activity">
                             <?php
                             include "../db.php"; //Used to get global pdo
                             try {
@@ -85,6 +84,7 @@
             <input type="button" class="small btn search" value="Search">
         </div>
     </div>
+    </form>
     <!-- Result-->
     <h2 class="title big results">
         <?php

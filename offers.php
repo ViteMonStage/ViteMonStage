@@ -19,7 +19,7 @@
         include "./php/navbar.php";
         ?>
         <?php include "./php/db.php"; //Used to get global pdo ?>
-        <?php include "./php/offers_sql.php"; ?>
+   
     </header>
 
     <!-- BANNER -->
