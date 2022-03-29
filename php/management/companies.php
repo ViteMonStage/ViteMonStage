@@ -30,6 +30,9 @@ if (isset($_POST['c_company'])) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=3'); //if textbox is left empty
         die();
     }
+    if (empty($description)) {
+        $description=NULL;
+    }
     if (empty($street_name)) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=3'); //if textbox is left empty
         die();
@@ -37,6 +40,12 @@ if (isset($_POST['c_company'])) {
     if (empty($street_number)) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=3'); //if textbox is left empty
         die();
+    }
+    if (empty($building_name)) {
+        $building_name=NULL;
+    }
+    if (empty($floor)) {
+        $floor=NULL;
     }
     if (empty($zipcode)) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=3'); //if textbox is left empty
