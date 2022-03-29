@@ -154,7 +154,7 @@ if (isset($_POST['d_user'])) {
         die();
     }
     try {
-        $stm = $pdo->prepare('SELECT id_user, id_role FROM user WHERE email=?'); //prepared statement to verify email
+        $stm = $pdo->prepare('SELECT id_user FROM user WHERE email=?'); //prepared statement to verify email
         $stm->bindParam(1, $email);
         $stm->execute();
         $row = $stm->fetchAll();
@@ -164,7 +164,7 @@ if (isset($_POST['d_user'])) {
             $stm->execute();
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_good=1');
         } else { //if  mail is not valid , returns error code 1
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=1');
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=4');
             die();
         }
     } catch (\PDOException $e) {

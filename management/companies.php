@@ -115,12 +115,34 @@
                 <div class="col-sm-6 divg">
                     <div class="orga">
                         <label for="dnametbx" class="tbxindicator small">Enter the name of the company to be deleted</label>
-                        <input type="text" class="form-control tbx medium" id="dnametbx" placeholder="VTM Incorporated"> <!-- name field -->
+                        <input type="text" class="form-control tbx medium" id="dnametbx" placeholder="VTM Incorporated" name="d_name"> <!-- name field -->
                     </div>
                 </div>
                 <div>
                     <!--Ci-dessous le bouton delete-->
                     <input type="submit" class="btn-primary btn Medium" id="dlogbtn" value="DELETE COMPANY" name="d_company">
+                    <?php
+                    if (isset($_GET["c_error"])) {
+                        if ($_GET["c_error"] == "1") {
+                            echo '<p class="small error">Error, please try again.</p>';
+                        }
+                    }
+                    if (isset($_GET["c_good"])) {
+                        if ($_GET["c_good"] == "1") {
+                            echo '<p class="small error">Company successfuly created.</p>';
+                        }
+                    }
+                    if (isset($_GET["c_error"])) {
+                        if ($_GET["c_error"] == "3") {
+                            echo '<p class="small error">Please fill all mandatory textboxes.</p>';
+                        }
+                    }
+                    if (isset($_GET["c_error"])) {
+                        if ($_GET["c_error"] == "2") {
+                            echo '<p class="small error">Company does not exist.</p>';
+                        }
+                    }
+                    ?>
                 </div>
 
                 <!-- COMPANY MODIFICATION -->
@@ -144,6 +166,5 @@
     include "../php/footer.php"
     ?>
 </body>
-
 
 </html>
