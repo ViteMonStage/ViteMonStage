@@ -26,7 +26,7 @@ function displayOffers()
                 <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
             </div>
             <div>
-                <a href="offers_detail.php?offer_id='. $value[7].'" role="button" class="small btn see">See Offer</a>
+                <a href="offers_detail.php?id_offer='. $value[7].'" role="button" class="small btn see">See Offer</a>
             </div>
         </div>
     </div>
