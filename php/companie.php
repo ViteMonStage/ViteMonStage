@@ -10,22 +10,22 @@ function displayCompanie()
         $sql->execute();
         $row = $sql->fetchAll();
         if (isset($row[0]) == 1) {
-
-            foreach ($row as $value) {
-                echo '<div class="result">';
-                echo '<img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
+            foreach ($row as $value) : ?>
+                <div class="result">
+                <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
             <div class="in_desc">
-            <h3 class="medium">' . $value[0] . '</h3>
-            <p class="mini">' . $value[1] . '</p>
-            <h4 class="mini loca">' . $value[2] . '(' . $value[3] . ') - ' . $value[4] . '</h4>
+            <h3 class="medium"><?php  echo $value[0] ?></h3>
+            <p class="mini"><?php echo $value[1] ?></p>
+            <h4 class="mini loca"><?php echo $value[2] ?>(<?php echo $value[3] ?>) - <?php echo $value[4] ?></h4>
             </div>
-            <a role="button" href="./companies_detail.php" class="small btn detail">See </a>
-        </div>';
+            <a role="button" href="./companies_detail.php" class="small btn detail">See</a>
+        </div>  
+        <?php endforeach; 
             }
-        }
-    } catch (\PDOException $e) {
+        }   catch (\PDOException $e) {
         echo $e->getMessage();
         echo "   ";
-        echo (int)$e->getCode();
+        echo (int)$e->getCode(); 
+        }
     }
-}
+    
