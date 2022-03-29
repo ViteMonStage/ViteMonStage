@@ -105,45 +105,6 @@ if (isset($_POST['d_user'])) {
         $id_user = $row[0][0];
         $id_role = $row[0][1];
         if (isset($row[0]) == 1) {
-            if ($id_role == 1 || $id_role == 4) {
-                $stm = $pdo->prepare('DELETE FROM candidature WHERE id_user=?'); //prepared statement to delete user's candidatures
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-                $stm = $pdo->prepare('DELETE FROM evaluation WHERE id_user=?'); //prepared statement to delete user's evaluations
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-                $stm = $pdo->prepare('DELETE FROM notification WHERE id_user=?'); //prepared statement to delete user's notifications
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-                $stm = $pdo->prepare('DELETE FROM wish WHERE id_user=?'); //prepared statement to delete user's wishlist
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-            }
-            if ($id_role == 2 || $id_role == 4) {
-                $stm = $pdo->prepare('DELETE FROM permission WHERE id_user=?'); //prepared statement to delete user's permissions
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-                $stm = $pdo->prepare('DELETE FROM candidature WHERE id_user=?'); //prepared statement to delete user's candidatures
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-                $stm = $pdo->prepare('DELETE FROM evaluation WHERE id_user=?'); //prepared statement to delete user's evaluations
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-                $stm = $pdo->prepare('DELETE FROM notification WHERE id_user=?'); //prepared statement to delete user's notifications
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-            }
-            if ($id_role == 3 || $id_role == 4) {
-                $stm = $pdo->prepare('DELETE FROM trust WHERE id_user=?'); //prepared statement to delete user's trust evalutations
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-                $stm = $pdo->prepare('DELETE FROM notification WHERE id_user=?'); //prepared statement to delete user's notifications
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-                $stm = $pdo->prepare('DELETE FROM promotion_leader WHERE id_user=?'); //prepared statement to delete promotion leader status
-                $stm->bindParam(1, $id_user);
-                $stm->execute();
-            }
             $stm = $pdo->prepare('DELETE FROM user WHERE email=?'); //prepared statement to delete user
             $stm->bindParam(1, $email);
             $stm->execute();
