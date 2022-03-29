@@ -2,7 +2,7 @@
 include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to check if user is logged in. If not : redirects immediately in login page
 include dirname(__FILE__) . "/notification.php"; 
 ?>
-
+<script src="/js/notification.js"></script>
 <nav class="navbar navbar-expand-lg navbar-light">
     <!-- Navbar that will be displayed in each regular page -->
     <a class="navbar-brand maxi logo" href="/index.php">VMS</a>
@@ -43,7 +43,7 @@ include dirname(__FILE__) . "/notification.php";
             <?php displayNotification($_SESSION['id_user']);?>
             <div class="modal-footer">
                 <button type="button" class="btn-notification small" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn-notification small">Mark all as read</button>
+                <button type="button" class="btn-notification small markallasread" data-bs-dismiss="modal">Mark all as read</button>
             </div>
         </div>
     </div>
