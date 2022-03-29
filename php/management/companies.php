@@ -14,8 +14,15 @@ if (isset($_POST['c_company'])) {
     $building_name = $_POST['c_building_name'];
     $floor = $_POST['c_floor'];
 
-    $zipcode = $_POST['c_zip'];
     $cityname = $_POST['c_city'];
+    $stm = $pdo->prepare('SELECT zipcode FROM city WHERE cityname=?'); //We get the last company id
+    $stm->bindParam(1, $cityname);
+    if ($stm->execute() == FALSE) {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1'); //if a value is not valid / an error occured , returns error code 1
+        die();
+    }
+    $row = $stm->fetchAll();
+    $zipcode = $row[0][0];
 
     //CHECK IF TEXTBOXES ARE FILLED
     if (empty($name)) {
@@ -46,10 +53,6 @@ if (isset($_POST['c_company'])) {
     }
     if (empty($floor)) {
         $floor=NULL;
-    }
-    if (empty($zipcode)) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=3'); //if textbox is left empty
-        die();
     }
     if (empty($cityname)) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=3'); //if textbox is left empty
@@ -92,11 +95,6 @@ if (isset($_POST['c_company'])) {
         die();
     }
     if (preg_match('/[\'^}{#~><>¬]/', $floor)) {
-        // one or more of the 'special characters' found in $string
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=2'); //if a character is not valid, returns error code 2
-        die();
-    }
-    if (preg_match('/[\'^}{#~><>¬]/', $zipcode)) {
         // one or more of the 'special characters' found in $string
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=2'); //if a character is not valid, returns error code 2
         die();
@@ -159,7 +157,7 @@ if (isset($_POST['c_company'])) {
 
 
 //DELETE COMPANY
-if (isset($_POST['d_user'])) {
+if (isset($_POST['d_company'])) {
     $name = $_POST['d_name'];
     if(empty($name)){
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/company.php?d_error=3'); //if textbox is left empty
@@ -179,6 +177,6 @@ if (isset($_POST['d_user'])) {
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?d_error=2');
         }
     } catch (\PDOException $e) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1'); //if a value is not valid , returns error code 1
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?d_error=1'); //if a value is not valid , returns error code 1
     }
 }

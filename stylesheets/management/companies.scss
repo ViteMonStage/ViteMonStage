@@ -29,7 +29,7 @@
     /* Textboxes style*/
     border-radius: 50px;
     border-style: none;
-    color: #777777 !important;
+    color: black !important;
     background-color: #EEEEEE;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -37,10 +37,14 @@
     font-size: 1.2em;
 }
 
+::placeholder{
+    color: #777777 !important;
+}
+
 .ltbx{
     border-radius: 50px;
     border-style: none;
-    color: #777777 !important;
+    color: black !important;
     background-color: #EEEEEE;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -81,12 +85,6 @@
     margin-top: 15%;
 }
 
-/* This part allow to hide the mandatory "browse" button */
-.custom-file-input.fil1{
-    filter: opacity(0);
-    height: 2.5em;
-}
-
 /* This part emulate the file button but can be styled */
 .filelabel{
     background-color: #EEEEEE;
@@ -99,24 +97,9 @@
     z-index: 1;
     padding-top: 0.5em;
     text-align: center;
-    color: #777777 !important;
+    color: black !important;
     vertical-align: middle;
 }
-
-/* "Add x" buttons style */
-.btn2{
-    border-radius: 50px;
-    border-style: none;
-    color: #ffffff !important;
-    background-color: #84FF4A;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    height: 2em;
-    width: 100%;
-    margin-top: 10px;
-    font-size: 1.5em;
-}
-
 
 .error{
     color:red;
