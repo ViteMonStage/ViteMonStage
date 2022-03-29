@@ -24,7 +24,7 @@ function displayWishlist($id_user)
                     <p class="mini">Description : ' . shortenString($value[0]) . '</p>
                     <h4 class="mini loca">' . $value[10] . ' (' . $value[9] . ') - Publication date : ' . $value[11] . ' - ' . $value[4] . '</h4>
                 </div>
-                <a href="offers_detail.php?offer_id=' . $value[12] . '" role="button" class="small btn offer">See offer</a>
+                <a href="offers_detail.php?id_offer=' . $value[12] . '" role="button" class="small btn offer">See offer</a>
                 </div>';
             }
         } else {
@@ -56,20 +56,20 @@ function isInWishlist($id_user, $id_offer)
     }
     return false;
 }
-function addInWishlist($id_user, $offer_id)
+function addInWishlist($id_user, $id_offer)
 {
     try {
-        if(!offerExists($offer_id)){
-            header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?offer_id='.$offer_id);
+        if(!offerExists($id_offer)){
+            header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?id_offer='.$id_offer);
         }else{
             //header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?offdder_id='.$offer_id);
         }
         include dirname(__FILE__) . "./db.php"; //Used to get global pdo
         $stm = $pdo->prepare('INSERT INTO wish VALUES (?,?)'); //prepared statement to verify email and password
-        $stm->bindParam(1, $offer_id);
+        $stm->bindParam(1, $id_offer);
         $stm->bindParam(2, $id_user);
         $stm->execute();
-        header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?offer_id='.$offer_id);
+        header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?id_offer='.$id_offer);
     } catch (\PDOException $e) {
         echo $e->getMessage();
         echo "   ";
@@ -77,20 +77,20 @@ function addInWishlist($id_user, $offer_id)
     }
 }
 
-function removeFromWishlist($id_user, $offer_id)
+function removeFromWishlist($id_user, $id_offer)
 {
     try {
-        if(!offerExists($offer_id)){
-            header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?offer_id='.$offer_id);
+        if(!offerExists($id_offer)){
+            header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?id_offer='.$id_offer);
         }else{
             //header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?offdder_id='.$offer_id);
         }
         include dirname(__FILE__) . "./db.php"; //Used to get global pdo
         $stm = $pdo->prepare('DELETE FROM wish  WHERE id_offer=? AND id_user=?'); //prepared statement to verify email and password
-        $stm->bindParam(1, $offer_id);
+        $stm->bindParam(1, $id_offer);
         $stm->bindParam(2, $id_user);
         $stm->execute();
-        header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?offer_id='.$offer_id);
+        header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?id_offer='.$id_offer);
     } catch (\PDOException $e) {
         echo $e->getMessage();
         echo "   ";
@@ -109,17 +109,16 @@ function shortenString($string)
 if (isset($_GET["add"])) {
 }
 
-function offerExists($offer_id){
+function offerExists($id_offer){
     try {
         include dirname(__FILE__) . "./db.php"; //Used to get global pdo
         $stm = $pdo->prepare('SELECT id_offer FROM offers WHERE id_offer=?');
-        $stm->bindParam(1, $offer_id);
+        $stm->bindParam(1, $id_offer);
         $stm->execute();
         $row = $stm->fetchAll();
         if (isset($row[0]) == 1) {
             return true;
         }else{
-            var_dump($row);
             return false;
         }
     }catch(Exception $e){
