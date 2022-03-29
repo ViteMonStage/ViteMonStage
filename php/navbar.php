@@ -16,6 +16,7 @@ include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to
             <a class="nav-item nav-link small" href="/companies.php" id="navbar-companies-btn"><i class="fa-solid fa-building"></i> COMPANIES</a>
             <a class="nav-item nav-link small navbar-highlight" href="/profile_user.php" id="navbar-profile-btn"><i class="fa-solid fa-user"></i> PROFILE</a>
             <a class="nav-item nav-link small navbar-highlight-logout" href="/php/disconnect.php" id="navbar-logout-btn"><i class="fa-solid fa-lock"></i> LOG OUT</a>
+            <?php if($_SESSION["role"] == 4):?>
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle small admin-list" href="#" data-bs-toggle="dropdown" id="navbar-admin-btn"><i class="fa-solid fa-gear" aria-expanded="false"></i> ADMINISTRATION</a>
                 <div class="dropdown-menu dropdown-menu-end admin-list">
@@ -26,6 +27,7 @@ include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to
                     <a href="/search_user.php" class="dropdown-item admin-list">Search users</a>
                 </div>
             </li>
+            <?php endif;?>
             <a class="nav-item nav-link small" href="#" role="button" id="navbar-notif-btn" data-bs-toggle="modal" data-bs-target="#notification-modal" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
         </div>
     </div>

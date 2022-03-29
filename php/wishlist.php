@@ -16,20 +16,20 @@ function displayWishlist($id_user)
         $stm->execute();
         $row = $stm->fetchAll();
         if (isset($row[0]) == 1) {
-            foreach ($row as $value) {
-                echo '<div class="result">
-                <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
-                <div class="in_desc">
-                    <h3 class="medium">' . $value[3] . ' • ' . $value[1] . '</h3>
-                    <p class="mini">Description : ' . shortenString($value[0]) . '</p>
-                    <h4 class="mini loca">' . $value[10] . ' (' . $value[9] . ') - Publication date : ' . $value[11] . ' - ' . $value[4] . '</h4>
-                </div>
-                <a href="offers_detail.php?id_offer=' . $value[12] . '" role="button" class="small btn offer">See offer</a>
-                </div>';
-            }
-        } else {
-            echo '<p class="small">No wishlist</p>';
-        }
+            foreach ($row as $value) : ?>
+                <div class="result">
+                    <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
+                    <div class="in_desc">
+                        <h3 class="medium"><?php echo $value[3] ?> • <?php echo $value[1]?></h3>
+                        <p class="mini">Description : <?php echo shortenString($value[0])?></p>
+                        <h4 class="mini loca"><?php echo $value[10]?> (<?php echo $value[9] ?>) - Publication date : <?php echo $value[11] ?> - <?php echo $value[4] ?></h4>
+                    </div>
+                    <a href="offers_detail.php?id_offer=<?php echo $value[12]?>'" role="button" class="small btn offer">See offer</a>
+                </div>  ;
+        <?php endforeach;
+        } else {?>
+            <p class="small">No wishlist</p>
+        <?php }
     } catch (\PDOException $e) {
         echo $e->getMessage();
         echo "   ";
@@ -59,9 +59,9 @@ function isInWishlist($id_user, $id_offer)
 function addInWishlist($id_user, $id_offer)
 {
     try {
-        if(!offerExists($id_offer)){
-            header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?id_offer='.$id_offer);
-        }else{
+        if (!offerExists($id_offer)) {
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $id_offer);
+        } else {
             //header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?offdder_id='.$offer_id);
         }
         include dirname(__FILE__) . "./db.php"; //Used to get global pdo
@@ -69,7 +69,7 @@ function addInWishlist($id_user, $id_offer)
         $stm->bindParam(1, $id_offer);
         $stm->bindParam(2, $id_user);
         $stm->execute();
-        header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?id_offer='.$id_offer);
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $id_offer);
     } catch (\PDOException $e) {
         echo $e->getMessage();
         echo "   ";
@@ -80,9 +80,9 @@ function addInWishlist($id_user, $id_offer)
 function removeFromWishlist($id_user, $id_offer)
 {
     try {
-        if(!offerExists($id_offer)){
-            header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?id_offer='.$id_offer);
-        }else{
+        if (!offerExists($id_offer)) {
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $id_offer);
+        } else {
             //header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?offdder_id='.$offer_id);
         }
         include dirname(__FILE__) . "./db.php"; //Used to get global pdo
@@ -90,7 +90,7 @@ function removeFromWishlist($id_user, $id_offer)
         $stm->bindParam(1, $id_offer);
         $stm->bindParam(2, $id_user);
         $stm->execute();
-        header("Location: http://".$_SERVER['HTTP_HOST'].'/offers_detail.php?id_offer='.$id_offer);
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $id_offer);
     } catch (\PDOException $e) {
         echo $e->getMessage();
         echo "   ";
@@ -109,7 +109,8 @@ function shortenString($string)
 if (isset($_GET["add"])) {
 }
 
-function offerExists($id_offer){
+function offerExists($id_offer)
+{
     try {
         include dirname(__FILE__) . "./db.php"; //Used to get global pdo
         $stm = $pdo->prepare('SELECT id_offer FROM offers WHERE id_offer=?');
@@ -118,20 +119,21 @@ function offerExists($id_offer){
         $row = $stm->fetchAll();
         if (isset($row[0]) == 1) {
             return true;
-        }else{
+        } else {
             return false;
         }
-    }catch(Exception $e){
+    } catch (Exception $e) {
         echo $e->getMessage();
         echo "   ";
         echo (int)$e->getCode();
     }
 }
 
-if(isset($_GET["add"])){
+
+if (isset($_GET["add"])) {
     session_start();
     addInWishlist($_SESSION["id_user"], $_GET["add"]);
-}else if(isset($_GET["remove"])){
+} else if (isset($_GET["remove"])) {
     session_start();
     removeFromWishlist($_SESSION["id_user"], $_GET["remove"]);
 }
