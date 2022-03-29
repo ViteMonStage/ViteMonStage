@@ -7,6 +7,7 @@ if (!isset($_SESSION)){
 $email=$_SESSION['email']; 
 include "db.php";
 //Preparing the request to get the infos from the table with the corresponding email address
+try{
 $sql = $pdo->prepare("SELECT 
                             lastname,
                             firstname,
@@ -27,5 +28,24 @@ $sql->bindParam(':email', $email);
 $sql->execute();
 $row = $sql->fetchAll();
 $id = $row[0][8];
+}
+catch(\PDOException $e){
+    echo $e->getMessage();
+    echo "     ";
+    echo(int)$e->getCode();
+}
 
+if(isset($_POST['postbutton'])){
+    $surname = $_POST['surname'];
+    $name = $_POST['name'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $birthday = $_POST['birthday'];
+    $promotion = $_POST['promotion'];
+    $campus = $_POST['campus'];
+    $promotype = $_POST['promotype'];
+
+
+$sql = $pdo->prepare("UPDATE ");
+}
 ?>

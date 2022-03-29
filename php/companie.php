@@ -18,7 +18,7 @@ function displayCompanie()
             <p class="mini"><?php echo $value[1] ?></p>
             <h4 class="mini loca"><?php echo $value[2] ?>(<?php echo $value[3] ?>) - <?php echo $value[4] ?></h4>
             </div>
-            <a role="button" href="./companies_detail.php" class="small btn detail">See</a>
+            <a role="button" href="./companies_detail.php" class="small btn detail see">See</a>
         </div>  
         <?php endforeach; 
             }

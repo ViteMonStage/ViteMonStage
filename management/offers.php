@@ -48,6 +48,36 @@
                             <option>COMPANY 2</option>
                         </select>
                     </div>
+                    <div class="orga5">
+                        <label class="tbxindicator Medium promotex">Promotions concerned</label>
+                        <div>
+                            <!-- Promotions concerned field -->
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx1">
+                                <label for="promtbx1" class="tbxindicator mini">CPIA1</label>
+                            </div>
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx2">
+                                <label for="promtbx2" class="tbxindicator mini">CPIA2 INFO</label>
+                            </div>
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx3">
+                                <label for="promtbx3" class="tbxindicator mini">CPIA2 GEN</label>
+                            </div>
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx4">
+                                <label for="promtbx4" class="tbxindicator mini">CPIA2 S3E</label>
+                            </div>
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx5">
+                                <label for="promtbx5" class="tbxindicator mini">CPIA2 BTP</label>
+                            </div>
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx6">
+                                <label for="promtbx6" class="tbxindicator mini">CPIA3</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm-6 row divd">
                     <div class="orga">
@@ -78,33 +108,12 @@
                         <label for="nbrtbx" class="tbxindicator small">Number of Interns</label>
                         <input type="number" class="form-control tbx medium" id="nbrtbx" placeholder="1"> <!-- number of interns field -->
                     </div>
-                </div>
-                <label class="tbxindicator Medium promotex">Promotions concerned</label>
-                <div class="orga5">
-                    <!-- Promotions concerned field -->
-                    <div class="checkb">
-                        <input type="checkbox" class="medium" id="promtbx1">
-                        <label for="promtbx1" class="tbxindicator mini">CPIA1</label>
-                    </div>
-                    <div class="checkb">
-                        <input type="checkbox" class="medium" id="promtbx2">
-                        <label for="promtbx2" class="tbxindicator mini">CPIA2 INFO</label>
-                    </div>
-                    <div class="checkb">
-                        <input type="checkbox" class="medium" id="promtbx3">
-                        <label for="promtbx3" class="tbxindicator mini">CPIA2 GEN</label>
-                    </div>
-                    <div class="checkb">
-                        <input type="checkbox" class="medium" id="promtbx4">
-                        <label for="promtbx4" class="tbxindicator mini">CPIA2 S3E</label>
-                    </div>
-                    <div class="checkb">
-                        <input type="checkbox" class="medium" id="promtbx5">
-                        <label for="promtbx5" class="tbxindicator mini">CPIA2 BTP</label>
-                    </div>
-                    <div class="checkb">
-                        <input type="checkbox" class="medium" id="promtbx6">
-                        <label for="promtbx6" class="tbxindicator mini">CPIA3</label>
+                    <div class="orga">
+                        <label class="custom-file-label tbxindicator">Profile picture</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input fil1" id="customFile" name="c_profilepic">
+                            <label class="custom-file-label filelabel medium" for="customFile">Choose file</label> <!-- Profile picture field -->
+                        </div>
                     </div>
                 </div>
                 <div>

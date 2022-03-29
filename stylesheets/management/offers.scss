@@ -47,13 +47,17 @@
     background-color: #EEEEEE;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: 600;
-    height: 11em;
+    height: 12em;
     font-size: 1.2em;
     padding-right: 15px;
     padding-left: 15px;
     resize: none;
 }
 
+.txbx{
+    width: 20px;
+    height: 20px;
+}
 .btn {
     /* Button style*/
     border-radius: 50px;
@@ -90,18 +94,20 @@
     height: 2.5em;
 }
 
-/* "Add x" buttons style */
-.btn2{
-    border-radius: 50px;
-    border-style: none;
-    color: #ffffff !important;
-    background-color: #84FF4A;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    height: 2em;
+/* This part emulate the file button but can be styled */
+.filelabel{
+    background-color: #EEEEEE;
     width: 100%;
-    margin-top: 10px;
-    font-size: 1.5em;
+    height: 2.5em;
+    border-radius: 50px;
+    position:relative;
+    bottom:40px;
+    right:0;
+    z-index: 1;
+    padding-top: 0.5em;
+    text-align: center;
+    color: black !important;
+    vertical-align: middle;
 }
 
 .error{
@@ -126,19 +132,27 @@
 }
 
 .orga4{
-    height: 20em;
+    height: 21.75em;
     padding:0;
 }
 
 .orga5{
-    width: 330px;
     background-color:#EEEEEE;
     border-radius: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
+    margin-top: 40px;
 }
 
 .promotex{
-    text-align: center;
-    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
+.checkb{
+    width: 10em;
+    padding-left: 20px;
+    display: inline-block;
+    margin-left: 10px;
+    
+
+}
