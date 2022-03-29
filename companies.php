@@ -36,6 +36,7 @@
             <input type="text" class="tbx small" id="nametbx">
         </div>
 
+
         <div class="col-lg-3 col-sm-12 colo">
             <label for="locationtbx" class="tbxindicator small">Location</label>
             <select class="form-control tbx small"  id="nametbx">
@@ -61,15 +62,41 @@
         </div>
         <div class="col-lg-3 col-sm-12 colo">
             <label for="sectortbx" class="tbxindicator small">Sector</label>
-            <input type="text" class="tbx small" id="sectortbx">
+            <select class="form-control tbx small"  id="sectortbx">
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            try {
+                                $stm = $pdo->prepare('SELECT sector_activity from company'); //prepared statement to get campuses name
+                                $stm->execute();
+                                $row = $stm->fetchAll();
+                                foreach($row as $value)
+                                {
+                                    echo'<option>'.$value[0].'</option>';
+                                }
+                            } catch (\PDOException $e) {
+                                echo $e->getMessage();
+                                echo "   ";
+                                echo (int)$e->getCode();
+                            }
+                            ?>
+                        </select>
         </div>
         <div class="col-lg-3 col-sm-12 colo">
             <input type="button" class="small btn search" value="Search">
         </div>
     </div>
-    <!-- Resut-->
+    <!-- Result-->
+    <h2 class="title big results">
+        <?php
+        $sql = ('SELECT count(id_company) FROM company;'); //
+        $res = $pdo->query($sql);
+        $count = $res->fetchColumn();
+        echo "$count Results";
+        ?>
+        </h2>
 
     <h2 class="results big"> </h2>
+    <!--Function allowing the dynamic display of the different companies in our database -->
     <?php include_once dirname(__FILE__) . "/php/companie.php";displayCompanie(); ?>
     <?php
     include "./php/footer.php"
