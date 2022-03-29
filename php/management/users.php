@@ -65,26 +65,22 @@ if (isset($_POST['c_user'])) {
             $stm->execute();
             $row = $stm->fetchAll();
             $id_user = $row[0][0];
-
             $stm = $pdo->prepare('INSERT INTO permission (search_company, create_company, modify_company, evaluate_company, delete_company, stats_company, search_offer, create_offer, modify_offer, delete_offer, stats_offer, search_pilot, create_pilot, modify_pilot, delete_pilot, search_delegate, create_delegate, modify_delegate, delete_delegate, search_student, create_student, modify_student, delete_student, stats_student, id_user)VALUES(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, ? );'); //Fill permission for delegates
             $stm->bindParam(1, $id_user);
             $stm->execute();
-
             $stm = $pdo->prepare('SELECT MAX(id) FROM permission'); //We get the last permission id
             $stm->bindParam(1, $id_user);
             $stm->execute();
             $id_permission = $row[0][0];
-
-
-
             $stm = $pdo->prepare('UPDATE user SET id_permission = ? WHERE id_user= ?'); //Update user table
             $stm->bindParam(1, $id_permission);
             $stm->bindParam(2, $id_user);
             $stm->execute();
         }
         if (isset($row[0]) == 1) {
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_good=1');
         } else {
-            //if a value is not valid , returns error code 1
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if a value is not valid , returns error code 1
         }
     } catch (\PDOException $e) {
         echo $e->getMessage();

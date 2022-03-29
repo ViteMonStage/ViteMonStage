@@ -28,7 +28,6 @@ include_once "../php/navbar.php";
                 <div class="mantitl">
                     <h1 class="big titl">USER CREATION</h1>
                 </div>
-
                 <div class="col-sm-6 divg">
                     <div class="orga">
                         <label for="mailtbx" class="tbxindicator small">Email</label>
@@ -41,6 +40,13 @@ include_once "../php/navbar.php";
                     <div class="orga">
                         <label for="passtbx_rep" class="tbxindicator small">Password (repeat)</label>
                         <input type="password" class="form-control tbx medium" id="passtbx_rep" placeholder="••••••••••" name="c_password_r"> <!-- password repeat field -->
+                        <?php
+                        if (isset($_GET["c_pass"])) {
+                            if ($_GET["c_pass"] == "1") {
+                                echo '<p class="small error">Password verification failed.</p>';
+                            }
+                        }
+                        ?>
                     </div>
                     <div class="orga">
                         <label class="custom-file-label tbxindicator">Profile picture</label>
@@ -110,6 +116,18 @@ include_once "../php/navbar.php";
                 <div>
                     <!--Ci-dessous le bouton submit-->
                     <input type="submit" class="btn-primary btn Medium" id="newbtn" value="NEW ACCOUNT" name="c_user">
+                    <?php
+                    if (isset($_GET["c_error"])) {
+                        if ($_GET["d_error"] == "1") {
+                            echo '<p class="small error">E-mail incorrect, please try again.</p>';
+                        }
+                    }
+                    if (isset($_GET["c_good"])) {
+                        if ($_GET["c_good"] == "1") {
+                            echo '<p class="small error">User successfuly created.</p>';
+                        }
+                    }
+                    ?>
                 </div>
 
                 <!--USER DELETION-->
