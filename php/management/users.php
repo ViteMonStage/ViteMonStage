@@ -20,7 +20,10 @@ if (isset($_POST['c_user'])) {
     //prepared statement to get role id
     $stm = $pdo->prepare('SELECT id_role FROM role WHERE role = ?');
     $stm->bindParam(1, $_POST['c_role']);
-    $stm->execute();
+    if($stm->execute() == FALSE)
+    {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+    }
     $row = $stm->fetchAll();
     $id_role = $row[0][0];
     //get promotion id    
@@ -44,11 +47,14 @@ if (isset($_POST['c_user'])) {
     //prepared statement to get campus id    
     $stm = $pdo->prepare('SELECT id_campus FROM campus WHERE campus_name = ?');
     $stm->bindParam(1, $_POST['c_campus']);
-    $stm->execute();
+    if($stm->execute() == FALSE)
+    {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+    }
     $row = $stm->fetchAll();
     $id_campus = $row[0][0];
     try {
-        $stm = $pdo->prepare('INSERT INTO user (email, password, firstname, lastname, birthday, gender, id_role, id_promotion, id_permission, id_campus) VALUES (?,?,?,?,?,?,?,?,NULL,?)'); //prepared statement to verify email and password
+        $stm = $pdo->prepare('INSERT INTO user (email, password, firstname, lastname, birthday, gender, id_role, id_promotion, id_permission, id_campus) VALUES (?,?,?,?,?,?,?,?,NULL,?)'); //prepared statement to insert values
         $stm->bindParam(1, $email);
         $stm->bindParam(2, $password);
         $stm->bindParam(3, $firstname);
@@ -58,34 +64,43 @@ if (isset($_POST['c_user'])) {
         $stm->bindParam(7, $id_role);
         $stm->bindParam(8, $id_promotion);
         $stm->bindParam(9, $id_campus);
-        $stm->execute();
+        if($stm->execute() == FALSE)
+        {
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+        }
         if ($id_role == 2) {
             $stm = $pdo->prepare('SELECT id_user from user WHERE email = ?'); // We get the id from the user we just created
             $stm->bindParam(1, $email);
-            $stm->execute();
+            if($stm->execute() == FALSE)
+            {
+                header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+            }
             $row = $stm->fetchAll();
             $id_user = $row[0][0];
             $stm = $pdo->prepare('INSERT INTO permission (search_company, create_company, modify_company, evaluate_company, delete_company, stats_company, search_offer, create_offer, modify_offer, delete_offer, stats_offer, search_pilot, create_pilot, modify_pilot, delete_pilot, search_delegate, create_delegate, modify_delegate, delete_delegate, search_student, create_student, modify_student, delete_student, stats_student, id_user)VALUES(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, ? );'); //Fill permission for delegates
             $stm->bindParam(1, $id_user);
-            $stm->execute();
-            $stm = $pdo->prepare('SELECT MAX(id) FROM permission'); //We get the last permission id
+            if($stm->execute() == FALSE)
+            {
+                header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+            }
+            $stm = $pdo->prepare('SELECT MAX(id_permission) FROM permission'); //We get the last permission id
             $stm->bindParam(1, $id_user);
-            $stm->execute();
+            {
+                header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+            }
+            $row = $stm->fetchAll();
             $id_permission = $row[0][0];
             $stm = $pdo->prepare('UPDATE user SET id_permission = ? WHERE id_user= ?'); //Update user table
             $stm->bindParam(1, $id_permission);
             $stm->bindParam(2, $id_user);
-            $stm->execute();
+            if($stm->execute() == FALSE)
+            {
+                header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+            }
         }
-        if (isset($row[0]) == 1) {
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_good=1');
-        } else {
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if a value is not valid , returns error code 1
-        }
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_good=1');//if everything is good , returns good code 1
     } catch (\PDOException $e) {
-        echo $e->getMessage();
-        echo "   ";
-        echo (int)$e->getCode();
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if exception , returns error code 1
     }
 }
 
@@ -107,8 +122,6 @@ if (isset($_POST['d_user'])) {
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=1');
         }
     } catch (\PDOException $e) {
-        echo $e->getMessage();
-        echo "   ";
-        echo (int)$e->getCode();
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1');//if a value is not valid , returns error code 1
     }
 }

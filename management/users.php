@@ -153,8 +153,8 @@ include "../php/navbar.php";
                     <input type="submit" class="btn-primary btn Medium" id="newbtn" value="NEW ACCOUNT" name="c_user">
                     <?php
                     if (isset($_GET["c_error"])) {
-                        if ($_GET["d_error"] == "1") {
-                            echo '<p class="small error">E-mail incorrect, please try again.</p>';
+                        if ($_GET["c_error"] == "1") {
+                            echo '<p class="small error">Error, please try again.</p>';
                         }
                     }
                     if (isset($_GET["c_good"])) {

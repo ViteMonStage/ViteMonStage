@@ -39,6 +39,8 @@
                         <input type="text" class="form-control tbx medium" id="mailtbx" placeholder="VTM.Incorporated@vtm.com" name="c_mail"> <!-- email field -->
                     </div>
                     <div class="orga">
+                    </div>
+                    <div class="orga">
                         <label for="stnametbx" class="tbxindicator small">Street Name</label>
                         <input type="text" class="form-control tbx medium" id="stnametbx" placeholder="Garry Vignot boulevard" name="c_street_name"> <!-- street name field -->
                     </div>
@@ -55,16 +57,14 @@
                 <div class="col-sm-6 row divd">
                     <div class="orga">
                         <label for="sectortbx" class="tbxindicator small">Sector</label> <!-- sector field -->
-                        <select class="form-control tbx medium" name="c_sector" id="sectortbx">
-                            <option selected>SECTOR</option>
-                            <option>SECTOR 1</option>
-                            <option>SECTOR 2</option>
-                        </select>
+                        <input type="text" class="form-control tbx medium" id="sectortbx" placeholder="Electronics" name="c_sector"> <!-- sector field -->
+                    </div>
+                    <div class="orga4">
+                        <label for="desctbx" class="tbxindicator small">Description</label>
+                        <textarea class="form-control ltbx medium" id="desctbx" name = "c_desc" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
                     </div>
                     <div class="orga">
-                    </div>
-                    <div class="orga">
-                        <label for="stnumbtbx" class="tbxindicator small">Street Name</label>
+                        <label for="stnumbtbx" class="tbxindicator small">Street Number</label>
                         <input type="text" class="form-control tbx medium" id="stnumbtbx" placeholder="22 bis" name="c_street_number"> <!-- street number field -->
                     </div>
                     <div class="orga">
@@ -80,6 +80,18 @@
                 <div>
                     <!--Ci-dessous le bouton submit-->
                     <input type="submit" class="btn-primary btn Medium" id="logbtn" value="NEW COMPANY" name="c_company">
+                    <?php
+                    if (isset($_GET["c_error"])) {
+                        if ($_GET["c_error"] == "1") {
+                            echo '<p class="small error">Error, please try again.</p>';
+                        }
+                    }
+                    if (isset($_GET["c_good"])) {
+                        if ($_GET["c_good"] == "1") {
+                            echo '<p class="small error">Company successfuly created.</p>';
+                        }
+                    }
+                    ?>
                 </div>
 
 
@@ -112,7 +124,6 @@
                     <!--Ci-dessous le bouton submit-->
                     <input type="submit" class="btn-primary btn Medium" id="mlogbtn" value="MODIFY COMPANY" name="m_company">
                 </div>
-
             </div>
         </div>
         <?php
