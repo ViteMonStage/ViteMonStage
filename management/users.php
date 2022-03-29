@@ -108,21 +108,43 @@ include "../php/navbar.php";
                     <div class="orga">
                         <label for="roletbx" class="tbxindicator small">Role</label> <!-- promotion field -->
                         <select class="form-control tbx medium" id="roletbx" name="c_role">
-                            <option selected>Student</option>
-                            <option>Delegate</option>
-                            <option>Pilot</option>
-                            <option>Administrator</option>
-                            <option>Company</option>
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            try {
+                                $stm = $pdo->prepare('SELECT role FROM role'); //query to get roles
+                                $stm->execute();
+                                $row = $stm->fetchAll();
+                                foreach($row as $value)
+                                {
+                                    echo'<option>'.$value[0].'</option>';
+                                }
+                            } catch (\PDOException $e) {
+                                echo $e->getMessage();
+                                echo "   ";
+                                echo (int)$e->getCode();
+                            }
+                            ?>
                         </select>
                     </div>
                     <div class="orga">
                         <label for="promotbx" class="tbxindicator small">Promotion</label> <!-- promotion field -->
                         <select class="form-control tbx medium" id="promotbx" name="c_promo">
-                            <option selected>CPIA1</option>
-                            <option>CPIA2 IT</option>
-                            <option>CPIA2 GEN</option>
-                            <option>CPIA2 BTP</option>
-                            <option>CPIA2 S3E</option>
+                        <?php
+                            include "../db.php"; //Used to get global pdo
+                            try {
+                                $stm = $pdo->prepare('SELECT promotion_name, promotion_type FROM promotion INNER JOIN promotion_type ON promotion.id_promotion_type = promotion_type.id_promotion_type'); //query to get promotions and their type
+                                $stm->execute();
+                                $row = $stm->fetchAll();
+                                foreach($row as $value)
+                                {
+                                    echo'<option>'.$value[0] .' '.$value[1].'</option>';
+                                }
+                            } catch (\PDOException $e) {
+                                echo $e->getMessage();
+                                echo "   ";
+                                echo (int)$e->getCode();
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>
@@ -131,8 +153,8 @@ include "../php/navbar.php";
                     <input type="submit" class="btn-primary btn Medium" id="newbtn" value="NEW ACCOUNT" name="c_user">
                     <?php
                     if (isset($_GET["c_error"])) {
-                        if ($_GET["d_error"] == "1") {
-                            echo '<p class="small error">E-mail incorrect, please try again.</p>';
+                        if ($_GET["c_error"] == "1") {
+                            echo '<p class="small error">Error, please try again.</p>';
                         }
                     }
                     if (isset($_GET["c_good"])) {
