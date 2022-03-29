@@ -42,6 +42,19 @@
                         <input type="text" class="form-control tbx medium" id="mailtbx" placeholder="VTM.Incorporated@vtm.com" name="c_mail"> <!-- email field -->
                     </div>
                     <div class="orga">
+                        <label for="citytbx" class="tbxindicator small">City</label>
+                        <select class="form-control tbx medium" id="citytbx" name="c_city">
+                            <!-- city name field -->
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            $stm = $pdo->prepare('SELECT cityname FROM city');
+                            $stm->execute();
+                            $row = $stm->fetchAll();
+                            foreach ($row as $value) {
+                                echo '<option>' . $value[0] . '</option>';
+                            }
+                            ?>
+                        </select>
                     </div>
                     <div class="orga">
                         <label for="stnametbx" class="tbxindicator small">Street Name</label>
@@ -51,11 +64,6 @@
                         <label for="bnametbx" class="tbxindicator small">Building Name*</label>
                         <input type="text" class="form-control tbx medium" id="bnametbx" placeholder="Almas Tower" name="c_building_name"> <!-- building name field -->
                     </div>
-                    <div class="orga">
-                        <label for="citytbx" class="tbxindicator small">City</label>
-                        <input type="text" class="form-control tbx medium" id="citytbx" placeholder="Florianopolis" name="c_city"> <!-- city name field -->
-                    </div>
-
                 </div>
                 <div class="col-sm-6 row divd">
                     <div class="orga">
@@ -73,10 +81,6 @@
                     <div class="orga">
                         <label for="floortbx" class="tbxindicator small">Floor*</label>
                         <input type="number" class="form-control tbx medium" id="floortbx" placeholder="57" name="c_floor"> <!-- floor number field -->
-                    </div>
-                    <div class="orga">
-                        <label for="ziptbx" class="tbxindicator small">ZIP code</label>
-                        <input type="text" class="form-control tbx medium" id="ziptbx" placeholder="92800" name="c_zip"> <!-- zip code field -->
                     </div>
                 </div>
 
@@ -122,23 +126,23 @@
                     <!--Ci-dessous le bouton delete-->
                     <input type="submit" class="btn-primary btn Medium" id="dlogbtn" value="DELETE COMPANY" name="d_company">
                     <?php
-                    if (isset($_GET["c_error"])) {
-                        if ($_GET["c_error"] == "1") {
+                    if (isset($_GET["d_error"])) {
+                        if ($_GET["d_error"] == "1") {
                             echo '<p class="small error">Error, please try again.</p>';
                         }
                     }
-                    if (isset($_GET["c_good"])) {
-                        if ($_GET["c_good"] == "1") {
-                            echo '<p class="small error">Company successfuly created.</p>';
+                    if (isset($_GET["d_good"])) {
+                        if ($_GET["d_good"] == "1") {
+                            echo '<p class="small error">Company successfuly deleted.</p>';
                         }
                     }
-                    if (isset($_GET["c_error"])) {
-                        if ($_GET["c_error"] == "3") {
+                    if (isset($_GET["d_error"])) {
+                        if ($_GET["d_error"] == "3") {
                             echo '<p class="small error">Please fill all mandatory textboxes.</p>';
                         }
                     }
-                    if (isset($_GET["c_error"])) {
-                        if ($_GET["c_error"] == "2") {
+                    if (isset($_GET["d_error"])) {
+                        if ($_GET["d_error"] == "2") {
                             echo '<p class="small error">Company does not exist.</p>';
                         }
                     }
