@@ -26,6 +26,7 @@ if (isset($_POST['c_company'])) {
         if($stm->execute() == FALSE)
         {
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+            die();
         }
         $stm = $pdo->prepare('INSERT INTO city (zipcode, cityname) VALUES (?,?)'); //prepared statement to insert values intp city
         $stm->bindParam(1, $zipcode);
@@ -33,12 +34,14 @@ if (isset($_POST['c_company'])) {
         if($stm->execute() == FALSE)
         {
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+            die();
         }
         $stm = $pdo->prepare('SELECT MAX(id_company) FROM company'); //We get the last company id
         $stm->bindParam(1, $id_user);
         if($stm->execute() == FALSE)
         {
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+            die();
         }        
         $row = $stm->fetchAll();
         $id_company = $row[0][0];
@@ -48,6 +51,7 @@ if (isset($_POST['c_company'])) {
         if($stm->execute() == FALSE)
         {
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+            die();
         }
         $row = $stm->fetchAll();
         $id_city = $row[0][0];
@@ -62,10 +66,12 @@ if (isset($_POST['c_company'])) {
         if($stm->execute() == FALSE)
         {
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1');//if a value is not valid / an error occured , returns error code 1
+            die();
         }
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_good=1');//if everything is good , returns good code 1
     } catch (\PDOException $e) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1');//if exception , returns error code 1
+        die();
     }
 }
 
