@@ -17,7 +17,8 @@
 <body>
   <header>
     <?php
-    include "./php/navbar.php"
+    include "./php/navbar.php";
+    include "./php/candidature.php";
     ?>
   </header>
   <div class="current_candidatures">
@@ -25,106 +26,12 @@
     <div class="row g-0">
       <div class="col-lg-6 col-sm-12">
         <div class="list-group current" id="list-tab-1" role="tablist">
-          <a class="list-group-item list-group-item-action small active" id="current-list-1-list" data-bs-toggle="list" href="#current-list-1" role="tab" aria-controls="current-list-1">Company example 1 - Position 1 <span class="badge bg-secondary right">In progress...</span></a>
-          <a class="list-group-item list-group-item-action small" id="current-list-2-list" data-bs-toggle="list" href="#current-list-2" role="tab" aria-controls="current-list-2">Company example 2 - Position 2 <span class="badge bg-secondary right">In progress...</span></a>
-          <a class="list-group-item list-group-item-action small" id="current-list-3-list" data-bs-toggle="list" href="#current-list-3" role="tab" aria-controls="current-list-3">Company example 3 - Position 3 <span class="badge bg-secondary right">In progress...</span></a>
-          <a class="list-group-item list-group-item-action small" id="current-list-4-list" data-bs-toggle="list" href="#current-list-4" role="tab" aria-controls="current-list-4">Company example 4 - Position 4 <span class="badge bg-secondary right">In progress...</span></a>
+          <?php displayTabInProgress($_SESSION["id_user"]) ?>
         </div>
       </div>
       <div class="col-lg-6 col-sm-12">
         <div class="tab-content" id="nav-tabContent-1">
-          <div class="tab-pane fade small active show" id="current-list-1" role="tabpanel">
-            <div class="s_result">
-              <div class="in_desc">
-                <div>
-                  <h3 class="medium off_name">First offer</h3>
-                  <h4 class="small off_company">DC Incorporated</h4>
-                </div>
-                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">Step 4/8</div>
-                </div>
-              </div>
-              <div class="in_logo">
-                <div>
-                  <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                </div>
-                <div>
-                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff1">See Offer</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade small" id="current-list-2" role="tabpanel">
-            <div class="s_result">
-              <div class="in_desc">
-                <div>
-                  <h3 class="medium off_name">Second offer</h3>
-                  <h4 class="small off_company">DC Incorporated</h4>
-                </div>
-                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">Step 4/8</div>
-                </div>
-              </div>
-              <div class="in_logo">
-                <div>
-                  <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                </div>
-                <div>
-                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff2">See Offer</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade small" id="current-list-3" role="tabpanel">
-            <div class="s_result">
-              <div class="in_desc">
-                <div>
-                  <h3 class="medium off_name">Third offer</h3>
-                  <h4 class="small off_company">DC Incorporated</h4>
-                </div>
-                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">Step 4/8</div>
-                </div>
-              </div>
-              <div class="in_logo">
-                <div>
-                  <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                </div>
-                <div>
-                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff3">See Offer</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade small" id="current-list-4" role="tabpanel">
-            <div class="s_result">
-              <div class="in_desc">
-                <div>
-                  <h3 class="medium off_name">Fourth offer</h3>
-                  <h4 class="small off_company">DC Incorporated</h4>
-                </div>
-                <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">Step 4/8</div>
-                </div>
-              </div>
-              <div class="in_logo">
-                <div>
-                  <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                </div>
-                <div>
-                  <a href="offers_detail.php" role="button" class="small btn see" id="seeoff4">See Offer</a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php displayDescInProgress($_SESSION["id_user"]) ?>
         </div>
       </div>
     </div>
@@ -136,107 +43,11 @@
         <div class="row g-0">
           <div class="col-lg-6 col-sm-12">
             <div class="list-group accepted" id="list-tab-2" role="tablist">
-              <a class="list-group-item list-group-item-action small active" id="accepted-list-1-list" data-bs-toggle="list" href="#accepted-list-1" role="tab" aria-controls="accepted-list-1">Company example 1 - Position 1 <span class="badge success right">Accepted</span></a>
-              <a class="list-group-item list-group-item-action small" id="accepted-list-2-list" data-bs-toggle="list" href="#accepted-list-2" role="tab" aria-controls="accepted-list-2">Company example 2 - Position 2 <span class="badge success right">Accepted</span></a>
-              <a class="list-group-item list-group-item-action small" id="accepted-list-3-list" data-bs-toggle="list" href="#accepted-list-3" role="tab" aria-controls="accepted-list-3">Company example 3 - Position 3 <span class="badge success right">Accepted</span></a>
-              <a class="list-group-item list-group-item-action small" id="accepted-list-4-list" data-bs-toggle="list" href="#accepted-list-4" role="tab" aria-controls="accepted-list-4">Company example 4 - Position 4 <span class="badge success right">Accepted</span></a>
+              <?php displayTabAccepted($_SESSION["id_user"]) ?>
             </div>
           </div>
           <div class="col-lg-6 col-sm-12">
-            <div class="tab-content" id="nav-tabContent-2">
-              <div class="tab-pane fade small active show" id="accepted-list-1" role="tabpanel">
-                <div class="s_result">
-                  <div class="in_desc">
-                    <div>
-                      <h3 class="medium off_name">First offer</h3>
-                      <h4 class="small off_company">DC Incorporated</h4>
-                    </div>
-                    <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                    <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">Process completed</div>
-                    </div>
-                  </div>
-                  <div class="in_logo">
-                    <div>
-                      <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                    </div>
-                    <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff5">See Offer</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade small" id="accepted-list-2" role="tabpanel">
-                <div class="s_result">
-                  <div class="in_desc">
-                    <div>
-                      <h3 class="medium off_name">Second offer</h3>
-                      <h4 class="small off_company">DC Incorporated</h4>
-                    </div>
-                    <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                    <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">Process completed</div>
-                    </div>
-                  </div>
-                  <div class="in_logo">
-                    <div>
-                      <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                    </div>
-                    <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff6">See Offer</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade small" id="accepted-list-3" role="tabpanel">
-                <div class="s_result">
-                  <div class="in_desc">
-                    <div>
-                      <h3 class="medium off_name">Third offer</h3>
-                      <h4 class="small off_company">DC Incorporated</h4>
-                    </div>
-                    <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                    <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">Process completed</div>
-                    </div>
-                  </div>
-                  <div class="in_logo">
-                    <div>
-                      <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                    </div>
-                    <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff7">See Offer</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade small" id="accepted-list-4" role="tabpanel">
-                <div class="s_result">
-                  <div class="in_desc">
-                    <div>
-                      <h3 class="medium off_name">Fourth offer</h3>
-                      <h4 class="small off_company">DC Incorporated</h4>
-                    </div>
-                    <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                    <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">Process completed</div>
-                    </div>
-                  </div>
-                  <div class="in_logo">
-                    <div>
-                      <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                    </div>
-                    <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff8">See Offer</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php displayDescInAccepted($_SESSION["id_user"]) ?>
           </div>
         </div>
       </div>
@@ -247,111 +58,16 @@
         <div class="row g-0">
           <div class="col-lg-6 col-sm-12">
             <div class="list-group refused" id="list-tab-3" role="tablist">
-              <a class="list-group-item list-group-item-action small active" id="refused-list-1-list" data-bs-toggle="list" href="#refused-list-1" role="tab" aria-controls="refused-list-1">Company example 1 - Position 1 <span class="badge refused right">Refused</span></a>
-              <a class="list-group-item list-group-item-action small" id="refused-list-2-list" data-bs-toggle="list" href="#refused-list-2" role="tab" aria-controls="refused-list-2">Company example 2 - Position 2 <span class="badge refused right">Refused</span></a>
-              <a class="list-group-item list-group-item-action small" id="refused-list-3-list" data-bs-toggle="list" href="#refused-list-3" role="tab" aria-controls="refused-list-3">Company example 3 - Position 3 <span class="badge refused right">Refused</span></a>
-              <a class="list-group-item list-group-item-action small" id="refused-list-4-list" data-bs-toggle="list" href="#refused-list-4" role="tab" aria-controls="refused-list-4">Company example 4 - Position 4 <span class="badge refused right">Refused</span></a>
+              <?php displayTabRefused($_SESSION["id_user"]) ?>
             </div>
           </div>
           <div class="col-lg-6 col-sm-12">
-            <div class="tab-content" id="nav-tabContent-3">
-              <div class="tab-pane fade small active show" id="refused-list-1" role="tabpanel">
-                <div class="s_result">
-                  <div class="in_desc">
-                    <div>
-                      <h3 class="medium off_name">First offer</h3>
-                      <h4 class="small off_company">DC Incorporated</h4>
-                    </div>
-                    <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                    <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">Canceled</div>
-                    </div>
-                  </div>
-                  <div class="in_logo">
-                    <div>
-                      <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                    </div>
-                    <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff9">See Offer</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade small" id="refused-list-2" role="tabpanel">
-                <div class="s_result">
-                  <div class="in_desc">
-                    <div>
-                      <h3 class="medium off_name">Second offer</h3>
-                      <h4 class="small off_company">DC Incorporated</h4>
-                    </div>
-                    <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                    <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">Canceled</div>
-                    </div>
-                  </div>
-                  <div class="in_logo">
-                    <div>
-                      <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                    </div>
-                    <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff10">See Offer</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade small" id="refused-list-3" role="tabpanel">
-                <div class="s_result">
-                  <div class="in_desc">
-                    <div>
-                      <h3 class="medium off_name">Third offer</h3>
-                      <h4 class="small off_company">DC Incorporated</h4>
-                    </div>
-                    <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                    <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">Canceled</div>
-                    </div>
-                  </div>
-                  <div class="in_logo">
-                    <div>
-                      <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                    </div>
-                    <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff11">See Offer</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade small" id="refused-list-4" role="tabpanel">
-                <div class="s_result">
-                  <div class="in_desc">
-                    <div>
-                      <h3 class="medium off_name">Fourth offer</h3>
-                      <h4 class="small off_company">DC Incorporated</h4>
-                    </div>
-                    <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-                    <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">Canceled</div>
-                    </div>
-                  </div>
-                  <div class="in_logo">
-                    <div>
-                      <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-                    </div>
-                    <div>
-                      <a href="offers_detail.php" role="button" class="small btn see" id="seeoff12">See Offer</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <?php displayDescInRefused($_SESSION["id_user"]) ?>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <?php
   include "./php/footer.php"
