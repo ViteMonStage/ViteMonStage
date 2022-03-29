@@ -42,6 +42,8 @@
                         <input type="text" class="form-control tbx medium" id="mailtbx" placeholder="VTM.Incorporated@vtm.com" name="c_mail"> <!-- email field -->
                     </div>
                     <div class="orga">
+                    </div>
+                    <div class="orga">
                         <label for="citytbx" class="tbxindicator small">City</label>
                         <select class="form-control tbx medium" id="citytbx" name="c_city">
                             <!-- city name field -->
@@ -51,7 +53,7 @@
                             $stm->execute();
                             $row = $stm->fetchAll();
                             foreach ($row as $value) {
-                                echo '<option value='."$value[0]".'>' . $value[1] . ' - ' . $value[2] . '</option>';
+                                echo '<option value=' . "$value[0]" . '>' . $value[1] . ' - ' . $value[2] . '</option>';
                             }
                             ?>
                         </select>
@@ -61,8 +63,8 @@
                         <input type="text" class="form-control tbx medium" id="stnametbx" placeholder="Garry Vignot boulevard" name="c_street_name"> <!-- street name field -->
                     </div>
                     <div class="orga">
-                        <label for="bnametbx" class="tbxindicator small">Building Name*</label>
-                        <input type="text" class="form-control tbx medium" id="bnametbx" placeholder="Almas Tower" name="c_building_name"> <!-- building name field -->
+                        <label for="stnumbtbx" class="tbxindicator small">Street Number</label>
+                        <input type="text" class="form-control tbx medium" id="stnumbtbx" placeholder="22 bis" name="c_street_number"> <!-- street number field -->
                     </div>
                 </div>
                 <div class="col-sm-6 row divd">
@@ -75,12 +77,19 @@
                         <textarea class="form-control ltbx medium" id="desctbx" name="c_desc" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
                     </div>
                     <div class="orga">
-                        <label for="stnumbtbx" class="tbxindicator small">Street Number</label>
-                        <input type="text" class="form-control tbx medium" id="stnumbtbx" placeholder="22 bis" name="c_street_number"> <!-- street number field -->
+                        <label for="bnametbx" class="tbxindicator small">Building Name*</label>
+                        <input type="text" class="form-control tbx medium" id="bnametbx" placeholder="Almas Tower" name="c_building_name"> <!-- building name field -->
                     </div>
                     <div class="orga">
                         <label for="floortbx" class="tbxindicator small">Floor*</label>
                         <input type="number" class="form-control tbx medium" id="floortbx" placeholder="57" name="c_floor"> <!-- floor number field -->
+                    </div>
+                    <div class="orga">
+                        <label class="custom-file-label tbxindicator">Profile picture</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input fil1" id="customFile" name="c_profilepic">
+                            <label class="custom-file-label filelabel medium" for="customFile">Choose file</label> <!-- Profile picture field -->
+                        </div>
                     </div>
                 </div>
 

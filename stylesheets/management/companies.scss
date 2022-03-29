@@ -85,6 +85,12 @@
     margin-top: 15%;
 }
 
+/* This part allow to hide the mandatory "browse" button */
+.custom-file-input.fil1{
+    filter: opacity(0);
+    height: 2.5em;
+}
+
 /* This part emulate the file button but can be styled */
 .filelabel{
     background-color: #EEEEEE;
