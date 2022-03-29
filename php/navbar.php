@@ -1,5 +1,6 @@
 <?php
 include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to check if user is logged in. If not : redirects immediately in login page
+include dirname(__FILE__) . "/notification.php"; 
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -28,7 +29,7 @@ include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to
                 </div>
             </li>
             <?php endif;?>
-            <a class="nav-item nav-link small" href="#" role="button" id="navbar-notif-btn" data-bs-toggle="modal" data-bs-target="#notification-modal" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger">0</span></a>
+            <a class="nav-item nav-link small" href="#" role="button" id="navbar-notif-btn" data-bs-toggle="modal" data-bs-target="#notification-modal" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bell"></i><span class="show-small hide-big notification"> NOTIFICATIONS</span> <span id="notifAmount" class="badge rounded-pill bg-danger"><?php echo getNumberNotification($_SESSION['id_user']) ?></span></a>
         </div>
     </div>
 </nav>
@@ -39,7 +40,7 @@ include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to
                 <h5 class="modal-title small" id="notification-modal">Notifications</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <?php include dirname(__FILE__) . "/notification.php"; displayNotification();?>
+            <?php displayNotification($_SESSION['id_user']);?>
             <div class="modal-footer">
                 <button type="button" class="btn-notification small" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn-notification small">Mark all as read</button>
