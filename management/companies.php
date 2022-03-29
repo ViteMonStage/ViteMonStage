@@ -15,12 +15,15 @@
 </head>
 
 <body>
+    <header>
+        <?php
+        include $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
+        ?>
+        <?php
+        include "../php/navbar.php"
+        ?>
+    </header>
     <form action="../php/management/companies.php" method="post">
-        <header>
-            <?php
-            include "../php/navbar.php"
-            ?>
-        </header>
         <div class="d-flex align-items-center justify-content-center madiv ">
             <!-- this is the white box -->
             <div class="mainbox row">
@@ -61,7 +64,7 @@
                     </div>
                     <div class="orga4">
                         <label for="desctbx" class="tbxindicator small">Description</label>
-                        <textarea class="form-control ltbx medium" id="desctbx" name = "c_desc" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
+                        <textarea class="form-control ltbx medium" id="desctbx" name="c_desc" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
                     </div>
                     <div class="orga">
                         <label for="stnumbtbx" class="tbxindicator small">Street Number</label>
@@ -126,10 +129,10 @@
                 </div>
             </div>
         </div>
-        <?php
-        include "../php/footer.php"
-        ?>
     </form>
+    <?php
+    include "../php/footer.php"
+    ?>
 </body>
 
 

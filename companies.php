@@ -38,7 +38,26 @@
 
         <div class="col-lg-3 col-sm-12 colo">
             <label for="locationtbx" class="tbxindicator small">Location</label>
-            <input type="text" class="tbx small" id="locationtbx">
+            <select class="form-control tbx small"  id="nametbx">
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            try {
+                                $stm = $pdo->prepare('SELECT cityname from company 
+                                INNER JOIN  address on company.id_company = address.id_company
+                                INNER JOIN city on address.id_city = city.id_city'); //prepared statement to get campuses name
+                                $stm->execute();
+                                $row = $stm->fetchAll();
+                                foreach($row as $value)
+                                {
+                                    echo'<option>'.$value[0].'</option>';
+                                }
+                            } catch (\PDOException $e) {
+                                echo $e->getMessage();
+                                echo "   ";
+                                echo (int)$e->getCode();
+                            }
+                            ?>
+                        </select>
         </div>
         <div class="col-lg-3 col-sm-12 colo">
             <label for="sectortbx" class="tbxindicator small">Sector</label>

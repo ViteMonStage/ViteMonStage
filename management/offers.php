@@ -17,6 +17,9 @@
 <body>
     <header>
         <?php
+        include $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
+        ?>
+        <?php
         include "../php/navbar.php"
         ?>
     </header>
@@ -109,8 +112,8 @@
             </div>
 
 
-             <!-- OFFER DELETION -->
-             <div class="mantitl">
+            <!-- OFFER DELETION -->
+            <div class="mantitl">
                 <h1 class="big titl">OFFER DELETION</h1>
             </div>
             <div class="col-sm-6 divg">
@@ -132,8 +135,8 @@
 
 
 
-                        <!-- OFFER MODIFICATION -->
-                        <div class="mantitl">
+            <!-- OFFER MODIFICATION -->
+            <div class="mantitl">
                 <h1 class="big titl">OFFER MODIFICATION</h1>
             </div>
             <div class="col-sm-6 divg">

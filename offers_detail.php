@@ -24,41 +24,9 @@
 
 <body>
     <!--Offer description-->
-    <div class="off_desc">
-        <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
-        <div class="off_desc_txt">
-            <h2 class="big">Offer name</h2>
-            <h4 class="small">Company name</h4>
-            <h4 class="small">Company location</h4>
-            <h4 class="small">Date of publication</h4>
-            <h4 class="small">Number of candidates</h4>
-            <h4 class="small">Offer starting date - Offer ending date</h4>
-        </div>
-        <?php
-        if(!isInWishlist($_SESSION["id_user"],$_GET["id_offer"])){
-            echo '<div class="wish">
-            <a class="addlink" href="/php/wishlist.php?add='.$_GET["id_offer"].'">
-                <div class="wish_d1">
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <div class="wish_d2">
-                    <h5 class="mini"> Add to wishlist</h5>
-                </div>
-            </a>
-            </div>';
-        }else{
-            echo '<div class="wish">
-            <a class="removelink" href="/php/wishlist.php?remove='.$_GET["id_offer"].'">
-            <div class="wish_d1">
-                <i class="fa-solid fa-star"></i>
-            </div>
-            <div class="wish_d2">
-                <h5 class="mini"> Remove from wishlist</h5>
-            </div>
-            </a>
-            </div>';
-        }
-        ?>
+    <?php include dirname(__FILE__) . "/php/offer.php";displayOfferdetail(); ?>
+
+
 
     </div>
     <!--"Apply" section-->
@@ -70,9 +38,6 @@
     </div>
 
     <!--Offer details-->
-    <div class="off_det">
-        <h3 class="medium">Offer details</h3>
-        <h5 class="small">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</h5>
 
 
     </div>
