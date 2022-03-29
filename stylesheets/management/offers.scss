@@ -24,11 +24,15 @@
     justify-content: space-evenly;
 }
 
+::placeholder{
+    color: #777777 !important;
+}
+
 .tbx {
     /* Textboxes style*/
     border-radius: 50px;
     border-style: none;
-    color: #777777 !important;
+    color: black !important;
     background-color: #EEEEEE;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -39,7 +43,7 @@
 .ltbx{
     border-radius: 50px;
     border-style: none;
-    color: #777777 !important;
+    color: black !important;
     background-color: #EEEEEE;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -84,22 +88,6 @@
 .custom-file-input.fil1{
     filter: opacity(0);
     height: 2.5em;
-}
-
-/* This part emulate the file button but can be styled */
-.filelabel{
-    background-color: #EEEEEE;
-    width: 100%;
-    height: 2.5em;
-    border-radius: 50px;
-    position:relative;
-    bottom:40px;
-    right:0;
-    z-index: 1;
-    padding-top: 0.5em;
-    text-align: center;
-    color: #777777 !important;
-    vertical-align: middle;
 }
 
 /* "Add x" buttons style */
