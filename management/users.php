@@ -197,6 +197,16 @@ include "../php/navbar.php";
                             echo '<p class="small error">User successfuly deleted.</p>';
                         }
                     }
+                    if (isset($_GET["d_error"])) {
+                        if ($_GET["d_error"] == "3") {
+                            echo '<p class="small error">Please fill all mandatory textboxes.</p>';
+                        }
+                    }
+                    if (isset($_GET["d_error"])) {
+                        if ($_GET["d_error"] == "4") {
+                            echo '<p class="small error">User does not exist.</p>';
+                        }
+                    }
                     ?>
                 </div>
 

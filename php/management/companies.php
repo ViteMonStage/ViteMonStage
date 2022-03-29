@@ -158,23 +158,27 @@ if (isset($_POST['c_company'])) {
 }
 
 
-//DELETE USER
+//DELETE COMPANY
 if (isset($_POST['d_user'])) {
-    $email = $_POST['d_email'];
+    $name = $_POST['d_name'];
+    if(empty($name)){
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/company.php?d_error=3'); //if textbox is left empty
+        die();
+    }
     try {
-        $stm = $pdo->prepare('SELECT id_user, id_role FROM user WHERE email=?'); //prepared statement to verify email
-        $stm->bindParam(1, $email);
+        $stm = $pdo->prepare('SELECT id_company FROM company WHERE company_name=?'); //prepared statement to verify company existence
+        $stm->bindParam(1, $name);
         $stm->execute();
         $row = $stm->fetchAll();
         if (isset($row[0]) == 1) {
-            $stm = $pdo->prepare('DELETE FROM user WHERE email=?'); //prepared statement to delete user
-            $stm->bindParam(1, $email);
+            $stm = $pdo->prepare('DELETE FROM company WHERE company_name=?'); //prepared statement to delete company
+            $stm->bindParam(1, $name);
             $stm->execute();
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_good=1');
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?d_good=1');
         } else { //if  mail is not valid , returns error code 1
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=1');
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?d_error=2');
         }
     } catch (\PDOException $e) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1'); //if a value is not valid , returns error code 1
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1'); //if a value is not valid , returns error code 1
     }
 }
