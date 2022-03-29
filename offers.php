@@ -33,25 +33,29 @@
 
     <!-- SEARCH BARS -->
     <div class="row g-0 justify-content-center">
-        <div class="col-lg-2 col-sm-12">
+        <div class="col-lg-2 col-sm-12 test">
             <label for="nametbx" class="tbxindicator small">Location</label>
             <input type="text" class="tbx small" id="nametbx">
         </div>
-        <div class="col-lg-2 col-sm-12">
+        <div class="col-lg-2 col-sm-12 ">
             <label for="locationtbx" class="tbxindicator small">Publication date</label>
             <input type="text" class="tbx small" id="locationtbx">
         </div>
-        <div class="col-lg-2 col-sm-12">
+        <div class="col-lg-2 col-sm-12 ">
             <label for="sectortbx" class="tbxindicator small">Sector</label>
             <input type="text" class="tbx small" id="sectortbx">
         </div>
-        <div class="col-lg-2 col-sm-12">
+        <div class="col-lg-2 col-sm-12 ">
             <label for="sectortbx" class="tbxindicator small">Number of places</label>
             <input type="text" class="tbx small" id="placetbx">
         </div>
-        <div class="col-lg-2 col-sm-12">
+        <div class="col-lg-2 col-sm-12 ">
             <label for="sectortbx" class="tbxindicator small">Duration</label>
             <input type="text" class="tbx small" id="durationtbx">
+        </div>
+        <div class="col-lg-2 col-sm-12 ">
+            <label for="sectortbx" class="tbxindicator small">Skills</label>
+            <input type="text" class="tbx small" id="skillstbx">
         </div>
     </div>
     <input type="button" class="small btn search" id="searchbtn" value="Search">
