@@ -48,32 +48,34 @@
                             <option>COMPANY 2</option>
                         </select>
                     </div>
-                    <label class="tbxindicator Medium promotex">Promotions concerned</label>
                     <div class="orga5">
-                        <!-- Promotions concerned field -->
-                        <div class="checkb">
-                            <input type="checkbox" class="medium txbx" id="promtbx1">
-                            <label for="promtbx1" class="tbxindicator mini">CPIA1</label>
-                        </div>
-                        <div class="checkb">
-                            <input type="checkbox" class="medium txbx" id="promtbx2">
-                            <label for="promtbx2" class="tbxindicator mini">CPIA2 INFO</label>
-                        </div>
-                        <div class="checkb">
-                            <input type="checkbox" class="medium txbx" id="promtbx3">
-                            <label for="promtbx3" class="tbxindicator mini">CPIA2 GEN</label>
-                        </div>
-                        <div class="checkb">
-                            <input type="checkbox" class="medium txbx" id="promtbx4">
-                            <label for="promtbx4" class="tbxindicator mini">CPIA2 S3E</label>
-                        </div>
-                        <div class="checkb">
-                            <input type="checkbox" class="medium txbx" id="promtbx5">
-                            <label for="promtbx5" class="tbxindicator mini">CPIA2 BTP</label>
-                        </div>
-                        <div class="checkb">
-                            <input type="checkbox" class="medium txbx" id="promtbx6">
-                            <label for="promtbx6" class="tbxindicator mini">CPIA3</label>
+                        <label class="tbxindicator Medium promotex">Promotions concerned</label>
+                        <div>
+                            <!-- Promotions concerned field -->
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx1">
+                                <label for="promtbx1" class="tbxindicator mini">CPIA1</label>
+                            </div>
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx2">
+                                <label for="promtbx2" class="tbxindicator mini">CPIA2 INFO</label>
+                            </div>
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx3">
+                                <label for="promtbx3" class="tbxindicator mini">CPIA2 GEN</label>
+                            </div>
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx4">
+                                <label for="promtbx4" class="tbxindicator mini">CPIA2 S3E</label>
+                            </div>
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx5">
+                                <label for="promtbx5" class="tbxindicator mini">CPIA2 BTP</label>
+                            </div>
+                            <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx6">
+                                <label for="promtbx6" class="tbxindicator mini">CPIA3</label>
+                            </div>
                         </div>
                     </div>
                 </div>
