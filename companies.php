@@ -81,7 +81,7 @@
                         </select>
         </div>
         <div class="col-lg-3 col-sm-12 colo">
-            <input type="button" class="small btn search" value="Search">
+           <a  role="button" class ="small btn search"  href="./companies_detail.php?company_name=<?php echo $value[0] ?>?cityname=<?php echo $value[2] ?>?sector_activity=<?php echo $value[4] ?>">Search</a> 
         </div>
     </div>
     </form>
