@@ -21,7 +21,7 @@ function displayTabInProgress($id_user)
             <?php endforeach; ?>
         <?php
         } else { ?>
-            <p class="small">No offer in progress</p>
+            <p class="small no-offer">No offer in progress yet...</p>
             <?php }
     } catch (\PDOException $e) {
         echo $e->getMessage();
@@ -60,7 +60,7 @@ function displayDescInProgress($id_user)
                             <p class="mini">Description : <?php echo shortenString($value[7]) ?></p>
                             <h4 class="mini"><?php echo shortenString($value[8]) ?> (<?php echo shortenString($value[9]) ?>) - <?php echo shortenString($value[10]) ?> - IT</h4>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">Step 4/8</div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo toPercent(getStep($value[0])); ?>%">Step <?php echo getStep($value[0]) ?>/6</div>
                             </div>
                         </div>
                         <div class="in_logo">
@@ -68,7 +68,7 @@ function displayDescInProgress($id_user)
                                 <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                             </div>
                             <div>
-                                <a href="offers_detail.php?id_offer=<?php echo $key+1 ?>" role="button" class="small btn see" id="seeoff1">See Offer</a>
+                                <a href="offers_detail.php?id_offer=<?php echo $key + 1 ?>" role="button" class="small btn see" id="seeoff1">See Offer</a>
                             </div>
                         </div>
                     </div>
@@ -104,7 +104,7 @@ function displayTabAccepted($id_user)
             <?php endforeach; ?>
         <?php
         } else { ?>
-            <p class="small no-offer">No offer accepted</p>
+            <p class="small no-offer">No accepted offer yet...</p>
             <?php }
     } catch (\PDOException $e) {
         echo $e->getMessage();
@@ -151,7 +151,7 @@ function displayDescInAccepted($id_user)
                                 <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                             </div>
                             <div>
-                                <a href="offers_detail.php?id_offer=<?php echo $key+1 ?>" role="button" class="small btn see" id="seeoff7">See Offer</a>
+                                <a href="offers_detail.php?id_offer=<?php echo $key + 1 ?>" role="button" class="small btn see" id="seeoff7">See Offer</a>
                             </div>
                         </div>
                     </div>
@@ -198,7 +198,7 @@ function displayTabRefused($id_user)
             <?php endforeach; ?>
         <?php
         } else { ?>
-            <p class="small no-offer">No offer refused</p>
+            <p class="small no-offer">No refused offer yet...</p>
             <?php }
     } catch (\PDOException $e) {
         echo $e->getMessage();
@@ -245,16 +245,60 @@ function displayDescInRefused($id_user)
                                 <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                             </div>
                             <div>
-                                <a href="offers_detail.php?id_offer=<?php echo $key+1 ?>" role="button" class="small btn see" id="seeoff7">See Offer</a>
+                                <a href="offers_detail.php?id_offer=<?php echo $key + 1 ?>" role="button" class="small btn see" id="seeoff7">See Offer</a>
                             </div>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
+        <?php }
+    } catch (\PDOException $e) {
+        echo $e->getMessage();
+        echo "   ";
+        echo (int)$e->getCode();
+    }
+}
+
+
+function getStep($id_candidature)
+{
+    try {
+        include dirname(__FILE__) . "/db.php"; //Used to get global pdo
+        $stm = $pdo->prepare('SELECT candidature.id_candidature, user.id_user, progress.id_progress,candidature.id_statut,status.name,offer_name,
+        progress.step1,progress.step2,progress.step3,progress.step4,progress.step5,progress.step6
+                    FROM 8aah0fCXko.candidature
+                    INNER JOIN user on candidature.id_user = user.id_user
+                    INNER JOIN progress on candidature.id_candidature = progress.id_candidature
+                    INNER JOIN status on candidature.id_statut=status.id_statut
+                    INNER JOIN offers on offers.id_offer=candidature.id_offer
+                    WHERE candidature.id_candidature=?');
+        $stm->bindParam(1, $id_candidature);
+        $stm->execute();
+        $row = $stm->fetchAll();
+        if (isset($row[0]) == 1) {
+            if(!is_null($row[0][11])){
+                return 6;
+            }if(!is_null($row[0][10])){
+                return 5;
+            }if(!is_null($row[0][9])){
+                return 4;
+            }if(!is_null($row[0][8])){
+                return 3;
+            }if(!is_null($row[0][7])){
+                return 2;
+            }if(!is_null($row[0][6])){
+                return 1;
+            }
+        } else { ?>
+            <p class="small no-offer">No offer refused</p>
 <?php }
     } catch (\PDOException $e) {
         echo $e->getMessage();
         echo "   ";
         echo (int)$e->getCode();
     }
+}
+
+function toPercent($step){
+    return floor(($step/6)*100);
 }
