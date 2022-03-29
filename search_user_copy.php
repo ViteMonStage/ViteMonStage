@@ -30,20 +30,19 @@
             <div class="col-md-12">
                 <div class="card p-3 py-4">
                     <h5>Search a User</h5>
-                    <form action="search_user.php" method="post">
                     <div class="row g-3 mt-2">
                         <div class="col-md-2">
-                            <select class="form-select frm-slc" aria-label="Default select example" name="Status">
+                            <select class="form-select frm-slc" aria-label="Default select example" id="Status">
                                 <option class="frm-slc" value="1" selected>Anyone</option>
                                 <option class="frm-slc" value="2">Student</option>
                                 <option class="frm-slc" value="3">Delegate</option>
                                 <option class="frm-slc" value="4">Pilot</option>
                                 <option class="frm-slc" value="5">Administrator</option>
-                                <option class="frm-slc" value="6">Company Representative<?php  ?></option>
+                                <option class="frm-slc" value="6">Company Representative</option>
                             </select>
                         </div>
-                        <div class="col-md-8"> <input type="text" name="search_user" class="form-control" placeholder="Search for someone"><?php echo"$search_user"?> </div>
-                        <div class="col-md-2"> <button type="submit" name="submit" class="btn btn-secondary btn-block floatTop" value="submit">Search Results</button> </div> </form>
+                        <div class="col-md-8"> <input type="text" class="form-control" placeholder="Search for someone"> </div>
+                        <div class="col-md-2"> <button class="btn btn-secondary btn-block">Search Results</button> </div>
                     </div>
                 </div>
             </div>
@@ -53,10 +52,21 @@
     <div class="container">
         <div class="row ng-scope">
             <div class="col-md-10 offset-md-1">
-            <p class="search-results-count small"><?php echo(count_user()) ?></p>    
+                
+                
+                <?php 
+                    $select_count = "SELECT count(id_user) FROM 8aah0fCXko.user;";
 
-            <?php include_once dirname(__FILE__) . "/php/search_user_sql.php";displayUser(); ?>
-                <!--section class="search-result-item">
+                    $data_firstname = $pdo->quary("SELECT id_user, firstname FROM 8aah0fCXko.user")->fetchAll(PDO::FETCH_KEY_PAIR);
+                    $data_lastname = $pdo->quary('SELECT id_user, lastname FROM 8aah0fCXko.user')->fetchAll(PDO::FETCH_KEY_PAIR);
+                    $data_promo = $pdo->quary('SELECT id_user, id_promotion FROM 8aah0fCXko.user')->fetchAll(PDO::FETCH_KEY_PAIR);
+                    $data_description = $pdo->quary('SELECT id_user, description_user FROM 8aah0fCXko.user')->fetchAll(PDO::FETCH_KEY_PAIR);
+
+                    for($i=1;$i<=$select_count;$i++){
+                        echo"$data_firstname[$i]";
+                    }
+                ?>
+                <section class="search-result-item">
                     <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar1.png">
                     </a>
                     <div class="search-result-item-body">
@@ -79,7 +89,7 @@
                     <div class="search-result-item-body">
                         <div class="row">
                             <div class="col-sm-9">
-                                <h4 class="search-result-item-heading"><a href="#">$value</a></h4>
+                                <h4 class="search-result-item-heading"><a href="#">Fabien RIBES</a></h4>
                                 <p class="info">Student</p>
                                 <p class="description"> description</p>
                             </div>
@@ -140,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                </section-->
+                </section>
                 
             </div>
         </div>
