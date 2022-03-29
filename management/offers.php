@@ -134,61 +134,22 @@
                     <input type="submit" class="btn-primary btn Medium" id="dlogbtn" value="DELETE OFFER">
                 </div>
 
-
-
                 <!-- OFFER MODIFICATION -->
                 <div class="mantitl">
                     <h1 class="big titl">OFFER MODIFICATION</h1>
                 </div>
                 <div class="col-sm-6 divg">
                     <div class="orga">
-                        <label for="mnametbx" class="tbxindicator small">Name</label>
+                        <label for="mnametbx" class="tbxindicator small">Enter the name of the offer to be deleted</label>
                         <input type="text" class="form-control tbx medium" id="mnametbx" placeholder="WEB IT Internship"> <!-- name field -->
-                    </div>
-                    <div class="orga4">
-                        <label for="mdesctbx" class="tbxindicator small">Description</label>
-                        <textarea class="form-control ltbx medium" id="mdesctbx" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
-                    </div>
-                    <div class="orga">
-                        <label for="mcomptbx" class="tbxindicator small">Company</label>
-                        <select class="form-control tbx medium" name="company" id="mcomptbx">
-                            <option selected>VTS Incorporated</option> <!-- company field -->
-                            <option>COMPANY 1</option>
-                            <option>COMPANY 2</option>
-                        </select>
                     </div>
                 </div>
                 <div class="col-sm-6 row divd">
                     <div class="orga">
-                        <label for="mskilltbx" class="tbxindicator small">Skills</label>
-                        <input type="text" class="form-control tbx medium" id="mskilltbx" placeholder="Databases, HTML, CSS, PHP"> <!-- skills field -->
-                    </div>
-                    <div class="orga">
-                        <label for="msalartbx" class="tbxindicator small">Estimated salary (per month)</label>
-                        <input type="text" class="form-control tbx medium" id="msalartbx" placeholder="650€"> <!-- salary  field -->
-                    </div>
-                    <div class="orga2">
-                        <div class="col-sm-7 orga3">
-                            <!-- starting date field -->
-                            <label for="mstarttbx" class="tbxindicator small">Starting date</label>
-                            <div class="md-form md-outline input-with-post-icon datepicker">
-                                <input type="date" id="mstarttbx" class="form-control tbx medium">
-                            </div>
-                        </div>
-                        <div class="col-sm-5 orga3">
-                            <!-- ending date field -->
-                            <label for="mendtbx" class="tbxindicator small">Ending date</label>
-                            <div class="md-form md-outline input-with-post-icon datepicker">
-                                <input type="date" id="mendtbx" class="form-control tbx medium">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="orga">
-                        <label for="mnbrtbx" class="tbxindicator small">Number of Interns</label>
-                        <input type="number" class="form-control tbx medium" id="mnbrtbx" placeholder="1"> <!-- number of interns field -->
+                        <label for="mcompanytbx" class="tbxindicator small">Enter the company name</label>
+                        <input type="text" class="form-control tbx medium" id="mcompanytbx" placeholder="VTM Incorporated"> <!-- skills field -->
                     </div>
                 </div>
-                <label class="tbxindicator Medium promotex">Promotions concerned</label>
                 <div>
                     <!--Ci-dessous le bouton submit-->
                     <input type="submit" class="btn-primary btn Medium" id="mlogbtn" value="MODIFY OFFER">
