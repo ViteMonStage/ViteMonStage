@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
+include $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
 ?>
 <?php
-include_once "../php/navbar.php";
+include "../php/navbar.php";
 ?>
 
 <body>
@@ -58,9 +58,22 @@ include_once "../php/navbar.php";
                     <div class="orga">
                         <label for="campustbx" class="tbxindicator small">Campus</label> <!-- Campus field -->
                         <select class="form-control tbx medium" name="c_campus" id="campustbx">
-                            <option selected>Rouen</option>
-                            <option>Caen</option>
-                            <option>Nanterre</option>
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            try {
+                                $stm = $pdo->prepare('SELECT campus_name FROM campus'); //prepared statement to get campuses name
+                                $stm->execute();
+                                $row = $stm->fetchAll();
+                                foreach($row as $value)
+                                {
+                                    echo'<option>'.$value[0].'</option>';
+                                }
+                            } catch (\PDOException $e) {
+                                echo $e->getMessage();
+                                echo "   ";
+                                echo (int)$e->getCode();
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>

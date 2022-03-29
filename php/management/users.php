@@ -1,5 +1,5 @@
 <?php
-include_once "../db.php"; //Used to get global pdo
+include "../db.php"; //Used to get global pdo
 session_start();
 
 
