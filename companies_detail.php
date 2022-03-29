@@ -17,20 +17,12 @@
     <!-- Nav bar-->
     <header>
         <?php
-        include "./php/navbar.php"
+        include "./php/navbar.php";
+        include_once "./php/companie_details.php";
         ?>
     </header>
-    <div class="company_cadre">
-        <div class="image">
-            <img src="./assets/pictures/logo4.png" alt="Logo 1" class="logoentreprise">
-        </div>
-        <div class="company_desc">
-            <h3 class="medium">Name of the company</h3>
-            <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
-            <h4 class="mini">Evreux (27000) - Publication 04/05/2022 - IT</h4>
-            <h4 class="mini">Confiance des pilotes : 8.7/10</h4>
-        </div>
-    </div>
+    <?php include_once dirname(__FILE__) . "/php/companie.php";displayCompaniedetails(); ?>
+
     <div class="company_btn">
         <input type="button" class="small btn company" value="Invisible">
         <input type="button" class="small btn company" value="Modify">
