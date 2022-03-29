@@ -24,6 +24,10 @@
     justify-content: space-evenly;
 }
 
+::placeholder{
+    color: #777777 !important;
+}
+
 .tbx {
     /* Textboxes style*/
     border-radius: 50px;
