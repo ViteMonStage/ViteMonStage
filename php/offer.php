@@ -3,7 +3,7 @@ function displayOffers()
 {
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
-        $sql = $pdo->prepare('SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,offer_sector,offers.id_offer from offers
+        $sql = $pdo->prepare('SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,offer_area,offers.id_offer from offers
         INNER JOIN company on offers.id_company = company.id_company
         INNER JOIN address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city

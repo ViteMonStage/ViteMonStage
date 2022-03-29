@@ -34,7 +34,7 @@
     height: auto;
     
 }
-@media (max-width: 440px) {
+@media (max-width: 540px) {
     .infos {
         flex-direction: column;
         height: auto;
@@ -44,7 +44,7 @@
     }
 }
 
-@media (min-width: 440px) {
+@media (min-width: 540px) {
     .infos {
         display:flex;
         //justify-content: flex-start;
@@ -53,6 +53,14 @@
 .infos li {
     list-style: none;
 
+}
+.infos li input {
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: 70%;
+    transform: translateX(20%);
+    outline: none;
 }
 ul{
     margin-top: 10px;

@@ -6,7 +6,28 @@ session_start();
 //CREATE USER
 if (isset($_POST['c_user'])) {
     $email = $_POST['c_email'];
-    
+    $firstname = $_POST['c_firstname'];
+    $lastname = $_POST['c_lastname'];
+    $birthday = $_POST['c_birthday'];
+    $gender = $_POST['c_gender'];
+    //CHECK IF TEXTBOXES ARE FILLED
+    if(empty($firstname)){
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
+        die();
+    }
+    if(empty($lastname)){
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
+        die();
+    }
+    if(empty($email)){
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
+        die();
+    }
+    if(empty($password)){
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
+        die();
+    }
+
     if ($_POST['c_password'] == $_POST['c_password_r']) //Check if the user typed his password correctly twice
     {
         $password = $_POST['c_password'];
@@ -14,10 +35,6 @@ if (isset($_POST['c_user'])) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_pass=1');
         die();
     }
-    $firstname = $_POST['c_firstname'];
-    $lastname = $_POST['c_lastname'];
-    $birthday = $_POST['c_birthday'];
-    $gender = $_POST['c_gender'];
     //prepared statement to get role id
     $stm = $pdo->prepare('SELECT id_role FROM role WHERE role = ?');
     $stm->bindParam(1, $_POST['c_role']);
@@ -67,24 +84,6 @@ if (isset($_POST['c_user'])) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=2'); //if a character is not valid, returns error code 2
         die();
     }
-
-    if(empty($firstname)){
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
-        die();
-    }
-    if(empty($lastname)){
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
-        die();
-    }
-    if(empty($email)){
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
-        die();
-    }
-    if(empty($password)){
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
-        die();
-    }
-
     //prepared statement to get campus id    
     $stm = $pdo->prepare('SELECT id_campus FROM campus WHERE campus_name = ?');
     $stm->bindParam(1, $_POST['c_campus']);
@@ -150,8 +149,12 @@ if (isset($_POST['c_user'])) {
 //DELETE USER
 if (isset($_POST['d_user'])) {
     $email = $_POST['d_email'];
+    if(empty($email)){
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
+        die();
+    }
     try {
-        $stm = $pdo->prepare('SELECT id_user, id_role FROM user WHERE email=?'); //prepared statement to verify email
+        $stm = $pdo->prepare('SELECT id_user FROM user WHERE email=?'); //prepared statement to verify email
         $stm->bindParam(1, $email);
         $stm->execute();
         $row = $stm->fetchAll();
@@ -161,7 +164,7 @@ if (isset($_POST['d_user'])) {
             $stm->execute();
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_good=1');
         } else { //if  mail is not valid , returns error code 1
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=1');
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=4');
             die();
         }
     } catch (\PDOException $e) {

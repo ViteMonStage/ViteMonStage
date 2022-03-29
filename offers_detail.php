@@ -24,10 +24,8 @@
 
 <body>
     <!--Offer description-->
+    <!--Function allowing the dynamic display of the detail of an offer -->
     <?php include dirname(__FILE__) . "/php/offer.php";displayOfferdetail(); ?>
-
-
-
     </div>
     <!--"Apply" section-->
     <div class="off_apply">
@@ -36,10 +34,7 @@
         </button>
         <a href="companies_detail.php" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
     </div>
-
     <!--Offer details-->
-
-
     </div>
     <div class="modal fade" id="apply" tabindex="-1" aria-labelledby="applylabel" aria-hidden="true">
         <div class="modal-dialog">

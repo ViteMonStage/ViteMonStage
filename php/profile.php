@@ -19,8 +19,8 @@ $sql = $pdo->prepare("SELECT
                             id_user
                             from user
                             INNER JOIN campus on user.id_campus = campus.id_campus
-                            INNER JOIN promotion on user.id_promotion = promotion.id_promotion 
-                            INNER JOIN promotion_type on promotion.id_promotion_type=promotion_type.id_promotion_type
+                            LEFT JOIN promotion on user.id_promotion = promotion.id_promotion 
+                            LEFT JOIN promotion_type on promotion.id_promotion_type=promotion_type.id_promotion_type
                             WHERE email=(:email)");
 $email = $_SESSION['email'];
 $sql->bindParam(':email', $email);

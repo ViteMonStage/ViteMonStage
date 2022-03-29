@@ -30,36 +30,41 @@
 
     <!-- PROFILE BANNER -->
         <div class="infos">
+            
             <div class="profile-pic">
-               
+            <form>
             <img  src=<?php 
-            if(is_file('assets/user_data/avatar/'.$id.'.png'))
+            if(is_file('assets/user_data/avatar/'.$id.'.png' ))
             {
                 echo'/assets/user_data/avatar/'.$id.'.png';
             }
+            // elseif('assets/user_data/avatar/'.$id.'.jpg'){
+            //     echo'/assets/user_data/avatar/'.$id.'.jpg'; 
+            // }
             else{
                 echo"/assets/pictures/default_avatar.png";
             }
             ?> id="avatar" alt="Profile Picture">
              
-                <input id="file" type="file" onchange="loadFile(event)"/>
+                <input id="file" type="file" accept="image/png" onchange="loadFile(event)"/>
                 <label id="uploadbtn" for="file">
                     <span class="fa-solid fa-camera"></span>
                     <span>Change Image</span>
                 </label>
             </div>
             <ul id="listinfo">
-                <li class="medium"><?php print_r($row[0][0]); ?></li>
-                <li class="medium"><?php print_r($row[0][1]); ?></li>
-                <li class="small"><?php print_r($row[0][2]); ?></li>
-                <li class="small"><?php print_r($row[0][3]); ?></li>
-                <li class="mini"><?php print_r($row[0][4]); ?></li>
-                <li class="mini"><?php print_r($row[0][5]); ?></li>
-                <li class="mini"><?php print_r($row[0][6]); ?></li>
-                <li class="mini"><?php print_r($row[0][7]); ?></li>
+                <li><input class="medium" readonly="false" value="<?php print_r($row[0][0]); ?>"></li>
+                <li><input class="medium" readonly="readonly" value="<?php print_r($row[0][1]); ?>"></li>
+                <li><input class="small" readonly="readonly" value="<?php print_r($row[0][2]); ?>"></li>
+                <li><input class="small" readonly="readonly" value="<?php print_r($row[0][3]); ?>"></li>
+                <li><input class="mini" readonly="readonly" value="<?php print_r($row[0][4]); ?>"></li>
+                <li><input class="mini" readonly="readonly" value="<?php print_r($row[0][5]); ?>"></li>
+                <li><input class="mini" readonly="readonly" value="<?php print_r($row[0][6]); ?>"></li>
+                <li><input class="mini" readonly="readonly" value="<?php print_r($row[0][7]); ?>"></li>
             </ul>
             <img id="editbutton" src="assets/icons/edit-white.svg" alt="Edit" role="button" onclick="edit()">
             <img role="button" alt="done" src="assets/icons/check-white.svg" type="submit" id="end-editing">
+            </form>
         </div>
 
 
