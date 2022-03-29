@@ -5,7 +5,7 @@ include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to
 <nav class="navbar navbar-expand-lg navbar-light">
     <!-- Navbar that will be displayed in each regular page -->
     <a class="navbar-brand maxi logo" href="/index.php">VMS</a>
-    <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+    <button class="navbar-toggler pad" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" id="toggler">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
