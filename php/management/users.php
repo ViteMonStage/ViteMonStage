@@ -98,8 +98,6 @@ if (isset($_POST['d_user'])) {
         $stm->bindParam(1, $email);
         $stm->execute();
         $row = $stm->fetchAll();
-        $id_user = $row[0][0];
-        $id_role = $row[0][1];
         if (isset($row[0]) == 1) {
             $stm = $pdo->prepare('DELETE FROM user WHERE email=?'); //prepared statement to delete user
             $stm->bindParam(1, $email);
