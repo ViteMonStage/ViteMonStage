@@ -62,8 +62,25 @@
             <input type="text" class="tbx small" id="locationtbx">
         </div>
         <div class="col-lg-2 col-sm-12 ">
-            <label for="sectortbx" class="tbxindicator small">Sector</label>
-            <input type="text" class="tbx small" id="sectortbx">
+            <label for="sectortbx" class="tbxindicator small">Offer area</label>
+            <select class="form-control tbx small"  id="sectortbx">
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            try {
+                                $stm = $pdo->prepare('SELECT offer_area from offers'); //prepared statement to get campuses name
+                                $stm->execute();
+                                $row = $stm->fetchAll();
+                                foreach($row as $value)
+                                {
+                                    echo'<option>'.$value[0].'</option>';
+                                }
+                            } catch (\PDOException $e) {
+                                echo $e->getMessage();
+                                echo "   ";
+                                echo (int)$e->getCode();
+                            }
+                            ?>
+                        </select>
         </div>
         <div class="col-lg-2 col-sm-12 ">
             <label for="sectortbx" class="tbxindicator small">Number of places</label>
