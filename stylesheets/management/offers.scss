@@ -55,9 +55,8 @@
 }
 
 .txbx{
-    margin-left: 30px;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
 }
 .btn {
     /* Button style*/
@@ -138,15 +137,22 @@
 }
 
 .orga5{
-    width: 330px;
     background-color:#EEEEEE;
     border-radius: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     margin-top: 40px;
 }
 
 .promotex{
-    text-align: center;
-    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
+.checkb{
+    width: 10em;
+    padding-left: 20px;
+    display: inline-block;
+    margin-left: 10px;
+    
+
+}

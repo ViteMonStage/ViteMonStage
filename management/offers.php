@@ -50,9 +50,9 @@
                     </div>
                     <div class="orga5">
                         <label class="tbxindicator Medium promotex">Promotions concerned</label>
-                        <div class="orga5">
+                        <div>
                             <!-- Promotions concerned field -->
-                            <div>
+                            <div class="checkb">
                                 <input type="checkbox" class="medium txbx" id="promtbx1">
                                 <label for="promtbx1" class="tbxindicator mini">CPIA1</label>
                             </div>
