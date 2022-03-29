@@ -47,11 +47,11 @@
                             <!-- city name field -->
                             <?php
                             include "../db.php"; //Used to get global pdo
-                            $stm = $pdo->prepare('SELECT cityname FROM city');
+                            $stm = $pdo->prepare('SELECT id_city, cityname, zipcode FROM city');
                             $stm->execute();
                             $row = $stm->fetchAll();
                             foreach ($row as $value) {
-                                echo '<option>' . $value[0] . '</option>';
+                                echo '<option value='."$value[0]".'>' . $value[1] . ' - ' . $value[2] . '</option>';
                             }
                             ?>
                         </select>

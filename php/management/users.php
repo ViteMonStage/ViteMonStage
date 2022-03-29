@@ -10,6 +10,15 @@ if (isset($_POST['c_user'])) {
     $lastname = $_POST['c_lastname'];
     $birthday = $_POST['c_birthday'];
     $gender = $_POST['c_gender'];
+    $id_promotion = $_POST['c_promo'];
+    //CHECK PASSWORD
+    if ($_POST['c_password'] == $_POST['c_password_r']) //Check if the user typed his password correctly twice
+    {
+        $password = $_POST['c_password'];
+    } else {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_pass=1');
+        die();
+    }
     //CHECK IF TEXTBOXES ARE FILLED
     if(empty($firstname)){
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
@@ -27,14 +36,6 @@ if (isset($_POST['c_user'])) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
         die();
     }
-
-    if ($_POST['c_password'] == $_POST['c_password_r']) //Check if the user typed his password correctly twice
-    {
-        $password = $_POST['c_password'];
-    } else {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_pass=1');
-        die();
-    }
     //prepared statement to get role id
     $stm = $pdo->prepare('SELECT id_role FROM role WHERE role = ?');
     $stm->bindParam(1, $_POST['c_role']);
@@ -44,25 +45,6 @@ if (isset($_POST['c_user'])) {
     }
     $row = $stm->fetchAll();
     $id_role = $row[0][0];
-    //get promotion id    
-    switch ($_POST['c_promo']) {
-        case 'CPIA1':
-            $id_promotion = 5;
-            break;
-        case 'CPIA2 IT':
-            $id_promotion = 1;
-            break;
-        case 'CPIA2 GEN':
-            $id_promotion = 2;
-            break;
-        case 'CPIA2 BTP':
-            $id_promotion = 3;
-            break;
-        case 'CPIA2 SA3':
-            $id_promotion = 4;
-            break;
-    }
-
     //CHARACTER VERIFICATION
     if (preg_match('/[\'^}{#~><>¬]/', $firstname)) {
         // one or more of the 'special characters' found in $string
@@ -150,7 +132,7 @@ if (isset($_POST['c_user'])) {
 if (isset($_POST['d_user'])) {
     $email = $_POST['d_email'];
     if(empty($email)){
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=3'); //if textbox is left empty
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=3'); //if textbox is left empty
         die();
     }
     try {
@@ -168,7 +150,7 @@ if (isset($_POST['d_user'])) {
             die();
         }
     } catch (\PDOException $e) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?c_error=1'); //if a value is not valid , returns error code 1
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=1'); //if a value is not valid , returns error code 4
         die();
     }
 }
