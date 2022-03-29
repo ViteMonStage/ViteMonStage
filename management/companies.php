@@ -15,12 +15,15 @@
 </head>
 
 <body>
+    <header>
+        <?php
+        include $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
+        ?>
+        <?php
+        include "../php/navbar.php"
+        ?>
+    </header>
     <form action="../php/management/companies.php" method="post">
-        <header>
-            <?php
-            include "../php/navbar.php"
-            ?>
-        </header>
         <div class="d-flex align-items-center justify-content-center madiv ">
             <!-- this is the white box -->
             <div class="mainbox row">
@@ -45,7 +48,7 @@
                         <input type="text" class="form-control tbx medium" id="stnametbx" placeholder="Garry Vignot boulevard" name="c_street_name"> <!-- street name field -->
                     </div>
                     <div class="orga">
-                        <label for="bnametbx" class="tbxindicator small">Building Name</label>
+                        <label for="bnametbx" class="tbxindicator small">Building Name*</label>
                         <input type="text" class="form-control tbx medium" id="bnametbx" placeholder="Almas Tower" name="c_building_name"> <!-- building name field -->
                     </div>
                     <div class="orga">
@@ -60,15 +63,15 @@
                         <input type="text" class="form-control tbx medium" id="sectortbx" placeholder="Electronics" name="c_sector"> <!-- sector field -->
                     </div>
                     <div class="orga4">
-                        <label for="desctbx" class="tbxindicator small">Description</label>
-                        <textarea class="form-control ltbx medium" id="desctbx" name = "c_desc" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
+                        <label for="desctbx" class="tbxindicator small">Description*</label>
+                        <textarea class="form-control ltbx medium" id="desctbx" name="c_desc" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
                     </div>
                     <div class="orga">
                         <label for="stnumbtbx" class="tbxindicator small">Street Number</label>
                         <input type="text" class="form-control tbx medium" id="stnumbtbx" placeholder="22 bis" name="c_street_number"> <!-- street number field -->
                     </div>
                     <div class="orga">
-                        <label for="floortbx" class="tbxindicator small">Floor</label>
+                        <label for="floortbx" class="tbxindicator small">Floor*</label>
                         <input type="number" class="form-control tbx medium" id="floortbx" placeholder="57" name="c_floor"> <!-- floor number field -->
                     </div>
                     <div class="orga">
@@ -86,9 +89,19 @@
                             echo '<p class="small error">Error, please try again.</p>';
                         }
                     }
+                    if (isset($_GET["c_error"])) {
+                        if ($_GET["c_error"] == "2") {
+                            echo '<p class="small error">Invid character detected, please try again.</p>';
+                        }
+                    }
                     if (isset($_GET["c_good"])) {
                         if ($_GET["c_good"] == "1") {
                             echo '<p class="small error">Company successfuly created.</p>';
+                        }
+                    }
+                    if (isset($_GET["c_error"])) {
+                        if ($_GET["c_error"] == "3") {
+                            echo '<p class="small error">Please fill all mandatory textboxes.</p>';
                         }
                     }
                     ?>
@@ -126,10 +139,10 @@
                 </div>
             </div>
         </div>
-        <?php
-        include "../php/footer.php"
-        ?>
     </form>
+    <?php
+    include "../php/footer.php"
+    ?>
 </body>
 
 
