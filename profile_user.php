@@ -32,7 +32,7 @@
         <div class="infos">
             
             <div class="profile-pic">
-            <form>
+            <form action="php/profile.php" method="put">
             <img  src=<?php 
             if(is_file('assets/user_data/avatar/'.$id.'.png' ))
             {
@@ -45,7 +45,6 @@
                 echo"/assets/pictures/default_avatar.png";
             }
             ?> id="avatar" alt="Profile Picture">
-             
                 <input id="file" type="file" accept="image/png" onchange="loadFile(event)"/>
                 <label id="uploadbtn" for="file">
                     <span class="fa-solid fa-camera"></span>
@@ -53,17 +52,33 @@
                 </label>
             </div>
             <ul id="listinfo">
-                <li><input class="medium" readonly="false" value="<?php print_r($row[0][0]); ?>"></li>
-                <li><input class="medium" readonly="readonly" value="<?php print_r($row[0][1]); ?>"></li>
-                <li><input class="small" readonly="readonly" value="<?php print_r($row[0][2]); ?>"></li>
-                <li><input class="small" readonly="readonly" value="<?php print_r($row[0][3]); ?>"></li>
-                <li><input class="mini" readonly="readonly" value="<?php print_r($row[0][4]); ?>"></li>
-                <li><input class="mini" readonly="readonly" value="<?php print_r($row[0][5]); ?>"></li>
-                <li><input class="mini" readonly="readonly" value="<?php print_r($row[0][6]); ?>"></li>
-                <li><input class="mini" readonly="readonly" value="<?php print_r($row[0][7]); ?>"></li>
+                <li><input class="medium " placeholder="Lastname" readonly="readonly" name="surname" value="<?php print_r($row[0][0]); ?>"></li>
+                <li><input class="medium " placeholder="Name" readonly="readonly" name="name" value="<?php print_r($row[0][1]); ?>"></li>
+                <li><input class="small " placeholder="Gender" readonly="readonly" name="gender" value="<?php print_r($row[0][2]); ?>"></li>
+                <li><input class="small " placeholder="Email" readonly="readonly" name="email" value="<?php print_r($row[0][3]); ?>"></li>
+                <li><input class="mini " placeholder="Age" readonly="readonly"  name ="age" value="<?php print_r($row[0][4]); ?>"></li>
+                <li><div id="calendar" class="md-form md-outline input-with-post-icon datepicker">
+                                <input  placeholder="Select date" type="date" id="birthtbx" class="form-control tbx mini" name="birthday">
+                            </div></li>
+                <li><select id="listboxpromo" class="form-control tbx mini listbox" name="promotion">
+                    <div class="list-content">
+                    <?php
+                            include "../db.php"; //Used to get global pdo
+                            $stm = $pdo->prepare('SELECT id_promotion, promotion_name, promotion_type FROM promotion INNER JOIN promotion_type ON promotion.id_promotion_type = promotion_type.id_promotion_type'); //query to get promotions and their type
+                            $stm->execute();
+                            $row1 = $stm->fetchAll();
+                                echo '<option>None</option>';
+                            foreach ($row1 as $value) {
+                                echo '<option value='."$value[0]".'>' . $value[1] . ' - ' . $value[2] . '</option>';
+                            }
+                            ?>
+                            </div></li>
+                            <li><input   readonly="readonly" name="promotion" value="<?php print_r($row[0][5]); ?>"></li>
+                <li><input class="mini " placeholder="Campus" readonly="readonly" name="campus" value="<?php print_r($row[0][6]); ?>"></li>
+                <li><input class="mini " placeholder="Promotion type" readonly="readonly" name="promotype" value="<?php print_r($row[0][7]); ?>"></li>
             </ul>
             <img id="editbutton" src="assets/icons/edit-white.svg" alt="Edit" role="button" onclick="edit()">
-            <img role="button" alt="done" src="assets/icons/check-white.svg" type="submit" id="end-editing">
+            <input type="submit" role="button" alt="done"  id="end-editing" name="postbutton" value="">
             </form>
         </div>
 
