@@ -99,11 +99,6 @@
                         <input type="number" class="form-control tbx medium" id="nbrtbx" placeholder="1" name="c_interns_offer"> <!-- number of interns field -->
                     </div>
                     <div class="orga">
-                        <label class="custom-file-label tbxindicator">Profile picture</label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input fil1" id="customFile" name="c_pic_offer">
-                            <label class="custom-file-label filelabel medium" for="customFile">Choose file</label> <!-- Profile picture field -->
-                        </div>
                     </div>
                 </div>
                 <div>
