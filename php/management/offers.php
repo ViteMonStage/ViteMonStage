@@ -103,29 +103,35 @@ if (isset($_POST['c_offer'])) {
 }
 
 
-//DELETE OFFER NOT DONE
-if (isset($_POST['d_user'])) {
-    $email = $_POST['d_email'];
-    if (empty($email)) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=3'); //if textbox is left empty
+//DELETE OFFER 
+if (isset($_POST['d_offer'])) {
+    $name = $_POST['d_name'];
+    $company = $_POST['d_company'];
+    if (empty($name) || empty($company)) {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?d_error=3'); //if textbox is left empty
         die();
     }
     try {
-        $stm = $pdo->prepare('SELECT id_user FROM user WHERE email=?'); //prepared statement to verify email
-        $stm->bindParam(1, $email);
+        $stm = $pdo->prepare('SELECT id_offer FROM offers INNER JOIN company ON offers.id_company = company.id_company WHERE offer_name=? AND company_name=?'); //prepared statement to verify offer existence
+        $stm->bindParam(1, $name);
+        $stm->bindParam(2, $company);
         $stm->execute();
         $row = $stm->fetchAll();
         if (isset($row[0]) == 1) {
-            $stm = $pdo->prepare('DELETE FROM user WHERE email=?'); //prepared statement to delete user
-            $stm->bindParam(1, $email);
-            $stm->execute();
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_good=1');
+            $id_offer = $row[0][0];
+            $stm = $pdo->prepare('DELETE FROM offers WHERE id_offer=?'); //prepared statement to delete user
+            $stm->bindParam(1, $id_offer);
+            if ($stm->execute() == FALSE) {
+                header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?d_error=1'); //if a value is not valid / an error occured , returns error code 1
+                die();
+            }
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?d_good=1');
         } else { //if  mail is not valid , returns error code 1
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=4');
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?d_error=4');
             die();
         }
     } catch (\PDOException $e) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=1'); //if a value is not valid , returns error code 4
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?d_error=1'); //if a value is not valid , returns error code 1
         die();
     }
 }

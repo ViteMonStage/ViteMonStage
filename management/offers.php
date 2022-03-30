@@ -152,6 +152,27 @@
                 <div>
                     <!--Ci-dessous le bouton submit-->
                     <input type="submit" class="btn-primary btn Medium" id="dlogbtn" name="d_offer" value="DELETE OFFER">
+                    <?php
+                    if (isset($_GET["d_error"])) {
+                        if ($_GET["d_error"] == "1") {
+                            echo '<p class="small error">Error, please try again.</p>';
+                        }
+                        if ($_GET["d_error"] == "2") {
+                            echo '<p class="small error">Invid character detected, please try again.</p>';
+                        }
+                        if ($_GET["d_error"] == "3") {
+                            echo '<p class="small error">Please fill all textboxes.</p>';
+                        }
+                        if ($_GET["d_error"] == "4") {
+                            echo '<p class="small error">No offer with this name and company.</p>';
+                        }
+                    }
+                    if (isset($_GET["d_good"])) {
+                        if ($_GET["d_good"] == "1") {
+                            echo '<p class="small error">Offer successfuly deleted.</p>';
+                        }
+                    }
+                    ?>
                 </div>
 
                 <!-- OFFER MODIFICATION -->

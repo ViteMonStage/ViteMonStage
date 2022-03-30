@@ -30,7 +30,7 @@ if (isset($_POST['c_company'])) {
         die();
     }
     if (empty($description)) {
-        $description=NULL;
+        $description = NULL;
     }
     if (empty($street_name)) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=3'); //if textbox is left empty
@@ -41,10 +41,10 @@ if (isset($_POST['c_company'])) {
         die();
     }
     if (empty($building_name)) {
-        $building_name=NULL;
+        $building_name = NULL;
     }
     if (empty($floor)) {
-        $floor=NULL;
+        $floor = NULL;
     }
     //CHARACTER VERIFICATION
     if (preg_match('/[\'^}{#~><>¬]/', $name)) {
@@ -127,7 +127,7 @@ if (isset($_POST['c_company'])) {
 //DELETE COMPANY
 if (isset($_POST['d_company'])) {
     $name = $_POST['d_name'];
-    if(empty($name)){
+    if (empty($name)) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/company.php?d_error=3'); //if textbox is left empty
         die();
     }
@@ -139,7 +139,10 @@ if (isset($_POST['d_company'])) {
         if (isset($row[0]) == 1) {
             $stm = $pdo->prepare('DELETE FROM company WHERE company_name=?'); //prepared statement to delete company
             $stm->bindParam(1, $name);
-            $stm->execute();
+            if ($stm->execute() == FALSE) {
+                header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?d_error=1'); //if a value is not valid / an error occured , returns error code 1
+                die();
+            }
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?d_good=1');
         } else { //if  mail is not valid , returns error code 1
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?d_error=2');
