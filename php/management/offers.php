@@ -15,6 +15,31 @@ if (isset($_POST['c_offer'])) {
     $id_promotion_type = $_POST['c_promo_offer'];
     $offer_date = date('Y-m-d', time());
 
+    if (preg_match('/[\'^}{#~><>¬]/', $skills)) {
+        // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=2'); //if a character is not valid, returns error code 2
+        die();
+    }
+    if (preg_match('/[\'^}{#~><>¬]/', $salary)) {
+        // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=2'); //if a character is not valid, returns error code 2
+        die();
+    }
+    if (preg_match('/[\'^}{#~><>¬]/', $number_interns)) {
+        // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=2'); //if a character is not valid, returns error code 2
+        die();
+    }
+    if (preg_match('/[\'^}{#~><>¬]/', $desc)) {
+        // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=2'); //if a character is not valid, returns error code 2
+        die();
+    }
+    if (preg_match('/[\'^}{#~><>¬]/', $name)) {
+        // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=2'); //if a character is not valid, returns error code 2
+        die();
+    }
 
     //CHECK IF TEXTBOXES ARE FILLED
     if (empty($skills)) {
