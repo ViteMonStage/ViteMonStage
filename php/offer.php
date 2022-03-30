@@ -7,6 +7,7 @@ function displayOffers()
         INNER JOIN company on offers.id_company = company.id_company
         INNER JOIN address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city
+        INNER JOIN concern on
         ');
         $sql->execute();
         $row = $sql->fetchAll();
