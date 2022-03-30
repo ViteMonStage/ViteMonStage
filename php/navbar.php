@@ -1,6 +1,6 @@
 <?php
 include dirname(__FILE__) . "/login_check.php"; //import login_check.php file to check if user is logged in. If not : redirects immediately in login page
-include dirname(__FILE__) . "/notification.php"; 
+include dirname(__FILE__) . "/notification.php";
 ?>
 <script src="/js/notification.js"></script>
 <nav class="navbar navbar-expand-lg navbar-light">

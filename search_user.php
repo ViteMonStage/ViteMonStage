@@ -34,12 +34,12 @@
                     <div class="row g-3 mt-2">
                         <div class="col-md-2">
                             <select class="form-select frm-slc" aria-label="Default select example" name="Status">
-                                <option class="frm-slc" value="0" selected>Anyone</option>
-                                <option class="frm-slc" value="1">Student</option>
-                                <option class="frm-slc" value="2">Delegate</option>
-                                <option class="frm-slc" value="3">Pilot</option>
-                                <option class="frm-slc" value="4">Administrator</option>
-                                <option class="frm-slc" value="5">Company Representative<?php  ?></option>
+                                <option class="frm-slc" value="" selected>Anyone</option>
+                                <option class="frm-slc" value=" and user.id_role LIKE '1'">Student</option>
+                                <option class="frm-slc" value=" and user.id_role LIKE '2'">Delegate</option>
+                                <option class="frm-slc" value=" and user.id_role LIKE '3'">Pilot</option>
+                                <option class="frm-slc" value=" and user.id_role LIKE '4'">Administrator</option>
+                                <option class="frm-slc" value=" and user.id_role LIKE '5'">Company Representative<?php  ?></option>
                             </select>
                         </div>
                         <div class="col-md-8"> <input type="text" name="search_user" class="form-control" placeholder="<?php if(isset($_GET['usersearch'])){echo $_GET['usersearch'];} ?>"> </div>
@@ -54,7 +54,7 @@
     <div class="container">
         <div class="row ng-scope">
             <div class="col-md-10 offset-md-1">
-            <p class="search-results-count small"><?php echo(count_user()) ?></p>
+            
             <?php displayUser() ?>
             </div>
         </div>

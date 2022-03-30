@@ -11,7 +11,7 @@ function displayOfferdetail()
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
         $sql = $pdo->prepare('SELECT offer_name,company.company_name,cityname,zipcode,offer_date,number_interns, 
-        intership_start,intership_end,offers.description,offers.skills,promotion_type from offers
+        intership_start,intership_end,offers.description,offers.skills,promotion_type,offers.salary from offers
         INNER JOIN company on offers.id_company = company.id_company
         INNER JOIN address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city
@@ -31,9 +31,10 @@ function displayOfferdetail()
                         <h4 class="small">City : <?php echo  $value[2]?> (<?php echo $value[3] ?>)</h4>
                         <h4 class="small">Promotion type : <?php echo $value[10] ?></h4>
                         <h4 class="small"> Skills requiered : <?php echo $value[9] ?></h4>
-                        <h4 class="small">Offer date  :<?php echo $value[4]  ?></h4>
+                        <h4 class="small">Offer date  : <?php echo $value[4]  ?></h4>
                         <h4 class="small"> Number of interns : <?php echo  $value[5]  ?></h4>
                         <h4 class="small">Starting date : <?php echo  $value[6]  ?> - End date : <?php echo  $value[7]  ?></h4>
+                        <h4 class="small"><?php echo  $value[11] ?> €/ months</h4>
                     </div>
                     <?php if (!isInWishlist($_SESSION["id_user"], $_GET["id_offer"])) : ?>
                         <div class="wish">
