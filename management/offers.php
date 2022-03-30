@@ -49,7 +49,7 @@
                         </select>
                     </div>
                     <label class="tbxindicator Medium promotex">Promotions concerned</label>
-                    <div class="orga">
+                    <div>
                         <div class="ccheck">
                             <!-- Promotions concerned field -->
                             <div class="checkb">
@@ -108,14 +108,26 @@
                         <label for="nbrtbx" class="tbxindicator small">Number of Interns</label>
                         <input type="number" class="form-control tbx medium" id="nbrtbx" placeholder="1"> <!-- number of interns field -->
                     </div>
-                    <div class="orga5">
+                    <div class="orga">
+                    <label for="promotbx" class="tbxindicator small">Promotion</label> <!-- promotion field -->
+                        <select class="form-control tbx medium" id="promotbx" name="c_promo">
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            $stm = $pdo->prepare('SELECT id_promotion, promotion_name, promotion_type FROM promotion INNER JOIN promotion_type ON promotion.id_promotion_type = promotion_type.id_promotion_type'); //query to get promotions and their type
+                            $stm->execute();
+                            $row = $stm->fetchAll();
+                            foreach ($row as $value) {
+                                echo '<option value='."$value[0]".'>' . $value[1] . ' - ' . $value[2] . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="orga">
                         <label class="custom-file-label tbxindicator">Profile picture</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input fil1" id="customFile" name="c_profilepic">
                             <label class="custom-file-label filelabel medium" for="customFile">Choose file</label> <!-- Profile picture field -->
                         </div>
-                    </div>
-                    <div class="orga">
                     </div>
                 </div>
                 <div>
