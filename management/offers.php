@@ -48,9 +48,9 @@
                             <option>COMPANY 2</option>
                         </select>
                     </div>
-                    <div class="orga5">
-                        <label class="tbxindicator Medium promotex">Promotions concerned</label>
-                        <div>
+                    <label class="tbxindicator Medium promotex">Promotions concerned</label>
+                    <div class="orga">
+                        <div class="ccheck">
                             <!-- Promotions concerned field -->
                             <div class="checkb">
                                 <input type="checkbox" class="medium txbx" id="promtbx1">
@@ -108,12 +108,14 @@
                         <label for="nbrtbx" class="tbxindicator small">Number of Interns</label>
                         <input type="number" class="form-control tbx medium" id="nbrtbx" placeholder="1"> <!-- number of interns field -->
                     </div>
-                    <div class="orga">
+                    <div class="orga5">
                         <label class="custom-file-label tbxindicator">Profile picture</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input fil1" id="customFile" name="c_profilepic">
                             <label class="custom-file-label filelabel medium" for="customFile">Choose file</label> <!-- Profile picture field -->
                         </div>
+                    </div>
+                    <div class="orga4">
                     </div>
                 </div>
                 <div>
