@@ -180,19 +180,6 @@ include "../php/navbar.php";
                     }
                     ?>
                 </div>
-
-                <!--USER MODIFICATION FIELD-->
-                <div class="mantitl">
-                    <h1 class="big titl">USER MODIFICATION</h1>
-                </div>
-                <div class="col-sm-6 orga">
-                    <label for="mmailtbx" class="tbxindicator small">Enter user email and edit his page</label>
-                    <input type="email" class="form-control tbx medium" id="mmailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
-                </div>
-                <div>
-                    <!--Ci-dessous le bouton submit-->
-                    <input type="submit" class="btn-primary btn Medium" id="modbtn" value="MODIFY ACCOUNT" name="m_user">
-                </div>
             </div>
         </div>
         <?php
