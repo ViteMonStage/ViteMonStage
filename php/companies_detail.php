@@ -1,4 +1,22 @@
 <?php
+function companyExists(){
+    if(!isset($_GET['id_company']) == 1){
+        header('HTTP/1.1 404 Not found');
+        $contents = file_get_contents('./error/404.php', TRUE);
+        die($contents);
+    }
+    include dirname(__FILE__) . "/db.php"; //Used to get global pdo
+        $sql = $pdo->prepare('SELECT company_name from company where company.id_company = ?');
+        $sql->bindParam(1, $_GET['id_company']); // Assigning the id_offer parameter in the request and retrieving it from the url
+        $sql->execute(); // Execution of the request 
+        $row = $sql->fetchAll(); // Retrieves the rows of the query
+        if(!isset($row[0]) == 1){
+            header('HTTP/1.1 404 Not found');
+            $contents = file_get_contents('./error/404.php', TRUE);
+            die($contents);
+        }
+}
+
 function displayCompaniedetails()
 {
     try {
@@ -6,7 +24,7 @@ function displayCompaniedetails()
         $sql = $pdo->prepare('SELECT company_name,company.description,cityname,zipcode,sector_activity,pilot_trust,company.id_company from company 
         INNER JOIN  address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city
-        INNER JOIN trust on trust.id_company = company.id_company
+        LEFT JOIN trust on trust.id_company = company.id_company
         where company.id_company = ?
         ');
         $sql->bindParam(1, $_GET['id_company']); // Assigning the id_offer parameter in the request and retrieving it from the url
