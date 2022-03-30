@@ -54,8 +54,8 @@
     <div class="container">
         <div class="row ng-scope">
             <div class="col-md-10 offset-md-1">
-            
             <?php displayUser() ?>
+
             </div>
         </div>
     </div>
