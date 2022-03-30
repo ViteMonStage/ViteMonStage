@@ -42,8 +42,6 @@
                         <input type="text" class="form-control tbx medium" id="mailtbx" placeholder="VTM.Incorporated@vtm.com" name="c_mail"> <!-- email field -->
                     </div>
                     <div class="orga">
-                    </div>
-                    <div class="orga">
                         <label for="citytbx" class="tbxindicator small">City</label>
                         <select class="form-control tbx medium" id="citytbx" name="c_city">
                             <!-- city name field -->
@@ -83,13 +81,6 @@
                     <div class="orga">
                         <label for="floortbx" class="tbxindicator small">Floor*</label>
                         <input type="number" class="form-control tbx medium" id="floortbx" placeholder="57" name="c_floor"> <!-- floor number field -->
-                    </div>
-                    <div class="orga">
-                        <label class="custom-file-label tbxindicator">Profile picture</label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input fil1" id="customFile" name="c_profilepic">
-                            <label class="custom-file-label filelabel medium" for="customFile">Choose file</label> <!-- Profile picture field -->
-                        </div>
                     </div>
                 </div>
 

@@ -55,6 +55,15 @@
   margin-left: 10px;
 }
 
+.test{
+  width: 12em;
+  margin: 10px;
+}
+
+::placeholder{
+  color: #777777 !important;
+}
+
 /* Search textboxes divs */
 .col-lg-2 {
   margin-left: 15px;
