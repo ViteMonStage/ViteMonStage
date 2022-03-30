@@ -1,15 +1,73 @@
 <?php
-//include "./php/db.php"; //Used to get global pdo
 
+
+if(isset($_POST['submit'])){
+    $searchuser_param = $_POST['Status'];
+    $usersearch = $_POST['search_user'];
+    header('Location: ../search_user.php?Status='.$searchuser_param.'&usersearch='.$usersearch.'');
+}
+
+
+//include "./php/db.php"; //Used to get global pdo
 session_start();
 
 function count_user(){
-    global $pdo;
-    $sql = ('SELECT count(id_user) FROM 8aah0fCXko.user;');
-    $res = $pdo->query($sql);
-    $count = $res->fetchColumn();
+    include_once dirname(__FILE__) . "/db.php"; //Used to get global pdo
+    $usersearch = $_GET['usersearch'];
+    $searchuser_param = $_GET['Status'];
+    $sql = $pdo->prepare("SELECT count(id_user) from user WHERE concat(firstname,' ',lastname) like '%$usersearch%' OR lastname LIKE '%$usersearch%'");
+    $sql->execute();
+    $count = $sql->fetchAll();
     return "$count results";
 }
+
+function displayUser()
+{
+    try {
+        include_once dirname(__FILE__) . "/db.php"; //Used to get global pdo
+        $usersearch = $_GET['usersearch'];
+        $searchuser_param = $_GET['Status'];
+        $sql = $pdo->prepare("SELECT id_user,firstname,lastname,description_user,user.id_promotion,user.id_role,user.id_campus from user  
+        WHERE concat(firstname,' ',lastname) like '%$usersearch%' OR lastname LIKE '%$usersearch%'");
+        $sql->execute();
+        $row = $sql->fetchAll();
+
+            foreach ($row as $value) {
+            
+                echo "<section class='search-result-item'>";
+                $profile_pic = "./assets/profile_pic/$value[0].png";
+                if(file_exists($profile_pic)){
+                    echo"<a class='image-link' href='#'><img class='image' src='./assets/profile_pic/$value[0].png'>";
+                }else{
+                    echo"<a class='image-link' href='#'><img class='image' src='./assets/profile_pic/0.png'>";
+                }
+                echo"</a>
+                <div class='search-result-item-body'>
+                    <div class='row'>
+                        <div class='col-sm-9'>
+                            <h4 class='search-result-item-heading'><a href='#'>$value[1] $value[2]</a></h4>
+                            <p class='info'> $value[4] $value[5]</p>
+                            <p class='description'> $value[3]</p>
+                        </div>
+                        <div class='col-sm-3 text-align-center'>
+                            <a class='col-sm-10 btn btn-secondary ' href='#'>See profile</a>
+                            <a class='col-sm-10 btn btn-secondary' href='#'>Manage rights</a>
+                        </div>
+                    </div>
+                </div>
+            </section>";
+            }
+    } catch (\PDOException $e) {
+        echo $e->getMessage();
+        echo "   ";
+        echo (int)$e->getCode();
+    }
+}
+
+function placeholder($usersearch){
+    if($usersearch != ""){return $usersearch;} else return "Search for a user";
+}
+
 /*
 function get_user($search_status, $search, bool $pagination){
 
@@ -86,45 +144,3 @@ function get_user($search_status, $search, bool $pagination){
 /*if (isset($_POST['submit'])){
     $
 }*/
-function displayUser()
-{
-    try {
-        include dirname(__FILE__) . "/db.php"; //Used to get global pdo
-        $sql = $pdo->prepare("SELECT id_user,firstname,lastname,description_user,user.id_promotion,user.id_role,user.id_campus from user  
-        WHERE concat(firstname,' ',lastname) like '%?%' OR lastname LIKE '%?%'");
-        $sql->bindParam(1,$search_user);
-        $sql->bindParam(2,$search_user);
-        $sql->execute();
-        $row = $sql->fetchAll();
-
-            foreach ($row as $value) {
-            
-                echo "<section class='search-result-item'>";
-                $profile_pic = "./assets/profile_pic/$value[0].png";
-                if(file_exists($profile_pic)){
-                    echo"<a class='image-link' href='#'><img class='image' src='./assets/profile_pic/$value[0].png'>";
-                }else{
-                    echo"<a class='image-link' href='#'><img class='image' src='./assets/profile_pic/0.png'>";
-                }
-                echo"</a>
-                <div class='search-result-item-body'>
-                    <div class='row'>
-                        <div class='col-sm-9'>
-                            <h4 class='search-result-item-heading'><a href='#'>$value[1] $value[2]</a></h4>
-                            <p class='info'> $value[4] $value[5]</p>
-                            <p class='description'> $value[3]</p>
-                        </div>
-                        <div class='col-sm-3 text-align-center'>
-                            <a class='col-sm-10 btn btn-secondary ' href='#'>See profile</a>
-                            <a class='col-sm-10 btn btn-secondary' href='#'>Manage rights</a>
-                        </div>
-                    </div>
-                </div>
-            </section>";
-            }
-    } catch (\PDOException $e) {
-        echo $e->getMessage();
-        echo "   ";
-        echo (int)$e->getCode();
-    }
-}
