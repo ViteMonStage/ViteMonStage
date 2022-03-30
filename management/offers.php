@@ -34,58 +34,53 @@
                 <div class="col-sm-6 divg">
                     <div class="orga">
                         <label for="nametbx" class="tbxindicator small">Name</label>
-                        <input type="text" class="form-control tbx medium" id="nametbx" placeholder="WEB IT Internship"> <!-- name field -->
+                        <input type="text" class="form-control tbx medium" id="nametbx" placeholder="WEB IT Internship" name="c_name"> <!-- name field -->
                     </div>
                     <div class="orga4">
                         <label for="desctbx" class="tbxindicator small">Description</label>
-                        <textarea class="form-control ltbx medium" id="desctbx" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
+                        <textarea class="form-control ltbx medium" id="desctbx" name="c_desc" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
                     </div>
                     <div class="orga">
                         <label for="comptbx" class="tbxindicator small">Company</label>
-                        <select class="form-control tbx medium" name="company" id="comptbx">
-                            <option selected>VTS Incorporated</option> <!-- company field -->
-                            <option>COMPANY 1</option>
-                            <option>COMPANY 2</option>
+                        <select class="form-control tbx medium" name="c_company" id="comptbx">
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            $stm = $pdo->prepare('SELECT id_company, company_name FROM company'); //query to get promotions and their type
+                            $stm->execute();
+                            $row = $stm->fetchAll();
+                            foreach ($row as $value) {
+                                echo '<option value=' . "$value[0]" . '>' . $value[1] . '</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                     <label class="tbxindicator Medium promotex">Promotions concerned</label>
                     <div>
                         <div class="ccheck">
                             <!-- Promotions concerned field -->
-                            <div class="checkb">
-                                <input type="checkbox" class="medium txbx" id="promtbx1">
-                                <label for="promtbx1" class="tbxindicator mini">CPIA1</label>
-                            </div>
-                            <div class="checkb">
-                                <input type="checkbox" class="medium txbx" id="promtbx2">
-                                <label for="promtbx2" class="tbxindicator mini">CPIA2 INFO</label>
-                            </div>
-                            <div class="checkb">
-                                <input type="checkbox" class="medium txbx" id="promtbx3">
-                                <label for="promtbx3" class="tbxindicator mini">CPIA2 GEN</label>
-                            </div>
-                            <div class="checkb">
-                                <input type="checkbox" class="medium txbx" id="promtbx4">
-                                <label for="promtbx4" class="tbxindicator mini">CPIA2 S3E</label>
-                            </div>
-                            <div class="checkb">
-                                <input type="checkbox" class="medium txbx" id="promtbx5">
-                                <label for="promtbx5" class="tbxindicator mini">CPIA2 BTP</label>
-                            </div>
-                            <div class="checkb">
-                                <input type="checkbox" class="medium txbx" id="promtbx6">
-                                <label for="promtbx6" class="tbxindicator mini">CPIA3</label>
-                            </div>
+                            <?php
+                            $stm = $pdo->prepare('SELECT id_promotion, promotion_name, promotion_type FROM promotion INNER JOIN promotion_type ON promotion.id_promotion_type = promotion_type.id_promotion_type'); //query to get promotions and their type
+                            $stm->execute();
+                            $row = $stm->fetchAll();
+                            foreach ($row as $value) {
+                                echo '
+                                <div class="checkb">
+                                <input type="checkbox" class="medium txbx" id="promtbx1" name="' . $value[0] . '">
+                                <label for="promtbx1" class="tbxindicator mini">' . $value[1] . '-' . $value[2] . '</label>
+                                </div>
+                                ';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 row divd">
                     <div class="orga">
-                        <label for="skilltbx" class="tbxindicator small">Skills</label>
+                        <label for="skilltbx" class="tbxindicator small" name="c_skills">Skills</label>
                         <input type="text" class="form-control tbx medium" id="skilltbx" placeholder="Databases, HTML, CSS, PHP"> <!-- skills field -->
                     </div>
                     <div class="orga">
-                        <label for="salartbx" class="tbxindicator small">Estimated salary (per month)</label>
+                        <label for="salartbx" class="tbxindicator small" name="c_salary">Estimated salary (per month)</label>
                         <input type="text" class="form-control tbx medium" id="salartbx" placeholder="650€"> <!-- salary  field -->
                     </div>
                     <div class="orga2">
@@ -93,23 +88,23 @@
                             <!-- starting date field -->
                             <label for="starttbx" class="tbxindicator small">Starting date</label>
                             <div class="md-form md-outline input-with-post-icon datepicker">
-                                <input type="date" id="starttbx" class="form-control tbx medium">
+                                <input type="date" id="starttbx" class="form-control tbx medium" name="c_start_date">
                             </div>
                         </div>
                         <div class="col-sm-5 orga3">
                             <!-- ending date field -->
                             <label for="endtbx" class="tbxindicator small">Ending date</label>
                             <div class="md-form md-outline input-with-post-icon datepicker">
-                                <input type="date" id="endtbx" class="form-control tbx medium">
+                                <input type="date" id="endtbx" class="form-control tbx medium" name="c_end_date">
                             </div>
                         </div>
                     </div>
                     <div class="orga">
                         <label for="nbrtbx" class="tbxindicator small">Number of Interns</label>
-                        <input type="number" class="form-control tbx medium" id="nbrtbx" placeholder="1"> <!-- number of interns field -->
+                        <input type="number" class="form-control tbx medium" id="nbrtbx" placeholder="1" name="c_interns"> <!-- number of interns field -->
                     </div>
                     <div class="orga">
-                    <label for="promotbx" class="tbxindicator small">Promotion</label> <!-- promotion field -->
+                        <label for="promotbx" class="tbxindicator small">Promotion</label> <!-- promotion field -->
                         <select class="form-control tbx medium" id="promotbx" name="c_promo">
                             <?php
                             include "../db.php"; //Used to get global pdo
@@ -117,7 +112,7 @@
                             $stm->execute();
                             $row = $stm->fetchAll();
                             foreach ($row as $value) {
-                                echo '<option value='."$value[0]".'>' . $value[1] . ' - ' . $value[2] . '</option>';
+                                echo '<option value=' . "$value[0]" . '>' . $value[1] . ' - ' . $value[2] . '</option>';
                             }
                             ?>
                         </select>
@@ -143,13 +138,13 @@
                 <div class="col-sm-6 divg">
                     <div class="orga">
                         <label for="dnametbx" class="tbxindicator small">Enter the name of the offer to be deleted</label>
-                        <input type="text" class="form-control tbx medium" id="dnametbx" placeholder="WEB IT Internship"> <!-- name field -->
+                        <input type="text" class="form-control tbx medium" id="dnametbx" placeholder="WEB IT Internship" name="d_name"> <!-- name field -->
                     </div>
                 </div>
                 <div class="col-sm-6 row divd">
                     <div class="orga">
                         <label for="dcompanytbx" class="tbxindicator small">Enter the company name</label>
-                        <input type="text" class="form-control tbx medium" id="dcompanytbx" placeholder="VTM Incorporated"> <!-- skills field -->
+                        <input type="text" class="form-control tbx medium" id="dcompanytbx" placeholder="VTM Incorporated" name="d_company"> <!-- skills field -->
                     </div>
                 </div>
                 <div>
