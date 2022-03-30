@@ -25,123 +25,37 @@
     include "./php/navbar.php";
     ?>
     <!-- User serch bar -->
+    <form action="php/search_user_sql.php" method="post">
     <div class="container mt-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-12">
                 <div class="card p-3 py-4">
                     <h5>Search a User</h5>
-                    <form action="search_user.php" method="post">
                     <div class="row g-3 mt-2">
                         <div class="col-md-2">
                             <select class="form-select frm-slc" aria-label="Default select example" name="Status">
-                                <option class="frm-slc" value="1" selected>Anyone</option>
-                                <option class="frm-slc" value="2">Student</option>
-                                <option class="frm-slc" value="3">Delegate</option>
-                                <option class="frm-slc" value="4">Pilot</option>
-                                <option class="frm-slc" value="5">Administrator</option>
-                                <option class="frm-slc" value="6">Company Representative<?php  ?></option>
+                                <option class="frm-slc" value="0" selected>Anyone</option>
+                                <option class="frm-slc" value="1">Student</option>
+                                <option class="frm-slc" value="2">Delegate</option>
+                                <option class="frm-slc" value="3">Pilot</option>
+                                <option class="frm-slc" value="4">Administrator</option>
+                                <option class="frm-slc" value="5">Company Representative<?php  ?></option>
                             </select>
                         </div>
-                        <div class="col-md-8"> <input type="text" name="search_user" class="form-control" placeholder="Search for someone"><?php echo"$search_user"?> </div>
-                        <div class="col-md-2"> <button type="submit" name="submit" class="btn btn-secondary btn-block floatTop" value="submit">Search Results</button> </div> </form>
+                        <div class="col-md-8"> <input type="text" name="search_user" class="form-control" placeholder="<?php if(isset($_GET['usersearch'])){echo $_GET['usersearch'];} ?>"> </div>
+                        <div class="col-md-2"> <button type="submit" name="submit" class="btn btn-secondary btn-block floatTop" value="submit">Search Results</button> </div> 
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </form>
     <!--  Résults -->
     <div class="container">
         <div class="row ng-scope">
             <div class="col-md-10 offset-md-1">
-            <p class="search-results-count small"><?php echo(count_user()) ?></p>    
-
-            <?php include_once dirname(__FILE__) . "/php/search_user_sql.php";displayUser(); ?>
-                <!--section class="search-result-item">
-                    <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar1.png">
-                    </a>
-                    <div class="search-result-item-body">
-                        <div class="row">
-                            <div class="col-sm-9">
-                                <h4 class="search-result-item-heading"><a href="#">Florian SAVALLE</a></h4>
-                                <p class="info">Student</p>
-                                <p class="description"> description</p>
-                            </div>
-                            <div class="col-sm-3 text-align-center">
-                                <a class="col-sm-10 btn btn-secondary" href="#">See profile</a>
-                                <a class="col-sm-10 btn btn-secondary" href="#">Manage rights</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="search-result-item">
-                    <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar2.png">
-                    </a>
-                    <div class="search-result-item-body">
-                        <div class="row">
-                            <div class="col-sm-9">
-                                <h4 class="search-result-item-heading"><a href="#">$value</a></h4>
-                                <p class="info">Student</p>
-                                <p class="description"> description</p>
-                            </div>
-                            <div class="col-sm-3 text-align-center">
-                                <a class="col-sm-10 btn btn-secondary " href="#">See profile</a>
-                                <a class="col-sm-10 btn btn-secondary" href="#">Manage rights</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="search-result-item">
-                    <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar6.png">
-                    </a>
-                    <div class="search-result-item-body">
-                        <div class="row">
-                            <div class="col-sm-9">
-                                <h4 class="search-result-item-heading"><a href="#">Pierre LEJEUNE</a></h4>
-                                <p class="info">Delegate</p>
-                                <p class="description"> description</p>
-                            </div>
-                            <div class="col-sm-3 text-align-center">
-                                <a class="col-sm-10 btn btn-secondary" href="#">See profile</a>
-                                <a class="col-sm-10 btn btn-secondary" href="#">Manage rights</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="search-result-item">
-                    <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar4.png">
-                    </a>
-                    <div class="search-result-item-body">
-                        <div class="row">
-                            <div class="col-sm-9">
-                                <h4 class="search-result-item-heading"><a href="#">Paul DESPONT</a></h4>
-                                <p class="info">Student</p>
-                                <p class="description"> description</p>
-                            </div>
-                            <div class="col-sm-3 text-align-center">
-                                <a class="col-sm-10 btn btn-secondary" href="#">See profile</a>
-                                <a class="col-sm-10 btn btn-secondary" href="#">Manage rights</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="search-result-item">
-                    <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar5.png">
-                    </a>
-                    <div class="search-result-item-body">
-                        <div class="row">
-                            <div class="col-sm-9">
-                                <h4 class="search-result-item-heading"><a href="#">Tom ANTOINE</a></h4>
-                                <p class="info">Student</p>
-                                <p class="description"> description</p>
-                            </div>
-                            <div class="col-sm-3 text-align-center">
-                                <a class="col-sm-10 btn btn-secondary" href="#">See profile</a>
-                                <a class="col-sm-10 btn btn-secondary" href="#">Manage rights</a>
-                            </div>
-                        </div>
-                    </div>
-                </section-->
-                
+            <p class="search-results-count small"><?php echo(count_user()) ?></p>
+            <?php displayUser() ?>
             </div>
         </div>
     </div>
