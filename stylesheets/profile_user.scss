@@ -22,6 +22,7 @@
     height: 24px;
     width: 24px;
     display: none;
+    color: transparent;
     
 }
 .infos {
@@ -56,16 +57,16 @@
 
 }
 .listbox{
-    background-color: transparent;
-    color: white;
+    display: none;
+    background-color: white;
+    color: black;
     border: none;
     width: 70%;
     transform: translateX(20%);
     outline: none;
+    margin-top: 5px;
 }
-.listbox{
-    display: none;
-}
+
 
 .infos li .md-form {
     display: none;
@@ -86,6 +87,7 @@
     transform: translateX(20%);
     outline: none;
 }
+
 ul{
     margin-top: 10px;
     padding-left: 0;

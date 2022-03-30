@@ -135,20 +135,16 @@ include "../php/navbar.php";
                         if ($_GET["c_error"] == "1") {
                             echo '<p class="small error">Error, please try again.</p>';
                         }
-                    }
-                    if (isset($_GET["c_error"])) {
                         if ($_GET["c_error"] == "2") {
                             echo '<p class="small error">Invid character detected, please try again.</p>';
+                        }
+                        if ($_GET["c_error"] == "3") {
+                            echo '<p class="small error">Please fill all textboxes.</p>';
                         }
                     }
                     if (isset($_GET["c_good"])) {
                         if ($_GET["c_good"] == "1") {
                             echo '<p class="small error">User successfuly created.</p>';
-                        }
-                    }
-                    if (isset($_GET["c_error"])) {
-                        if ($_GET["c_error"] == "3") {
-                            echo '<p class="small error">Please fill all textboxes.</p>';
                         }
                     }
                     ?>
@@ -170,36 +166,19 @@ include "../php/navbar.php";
                         if ($_GET["d_error"] == "1") {
                             echo '<p class="small error">E-mail incorrect, please try again.</p>';
                         }
+                        if ($_GET["d_error"] == "3") {
+                            echo '<p class="small error">Please fill all mandatory textboxes.</p>';
+                        }
+                        if ($_GET["d_error"] == "4") {
+                            echo '<p class="small error">User does not exist.</p>';
+                        }
                     }
                     if (isset($_GET["d_good"])) {
                         if ($_GET["d_good"] == "1") {
                             echo '<p class="small error">User successfuly deleted.</p>';
                         }
                     }
-                    if (isset($_GET["d_error"])) {
-                        if ($_GET["d_error"] == "3") {
-                            echo '<p class="small error">Please fill all mandatory textboxes.</p>';
-                        }
-                    }
-                    if (isset($_GET["d_error"])) {
-                        if ($_GET["d_error"] == "4") {
-                            echo '<p class="small error">User does not exist.</p>';
-                        }
-                    }
                     ?>
-                </div>
-
-                <!--USER MODIFICATION FIELD-->
-                <div class="mantitl">
-                    <h1 class="big titl">USER MODIFICATION</h1>
-                </div>
-                <div class="col-sm-6 orga">
-                    <label for="mmailtbx" class="tbxindicator small">Enter user email and edit his page</label>
-                    <input type="email" class="form-control tbx medium" id="mmailtbx" placeholder="mail@example.com"> <!-- e-mail field -->
-                </div>
-                <div>
-                    <!--Ci-dessous le bouton submit-->
-                    <input type="submit" class="btn-primary btn Medium" id="modbtn" value="MODIFY ACCOUNT" name="m_user">
                 </div>
             </div>
         </div>

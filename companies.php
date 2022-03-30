@@ -33,7 +33,6 @@
     <div class="row g-0 justify-content-center filt smalltitle bigtitle">
         <div class="col-lg-3 col-sm-12 colo">
             <label for="nametbx" class="tbxindicator small">Name</label>
-
             <input type="text" class="tbx small" id="nametbx" name="company_name">
         </div>
         <div class="col-lg-3 col-sm-12 colo">
@@ -81,7 +80,7 @@
                         </select>
         </div>
         <div class="col-lg-3 col-sm-12 colo">
-           <a  role="button" class ="small btn search"  href="./companies_detail.php?company_name=<?php echo $value[0] ?>?cityname=<?php echo $value[2] ?>?sector_activity=<?php echo $value[4] ?>">Search</a> 
+           <input value="Search" id="submit" type="submit" class ="small btn search">
         </div>
     </div>
     </form>
@@ -102,8 +101,4 @@
     include "./php/footer.php"
     ?>
 </body>
-<?php
-
-?>
-
 </html>
