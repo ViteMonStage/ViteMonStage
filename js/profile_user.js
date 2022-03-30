@@ -25,6 +25,7 @@ function edit(){
         list[i].style.paddingLeft = "5px";
         list[i].style.paddingRight = "3px";    
         list[i].setAttribute("placeholder","placeholder");
+      
 }
     
     list[4].style.display = "None";
@@ -71,4 +72,5 @@ var loadFile = function (event) {
       reader.readAsDataURL(this.files[0]);
   }) 
 
+  
   
