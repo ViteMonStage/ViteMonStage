@@ -71,6 +71,3 @@ var loadFile = function (event) {
       });
       reader.readAsDataURL(this.files[0]);
   }) 
-
-  
-  
