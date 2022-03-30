@@ -149,6 +149,21 @@
                     }
                     ?>
                 </div>
+
+                <!-- COMPANY MODIFICATION -->
+                <div class="mantitl">
+                    <h1 class="big titl">COMPANY MODIFICATION</h1>
+                </div>
+                <div class="col-sm-6 divg">
+                    <div class="orga">
+                        <label for="mnametbx" class="tbxindicator small">Name</label>
+                        <input type="text" class="form-control tbx medium" id="mnametbx" placeholder="VTM Incorporated"> <!-- name field -->
+                    </div>
+                </div>
+                <div>
+                    <!--Ci-dessous le bouton submit-->
+                    <input type="submit" class="btn-primary btn Medium" id="mlogbtn" value="MODIFY COMPANY" name="m_company">
+                </div>
             </div>
         </div>
     </form>

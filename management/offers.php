@@ -174,6 +174,27 @@
                     }
                     ?>
                 </div>
+
+                <!-- OFFER MODIFICATION -->
+                <div class="mantitl">
+                    <h1 class="big titl">OFFER MODIFICATION</h1>
+                </div>
+                <div class="col-sm-6 divg">
+                    <div class="orga">
+                        <label for="mnametbx" class="tbxindicator small">Enter the name of the offer to be deleted</label>
+                        <input type="text" class="form-control tbx medium" id="mnametbx" placeholder="WEB IT Internship"> <!-- name field -->
+                    </div>
+                </div>
+                <div class="col-sm-6 row divd">
+                    <div class="orga">
+                        <label for="mcompanytbx" class="tbxindicator small">Enter the company name</label>
+                        <input type="text" class="form-control tbx medium" id="mcompanytbx" placeholder="VTM Incorporated"> <!-- skills field -->
+                    </div>
+                </div>
+                <div>
+                    <!--Ci-dessous le bouton submit-->
+                    <input type="submit" class="btn-primary btn Medium" id="mlogbtn" value="MODIFY OFFER">
+                </div>
             </div>
         </div>
     </form>
