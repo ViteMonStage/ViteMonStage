@@ -12,34 +12,42 @@ if(isset($_POST['submit'])){
 session_start();
 
 function count_user(){
-    include_once dirname(__FILE__) . "/db.php"; //Used to get global pdo
-    $usersearch = $_GET['usersearch'];
-    $searchuser_param = $_GET['Status'];
-    $sql = $pdo->prepare("SELECT count(id_user) from user WHERE concat(firstname,' ',lastname) like '%$usersearch%' OR lastname LIKE '%$usersearch%'");
-    $sql->execute();
-    $count = $sql->fetchAll();
+    global $pdo;
+    $sql = ('SELECT count(id_user) FROM 8aah0fCXko.user;');
+    $res = $pdo->query($sql);
+    $count = $res->fetchColumn();
     return "$count results";
 }
+
+
 
 function displayUser()
 {
     try {
-        include_once dirname(__FILE__) . "/db.php"; //Used to get global pdo
-        $usersearch = $_GET['usersearch'];
-        $searchuser_param = $_GET['Status'];
-        $sql = $pdo->prepare("SELECT id_user,firstname,lastname,description_user,user.id_promotion,user.id_role,user.id_campus from user  
-        WHERE concat(firstname,' ',lastname) like '%$usersearch%' OR lastname LIKE '%$usersearch%'");
+        include dirname(__FILE__) . "/db.php"; //Used to get global pdo
+        if(isset($_GET['usersearch'])){$usersearch = $_GET['usersearch'];}else $usersearch = "";
+        if(isset($_GET['Status'])){$searchuser_param = $_GET['Status'];}else $searchuser_param = "";
+        $sql = $pdo->prepare("SELECT id_user,firstname,lastname,description_user,promotion.promotion_name,role.role,campus.campus_name from user 
+        inner join promotion on user.id_promotion = promotion.id_promotion
+        inner join role on user.id_role = role.id_role
+		inner join campus on user.id_campus = campus.id_campus
+        WHERE concat(firstname,' ',lastname) like '%$usersearch%' $searchuser_param");
         $sql->execute();
         $row = $sql->fetchAll();
+        $rownum = $sql->rowCount();
+
+        ?>
+        <p class="search-results-count small">number of results : <?php echo $rownum ?></p>
+        <?php
 
             foreach ($row as $value) {
-            
+
                 echo "<section class='search-result-item'>";
-                $profile_pic = "./assets/profile_pic/$value[0].png";
+                $profile_pic = "./assets/user_data/avatar/$value[0].png";
                 if(file_exists($profile_pic)){
-                    echo"<a class='image-link' href='#'><img class='image' src='./assets/profile_pic/$value[0].png'>";
+                    echo"<a class='image-link' href='#'><img class='image' src='./assets/user_data/avatar/$value[0].png'>";
                 }else{
-                    echo"<a class='image-link' href='#'><img class='image' src='./assets/profile_pic/0.png'>";
+                    echo"<a class='image-link' href='#'><img class='image' src='./assets/user_data/avatar/0.png'>";
                 }
                 echo"</a>
                 <div class='search-result-item-body'>
@@ -62,10 +70,6 @@ function displayUser()
         echo "   ";
         echo (int)$e->getCode();
     }
-}
-
-function placeholder($usersearch){
-    if($usersearch != ""){return $usersearch;} else return "Search for a user";
 }
 
 /*
