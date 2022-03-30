@@ -74,8 +74,8 @@
                                 echo "<option value='NULL'".$selected."> None </option>";
                                     }
                                     else{
-                                    
-                                    echo '<option value=' . "$row[0][9]" . 'selected>' . $row[0][5] . ' - ' . $row[0][7] . '</option>';
+                                    echo "<option value='NULL'> None </option>";
+                                    echo '<option value="' . $row[0][9] . '"selected>' . $row[0][5] . ' - ' . $row[0][7] . '</option>';
                                     }
                         //include "../db.php"; //Used to get global pdo
                         $stm = $pdo->prepare("SELECT id_promotion, promotion_name, promotion_type FROM promotion INNER JOIN promotion_type ON promotion.id_promotion_type = promotion_type.id_promotion_type WHERE promotion_type != '" . $row[0][7] . "' "); //query to get promotions and their type
