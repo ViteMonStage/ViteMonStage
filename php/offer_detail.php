@@ -11,7 +11,7 @@ function displayOfferdetail()
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
         $sql = $pdo->prepare('SELECT offer_name,company.company_name,cityname,zipcode,offer_date,number_interns, /** Query that retrieve the informations that we wanted */
-        intership_start,intership_end,offers.description,offer_sector from offers
+        intership_start,intership_end,offers.description,offer_area from offers
         INNER JOIN company on offers.id_company = company.id_company
         INNER JOIN address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city
@@ -34,7 +34,7 @@ function displayOfferdetail()
                     </div>
                     <?php if (!isInWishlist($_SESSION["id_user"], $_GET["id_offer"])) : ?>
                         <div class="wish">
-                            <a class="addlink" href="/php/wishlist.php?add=<?php echo $_GET["id_offer"]  ?>">
+                            <a class="addlink" href="/php/wishlist.php?add=<?php echo $_GET["id_offer"]?>">
                                 <div class="wish_d1">
                                     <i class="fa-solid fa-star"></i>
                                 </div>

@@ -24,7 +24,7 @@ function displayWishlist($id_user)
                         <p class="mini">Description : <?php echo shortenString($value[0])?></p>
                         <h4 class="mini loca"><?php echo $value[10]?> (<?php echo $value[9] ?>) - Publication date : <?php echo $value[11] ?> - <?php echo $value[4] ?></h4>
                     </div>
-                    <a href="offers_detail.php?id_offer=<?php echo $value[12]?>'" role="button" class="small btn offer">See offer</a>
+                    <a href="offers_detail.php?id_offer=<?php echo $value[12]?>" role="button" class="small btn offer">See offer</a>
                 </div>  ;
         <?php endforeach;
         } else {?>

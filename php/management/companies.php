@@ -14,15 +14,7 @@ if (isset($_POST['c_company'])) {
     $building_name = $_POST['c_building_name'];
     $floor = $_POST['c_floor'];
 
-    $cityname = $_POST['c_city'];
-    $stm = $pdo->prepare('SELECT zipcode FROM city WHERE cityname=?'); //We get the last company id
-    $stm->bindParam(1, $cityname);
-    if ($stm->execute() == FALSE) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1'); //if a value is not valid / an error occured , returns error code 1
-        die();
-    }
-    $row = $stm->fetchAll();
-    $zipcode = $row[0][0];
+    $id_city = $_POST['c_city'];
 
     //CHECK IF TEXTBOXES ARE FILLED
     if (empty($name)) {
@@ -53,10 +45,6 @@ if (isset($_POST['c_company'])) {
     }
     if (empty($floor)) {
         $floor=NULL;
-    }
-    if (empty($cityname)) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=3'); //if textbox is left empty
-        die();
     }
     //CHARACTER VERIFICATION
     if (preg_match('/[\'^}{#~><>¬]/', $name)) {
@@ -99,24 +87,12 @@ if (isset($_POST['c_company'])) {
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=2'); //if a character is not valid, returns error code 2
         die();
     }
-    if (preg_match('/[\'^}{#~><>¬]/', $cityname)) {
-        // one or more of the 'special characters' found in $string
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=2'); //if a character is not valid, returns error code 2
-        die();
-    }
     try {
         $stm = $pdo->prepare('INSERT INTO company (company_name, sector_activity, nbr_cesi_student_accepted, visible, email, description) VALUES (?,?,0,1,?,?)'); //prepared statement to insert values
         $stm->bindParam(1, $name);
         $stm->bindParam(2, $sector);
         $stm->bindParam(3, $email);
         $stm->bindParam(4, $description);
-        if ($stm->execute() == FALSE) {
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1'); //if a value is not valid / an error occured , returns error code 1
-            die();
-        }
-        $stm = $pdo->prepare('INSERT INTO city (zipcode, cityname) VALUES (?,?)'); //prepared statement to insert values intp city
-        $stm->bindParam(1, $zipcode);
-        $stm->bindParam(2, $cityname);
         if ($stm->execute() == FALSE) {
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1'); //if a value is not valid / an error occured , returns error code 1
             die();
@@ -128,14 +104,6 @@ if (isset($_POST['c_company'])) {
         }
         $row = $stm->fetchAll();
         $id_company = $row[0][0];
-
-        $stm = $pdo->prepare('SELECT MAX(id_city) FROM city'); //We get the last city id
-        if ($stm->execute() == FALSE) {
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/companies.php?c_error=1'); //if a value is not valid / an error occured , returns error code 1
-            die();
-        }
-        $row = $stm->fetchAll();
-        $id_city = $row[0][0];
 
         $stm = $pdo->prepare('INSERT INTO address (street_name, street_number, building_name, floor, id_city, id_company) VALUES (?,?,?,?,?,?)'); //prepared statement to insert values
         $stm->bindParam(1, $street_name);

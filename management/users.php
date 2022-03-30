@@ -117,11 +117,11 @@ include "../php/navbar.php";
                         <select class="form-control tbx medium" id="promotbx" name="c_promo">
                             <?php
                             include "../db.php"; //Used to get global pdo
-                            $stm = $pdo->prepare('SELECT promotion_name, promotion_type FROM promotion INNER JOIN promotion_type ON promotion.id_promotion_type = promotion_type.id_promotion_type'); //query to get promotions and their type
+                            $stm = $pdo->prepare('SELECT id_promotion, promotion_name, promotion_type FROM promotion INNER JOIN promotion_type ON promotion.id_promotion_type = promotion_type.id_promotion_type'); //query to get promotions and their type
                             $stm->execute();
                             $row = $stm->fetchAll();
                             foreach ($row as $value) {
-                                echo '<option>' . $value[0] . ' ' . $value[1] . '</option>';
+                                echo '<option value='."$value[0]".'>' . $value[1] . ' - ' . $value[2] . '</option>';
                             }
                             ?>
                         </select>
@@ -135,20 +135,16 @@ include "../php/navbar.php";
                         if ($_GET["c_error"] == "1") {
                             echo '<p class="small error">Error, please try again.</p>';
                         }
-                    }
-                    if (isset($_GET["c_error"])) {
                         if ($_GET["c_error"] == "2") {
                             echo '<p class="small error">Invid character detected, please try again.</p>';
+                        }
+                        if ($_GET["c_error"] == "3") {
+                            echo '<p class="small error">Please fill all textboxes.</p>';
                         }
                     }
                     if (isset($_GET["c_good"])) {
                         if ($_GET["c_good"] == "1") {
                             echo '<p class="small error">User successfuly created.</p>';
-                        }
-                    }
-                    if (isset($_GET["c_error"])) {
-                        if ($_GET["c_error"] == "3") {
-                            echo '<p class="small error">Please fill all textboxes.</p>';
                         }
                     }
                     ?>
@@ -170,20 +166,16 @@ include "../php/navbar.php";
                         if ($_GET["d_error"] == "1") {
                             echo '<p class="small error">E-mail incorrect, please try again.</p>';
                         }
+                        if ($_GET["d_error"] == "3") {
+                            echo '<p class="small error">Please fill all mandatory textboxes.</p>';
+                        }
+                        if ($_GET["d_error"] == "4") {
+                            echo '<p class="small error">User does not exist.</p>';
+                        }
                     }
                     if (isset($_GET["d_good"])) {
                         if ($_GET["d_good"] == "1") {
                             echo '<p class="small error">User successfuly deleted.</p>';
-                        }
-                    }
-                    if (isset($_GET["d_error"])) {
-                        if ($_GET["d_error"] == "3") {
-                            echo '<p class="small error">Please fill all mandatory textboxes.</p>';
-                        }
-                    }
-                    if (isset($_GET["d_error"])) {
-                        if ($_GET["d_error"] == "4") {
-                            echo '<p class="small error">User does not exist.</p>';
                         }
                     }
                     ?>

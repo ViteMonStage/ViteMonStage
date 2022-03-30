@@ -16,7 +16,7 @@
     /* Textboxes style*/
     border-radius: 50px;
     border-style: none;
-    color: #000000 !important;
+    color: black !important;
     background-color: #eeeeee;
     height: 2.5em;
     font-size: 1.2em;
@@ -90,10 +90,29 @@
 }
 
 /* "Search" button style */
-.search {
+.btn.search {
     margin-top: 35px;
     margin-left: 4em;
+    color: rgb(255, 255, 255);
+    background-color: #51b700;
+    border-radius: 50px;
+    border-style: none;
+    height: 2.5em;
+    
 }
+
+/* See Offer Button style*/
+.btn.see {
+    color: rgb(255, 255, 255);
+    background-color: #51b700;
+    border-radius: 50px;
+    border-style: none;
+    height: 2.5em;
+    width: 100px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
 
 /* Location and publication text style*/
 .loca {
