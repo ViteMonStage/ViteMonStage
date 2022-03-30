@@ -96,7 +96,7 @@
 
     <h2 class="results big"> </h2>
     <!--Function allowing the dynamic display of the different companies in our database -->
-    <?php include_once dirname(__FILE__) . "/php/companie.php";displayCompanie(); ?>
+    <?php include_once dirname(__FILE__) . "/php/companies.php";displayCompanie(); ?>
     <?php
     include "./php/footer.php"
     ?>
