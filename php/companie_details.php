@@ -6,7 +6,7 @@ function displayCompaniedetails()
         $sql = $pdo->prepare('SELECT company_name,company.description,cityname,zipcode,sector_activity,pilot_trust,company.id_company from company 
         INNER JOIN  address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city
-        INNER JOIN trust on trust.id_company = company.id_company
+        LEFT JOIN  trust on trust.id_company = company.id_company
         where company.id_company = ?
         ');
         $sql->bindParam(1, $_GET['id_company']); // Assigning the id_offer parameter in the request and retrieving it from the url
