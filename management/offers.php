@@ -115,7 +115,7 @@
                             <label class="custom-file-label filelabel medium" for="customFile">Choose file</label> <!-- Profile picture field -->
                         </div>
                     </div>
-                    <div class="orga4">
+                    <div class="orga">
                     </div>
                 </div>
                 <div>
