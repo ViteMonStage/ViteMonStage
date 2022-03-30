@@ -38,61 +38,45 @@
             <select class="form-control tbx small"  id="nametbx">
                             <?php
                             include "../db.php"; //Used to get global pdo
-                            try {
-                                $stm = $pdo->prepare('SELECT distinct cityname from offers
-                                INNER JOIN company on offers.id_company = company.id_company
-                                INNER JOIN address on company.id_company = address.id_company
-                                INNER JOIN city on address.id_city = city.id_city'); //prepared statement to get the location of the offer
-                                $stm->execute();
-                                $row = $stm->fetchAll();
-                                foreach($row as $value)
-                                {
-                                    echo'<option>'.$value[0].'</option>';
-                                }
-                            } catch (\PDOException $e) {
-                                echo $e->getMessage();
-                                echo "   ";
-                                echo (int)$e->getCode();
+                            $stm = $pdo->prepare('SELECT distinct cityname from offers
+                            INNER JOIN company on offers.id_company = company.id_company
+                            INNER JOIN address on company.id_company = address.id_company
+                            INNER JOIN city on address.id_city = city.id_city'); //prepared statement to get the location of the offer
+                            $stm->execute();
+                            $row = $stm->fetchAll();
+                            foreach($row as $value)
+                            {
+                                echo'<option>'.$value[0].'</option>';
                             }
                             ?>
                         </select>
         </div>
-        <div class="col-lg-2 col-sm-12 ">
+        <div class="col-lg-2 col-sm-12 test ">
             <label for="locationtbx" class="tbxindicator small">Publication date</label>
             <input type="text" class="tbx small" id="locationtbx">
         </div>
-        <div class="col-lg-2 col-sm-12 ">
-            <label for="sectortbx" class="tbxindicator small">Offer area</label>
-            <select class="form-control tbx small"  id="sectortbx">
+        <div class="col-lg-2 col-sm-12 test ">
+            <label for="placetbx" class="tbxindicator small">Number of places</label>
+            <input type="number" class="tbx small" id="placetbx" placeholder="1">
+        </div>
+        <div class="col-lg-2 col-sm-12 test ">
+            <label for="durationtbx" class="tbxindicator small">Duration (months)</label>
+            <input type="number" class="tbx small" id="durationtbx" placeholder="4">
+        </div>
+        <div class="col-lg-2 col-sm-12 test">
+            <label for="promostbx" class="tbxindicator small">Promotions</label>
+            <select class="form-control tbx small"  id="promostbx">
                             <?php
                             include "../db.php"; //Used to get global pdo
-                            try {
-                                $stm = $pdo->prepare('SELECT offer_area from offers'); //prepared statement to get campuses name
-                                $stm->execute();
-                                $row = $stm->fetchAll();
-                                foreach($row as $value)
-                                {
-                                    echo'<option>'.$value[0].'</option>';
-                                }
-                            } catch (\PDOException $e) {
-                                echo $e->getMessage();
-                                echo "   ";
-                                echo (int)$e->getCode();
+                            $stm = $pdo->prepare('SELECT promotion_type FROM promotion_type '); //prepared statement to get the promotion concerned by the offer
+                            $stm->execute();
+                            $row = $stm->fetchAll();
+                            foreach($row as $value)
+                            {
+                                echo'<option>'.$value[0].'</option>';
                             }
                             ?>
                         </select>
-        </div>
-        <div class="col-lg-2 col-sm-12 ">
-            <label for="sectortbx" class="tbxindicator small">Number of places</label>
-            <input type="text" class="tbx small" id="placetbx">
-        </div>
-        <div class="col-lg-2 col-sm-12 ">
-            <label for="sectortbx" class="tbxindicator small">Duration</label>
-            <input type="text" class="tbx small" id="durationtbx">
-        </div>
-        <div class="col-lg-2 col-sm-12 ">
-            <label for="sectortbx" class="tbxindicator small">Skills</label>
-            <input type="text" class="tbx small" id="skillstbx">
         </div>
     </div>
     <input type="button" class="small btn search" id="searchbtn" value="Search">

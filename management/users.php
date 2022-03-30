@@ -49,11 +49,6 @@ include "../php/navbar.php";
                         ?>
                     </div>
                     <div class="orga">
-                        <label class="custom-file-label tbxindicator">Profile picture</label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input fil1" id="customFile" name="c_profilepic">
-                            <label class="custom-file-label filelabel medium" for="customFile">Choose file</label> <!-- Profile picture field -->
-                        </div>
                     </div>
                     <div class="orga">
                         <label for="campustbx" class="tbxindicator small">Campus</label> <!-- Campus field -->

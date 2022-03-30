@@ -19,7 +19,8 @@ $sql = $pdo->prepare("SELECT
                             promotion_type,
                             id_user,
                             promotion.id_promotion,
-                            user.id_campus
+                            user.id_campus,
+                            birthday
                             from user
                             INNER JOIN campus on user.id_campus = campus.id_campus
                             LEFT JOIN promotion on user.id_promotion = promotion.id_promotion 
@@ -36,6 +37,14 @@ catch(\PDOException $e){
     echo "     ";
     echo(int)$e->getCode();
 }
+
+if(isset($_FILES['file'])){
+    $tmpName = $_FILES['file']['tmp_name'];
+    $fname = $_FILES['file']['name'];
+    $fsize = $_FILES['file']['size'];
+    $ferror = $_FILES['file']['error'];
+}
+
 $pattern = "/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/";
 if(isset($_POST['postbutton'])){
     try{
@@ -78,7 +87,7 @@ $sqlu->bindParam(6,$promotion);
 $sqlu->bindParam(7,$campus);
 $sqlu->bindParam(8,$id);
 $sqlu->execute();
-
+move_uploaded_file($tmpName,'../assets/user_data/avatar/'.$id.'.png');
 header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php'); //if exception , returns error code 1
     }
     }
