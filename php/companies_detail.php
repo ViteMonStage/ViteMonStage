@@ -185,7 +185,7 @@ function displayAllRating($id_company)
     $sql->bindParam(1, $id_company); // Assigning the id_offer parameter in the request and retrieving it from the url
     $sql->execute(); // Execution of the request 
     $row = $sql->fetchAll(); // Retrieves the rows of the query
-    foreach ($row as $value) : ?>
+    foreach ($row as $key=>$value) : ?>
         <div class="profile_results row">
             <h3 class="medium results_title">Evaluations</h3>
             <div class="profile col-md-8">
@@ -194,58 +194,58 @@ function displayAllRating($id_company)
                 </div>
                 <div class="avatar_desc">
                     <h3 class="medium"><?php echo $value[9]?> <?php echo $value[10]?></h3>
-                    <p class="mini">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in euismod leo. Sed...</p>
+                    <p class="mini"><?php echo $value[6]?></p>
                 </div>
             </div>
             <div class="results col-md-3">
                 <div class="results_criteria">
                     <p class="criteria mini">Working environnement : </p>
                     <div class="rate starrating risingstar d-flex justify-content-center flex-row-reverse">
-                        <input type="radio" id="1-star5" class="uncheckable" name="working-environnement-rating" value="5" <?php echo ($value[1] == 5) ? 'checked' : '' ?> /><label for="1-star5" title="5 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="1-star4" class="uncheckable" name="working-environnement-rating" value="4" <?php echo ($value[1] == 4) ? 'checked' : '' ?> /><label for="1-star4" title="4 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="1-star3" class="uncheckable" name="working-environnement-rating" value="3" <?php echo ($value[1] == 3) ? 'checked' : '' ?> /><label for="1-star3" title="3 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="1-star2" class="uncheckable" name="working-environnement-rating" value="2" <?php echo ($value[1] == 2) ? 'checked' : '' ?> /><label for="1-star2" title="2 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="1-star1" class="uncheckable" name="working-environnement-rating" value="1" <?php echo ($value[1] == 1) ? 'checked' : '' ?> /><label for="1-star1" title="1 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="1<?php echo $key?>-star5" class="uncheckable" name="working-environnement-rating<?php echo $key?>" value="5" <?php echo ($value[1] == 5) ? 'checked' : '' ?> /><label for="1-star5" title="5 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="1<?php echo $key?>-star4" class="uncheckable" name="working-environnement-rating<?php echo $key?>" value="4" <?php echo ($value[1] == 4) ? 'checked' : '' ?> /><label for="1-star4" title="4 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="1<?php echo $key?>-star3" class="uncheckable" name="working-environnement-rating<?php echo $key?>" value="3" <?php echo ($value[1] == 3) ? 'checked' : '' ?> /><label for="1-star3" title="3 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="1<?php echo $key?>-star2" class="uncheckable" name="working-environnement-rating<?php echo $key?>" value="2" <?php echo ($value[1] == 2) ? 'checked' : '' ?> /><label for="1-star2" title="2 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="1<?php echo $key?>-star1" class="uncheckable" name="working-environnement-rating<?php echo $key?>" value="1" <?php echo ($value[1] == 1) ? 'checked' : '' ?> /><label for="1-star1" title="1 star"><i class="fa-solid fa-star"></i> </label>
                     </div>
                 </div>
                 <div class="results_criteria">
                     <p class="criteria mini">Working conditions : </p>
                     <div class="rate starrating risingstar d-flex justify-content-center flex-row-reverse">
-                        <input type="radio" id="2-star5" class="uncheckable" name="working-conditions-rating" value="5" <?php echo ($value[2] == 5) ? 'checked' : '' ?> /><label for="2-star5" title="5 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="2-star4" class="uncheckable" name="working-conditions-rating" value="4" <?php echo ($value[2] == 4) ? 'checked' : '' ?> /><label for="2-star4" title="4 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="2-star3" class="uncheckable" name="working-conditions-rating" value="3" <?php echo ($value[2] == 3) ? 'checked' : '' ?> /><label for="2-star3" title="3 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="2-star2" class="uncheckable" name="working-conditions-rating" value="2" <?php echo ($value[2] == 2) ? 'checked' : '' ?> /><label for="2-star2" title="2 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="2-star1" class="uncheckable" name="working-conditions-rating" value="1" <?php echo ($value[2] == 1) ? 'checked' : '' ?> /><label for="2-star1" title="1 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="2<?php echo $key?>-star5" class="uncheckable" name="working-conditions-rating<?php echo $key?>" value="5" <?php echo ($value[2] == 5) ? 'checked' : '' ?> /><label for="2-star5" title="5 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="2<?php echo $key?>-star4" class="uncheckable" name="working-conditions-rating<?php echo $key?>" value="4" <?php echo ($value[2] == 4) ? 'checked' : '' ?> /><label for="2-star4" title="4 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="2<?php echo $key?>-star3" class="uncheckable" name="working-conditions-rating<?php echo $key?>" value="3" <?php echo ($value[2] == 3) ? 'checked' : '' ?> /><label for="2-star3" title="3 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="2<?php echo $key?>-star2" class="uncheckable" name="working-conditions-rating<?php echo $key?>" value="2" <?php echo ($value[2] == 2) ? 'checked' : '' ?> /><label for="2-star2" title="2 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="2<?php echo $key?>-star1" class="uncheckable" name="working-conditions-rating<?php echo $key?>" value="1" <?php echo ($value[2] == 1) ? 'checked' : '' ?> /><label for="2-star1" title="1 star"><i class="fa-solid fa-star"></i> </label>
                     </div>
                 </div>
                 <div class="results_criteria">
                     <p class="criteria mini">Wage : </p>
                     <div class="rate starrating risingstar d-flex justify-content-center flex-row-reverse">
-                        <input type="radio" id="3-star5" class="uncheckable" name="wage-rating" value="5" <?php echo ($value[3] == 5) ? 'checked' : '' ?> /><label for="3-star5" title="5 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="3-star4" class="uncheckable" name="wage-rating" value="4" <?php echo ($value[3] == 4) ? 'checked' : '' ?> /><label for="3-star4" title="4 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="3-star3" class="uncheckable" name="wage-rating" value="3" <?php echo ($value[3] == 3) ? 'checked' : '' ?> /><label for="3-star3" title="3 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="3-star2" class="uncheckable" name="wage-rating" value="2" <?php echo ($value[3] == 2) ? 'checked' : '' ?> /><label for="3-star2" title="2 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="3-star1" class="uncheckable" name="wage-rating" value="1" <?php echo ($value[3] == 1) ? 'checked' : '' ?> /><label for="3-star1" title="1 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="3<?php echo $key?>-star5" class="uncheckable" name="wage-rating<?php echo $key?>" value="5" <?php echo ($value[3] == 5) ? 'checked' : '' ?> /><label for="3-star5" title="5 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="3<?php echo $key?>-star4" class="uncheckable" name="wage-rating<?php echo $key?>" value="4" <?php echo ($value[3] == 4) ? 'checked' : '' ?> /><label for="3-star4" title="4 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="3<?php echo $key?>-star3" class="uncheckable" name="wage-rating<?php echo $key?>" value="3" <?php echo ($value[3] == 3) ? 'checked' : '' ?> /><label for="3-star3" title="3 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="3<?php echo $key?>-star2" class="uncheckable" name="wage-rating<?php echo $key?>" value="2" <?php echo ($value[3] == 2) ? 'checked' : '' ?> /><label for="3-star2" title="2 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="3<?php echo $key?>-star1" class="uncheckable" name="wage-rating<?php echo $key?>" value="1" <?php echo ($value[3] == 1) ? 'checked' : '' ?> /><label for="3-star1" title="1 star"><i class="fa-solid fa-star"></i> </label>
                     </div>
                 </div>
                 <div class="results_criteria">
                     <p class="criteria mini">Acquired experience : </p>
                     <div class="rate starrating risingstar d-flex justify-content-center flex-row-reverse">
-                        <input type="radio" id="4-star5" class="uncheckable" name="acquired-experience-rating" value="5" <?php echo ($value[4] == 5) ? 'checked' : '' ?> /><label for="4-star5" title="5 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="4-star4" class="uncheckable" name="acquired-experience-rating" value="4" <?php echo ($value[4] == 4) ? 'checked' : '' ?> /><label for="4-star4" title="4 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="4-star3" class="uncheckable" name="acquired-experience-rating" value="3" <?php echo ($value[4] == 3) ? 'checked' : '' ?> /><label for="4-star3" title="3 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="4-star2" class="uncheckable" name="acquired-experience-rating" value="2" <?php echo ($value[4] == 2) ? 'checked' : '' ?> /><label for="4-star2" title="2 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="4-star1" class="uncheckable" name="acquired-experience-rating" value="1" <?php echo ($value[4] == 1) ? 'checked' : '' ?> /><label for="4-star1" title="1 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="4<?php echo $key?>-star5" class="uncheckable" name="acquired-experience-rating<?php echo $key?>" value="5" <?php echo ($value[4] == 5) ? 'checked' : '' ?> /><label for="4-star5" title="5 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="4<?php echo $key?>-star4" class="uncheckable" name="acquired-experience-rating<?php echo $key?>" value="4" <?php echo ($value[4] == 4) ? 'checked' : '' ?> /><label for="4-star4" title="4 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="4<?php echo $key?>-star3" class="uncheckable" name="acquired-experience-rating<?php echo $key?>" value="3" <?php echo ($value[4] == 3) ? 'checked' : '' ?> /><label for="4-star3" title="3 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="4<?php echo $key?>-star2" class="uncheckable" name="acquired-experience-rating<?php echo $key?>" value="2" <?php echo ($value[4] == 2) ? 'checked' : '' ?> /><label for="4-star2" title="2 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="4<?php echo $key?>-star1" class="uncheckable" name="acquired-experience-rating<?php echo $key?>" value="1" <?php echo ($value[4] == 1) ? 'checked' : '' ?> /><label for="4-star1" title="1 star"><i class="fa-solid fa-star"></i> </label>
                     </div>
                 </div>
                 <div class="results_criteria">
                     <p class="criteria mini">Supervision quality : </p>
                     <div class="rate starrating risingstar d-flex justify-content-center flex-row-reverse">
-                        <input type="radio" id="5-star5" class="uncheckable" name="supervision-quality-rating" value="5" <?php echo ($value[5] == 5) ? 'checked' : '' ?> /><label for="5-star5" title="5 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="5-star4" class="uncheckable" name="supervision-quality-rating" value="4" <?php echo ($value[5] == 4) ? 'checked' : '' ?> /><label for="5-star4" title="4 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="5-star3" class="uncheckable" name="supervision-quality-rating" value="3" <?php echo ($value[5] == 3) ? 'checked' : '' ?> /><label for="5-star3" title="3 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="5-star2" class="uncheckable" name="supervision-quality-rating" value="2" <?php echo ($value[5] == 2) ? 'checked' : '' ?> /><label for="5-star2" title="2 star"><i class="fa-solid fa-star"></i> </label>
-                        <input type="radio" id="5-star1" class="uncheckable" name="supervision-quality-rating" value="1" <?php echo ($value[5] == 1) ? 'checked' : '' ?> /><label for="5-star1" title="1 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="5<?php echo $key?>-star5" class="uncheckable" name="supervision-quality-rating<?php echo $key?>" value="5" <?php echo ($value[5] == 5) ? 'checked' : '' ?> /><label for="5-star5" title="5 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="5<?php echo $key?>-star4" class="uncheckable" name="supervision-quality-rating<?php echo $key?>" value="4" <?php echo ($value[5] == 4) ? 'checked' : '' ?> /><label for="5-star4" title="4 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="5<?php echo $key?>-star3" class="uncheckable" name="supervision-quality-rating<?php echo $key?>" value="3" <?php echo ($value[5] == 3) ? 'checked' : '' ?> /><label for="5-star3" title="3 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="5<?php echo $key?>-star2" class="uncheckable" name="supervision-quality-rating<?php echo $key?>" value="2" <?php echo ($value[5] == 2) ? 'checked' : '' ?> /><label for="5-star2" title="2 star"><i class="fa-solid fa-star"></i> </label>
+                        <input type="radio" id="5<?php echo $key?>-star1" class="uncheckable" name="supervision-quality-rating<?php echo $key?>" value="1" <?php echo ($value[5] == 1) ? 'checked' : '' ?> /><label for="5-star1" title="1 star"><i class="fa-solid fa-star"></i> </label>
                     </div>
                 </div>
             </div>
