@@ -18,12 +18,15 @@
     <!-- Nav bar-->
     <header>
         <?php
-        include "./php/navbar.php";
+        ob_start();
         include_once "./php/companies_detail.php";
+        companyExists();
+        include "./php/navbar.php";
         ?>
     </header>
     <?php
-    displayCompaniedetails(); ?>
+    ob_start();
+    displayCompaniedetails();?>
 
     <div class="company_btn">
         <input type="button" class="small btn company" value="Invisible">

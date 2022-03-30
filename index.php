@@ -27,7 +27,7 @@
                     <img src="assets/pictures/candidatures.png" class="img" alt="meeting">
                     <div class="text-block">
                         <h4 class="big">Your applications</h4>
-                        <p class="medium">Keep track your applications here.</p>
+                        <p class="medium">Keep track of your applications here.</p>
                     </div>
                 </a>
             </div>
