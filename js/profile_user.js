@@ -56,6 +56,10 @@ done_button.addEventListener("click",function(){
     done_button.style.display = "none";
     edit_profile.style.display = "none";
     edit_button.style.display ="block";
+    promo.style.display = "none";
+    campus.style.display = "none";
+    list[7].style.display = "block";
+    list[8].style.display = "block";
 })
 
 var loadFile = function (event) {

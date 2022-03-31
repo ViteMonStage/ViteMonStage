@@ -37,11 +37,11 @@
         <div class="profile-pic">
             <form action="php/profile.php" method="post" enctype="multipart/form-data">
                 <img src=<?php
-                            if (is_file('assets/user_data/avatar/' . $id . '.png')) {
-                                echo '/assets/user_data/avatar/' . $id . '.png';
+                            if (is_file('assets/user_data/avatar/' . $id_user . '.png')) {
+                                echo '/assets/user_data/avatar/' . $id_user . '.png';
                             }
-                            // elseif('assets/user_data/avatar/'.$id.'.jpg'){
-                            //     echo'/assets/user_data/avatar/'.$id.'.jpg'; 
+                            // elseif('assets/user_data/avatar/'.$id_user.'.jpg'){
+                            //     echo'/assets/user_data/avatar/'.$id_user.'.jpg'; 
                             // }
                             else {
                                 echo "/assets/pictures/default_avatar.png";
@@ -105,6 +105,7 @@
                         ?>
                     </div>
             </li>
+            <input type="hidden" name="id_user" value="<?php echo $id_user?>"/>
             <li><input class="mini " placeholder="Campus" readonly="readonly" name="camp" value="<?php echo $row[0][6]; ?>"></li>
             <li><input class="mini " placeholder="" readonly="readonly" name="promotype" value="<?php echo $row[0][7]; ?>"></li>
         </ul>
@@ -157,8 +158,8 @@
                     <p class="medium titre">Current candidatures </p>
                     <div class="scroller">
                         <div class="offerexample">
-                            <a href="" class="medium">Offer example</a>
-                            <a href="" class="small">Company</a>
+                            <div class="medium">Offer example</div>
+                            <div class="small">Company</div>
                             <p class="mini">Progress : </p>
                             <!-- PROGRESS BAR -->
                             <div class="progress">
@@ -177,46 +178,7 @@
                             </ul>
                         </div>
 
-                        <div class="offerexample ">
-                            <a href="" class="medium">Offer example</a>
-                            <a href="" class="small">Company</a>
-                            <p class="mini">Progress : </p>
-                            <!-- PROGRESS BAR -->
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Step 4/8</div>
-                            </div>
-                            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Ex maxime, ipsam maiores itaque sint ab, corporis est,
-                                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
-                            </p>
-                            <ul class="list mini">
-                                <li id="ccity">City</li>
-                                <li class="dot">-</li>
-                                <li id="cpublishDate">Publish Date</li>
-                                <li class="dot">-</li>
-                                <li id="csector">Sector</li>
-                            </ul>
-                        </div>
-                        <div class="offerexample ">
-                            <a href="" class="medium">Offer example</a>
-                            <a href="" class="small">Company</a>
-                            <p class="mini">Progress : </p>
-                            <!-- PROGRESS BAR -->
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Step 4/8</div>
-                            </div>
-                            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Ex maxime, ipsam maiores itaque sint ab, corporis est,
-                                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
-                            </p>
-                            <ul class="list mini">
-                                <li id="ccity">City</li>
-                                <li class="dot">-</li>
-                                <li id="cpublishDate">Publish Date</li>
-                                <li class="dot">-</li>
-                                <li id="csector">Sector</li>
-                            </ul>
-                        </div>
+                        
                     </div>
                     <div class="bouton">
                         <a role="button" class="small btn" href="candidatures.php" alt="Candidatures">See more</a>
