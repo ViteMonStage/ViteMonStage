@@ -78,3 +78,23 @@ function displayOfferdetail()
         echo (int)$e->getCode();
     }
 }
+
+function hasAlreadySentCandidature()
+{
+    try {
+        include dirname(__FILE__) . "/db.php"; //Used to get global pdo
+        $sql = $pdo->prepare('SELECT * FROM candidature WHERE id_offer = ? AND id_user = ?');
+        $sql->bindParam(1, $_GET['id_offer']); // Assigning the id_offer parameter in the request and retrieving it from the url
+        $sql->bindParam(2, $_SESSION['id_user']);
+        $sql->execute(); // Execution of the request 
+        $row = $sql->fetchAll(); // Retrieves the rows of the query
+        if (isset($row[0]) == 1) {
+            return true;
+        }
+        return false;
+    } catch (\PDOException $e) { // displays an error if the try fails
+        echo $e->getMessage();
+        echo "   ";
+        echo (int)$e->getCode();
+    }
+}
