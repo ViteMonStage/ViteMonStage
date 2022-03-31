@@ -275,8 +275,8 @@
     $stm->bindParam(1, $row[0][3]);
     $stm->execute();
     $row1 = $stm->fetchAll();
-    if(){}
-    ?>
+    $role=$row1[0][0];
+    if($role == 2):    ?>
     <div class="row g-0">
         <div class="col-lg-10 col-sm-10 divcheck">
             <div class="taskbox">
@@ -334,7 +334,9 @@
             </div>
         </div>
     </div>
-
+        <?php
+        endif
+        ?>
     <!-- FOOTER -->
 
 
