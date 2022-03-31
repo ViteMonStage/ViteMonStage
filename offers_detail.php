@@ -39,7 +39,7 @@
             Already applied
         </button>
         <?php endif; ?>
-        <a href="companies_detail.php" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
+        <a href="companies_detail.php?id_company=<?php echo getCompanyFromOffer($_GET["id_offer"])?>" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
     </div>
     <!--Offer details-->
     </div>
