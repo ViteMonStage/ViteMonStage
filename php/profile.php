@@ -34,7 +34,11 @@ if (isset($_GET['id_user'])&& (($_SESSION['role']==4))){
     $id_user=$_GET['id_user'];
     
 }
-elseif(isset($_GET['id_user'])&& (($_SESSION['role']==3))&& ($_GET['id_user']!=3)) {
+elseif(isset($_GET['id_user'])&& (($_SESSION['role']==3))&& ($_GET['id_role']!=3)) {
+    $id_user=$_GET['id_user'];
+    
+}
+elseif(isset($_GET['id_user'])&& (($_SESSION['role']==5))&& ($_GET['id_role']==5)) {
     $id_user=$_GET['id_user'];
     
 }
@@ -170,7 +174,7 @@ function loadWishlist(){
                                 INNER JOIN address on company.id_company=address.id_company
                                 INNER JOIN city on city.id_city=address.id_city
                                 where user.id_user = (:id_user)
-                                limit 10");
+                                limit 5");
     $sqlwish->bindParam(':id_user',$id_user);
     $sqlwish->execute();
     $roww = $sqlwish ->fetchAll();
