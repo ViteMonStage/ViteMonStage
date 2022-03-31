@@ -4,9 +4,7 @@
 }
 #navbar-profile-btn {
     color: rgba(255, 255, 255, 0.842);
-    pointer-events: none;
 }
-
 
 
 .infos #editbutton {
@@ -158,8 +156,11 @@ ul{
 }
 
 .menu .offerexample {
-    margin-top: 0%;
+    margin-top: 1px;
     margin-left: 1em;
+    background-color:rgba(211, 211, 211, 0.7); 
+    border-radius: 10px;
+    padding: 10px;
 }
 .list li {
     display: inline;
@@ -206,9 +207,25 @@ ul{
     height: 2.25em;
     margin-left: 15vh;
 }
+
+.small.btnx {
+    /* Button style*/
+    color: rgb(255, 255, 255);
+    background-color: #51b700;
+    padding: none;
+    border-radius: 50px;
+    border-style: none;
+    height: 2.25em;
+    width: 100%;
+    margin-bottom: 10px;
+}
 .small.btn:hover {
     background-color: #2a652c;
 }
+.small.btnx:hover {
+    background-color: #2a652c;
+}
+
 
 body a {
     color: #09a129;
@@ -298,13 +315,10 @@ li {
     align-items: center;
     padding: 1em;
 }
-.taskbox li label {
-    margin-right: 2em;
-}
+
 
 #navbar-profile-btn {
     color: #ffffff;
-    pointer-events: none;
 }
 
 .list-group{
@@ -324,4 +338,23 @@ li {
     height: 100%;
     margin: 3%;
     margin-left: 5%;
+}
+
+.mantitl{
+    background-color: gray;
+    color: white;
+    padding: 20px;
+    border-radius:20px;
+    margin-bottom: 10px;
+}
+.titl{
+    text-align: center;
+}
+
+.chec{
+    width: 15em;
+}
+
+.divcheck{
+    margin-left: 8%;
 }

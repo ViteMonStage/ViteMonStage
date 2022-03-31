@@ -3,8 +3,10 @@
 if (!isset($_SESSION)){
     session_start();
 }
-//Get email value stored in the session
-$email=$_SESSION['email']; 
+
+
+
+
 include "db.php";
 //Preparing the request to get the infos from the table with the corresponding email address
 try{
@@ -25,12 +27,21 @@ $sql = $pdo->prepare("SELECT
                             INNER JOIN campus on user.id_campus = campus.id_campus
                             LEFT JOIN promotion on user.id_promotion = promotion.id_promotion 
                             LEFT JOIN promotion_type on promotion.id_promotion_type=promotion_type.id_promotion_type
-                            WHERE email=(:email)");
-$email = $_SESSION['email'];
-$sql->bindParam(':email', $email);
+                            WHERE id_user=(:id_user)");
+
+if (isset($_GET['id_user'])){
+    $id_user=$_GET['id_user'];
+}
+else{
+//Get email value stored in the session
+$id_user = $_SESSION['id_user'];
+
+}
+$sql->bindParam(':id_user', $id_user);
 $sql->execute();
 $row = $sql->fetchAll();
 $id = $row[0][8];
+$birthday = $row[0][11];
 }
 catch(\PDOException $e){
     echo $e->getMessage();
@@ -47,10 +58,24 @@ if(isset($_FILES['file'])){
 
 $pattern = "/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/";
 if(isset($_POST['postbutton'])){
+    $surname = $_POST['surname'];
+    $name = $_POST['name'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $birthday = $_POST['birthday'];
+    $promotion = $_POST['promotion'];
+    $campus = $_POST['campus'];
     try{
-        if(empty($_POST['surname'])|| empty($_POST['name'])|| empty($_POST['gender'])|| empty($_POST['email'])
-        || !preg_match($pattern,$_POST['birthday'])|| empty($_POST['campus'])){
+        if(empty($surname)|| empty($name)|| empty($gender)|| empty($email)
+        || !preg_match($pattern,$birthday)|| empty($campus)){
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=1');
+            die();
+        }
+        elseif((preg_match('/[\'^}{#~><>¬]/', $surname|| $name))){
+            // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=2'); //if a character is not valid, returns error code 2
+        die();
+
         }
         else{
             if ($_POST['promotion']=='NULL'){
@@ -58,13 +83,7 @@ if(isset($_POST['postbutton'])){
             }
 
         
-$surname = $_POST['surname'];
-$name = $_POST['name'];
-$gender = $_POST['gender'];
-$email = $_POST['email'];
-$birthday = $_POST['birthday'];
-$promotion = $_POST['promotion'];
-$campus = $_POST['campus'];
+
         
 
 
@@ -95,6 +114,72 @@ catch(\PDOException $e){
     echo $e->getMessage();
     echo "     ";
     echo(int)$e->getCode();
+}
+}
+function loadWishlist(){
+    try{
+    include "db.php";
+    if (isset($_GET['id_user'])){
+        $id_user=$_GET['id_user'];
+    }
+    else{
+    //Get email value stored in the session
+    $id_user = $_SESSION['id_user'];
+    }
+    $sqlwish = $pdo->prepare("  SELECT wish.id_user,
+                                        user.email,
+                                        wish.id_offer, 
+                                        offer_name, 
+                                        offer_date , 
+                                        offers.id_company, 
+                                        company_name, 
+                                        offers.description, 
+                                        city.id_city, 
+                                        cityname, 
+                                        sector_activity
+                                FROM wish
+                                INNER JOIN user on wish.id_user =user.id_user
+                                INNER JOIN offers on wish.id_offer= offers.id_offer
+                                INNER JOIN company on offers.id_company = company.id_company
+                                INNER JOIN address on company.id_company=address.id_company
+                                INNER JOIN city on city.id_city=address.id_city
+                                where user.id_user = (:id_user)
+                                limit 10");
+    $sqlwish->bindParam(':id_user',$id_user);
+    $sqlwish->execute();
+    $roww = $sqlwish ->fetchAll();
+    if (isset($roww[0])== 1){
+        foreach ($roww as $value) :?>
+            <div class='offerexample'>
+            <a href='../offers_detail.php?id_offer=<?php echo $value[2] ?>' class='medium'><?php echo $value[3]?></a>
+            <a href='/companies_detail.php?id_company=<?php echo $value[5] ?>' class='small'><?php echo $value[6]?></a>
+            <p class='mini'><?php echo $value[7]?>
+            </p>
+            <div class='space'>
+                <ul class='list mini'>
+                    <li ><?php echo $value[9]?></li>
+                    <li class='dot'>-</li>
+                    <li ><?php echo $value[4]?></li>
+                    <li class='dot'>-</li>
+                    <li ><?php echo $value[10]?></li>
+                </ul>
+            </div>
+        </div> <?php endforeach;
+    }
+    else {
+        ?>
+        <div class='offerexample medium'>
+        No offers added to wishlist.
+        Your wishlist is empty :( 
+        </div>
+        <?php
+    }
+}
+
+catch(\PDOException $e){
+    echo $e->getMessage();
+    echo "  ";
+    echo (int)$e->getCode();
 }
 }
 ?>

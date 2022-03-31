@@ -46,6 +46,7 @@
                                 INNER JOIN city on address.id_city = city.id_city'); //prepared statement to get campuses name
                                 $stm->execute();
                                 $row = $stm->fetchAll();
+                                echo'<option>Any Location</option>';
                                 foreach($row as $value)
                                 {
                                     echo'<option>'.$value[0].'</option>';
@@ -67,6 +68,7 @@
                                 $stm = $pdo->prepare('SELECT sector_activity from company'); //prepared statement to get campuses name
                                 $stm->execute();
                                 $row = $stm->fetchAll();
+                                echo'<option>Any Sector</option>';
                                 foreach($row as $value)
                                 {
                                     echo'<option>'.$value[0].'</option>';
@@ -84,15 +86,6 @@
         </div>
     </div>
     </form>
-    <!-- Result-->
-    <h2 class="title big results">
-        <?php
-        $sql = ('SELECT count(id_company) FROM company;'); //
-        $res = $pdo->query($sql);
-        $count = $res->fetchColumn();
-        echo "$count Results";
-        ?>
-        </h2>
 
     <h2 class="results big"> </h2>
     <!--Function allowing the dynamic display of the different companies in our database -->

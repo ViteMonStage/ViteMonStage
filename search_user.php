@@ -54,8 +54,8 @@
     <div class="container">
         <div class="row ng-scope">
             <div class="col-md-10 offset-md-1">
-            <p class="search-results-count small"><?php echo(count_user()) ?></p>
             <?php displayUser() ?>
+
             </div>
         </div>
     </div>

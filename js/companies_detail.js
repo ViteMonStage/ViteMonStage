@@ -19,4 +19,14 @@ $(document).ready(function () {
         }
     });
 
+    $("#btn-submit-tutor").click(function (e) {
+        var ctr = $("input[type=radio][name=company-trust-rating]:checked").val();
+        if(ctr == null){
+            alert("Please fill all fields")
+            return false;}
+        else{
+            return true;
+        }
+    });
+
 });

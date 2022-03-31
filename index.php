@@ -18,7 +18,7 @@
     <?php
     include "./php/navbar.php";
     ?>
-    <h1 class="welcome big">Welcome on VMS</h1>
+    <h1 class="welcome big">Welcome on VMS, <?php echo $_SESSION["name"] ?></h1>
     <div class="row g-0">
         <!-- "Applications" square -->
         <div class="col-lg-6 col-sm-12">
@@ -27,7 +27,7 @@
                     <img src="assets/pictures/candidatures.png" class="img" alt="meeting">
                     <div class="text-block">
                         <h4 class="big">Your applications</h4>
-                        <p class="medium">Keep track your applications here.</p>
+                        <p class="medium">Keep track of your applications here.</p>
                     </div>
                 </a>
             </div>
