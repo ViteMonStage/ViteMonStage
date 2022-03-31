@@ -27,17 +27,17 @@ $sql = $pdo->prepare("SELECT
                             INNER JOIN campus on user.id_campus = campus.id_campus
                             LEFT JOIN promotion on user.id_promotion = promotion.id_promotion 
                             LEFT JOIN promotion_type on promotion.id_promotion_type=promotion_type.id_promotion_type
-                            WHERE email=(:email)");
+                            WHERE id_user=(:id_user)");
 
-if (isset($_POST['e-mail'])){
-    $email=$_POST['e-mail'];
+if (isset($_GET['id_user'])){
+    $id_user=$_GET['id_user'];
 }
 else{
 //Get email value stored in the session
-$email = $_SESSION['email'];
+$id_user = $_SESSION['id_user'];
 
 }
-$sql->bindParam(':email', $email);
+$sql->bindParam(':id_user', $id_user);
 $sql->execute();
 $row = $sql->fetchAll();
 $id = $row[0][8];
