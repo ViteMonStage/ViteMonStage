@@ -15,7 +15,7 @@ try {
     $stm->execute();
     $row = $stm->fetchAll();
 
-    if ($row[0][3] == 2) {
+    if ($row[0][1] == 2) {
         $stm = $pdo->prepare('SELECT search_company, create_company, modify_company, evaluate_company, delete_company, stats_company, search_offer, create_offer, modify_offer, delete_offer, stats_offer, search_pilot, create_pilot, modify_pilot, delete_pilot, search_delegate, create_delegate, modify_delegate, delete_delegate, search_student, create_student, modify_student, delete_student, stats_student FROM permission WHERE id_user = ?'); //prepared statement to verify email and password
         $stm->bindParam(1, $row[0][3]);
         $stm->execute();
@@ -27,7 +27,7 @@ try {
         $_SESSION['role'] = $row[0][1];
         $_SESSION['id_user'] = $row[0][3];
         $_SESSION['name'] = $row[0][4] . " " . $row[0][5];
-        if ($row[0][3] == 2) {
+        if ($row[0][1] == 2) {
             $_SESSION['search_company'] = $row1[0][0];
             $_SESSION['create_company'] = $row1[0][1];
             $_SESSION['modify_company'] = $row1[0][2];

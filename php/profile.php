@@ -42,7 +42,16 @@ elseif(isset($_GET['id_user'])&& (($_SESSION['role']==5))&& ($_GET['id_role']==5
     $id_user=$_GET['id_user'];
     
 }
-// elseif(isset($_GET['id_user'])&& (($_SESSION['role']==3))&& ($_GET['id_user']!=3){
+<?php
+if ($_SESSION['role'] == 2 && $_SESSION['create_company'] == 0 && $_SESSION['delete_company'] == 0 && $_SESSION['modify_company'] == 0) {
+    header('HTTP/1.1 403 Unauthorized');
+    $contents = file_get_contents('../error/403.php', TRUE);
+    die($contents);
+}
+?>
+// elseif(isset($_GET['id_user'])&& (($_SESSION['role']==2)){
+//     if($_GET['id_role']==1 && )
+
 
 // }
 else{
@@ -95,13 +104,13 @@ if(isset($_POST['postbutton'])){
         die();
         
         }
-        if($_SESSION['role']==2 || $_SESSION['role']== 3){
+        if($_SESSION['role']==2 || $_SESSION['role']== 3 || $_SESSION['role'] == 1 || $_SESSION['role'] == 5){
             $sqlid= $pdo->prepare("SELECT id_role from user where id_user = ?");
             $sqlid->bindParam(1,$id_user);
             $sqlid->execute();
             $sqlid->fetchAll();
             $rowid=$sqlid;
-            if($rowid[0][0] == 3 || $rowid[0][0] ){
+            if($rowid[0][0] == 3  ){
                 header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=3');
                 die();
             }
