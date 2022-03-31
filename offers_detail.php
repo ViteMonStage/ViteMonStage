@@ -25,7 +25,8 @@
 <body>
     <!--Offer description-->
     <!--Function allowing the dynamic display of the detail of an offer -->
-    <?php include dirname(__FILE__) . "/php/offer.php";displayOfferdetail(); ?>
+    <?php include dirname(__FILE__) . "/php/offer.php";
+    displayOfferdetail(); ?>
     </div>
     <!--"Apply" section-->
     <div class="off_apply">
@@ -36,31 +37,33 @@
     </div>
     <!--Offer details-->
     </div>
-    <div class="modal fade" id="apply" tabindex="-1" aria-labelledby="applylabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title small" id="applylabel">Postulate to this intership</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="resumeFile" class="form-label small">Select your resume *</label>
-                        <input class="form-control small" type="file" id="resumeFile" accept=".jpg,.docx,.png,.pdf">
+    <form action="/php/send_application.php" method="POST" enctype="multipart/form-data">
+        <div class="modal fade" id="apply" tabindex="-1" aria-labelledby="applylabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title small" id="applylabel">Postulate to this intership</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="mb-3">
-                        <label for="motivationLetterFile" class="form-label small">Select your motivation letter *</label>
-                        <input class="form-control small" type="file" id="motivationLetterFile" accept=".jpg,.docx,.png,.pdf">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="resumeFile" class="form-label small">Select your resume *</label>
+                            <input class="form-control small" type="file" id="resumeFile" name="resumeFile">
+                        </div>
+                        <div class="mb-3">
+                            <label for="motivationLetterFile" class="form-label small">Select your motivation letter *</label>
+                            <input class="form-control small" type="file" id="motivationLetterFile" name="motivationLetterFile">
+                        </div>
+                        <p class="mini">* Field required, only .jpg, .docx, .png, .pdf accepted</p>
                     </div>
-                    <p class="mini">* Field required, only .jpg, .docx, .png, .pdf accepted</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn small" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn small">Send application</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn small" data-bs-dismiss="modal">Cancel</button>
+                        <input class="btn small" type="submit" id="submit" value="Send application">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
     <?php
     include "./php/footer.php"
     ?>

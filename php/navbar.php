@@ -17,7 +17,7 @@ include dirname(__FILE__) . "/notification.php";
             <a class="nav-item nav-link small" href="/companies.php" id="navbar-companies-btn"><i class="fa-solid fa-building"></i> COMPANIES</a>
             <a class="nav-item nav-link small navbar-highlight" href="/profile_user.php" id="navbar-profile-btn"><i class="fa-solid fa-user"></i> PROFILE</a>
             <a class="nav-item nav-link small navbar-highlight-logout" href="/php/disconnect.php" id="navbar-logout-btn"><i class="fa-solid fa-lock"></i> LOG OUT</a>
-            <?php if($_SESSION["role"] == 4):?>
+            <?php if($_SESSION["role"] == 4 || $_SESSION["role"] == 3):?>
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle small admin-list" href="#" data-bs-toggle="dropdown" id="navbar-admin-btn"><i class="fa-solid fa-gear" aria-expanded="false"></i> ADMINISTRATION</a>
                 <div class="dropdown-menu dropdown-menu-end admin-list">
