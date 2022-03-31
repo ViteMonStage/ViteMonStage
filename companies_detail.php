@@ -27,11 +27,19 @@
     <?php
     ob_start();
     displayCompaniedetails();?>
+<<<<<<< HEAD
+    <form class="company_btn" action="./php/visible.php" method="POST"> 
+        <input type="button" class="small btn company" value="Invisible" name="invisible">
+    </form>
+=======
+
     <div class="company_btn">
         <input type="button" class="small btn company" value="Modify">
         <input type="button" class="small btn company" value="Modify">
         <input type="button" class="small btn company" value="Delete">
     </div>
+
+>>>>>>> 866186fc3f46cd32c651c71713b0dfa0ec2cdef4
     <?php include_once dirname(__FILE__) . "/php/companies.php";
     displayRatingOptions($_SESSION["id_user"],$_GET["id_company"]); 
     displayAllRating($_GET["id_company"]);
