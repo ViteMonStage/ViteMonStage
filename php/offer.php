@@ -3,14 +3,44 @@ function displayOffers()
 {
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
-        $sql = $pdo->prepare('SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,offers.salary,offers.id_offer from offers
+        $query = 'SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,offers.salary,offers.id_offer,offers.number_interns,offers.skills,promotion_type from offers
         INNER JOIN company on offers.id_company = company.id_company
         INNER JOIN address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city
-        
-        ');
+        LEFT JOIN concern on concern.id_offer = offers.id_offer
+        LEFT JOIN promotion_type on promotion_type.id_promotion_type = concern.id_promotion_type
+        WHERE 1=1
+        ';
+
+        if(!empty($_GET["offer_name"])){
+            $query=$query." AND company_name='".$_GET["company_name"]."'";
+        }
+        if(!empty($_GET["offer_location"])){                                      //get the "location" value
+            if($_GET["offer_location"] == "Any Location"){                        //if the value of "location" is "Any location", the variable $quary won't change
+            }else $query=$query." AND cityname='".$_GET["offer_location"]."'";    //if the value of "location" is one of a city, the variable $quary will be updated whith the name of the city
+        }
+        if(!empty($_GET["min_place_offer"])){
+            $query=$query." AND number_interns>'".$_GET["company_name"]."'";
+        }
+        if(!empty($_GET["company_name"])){
+            $query=$query." AND company_name='".$_GET["company_name"]."'";
+        }
+        if(!empty($_GET["promotion"])){                                      //get the "location" value
+            if($_GET["promotion"] == "Any Promotion"){                        //if the value of "location" is "Any location", the variable $quary won't change
+            }else $query=$query." AND promotion_type='".$_GET["promotion"]."'";    //if the value of "location" is one of a city, the variable $quary will be updated whith the name of the city
+        }
+
+        $sql = $pdo->prepare($query);  
         $sql->execute();
         $row = $sql->fetchAll();
+        $count = $sql->rowCount();
+
+        //Result
+        ?>
+        <h2 class="title big results">
+            <?php echo "$count Results";?>
+        </h2>
+        <?php
         if (isset($row[0]) == 1) {
             foreach ($row as $value) : ?>
                 <div class="s_result">
