@@ -45,14 +45,16 @@ function displayUser() //affichage des utilisateur correspondant a la rechèrche
         inner join promotion on user.id_promotion = promotion.id_promotion
         inner join role on user.id_role = role.id_role
 		inner join campus on user.id_campus = campus.id_campus AND user.id_role != 3 AND user.id_role != 4
-        WHERE concat(firstname,' ',lastname) like '%$usersearch%' $searchuser_param"); // prepared sql command
+        WHERE concat(firstname,' ',lastname) like '%$usersearch%' $searchuser_param
+        ORDER BY firstname ASC"); // prepared sql command
        
        elseif($_SESSION['role'] == 4){
         $sql = $pdo->prepare("SELECT id_user,firstname,lastname,description_user,promotion.promotion_name,role.role,campus.campus_name,user.email,user.id_role from user 
         inner join promotion on user.id_promotion = promotion.id_promotion
         inner join role on user.id_role = role.id_role
 		inner join campus on user.id_campus = campus.id_campus
-        WHERE concat(firstname,' ',lastname) like '%$usersearch%' $searchuser_param"); // prepared sql command
+        WHERE concat(firstname,' ',lastname) like '%$usersearch%' $searchuser_param
+        ORDER BY firstname ASC"); // prepared sql command
        }
         $sql->execute(); //execute the command
         $row = $sql->fetchAll(); //fetch the info
@@ -77,7 +79,7 @@ function displayUser() //affichage des utilisateur correspondant a la rechèrche
                         <div class='row'>
                             <div class='col-sm-9'>
                                 <h4 class='search-result-item-heading'><a href='./profile_user.php?id_user=$value[0]&id_role=$value[8]'>$value[1] $value[2]</a></h4> "/*show the user name and if clicked redirect to the profile of the user*/; echo"
-                                <p class='info'> class : $value[4] / Status : $value[5] / campus : $value[7]</p> "/**/; echo"
+                                <p class='small info'> Promotion : $value[4] / Status : $value[5] / Campus : $value[7]</p> "/**/; echo"
                                 <p class='description'> $value[3]</p> "/*The description of the user*/; echo"
                             </div>
                             <div class='col-sm-3 text-align-center'>
