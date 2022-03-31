@@ -27,13 +27,11 @@
     <?php
     ob_start();
     displayCompaniedetails();?>
-
     <div class="company_btn">
         <input type="button" class="small btn company" value="Modify">
         <input type="button" class="small btn company" value="Modify">
         <input type="button" class="small btn company" value="Delete">
     </div>
-
     <?php include_once dirname(__FILE__) . "/php/companies.php";
     displayRatingOptions($_SESSION["id_user"],$_GET["id_company"]); 
     displayAllRating($_GET["id_company"]);
