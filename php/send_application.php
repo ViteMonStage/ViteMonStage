@@ -68,7 +68,7 @@ try {
     $val1 = $_GET["id_offer"] . "_" . $_SESSION["id_user"] . "." . $extension1;
     $val2 = $_GET["id_offer"] . "_" . $_SESSION["id_user"] . "." . $extension2;
     $null = NULL;
-    $val8 = 1;
+    $val8 = 3;
     $sql->bindParam(1, $val1);
     $sql->bindParam(2, $val2);
     $sql->bindParam(3, $null);
@@ -97,4 +97,9 @@ try {
     echo (int)$e->getCode();
 }
 
+include "./notification.php";
+addNotification($_SESSION["id_user"],1,"You applied to a new offer !","You can check it <a href='http://". $_SERVER['HTTP_HOST'] . "/offers_detail.php?id_offer=".$_GET["id_offer"]."'>here</a>.");
+
 header('Location: ../offers_detail.php?id_offer='.$_GET['id_offer'].'&success=true');
+
+?>
