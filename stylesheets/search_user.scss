@@ -132,9 +132,14 @@ body {
     }
     
     .search-result-item-heading>a {
-        color: #555
+        color: #555;
+        text-decoration: none;
     }
     
+    .small.info {
+        color: rgb(65, 65, 65);
+    }
+
     @media (min-width:768px) {
         .search-result-item-heading {
             margin: 0
