@@ -14,7 +14,7 @@ function displayCompanie()
     INNER JOIN city on address.id_city = city.id_city WHERE 1=1';
     }
     if(!empty($_GET["company_name"])){
-        $query=$query." AND company_name='".$_GET["company_name"]."'";
+        $query=$query." AND company_name LIKE '%".$_GET['company_name']."%'";
     }
     if(!empty($_GET["location"])){                                      //get the "location" value
         if($_GET["location"] == "Any Location"){                        //if the value of "location" is "Any location", the variable $quary won't change

@@ -70,7 +70,7 @@ function displayOfferdetail()
                 <h3 class="medium"> Offer description </h3>
                 <p class="mini"> <?php echo $value[8]  ?> </p>
             </div>
-<?php endforeach;
+        <?php endforeach;
         }
     } catch (\PDOException $e) { // displays an error if the try fails
         echo $e->getMessage();
@@ -98,7 +98,8 @@ function hasAlreadySentCandidature()
     }
 }
 
-function getCompanyFromOffer($id_offer){
+function getCompanyFromOffer($id_offer)
+{
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
         $sql = $pdo->prepare('SELECT id_company FROM offers WHERE id_offer = ?');
@@ -112,5 +113,25 @@ function getCompanyFromOffer($id_offer){
         echo $e->getMessage();
         echo "   ";
         echo (int)$e->getCode();
+    }
+}
+
+function alertHandler()
+{
+    if (isset($_GET["success"])) {
+        if ($_GET["success"] == true) : ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>All is good !</strong> We successfully sent your documents ! We notified you !
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif;
+    }
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == 1) : ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error :</strong> You tried to import wrong format resume or motivation letter...
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+<?php endif;
     }
 }
