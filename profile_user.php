@@ -112,11 +112,16 @@
         <input type="submit" role="button" alt="done" id="end-editing" name="postbutton" value="postbutton">
         <?php
         if (isset($_GET["errorinputs"])) {
-            if ($_GET["errorinputs"] == "1") {
+            switch ($_GET["errorinputs"]) {
+                case 1  :
 
-                echo "Error : please fill all inputs";
-            }
-        } ?>
+                echo "Error 1 : please fill all fields";
+                break;
+                case 2:
+
+                echo "Error 2 : forbidden characters inserted";
+                break;
+        }} ?>
 
         </form>
     </div>
@@ -135,40 +140,7 @@
                 <div class="wishlist">
                     <p class="medium titre">Wishlist</p>
                     <div class="scroller">
-                        <div class="offerexample">
-                            <a href="" class="medium">Offer example</a>
-                            <a href="" class="small">Company</a>
-                            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Ex maxime, ipsam maiores itaque sint ab, corporis est,
-                                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
-                            </p>
-                            <div class="space">
-                                <ul class="list mini">
-                                    <li id="wcity">City</li>
-                                    <li class="dot">-</li>
-                                    <li id="wpublishDate">Publish Date</li>
-                                    <li class="dot">-</li>
-                                    <li id="wsector">Sector</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="offerexample">
-                            <a href="" class="medium">Offer example</a>
-                            <a href="" class="small">Company</a>
-                            <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Ex maxime, ipsam maiores itaque sint ab, corporis est,
-                                commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
-                            </p>
-                            <div class="space">
-                                <ul class="list mini">
-                                    <li id="wcity">City</li>
-                                    <li class="dot">-</li>
-                                    <li id="wpublishDate">Publish Date</li>
-                                    <li class="dot">-</li>
-                                    <li id="wsector">Sector</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <?php loadWishlist()?>
                         <div class="offerexample">
                             <a href="" class="medium">Offer example</a>
                             <a href="" class="small">Company</a>

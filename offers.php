@@ -29,7 +29,7 @@
         <div class="text-block">
             <h4 class="t_off bigtitle smalltitle">Offers</h4>
             <p class="t_off2 bigtitle smalltitle">Check out the popular offers right now.</p>
-        </div>
+        </div> 
     </div>
 
     <!-- SEARCH BARS -->
