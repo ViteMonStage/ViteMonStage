@@ -70,16 +70,16 @@ function displayUser() //affichage des utilisateur correspondant a la rechèrche
                 echo "<section class='search-result-item border'>";
                 $profile_pic = "./assets/user_data/avatar/$value[0].png"; //path of the profile pictures to check if they exist
                 if(file_exists($profile_pic)){ 
-                    echo "<a class='image-link' href='./profile_user.php?id_user=$value[0]&id_role=$value[8]'><img class='image' src='./assets/user_data/avatar/$value[0].png'>"; //if the picture exists output this
+                    echo "<a class='image-link' href='./profile_user.php?id_user=$value[0]&id_role=$value[8]'><img class='image' alt='$value[1] $value[2]' src='./assets/user_data/avatar/$value[0].png'>"; //if the picture exists output this
                 }else{
-                    echo"<a class='image-link' href='./profile_user.php?id_user=$value[0]&id_role=$value[8]'><img class='image' src='./assets/user_data/avatar/0.png'>"; //if the picture dosen't exists output this
+                    echo"<a class='image-link' href='./profile_user.php?id_user=$value[0]&id_role=$value[8]'><img class='image' alt='$value[1] $value[2]' src='./assets/user_data/avatar/0.png'>"; //if the picture dosen't exists output this
                 }
                 echo"</a>
                     <div class='search-result-item-body'>
                         <div class='row'>
                             <div class='col-sm-9'>
                                 <h4 class='search-result-item-heading'><a href='./profile_user.php?id_user=$value[0]&id_role=$value[8]'>$value[1] $value[2]</a></h4> "/*show the user name and if clicked redirect to the profile of the user*/; echo"
-                                <p class='small info'> Promotion : $value[4] / Status : $value[5] / Campus : $value[7]</p> "/**/; echo"
+                                <p class='small info'> Promotion : $value[4] / Status : $value[5] / Campus : $value[6]</p> "/**/; echo"
                                 <p class='description'> $value[3]</p> "/*The description of the user*/; echo"
                             </div>
                             <div class='col-sm-3 text-align-center'>
