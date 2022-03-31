@@ -9,7 +9,7 @@ if (empty($_POST['email']) == true || empty($_POST['password']) == true) { //if 
 $email = $_POST['email'];
 $password = $_POST['password'];
 try {
-    $stm = $pdo->prepare('SELECT email,id_role,password,id_user FROM user WHERE email=? AND password=?'); //prepared statement to verify email and password
+    $stm = $pdo->prepare('SELECT email,id_role,password,id_user,firstname,lastname FROM user WHERE email=? AND password=?'); //prepared statement to verify email and password
     $stm->bindParam(1, $email);
     $stm->bindParam(2, $password);
     $stm->execute();
@@ -19,6 +19,7 @@ try {
         $_SESSION['email'] = $email; //if password and mail are a valid couple, grant access by setting session email value
         $_SESSION['role'] = $row[0][1];
         $_SESSION['id_user'] = $row[0][3];
+        $_SESSION['name'] = $row[0][4]." ".$row[0][5];
     } else { //if password and mail are not a valid couple, returns error code 1
         header('Location: ../login.php?error=1');
     }

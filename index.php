@@ -18,7 +18,7 @@
     <?php
     include "./php/navbar.php";
     ?>
-    <h1 class="welcome big">Welcome on VMS</h1>
+    <h1 class="welcome big">Welcome on VMS, <?php echo $_SESSION["name"] ?></h1>
     <div class="row g-0">
         <!-- "Applications" square -->
         <div class="col-lg-6 col-sm-12">
