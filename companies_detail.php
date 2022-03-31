@@ -27,19 +27,22 @@
     <?php
     ob_start();
     displayCompaniedetails();?>
-<<<<<<< HEAD
-    <form class="company_btn" action="./php/visible.php" method="POST"> 
-        <input type="button" class="small btn company" value="Invisible" name="invisible">
+    <?php if($_SESSION['role'] == 3 || $_SESSION['role'] == 4):?>
+    
+    <form class="company_btn" action="./php/visible.php?id_company=<?php echo $_GET['id_company'] ?>" method="POST"> 
+        <input type="submit" class="small btn company" value="Invisible" name="invisible">
+       <?php if (isset($_GET["isvisible"])) {
+                        if ($_GET["isvisible"] == "0") {
+                            echo '<p class="small error"> Company is now visible for all users.</p>';
+                        }
+                        if ($_GET["isvisible"] == "1") {
+                            echo '<p class="small error"> Company is now invisible for all users.</p>';
+                        }
+                    }
+                   ?>
     </form>
-=======
+    <?php endif ?>
 
-    <div class="company_btn">
-        <input type="button" class="small btn company" value="Modify">
-        <input type="button" class="small btn company" value="Modify">
-        <input type="button" class="small btn company" value="Delete">
-    </div>
-
->>>>>>> 866186fc3f46cd32c651c71713b0dfa0ec2cdef4
     <?php include_once dirname(__FILE__) . "/php/companies.php";
     displayRatingOptions($_SESSION["id_user"],$_GET["id_company"]); 
     displayAllRating($_GET["id_company"]);
