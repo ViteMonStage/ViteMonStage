@@ -25,7 +25,7 @@ include dirname(__FILE__) . "/notification.php";
                     <a href="/management/offers.php" class="dropdown-item admin-list">Manage offers</a>
                     <a href="/management/users.php" class="dropdown-item admin-list">Manage users</a>
                     <div class="dropdown-divider"></div>
-                    <a href="/search_user.php" class="dropdown-item admin-list">Search users</a>
+                    <a href="/search_user.php?Status=0&usersearch=" class="dropdown-item admin-list">Search users</a>
                 </div>
             </li>
             <?php endif;?>
