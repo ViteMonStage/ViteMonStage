@@ -156,8 +156,11 @@ ul{
 }
 
 .menu .offerexample {
-    margin-top: 0%;
+    margin-top: 1px;
     margin-left: 1em;
+    background-color:rgba(211, 211, 211, 0.7); 
+    border-radius: 10px;
+    padding: 10px;
 }
 .list li {
     display: inline;
