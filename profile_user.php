@@ -23,8 +23,10 @@
     <!-- NAVBAR -->
     <header>
         <?php
-        include "./php/navbar.php";
         include "./php/profile.php";
+        include "./php/navbar.php";
+        
+        
 
 
         ?>
