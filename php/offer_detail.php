@@ -28,14 +28,14 @@ function displayOfferdetail()
                     <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                     <div class="off_desc_txt">
                         <h2 class="big"> <?php echo $value[0] ?></h2> <!-- replace the html with the value 0 (first column) of the first row the table   -->
-                        <h4 class="small">Name of the company : <?php echo $value[1] ?></h4>
-                        <h4 class="small">City : <?php echo  $value[2] ?> (<?php echo $value[3] ?>)</h4>
-                        <h4 class="small">Promotion type : <?php echo $value[10] ?></h4>
-                        <h4 class="small"> Skills requiered : <?php echo $value[9] ?></h4>
-                        <h4 class="small">Offer date : <?php echo $value[4]  ?></h4>
-                        <h4 class="small"> Number of interns : <?php echo  $value[5]  ?></h4>
-                        <h4 class="small">Starting date : <?php echo  $value[6]  ?> - End date : <?php echo  $value[7]  ?></h4>
-                        <h4 class="small"><?php echo  $value[11] ?> €/ months</h4>
+                        <h4 class="small"><i class="fa-solid fa-tag"></i> Name of the company : <?php echo $value[1] ?></h4>
+                        <h4 class="small"><i class="fa-solid fa-city"></i> City : <?php echo  $value[2] ?> (<?php echo $value[3] ?>)</h4>
+                        <h4 class="small"><i class="fa-solid fa-graduation-cap"></i> Promotion type : <?php echo $value[10] ?></h4>
+                        <h4 class="small"><i class="fa-solid fa-plus"></i> Skills requiered : <?php echo $value[9] ?></h4>
+                        <h4 class="small"><i class="fa-solid fa-calendar-day"></i> Offer date : <?php echo $value[4]  ?></h4>
+                        <h4 class="small"><i class="fa-solid fa-people-group"></i> Number of interns : <?php echo  $value[5]  ?></h4>
+                        <h4 class="small"><i class="fa-solid fa-arrow-up"></i></i> Starting date : <?php echo  $value[6]  ?> - <i class="fa-solid fa-arrow-down"></i> End date : <?php echo  $value[7]  ?></h4>
+                        <h4 class="small"><i class="fa-solid fa-file-invoice-dollar"></i> <?php echo  $value[11] ?> €/ months</h4>
                     </div>
                     <?php if (!isInWishlist($_SESSION["id_user"], $_GET["id_offer"])) : ?>
                         <?php if ($_SESSION['role'] != 2 || $_SESSION['role'] != 3) :    ?>
