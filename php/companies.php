@@ -3,18 +3,15 @@ function displayCompanie()
 {
     $query = 'SELECT company_name,company.description,cityname,zipcode,sector_activity,company.id_company from company 
     INNER JOIN  address on company.id_company = address.id_company
-    INNER JOIN city on address.id_city = city.id_city';
-     if(isset($_GET["company_name"]) || isset($_GET["location"]) || isset($_GET["sector_activity"])) { 
-        $query=$query."WHERE 1=1";
-     }
-    if(isset($_GET["company_name"])){
-        $query=$query."AND company_name=".$_GET["company_name"];
+    INNER JOIN city on address.id_city = city.id_city WHERE 1=1';
+    if(!empty($_GET["company_name"])){
+        $query=$query." AND company_name='".$_GET["company_name"]."'";
     }
-    if(isset($_GET["location"])){
-        $query=$query."AND cityname=".$_GET["location"];
+    if(!empty($_GET["location"])){
+        $query=$query." AND cityname='".$_GET["location"]."'";
     }
-    if(isset($_GET["sector_activity"])){
-        $query=$query."AND sector_activity=".$_GET["sector_activity"];
+    if(!empty($_GET["sector_activity"])){
+        $query=$query." AND sector_activity='".$_GET["sector_activity"]."'";
     }
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo

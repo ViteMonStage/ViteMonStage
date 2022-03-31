@@ -62,7 +62,8 @@
             <li><input class="mini " placeholder="Age" readonly="readonly" name="age" value="<?php echo$row[0][4]; ?>"></li>
             <li>
                 <div id="calendar" class="md-form md-outline input-with-post-icon datepicker">
-                    <input placeholder="Select date" type="date" id="birthtbx" class="form-control tbx mini" name="birthday">
+                    <input placeholder="Select date" type="date" id="birthtbx" class="form-control tbx mini" name="birthday" value="<?php echo $birthday
+                    ?>">
                 </div>
             </li>
             <li><select id="listboxpromo" class="form-control tbx mini listbox" name="promotion">

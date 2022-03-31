@@ -31,6 +31,8 @@ $sql->bindParam(':email', $email);
 $sql->execute();
 $row = $sql->fetchAll();
 $id = $row[0][8];
+$birthday = $row[0][11];
+
 }
 catch(\PDOException $e){
     echo $e->getMessage();
