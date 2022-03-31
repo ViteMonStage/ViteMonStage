@@ -28,7 +28,7 @@
         <img src="assets/pictures/offres.png" class="img banner" alt="offres">
         <div class="text-block">
             <h4 class="t_off bigtitle smalltitle">Offers</h4>
-            <p class="t_off2 bigtitle smalltitle">Check out the most recent right now!</p>
+            <p class="t_off2 bigtitle smalltitle">Check out the most recent offers right now!</p>
         </div> 
     </div>
 
@@ -63,7 +63,7 @@
         </div>
         <div class="col-lg-2 col-sm-12 test ">
             <label for="durationtbx" class="tbxindicator small">Duration (months)</label>
-            <input type="number" min="1" class="tbx small" id="durationtbx" name="duration_offer">
+            <input type="number" min="1" class="tbx small" id="durationtbx" name="duration">
         </div>
         <div class="col-lg-2 col-sm-12 test">
             <label for="promostbx" class="tbxindicator small">Promotions</label>
