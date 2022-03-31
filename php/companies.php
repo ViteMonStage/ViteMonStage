@@ -1,9 +1,18 @@
 <?php
 function displayCompanie()
 {
+    if($_SESSION['role'] == 1 || $_SESSION['role'] == 2 || $_SESSION['role'] == 5)
+    {
+    $query = 'SELECT company_name,company.description,cityname,zipcode,sector_activity,company.id_company from company 
+    INNER JOIN  address on company.id_company = address.id_company
+    INNER JOIN city on address.id_city = city.id_city WHERE 1=1 AND visible = 1';
+    }
+    elseif($_SESSION['role'] == 3 || $_SESSION['role'] == 4)
+    {
     $query = 'SELECT company_name,company.description,cityname,zipcode,sector_activity,company.id_company from company 
     INNER JOIN  address on company.id_company = address.id_company
     INNER JOIN city on address.id_city = city.id_city WHERE 1=1';
+    }
     if(!empty($_GET["company_name"])){
         $query=$query." AND company_name='".$_GET["company_name"]."'";
     }
@@ -36,7 +45,7 @@ function displayCompanie()
         <div class="result">
             <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
             <div class="in_desc">
-            <h3 class="medium"><?php  echo "$value[0]" ?></h3>
+            <h3 class="medium"><?php  echo $value[0] ?></h3>
             <p class="mini"><?php echo $value[1] ?></p>
             <h4 class="mini loca"><?php echo $value[2] ?>(<?php echo $value[3] ?>) - <?php echo $value[4] ?></h4>
             </div>

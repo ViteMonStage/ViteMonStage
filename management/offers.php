@@ -126,8 +126,7 @@
                     }
                     ?>
                 </div>
-
-
+                
                 <!-- OFFER DELETION -->
                 <div class="mantitl">
                     <h1 class="big titl">OFFER DELETION</h1>
@@ -175,20 +174,100 @@
                     <h1 class="big titl">OFFER MODIFICATION</h1>
                 </div>
                 <div class="col-sm-6 divg">
+                <div class="orga">
+                        <label for="nametbx" class="tbxindicator small">ID and name of the offer that u want to modify</label>
+                        <select class="form-control tbx medium" name="m_id_offer" id="comptbx">
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            $stm = $pdo->prepare('SELECT id_offer,offer_name FROM offers'); //query to get company ids and their name
+                            $stm->execute();
+                            $row = $stm->fetchAll();
+                            foreach ($row as $value) {
+                                echo'<option value='."$value[0]".'>' . $value[0] . ' - ' . $value[1] . '</option>';
+                            }
+                            ?>
+                        </select> <!-- name field -->
+                    </div>
                     <div class="orga">
-                        <label for="mnametbx" class="tbxindicator small">Enter the name of the offer to be deleted</label>
-                        <input type="text" class="form-control tbx medium" id="mnametbx" placeholder="WEB IT Internship"> <!-- name field -->
+                        <label for="nametbx" class="tbxindicator small">Name</label>
+                        <input type="text" class="form-control tbx medium" id="nametbx" placeholder="WEB IT Internship" name="m_name_offer"> <!-- name field -->
+                    </div>
+                    <div class="orga4">
+                        <label for="desctbx" class="tbxindicator small">Description</label>
+                        <textarea class="form-control ltbx medium" id="desctbx" name="m_desc_offer" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
+                    </div>
+                    <div class="orga">
+                        <label for="promotbx" class="tbxindicator small">Promotion type concerned</label>
+                        <select class="form-control tbx medium" name="m_promotion_type" id="promotbx">
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            $stm = $pdo->prepare('SELECT * FROM promotion_type'); //query to get promotion types and ids
+                            $stm->execute();
+                            $row = $stm->fetchAll();
+                            foreach ($row as $value) {
+                                echo '<option>'.$value[1].'</option>';
+                            }
+                            ?>
+                        </select>
                     </div>
                 </div>
                 <div class="col-sm-6 row divd">
                     <div class="orga">
-                        <label for="mcompanytbx" class="tbxindicator small">Enter the company name</label>
-                        <input type="text" class="form-control tbx medium" id="mcompanytbx" placeholder="VTM Incorporated"> <!-- skills field -->
+                        <label for="skilltbx" class="tbxindicator small">Skills</label>
+                        <input type="text" class="form-control tbx medium" name="m_skills_offer" id="skilltbx" placeholder="Databases, HTML, CSS, PHP"> <!-- skills field -->
+                    </div>
+                    <div class="orga">
+                        <label for="salartbx" class="tbxindicator small">Estimated salary (per month)</label>
+                        <input type="text" class="form-control tbx medium" id="salartbx" placeholder="650€" name="m_salary_offer"> <!-- salary  field -->
+                    </div>
+                    <div class="orga2">
+                        <div class="col-sm-7 orga3">
+                            <!-- starting date field -->
+                            <label for="starttbx" class="tbxindicator small">Starting date</label>
+                            <div class="md-form md-outline input-with-post-icon datepicker">
+                                <input type="date" id="starttbx" class="form-control tbx medium" name="m_start_date_offer">
+                            </div>
+                        </div>
+                        <div class="col-sm-5 orga3">
+                            <!-- ending date field -->
+                            <label for="endtbx" class="tbxindicator small">Ending date</label>
+                            <div class="md-form md-outline input-with-post-icon datepicker">
+                                <input type="date" id="endtbx" class="form-control tbx medium" name="m_end_date_offer">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orga">
+                        <label for="nbrtbx" class="tbxindicator small">Number of Interns</label>
+                        <input type="number" class="form-control tbx medium" id="nbrtbx" placeholder="1" name="m_interns_offer"> <!-- number of interns field -->
+                    </div>
+                    <div class="orga">
                     </div>
                 </div>
+
                 <div>
                     <!--Ci-dessous le bouton submit-->
-                    <input type="submit" class="btn-primary btn Medium" id="mlogbtn" value="MODIFY OFFER">
+                    <input type="submit" class="btn-primary btn Medium" id="mlogbtn" name="m_offer" value="MODIFY OFFER">
+                    <?php
+                    if (isset($_GET["m_error"])) {
+                        if ($_GET["m_error"] == "1") {
+                            echo '<p class="small error">Error, please try again.</p>';
+                        }
+                        if ($_GET["m_error"] == "2") {
+                            echo '<p class="small error">Invid character detected, please try again.</p>';
+                        }
+                        if ($_GET["m_error"] == "3") {
+                            echo '<p class="small error">Please fill all textboxes.</p>';
+                        }
+                        if ($_GET["m_error"] == "4") {
+                            echo '<p class="small error">No offer with this name and company.</p>';
+                        }
+                    }
+                    if (isset($_GET["m_good"])) {
+                        if ($_GET["m_good"] == "1") {
+                            echo '<p class="small error">Offer successfuly modified.</p>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>

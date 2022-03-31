@@ -142,18 +142,100 @@
                 </div>
 
                 <!-- COMPANY MODIFICATION -->
-                <div class="mantitl">
+                
+                 <div class="mantitl">
                     <h1 class="big titl">COMPANY MODIFICATION</h1>
                 </div>
+                
                 <div class="col-sm-6 divg">
+                <div class="orga">
+                    <label for="nametbx" class="tbxindicator small">ID of the offer that u want to modify</label>
+                        <select class="form-control tbx medium" name="m_id_company" id="comptbx">
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            $stm = $pdo->prepare('SELECT id_company,company_name FROM company'); //query to get company ids and their name
+                            $stm->execute();
+                            $row = $stm->fetchAll();
+                            foreach ($row as $value) {
+                                echo'<option value='."$value[0]".'>' . $value[0] . ' - ' . $value[1] . '</option>';
+                            }
+                            ?>
+                        </select> <!-- name field -->
+                       
+                    </div>
                     <div class="orga">
-                        <label for="mnametbx" class="tbxindicator small">Name</label>
-                        <input type="text" class="form-control tbx medium" id="mnametbx" placeholder="VTM Incorporated"> <!-- name field -->
+                        <label for="nametbx" class="tbxindicator small">Name</label>
+                        <input type="text" class="form-control tbx medium" id="nametbx" placeholder="VTM Incorporated" name="m_name"> <!-- name field -->
+                    </div>
+                    <div class="orga">
+                        <label for="mailtbx" class="tbxindicator small">Email</label>
+                        <input type="text" class="form-control tbx medium" id="mailtbx" placeholder="VTM.Incorporated@vtm.com" name="m_mail"> <!-- email field -->
+                    </div>
+
+                    <div class="orga">
+                        <label for="stnametbx" class="tbxindicator small">Street Name</label>
+                        <input type="text" class="form-control tbx medium" id="stnametbx" placeholder="Garry Vignot boulevard" name="m_street_name"> <!-- street name field -->
+                    </div>
+                    <div class="orga">
+                        <label for="stnumbtbx" class="tbxindicator small">Street Number</label>
+                        <input type="text" class="form-control tbx medium" id="stnumbtbx" placeholder="22 bis" name="m_street_number"> <!-- street number field -->
                     </div>
                 </div>
+                <div class="col-sm-6 row divd">
+                    <div class="orga">
+                        <label for="sectortbx" class="tbxindicator small">Sector</label> <!-- sector field -->
+                        <input type="text" class="form-control tbx medium" id="sectortbx" placeholder="Electronics" name="m_sector"> <!-- sector field -->
+                    </div>
+                    <div class="orga4">
+                        <label for="desctbx" class="tbxindicator small">Description*</label>
+                        <textarea class="form-control ltbx medium" id="desctbx" name="m_desc" placeholder="Lorem ipsum dolor sit amet. Qui consequatur doloribus quo alias repudiandae eos labore tempora. Et aspernatur ullam quo sequi illum aut rerum voluptates sed reprehenderit labore et quam maxime aut accusantium exercitationem qui quasi distinctio. Eos dignissimos eius et officia saepe eos suscipit esse et inventore quia ex commodi accusamus et reprehenderit sunt eos soluta aspernatur."></textarea> <!-- description field -->
+                    </div>
+                    <div class="orga">
+                        <label for="citytbx" class="tbxindicator small">City</label>
+                        <select class="form-control tbx medium" id="citytbx" name="m_city">
+                            <!-- city name field -->
+                            <?php
+                            include "../db.php"; //Used to get global pdo
+                            $stm = $pdo->prepare('SELECT id_city, cityname, zipcode FROM city');
+                            $stm->execute();
+                            $row = $stm->fetchAll();
+                            foreach ($row as $value) {
+                                echo '<option value=' . "$value[0]" . '>' . $value[1] . ' - ' . $value[2] . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="orga">
+                        <label for="bnametbx" class="tbxindicator small">Building Name*</label>
+                        <input type="text" class="form-control tbx medium" id="bnametbx" placeholder="Almas Tower" name="m_building_name"> <!-- building name field -->
+                    </div>
+                    <div class="orga">
+                        <label for="floortbx" class="tbxindicator small">Floor*</label>
+                        <input type="number" class="form-control tbx medium" id="floortbx" placeholder="57" name="m_floor"> <!-- floor number field -->
+                    </div>
+                </div>
+
                 <div>
                     <!--Ci-dessous le bouton submit-->
-                    <input type="submit" class="btn-primary btn Medium" id="mlogbtn" value="MODIFY COMPANY" name="m_company">
+                    <input type="submit" class="btn-primary btn Medium" id="logbtn" value="MODIFY COMPANY" name="m_company">
+                    <?php
+                    if (isset($_GET["m_error"])) {
+                        if ($_GET["m_error"] == "1") {
+                            echo '<p class="small error">Error, please try again.</p>';
+                        }
+                        if ($_GET["m_error"] == "2") {
+                            echo '<p class="small error">Invid character detected, please try again.</p>';
+                        }
+                        if ($_GET["m_error"] == "3") {
+                            echo '<p class="small error">Please fill all mandatory textboxes.</p>';
+                        }
+                    }
+                    if (isset($_GET["m_good"])) {
+                        if ($_GET["m_good"] == "1") {
+                            echo '<p class="small error">Company successfuly created.</p>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>

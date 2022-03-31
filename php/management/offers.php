@@ -135,3 +135,113 @@ if (isset($_POST['d_offer'])) {
         die();
     }
 }
+
+//MODIFY OFFER 
+if (isset($_POST['m_offer'])) {
+    $skills = $_POST['m_skills_offer'];
+    $id_offer = $_POST['m_id_offer'];
+    $internship_start = $_POST['m_start_date_offer'];
+    $internship_end = $_POST['m_end_date_offer'];
+    $salary = $_POST['m_salary_offer'];
+    $number_interns = $_POST['m_interns_offer'];
+    $desc = $_POST['m_desc_offer'];
+    $name = $_POST['m_name_offer'];
+    $promotion_type = $_POST['m_promotion_type'];
+    $offer_date = date('Y-m-d', time());
+
+   
+
+    if (preg_match('/[\'^}{#~><>¬]/', $skills)) {
+        // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=2'); //if a character is not valid, returns error code 2
+        die();
+    }
+    if (preg_match('/[\'^}{#~><>¬]/', $salary)) {
+        // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=2'); //if a character is not valid, returns error code 2
+        die();
+    }
+    if (preg_match('/[\'^}{#~><>¬]/', $number_interns)) {
+        // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=2'); //if a character is not valid, returns error code 2
+        die();
+    }
+    if (preg_match('/[\'^}{#~><>¬]/', $desc)) {
+        // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=2'); //if a character is not valid, returns error code 2
+        die();
+    }
+    if (preg_match('/[\'^}{#~><>¬]/', $name)) {
+        // one or more of the 'special characters' found in $string
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=2'); //if a character is not valid, returns error code 2
+        die();
+    }
+
+    //CHECK IF TEXTBOXES ARE FILLED
+    if (empty($skills)) {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=3'); //if textbox is left empty
+        die();
+    }
+    if (empty($salary)) {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=3'); //if textbox is left empty
+        die();
+    }
+    if (empty($number_interns)) {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=3'); //if textbox is left empty
+        die();
+    }
+    if (empty($desc)) {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=3'); //if textbox is left empty
+        die();
+    }
+    if (empty($name)) {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=3'); //if textbox is left empty
+        die();
+    }
+
+    try {
+        $stm = $pdo->prepare('UPDATE offers
+        SET skills = ?, 
+        intership_start = ?,
+        intership_end =?,
+        salary=?, 
+        number_interns=?,
+        description=?,
+        offer_name=?
+        WHERE id_offer=?'); //prepared statement to insert values
+        $stm->bindParam(1, $skills);
+        $stm->bindParam(2, $internship_start);
+        $stm->bindParam(3, $internship_end);
+        $stm->bindParam(4, $salary);
+        $stm->bindParam(5, $number_interns);
+        $stm->bindParam(6, $desc);
+        $stm->bindParam(7, $name);
+        $stm->bindParam(8, $id_offer);
+                        
+        if ($stm->execute() == FALSE) {
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=1'); //if a value is not valid / an error occured , returns error code 1
+            die();
+        }
+        $stm = $pdo->prepare('SELECT id_promotion_type from promotion_type
+        WHERE promotion_type = ?');
+        $stm->bindParam(1, $promotion_type);
+        $stm->execute; 
+        $row = $stm->fetchAll();
+        $id_promotion_type= $row[0][0];
+        $stm = $pdo->prepare('UPDATE concern 
+        set id_promotion_type = ? WHERE id_offer =?'); 
+        $stm->bindParam(1, $id_offer);
+        $stm->bindParam(2, $id_promotion_type);
+
+        if ($stm->execute() == FALSE) {
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=1'); //if a value is not valid / an error occured , returns error code 1
+            die();
+        }
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_good=1'); //if everything is good , returns good code 1
+
+    } catch (\PDOException $e) {
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?m_error=1'); //if exception , returns error code 1
+        die();
+    }
+}
+
