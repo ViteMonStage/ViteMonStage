@@ -98,7 +98,9 @@ include "../php/navbar.php";
                         <select class="form-control tbx medium" id="roletbx" name="c_role">
                             <?php
                             include "../db.php"; //Used to get global pdo
-                            $stm = $pdo->prepare('SELECT role FROM role'); //query to get roles
+                            if($_SESSION['role'] == 3 || $_SESSION['role'] == 2){
+                            $stm = $pdo->prepare('SELECT role FROM role WHERE id_role != 3 AND id_role !=4'); //query to get roles
+                        }
                             $stm->execute();
                             $row = $stm->fetchAll();
                             foreach ($row as $value) {

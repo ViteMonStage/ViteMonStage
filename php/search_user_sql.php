@@ -40,12 +40,20 @@ function displayUser() //affichage des utilisateur correspondant a la rechèrche
             $searchuser_param = "and user.id_role LIKE '$searchuser_param'";
         }
         
+        if($_SESSION['role'] == 3 || $_SESSION['role'] == 2 || $_SESSION['role'] == 5)
+        $sql = $pdo->prepare("SELECT id_user,firstname,lastname,description_user,promotion.promotion_name,role.role,campus.campus_name,user.email from user 
+        inner join promotion on user.id_promotion = promotion.id_promotion
+        inner join role on user.id_role = role.id_role
+		inner join campus on user.id_campus = campus.id_campus AND user.id_role != 3 AND user.id_role != 4
+        WHERE concat(firstname,' ',lastname) like '%$usersearch%' $searchuser_param"); // prepared sql command
+       
+       elseif($_SESSION['role'] == 4){
         $sql = $pdo->prepare("SELECT id_user,firstname,lastname,description_user,promotion.promotion_name,role.role,campus.campus_name,user.email from user 
         inner join promotion on user.id_promotion = promotion.id_promotion
         inner join role on user.id_role = role.id_role
 		inner join campus on user.id_campus = campus.id_campus
         WHERE concat(firstname,' ',lastname) like '%$usersearch%' $searchuser_param"); // prepared sql command
-       
+       }
         $sql->execute(); //execute the command
         $row = $sql->fetchAll(); //fetch the info
         $rownum = $sql->rowCount();//Counts the command rows
@@ -53,7 +61,7 @@ function displayUser() //affichage des utilisateur correspondant a la rechèrche
 
 
         ?>
-        <p class="search-results-count small">number of results : <?php echo $rownum //outputs the number of results ?></p> 
+        <p class="search-results-count small">Number of results : <?php echo $rownum //outputs the number of results ?></p> 
         <?php
             foreach ($row as $value) {
 

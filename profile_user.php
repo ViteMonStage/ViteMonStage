@@ -58,7 +58,7 @@
             <li><input class="medium " placeholder="Name" readonly="readonly" name="name" value="<?php echo $row[0][1]; ?>"></li>
             <li><input class="small " placeholder="Gender" readonly="readonly" name="gender" value="<?php echo $row[0][2]; ?>"></li>
             <li><input class="small " placeholder="Email" readonly="readonly" name="email" value="<?php echo $row[0][3]; ?>"></li>
-            <li><input class="mini " placeholder="Age" readonly="readonly" name="age" value="<?php echo $row[0][4]." years old"; ?>"></li>
+            <li><input class="mini " placeholder="Age" readonly="readonly" name="age" value="<?php echo $row[0][4] . " years old"; ?>"></li>
             <li>
                 <div id="calendar" class="md-form md-outline input-with-post-icon datepicker">
                     <input placeholder="Select date" type="date" id="birthtbx" class="form-control tbx mini" name="birthday" value="<?php echo $birthday
@@ -114,15 +114,16 @@
         <?php
         if (isset($_GET["errorinputs"])) {
             switch ($_GET["errorinputs"]) {
-                case 1  :
+                case 1:
 
-                echo "Error 1 : please fill all fields";
-                break;
+                    echo "Error 1 : please fill all fields";
+                    break;
                 case 2:
 
-                echo "Error 2 : forbidden characters inserted";
-                break;
-        }} ?>
+                    echo "Error 2 : forbidden characters inserted";
+                    break;
+            }
+        } ?>
 
         </form>
     </div>
@@ -139,6 +140,33 @@
 
                 <!-- WISHLIST MENU -->
                 <div class="wishlist">
+                    <?php if ($_SESSION['role'] != 2 || $_SESSION['role'] != 3) :    ?><p class="medium titre">Wishlist</p>
+                    <?php else :    ?><p class="medium titre">You do not have acces to a wishlist</p><?php endif ?>
+                    <?php if ($_SESSION['role'] != 2 || $_SESSION['role'] != 3) :    ?>
+                        <div class="scroller">
+                            <?php loadWishlist() ?>
+                            <div class="offerexample">
+                                <a href="" class="medium">Offer example</a>
+                                <a href="" class="small">Company</a>
+                                <p class="mini">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Ex maxime, ipsam maiores itaque sint ab, corporis est,
+                                    commodi quaerat dignissimos laboriosam eaque perspiciatis architecto a nostrum esse autem ut optio!
+                                </p>
+                                <div class="space">
+                                    <ul class="list mini">
+                                        <li id="wcity">City</li>
+                                        <li class="dot">-</li>
+                                        <li id="wpublishDate">Publish Date</li>
+                                        <li class="dot">-</li>
+                                        <li id="wsector">Sector</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bouton">
+                            <a role="button" class="small btn" href="wishlist.php" alt="Wishlist">See more</a>
+                        </div>
+                    <?php endif ?>
                     <p class="medium titre">Wishlist</p>
                     <div class="scroller">
                         <?php loadWishlist()?>
@@ -152,7 +180,6 @@
                 </div>
             </div>
             <div class="col-lg-6 col-sm-12">
-
                 <!-- CANDIDATURES MENU -->
                 <div class="candidatures">
                     <p class="medium titre">Current candidatures </p>
@@ -187,74 +214,122 @@
             </div>
         </div>
     </div>
-    <?php                         
-    $email=$row[0][3];
+    <?php
+    $email = $row[0][3];
     $stm = $pdo->prepare("SELECT id_role FROM user WHERE email=?"); //query to get profile role
     $stm->bindParam(1, $row[0][3]);
     $stm->execute();
     $row1 = $stm->fetchAll();
-    $role=$row1[0][0];
-    if($role == 2):    ?>
-    <div class="row g-0">
-        <div class="col-lg-10 col-sm-10 divcheck">
-            <div class="taskbox">
-                <div class="useracc row">
-                    <div class="mantitl">
-                        <h1 class="big titl">DELEGATE PERMISSIONS</h1>
+    $role = $row1[0][0];
+    if ($role == 2 && $_SESSION['role'] != 2) :    ?>
+        <div class="row g-0">
+            <div class="col-lg-10 col-sm-10 divcheck">
+                <div class="taskbox">
+                    <div class="useracc row">
+                        <div class="mantitl">
+                            <h1 class="big titl">DELEGATE PERMISSIONS</h1>
+                        </div>
+                        <form action="../php/permissions.php?<?php echo $row[0][3]; ?>" method="post">
+                            <?php
+                            $email = $row[0][3];
+                            $stm = $pdo->prepare("SELECT search_company, create_company, modify_company, evaluate_company, delete_company, stats_company, search_offer, create_offer, modify_offer, delete_offer, stats_offer, search_pilot, create_pilot, modify_pilot, delete_pilot, search_delegate, create_delegate, modify_delegate, delete_delegate, search_student, create_student, modify_student, delete_student, stats_student FROM permission INNER JOIN user ON permission.id_user = user.id_user WHERE email = ? "); //query to get PERMISSIONS
+                            $stm->bindParam(1, $email);
+                            $stm->execute();
+                            $row1 = $stm->fetchAll();
+                            ?>
+                            <ul class="row col-lg-12 list-group list-group-horizontal flex ">
+                                <div class="col-lg-2 chec">
+                                    <li> <label class='switch mini'><input type='checkbox' id="c_search" name="c_search" <?php if ($row1[0][0]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Search a company</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="c_create" name="c_create" <?php if ($row1[0][1]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Create a company</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="c_modify" name="c_modify" <?php if ($row1[0][2]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Modify a company</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="c_rate" name="c_rate" <?php if ($row1[0][3]) {
+                                                                                                                            echo 'checked';
+                                                                                                                        } ?>><span></span></label><span class="mini">Evaluate a company</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="c_delete" name="c_delete" <?php if ($row1[0][4]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Delete a company</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="c_stats" name="c_stats" <?php if ($row1[0][5]) {
+                                                                                                                            echo 'checked';
+                                                                                                                        } ?>><span></span></label><span class="mini">See company stats</span></li>
+                                </div>
+                                <div class="col-lg-2 chec">
+                                    <li> <label class='switch mini'><input type='checkbox' id="o_search" name="o_search" <?php if ($row1[0][6]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Search an offer</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="o_create" name="o_create" <?php if ($row1[0][7]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Create an offer</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="o_modify" name="o_modify" <?php if ($row1[0][8]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Modify an offer</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="o_delete" name="o_delete" <?php if ($row1[0][9]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Delete an offer</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="o_stats" name="o_stats" <?php if ($row1[0][10]) {
+                                                                                                                            echo 'checked';
+                                                                                                                        } ?>><span></span></label><span class="mini">See offer stats</span></li>
+                                </div>
+                                <div class="col-lg-2 chec">
+                                    <li> <label class='switch mini'><input type='checkbox' id="p_search" name="p_search" <?php if ($row1[0][11]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Search a pilot</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="p_create" name="p_create" <?php if ($row1[0][12]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Create a pilot</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="p_modify" name="p_modify" <?php if ($row1[0][13]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Modify pilot</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="p_delete" name="p_delete" <?php if ($row1[0][14]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Delete pilot</span></li>
+                                </div>
+                                <div class="col-lg-2 chec">
+                                    <li> <label class='switch mini'><input type='checkbox' id="d_search" name="d_search" <?php if ($row1[0][15]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Search delegate</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="d_create" name="d_create" <?php if ($row1[0][16]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Create a delegate</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="d_modify" name="d_modify" <?php if ($row1[0][17]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Modify delegate</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="d_delete" name="d_delete" <?php if ($row1[0][18]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Delete delegate</span></li>
+                                </div>
+                                <div class="col-lg-2 chec">
+                                    <li> <label class='switch mini'><input type='checkbox' id="st_search" name="st_search" <?php if ($row1[0][19]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Search student</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="st_create" name="st_create" <?php if ($row1[0][20]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Create a student</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="st_modify" name="st_modify" <?php if ($row1[0][21]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Modify a student</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="st_delete" name="st_delete" <?php if ($row1[0][22]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">Delete a student</span></li>
+                                    <li> <label class='switch mini'><input type='checkbox' id="st_stats" name="st_stats" <?php if ($row1[0][23]) {
+                                                                                                                                echo 'checked';
+                                                                                                                            } ?>><span></span></label><span class="mini">See students stats</span></li>
+                                </div>
+                            </ul>
+                            <input type="submit" class="small btnx" alt="permissions" value="Apply permissions" name="check_sub">
+                        </form>
                     </div>
-                    <form action="../php/permissions.php?<?php echo $row[0][3]; ?>" method="post">
-                        <?php
-                        $email=$row[0][3];
-                        $stm = $pdo->prepare("SELECT search_company, create_company, modify_company, evaluate_company, delete_company, stats_company, search_offer, create_offer, modify_offer, delete_offer, stats_offer, search_pilot, create_pilot, modify_pilot, delete_pilot, search_delegate, create_delegate, modify_delegate, delete_delegate, search_student, create_student, modify_student, delete_student, stats_student FROM permission INNER JOIN user ON permission.id_user = user.id_user WHERE email = ? "); //query to get PERMISSIONS
-                        $stm->bindParam(1, $email);
-                        $stm->execute();
-                        $row1 = $stm->fetchAll();
-                        ?>
-                        <ul class="row col-lg-12 list-group list-group-horizontal flex ">
-                            <div class="col-lg-2 chec">
-                                <li> <label class='switch mini'><input type='checkbox' id="c_search" name="c_search" <?php if($row1[0][0]){echo'checked';}?>><span></span></label><span class="mini">Search a company</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="c_create" name="c_create" <?php if($row1[0][1]){echo'checked';}?>><span></span></label><span class="mini">Create a company</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="c_modify" name="c_modify" <?php if($row1[0][2]){echo'checked';}?>><span></span></label><span class="mini">Modify a company</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="c_rate" name="c_rate" <?php if($row1[0][3]){echo'checked';}?>><span></span></label><span class="mini">Evaluate a company</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="c_delete" name="c_delete" <?php if($row1[0][4]){echo'checked';}?>><span></span></label><span class="mini">Delete a company</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="c_stats" name="c_stats" <?php if($row1[0][5]){echo'checked';}?>><span></span></label><span class="mini">See company stats</span></li>
-                            </div>
-                            <div class="col-lg-2 chec">
-                                <li> <label class='switch mini'><input type='checkbox' id="o_search" name="o_search" <?php if($row1[0][6]){echo'checked';}?>><span></span></label><span class="mini">Search an offer</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="o_create" name="o_create" <?php if($row1[0][7]){echo'checked';}?>><span></span></label><span class="mini">Create an offer</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="o_modify" name="o_modify" <?php if($row1[0][8]){echo'checked';}?>><span></span></label><span class="mini">Modify an offer</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="o_delete" name="o_delete" <?php if($row1[0][9]){echo'checked';}?>><span></span></label><span class="mini">Delete an offer</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="o_stats" name="o_stats" <?php if($row1[0][10]){echo'checked';}?>><span></span></label><span class="mini">See offer stats</span></li>
-                            </div>
-                            <div class="col-lg-2 chec">
-                                <li> <label class='switch mini'><input type='checkbox' id="p_search" name="p_search" <?php if($row1[0][11]){echo'checked';}?>><span></span></label><span class="mini">Search a pilot</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="p_create" name="p_create" <?php if($row1[0][12]){echo'checked';}?>><span></span></label><span class="mini">Create a pilot</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="p_modify" name="p_modify" <?php if($row1[0][13]){echo'checked';}?>><span></span></label><span class="mini">Modify pilot</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="p_delete" name="p_delete" <?php if($row1[0][14]){echo'checked';}?>><span></span></label><span class="mini">Delete pilot</span></li>
-                            </div>
-                            <div class="col-lg-2 chec">
-                                <li> <label class='switch mini'><input type='checkbox' id="d_search" name="d_search" <?php if($row1[0][15]){echo'checked';}?>><span></span></label><span class="mini">Search delegate</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="d_create" name="d_create" <?php if($row1[0][16]){echo'checked';}?>><span></span></label><span class="mini">Create a delegate</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="d_modify" name="d_modify" <?php if($row1[0][17]){echo'checked';}?>><span></span></label><span class="mini">Modify delegate</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="d_delete" name="d_delete" <?php if($row1[0][18]){echo'checked';}?>><span></span></label><span class="mini">Delete delegate</span></li>
-                            </div>
-                            <div class="col-lg-2 chec">
-                                <li> <label class='switch mini'><input type='checkbox' id="st_search" name="st_search" <?php if($row1[0][19]){echo'checked';}?>><span></span></label><span class="mini">Search student</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="st_create" name="st_create" <?php if($row1[0][20]){echo'checked';}?>><span></span></label><span class="mini">Create a student</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="st_modify" name="st_modify" <?php if($row1[0][21]){echo'checked';}?>><span></span></label><span class="mini">Modify a student</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="st_delete" name="st_delete" <?php if($row1[0][22]){echo'checked';}?>><span></span></label><span class="mini">Delete a student</span></li>
-                                <li> <label class='switch mini'><input type='checkbox' id="st_stats" name="st_stats" <?php if($row1[0][23]){echo'checked';}?>><span></span></label><span class="mini">See students stats</span></li>
-                            </div>
-                        </ul>
-                        <input type="submit" class="small btnx" alt="permissions" value="Apply permissions" name="check_sub">
-                    </form>
                 </div>
             </div>
         </div>
-    </div>
-        <?php
-        endif
-        ?>
+    <?php
+    endif
+    ?>
     <!-- FOOTER -->
 
 
