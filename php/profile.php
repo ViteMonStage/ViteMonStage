@@ -143,15 +143,16 @@ function loadWishlist(){
                                 INNER JOIN company on offers.id_company = company.id_company
                                 INNER JOIN address on company.id_company=address.id_company
                                 INNER JOIN city on city.id_city=address.id_city
-                                where user.id_user = (:id_user)");
+                                where user.id_user = (:id_user)
+                                limit 10");
     $sqlwish->bindParam(':id_user',$id_user);
     $sqlwish->execute();
     $roww = $sqlwish ->fetchAll();
     if (isset($roww[0])== 1){
         foreach ($roww as $value) :?>
             <div class='offerexample'>
-            <a href='' class='medium'><?php echo $value[3]?></a>
-            <a href='' class='small'><?php echo $value[6]?></a>
+            <a href='../offers_detail.php?id_offer=<?php echo $value[2] ?>' class='medium'><?php echo $value[3]?></a>
+            <a href='/companies_detail.php?id_company=<?php echo $value[5] ?>' class='small'><?php echo $value[6]?></a>
             <p class='mini'><?php echo $value[7]?>
             </p>
             <div class='space'>
@@ -164,6 +165,14 @@ function loadWishlist(){
                 </ul>
             </div>
         </div> <?php endforeach;
+    }
+    else {
+        ?>
+        <div class='offerexample medium'>
+        No offers added to wishlist.
+        Your wishlist is empty :( 
+        </div>
+        <?php
     }
 }
 
