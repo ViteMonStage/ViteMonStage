@@ -122,6 +122,9 @@
 
                     echo "Error 2 : forbidden characters inserted";
                     break;
+                case 3:
+
+                    echo "Error 3 : You don't have permission to edit this user";
             }
         } ?>
 
