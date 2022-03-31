@@ -3,7 +3,7 @@ function displayOffers()
 {
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
-        $query = 'SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,offers.salary,offers.id_offer,offers.number_interns,offers.skills,promotion_type from offers
+        $query = 'SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,offers.salary,offers.id_offer,offers.number_interns,offers.skills,promotion_type,offers.intership_end,offers.intership_start,datediff(offers.intership_end,offers.intership_start) DIV 28 as months from offers
         INNER JOIN company on offers.id_company = company.id_company
         INNER JOIN address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city
@@ -13,7 +13,7 @@ function displayOffers()
         ';
 
         if(!empty($_GET["offer_name"])){
-            $query=$query." LIKE offer_name='".$_GET["offer_name"]."'";
+            $query=$query." AND offer_name LIKE '%".$_GET["offer_name"]."%'";
         }
         if(!empty($_GET["offer_location"])){                                      //get the "location" value
             if($_GET["offer_location"] == "Any Location"){                        //if the value of "location" is "Any location", the variable $quary won't change
@@ -22,8 +22,8 @@ function displayOffers()
         if(!empty($_GET["min_place_offer"])){
             $query=$query." AND number_interns>'".$_GET["min_place_offer"]."'";
         }
-        if(!empty($_GET["company_name"])){
-            $query=$query." AND company_name='".$_GET["duration"]."'";
+        if(!empty($_GET["duration"])){
+            $query=$query." AND datediff(offers.intership_end,offers.intership_start) DIV 28 >= '".$_GET['duration']."'";
         }
         if(!empty($_GET["promotion"])){                                      //get the "location" value
             if($_GET["promotion"] == "Any Promotion"){                        //if the value of "location" is "Any location", the variable $quary won't change
@@ -52,6 +52,7 @@ function displayOffers()
                         <p class="mini"><?php echo  $value[2] ?></p>
                         <h4 class="mini"><?php echo  $value[6] ?> €/ months</h4>
                         <h4 class="mini"> <?php echo  $value[3] ?> (<?php echo  $value[4] ?>) - <?php echo  $value[5] ?> </h4>
+                        <h4class="mini"><?php echo  "Starts on the ".$value[12]." and ends on the ".$value[11]." for ".$value[13]." months" ?></h4>
                     </div>
                     <div class="in_logo">
                         <div>
