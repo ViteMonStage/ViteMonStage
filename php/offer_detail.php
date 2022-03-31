@@ -91,7 +91,23 @@ function hasAlreadySentCandidature()
         if (isset($row[0]) == 1) {
             return true;
         }
-        return false;
+    } catch (\PDOException $e) { // displays an error if the try fails
+        echo $e->getMessage();
+        echo "   ";
+        echo (int)$e->getCode();
+    }
+}
+
+function getCompanyFromOffer($id_offer){
+    try {
+        include dirname(__FILE__) . "/db.php"; //Used to get global pdo
+        $sql = $pdo->prepare('SELECT id_company FROM offers WHERE id_offer = ?');
+        $sql->bindParam(1, $id_offer); // Assigning the id_offer parameter in the request and retrieving it from the url
+        $sql->execute(); // Execution of the request 
+        $row = $sql->fetchAll(); // Retrieves the rows of the query
+        if (isset($row[0]) == 1) {
+            return $row[0][0];
+        }
     } catch (\PDOException $e) { // displays an error if the try fails
         echo $e->getMessage();
         echo "   ";

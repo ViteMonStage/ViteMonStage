@@ -97,4 +97,4 @@ try {
     echo (int)$e->getCode();
 }
 
-header('Location: ../offers_detail.php?id_offer='.$_GET['id_offer']);
+header('Location: ../offers_detail.php?id_offer='.$_GET['id_offer'].'&success=true');
