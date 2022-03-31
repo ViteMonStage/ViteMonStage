@@ -13,17 +13,17 @@ function displayOffers()
         ';
 
         if(!empty($_GET["offer_name"])){
-            $query=$query." AND company_name='".$_GET["company_name"]."'";
+            $query=$query." LIKE offer_name='".$_GET["offer_name"]."'";
         }
         if(!empty($_GET["offer_location"])){                                      //get the "location" value
             if($_GET["offer_location"] == "Any Location"){                        //if the value of "location" is "Any location", the variable $quary won't change
             }else $query=$query." AND cityname='".$_GET["offer_location"]."'";    //if the value of "location" is one of a city, the variable $quary will be updated whith the name of the city
         }
         if(!empty($_GET["min_place_offer"])){
-            $query=$query." AND number_interns>'".$_GET["company_name"]."'";
+            $query=$query." AND number_interns>'".$_GET["min_place_offer"]."'";
         }
         if(!empty($_GET["company_name"])){
-            $query=$query." AND company_name='".$_GET["company_name"]."'";
+            $query=$query." AND company_name='".$_GET["duration"]."'";
         }
         if(!empty($_GET["promotion"])){                                      //get the "location" value
             if($_GET["promotion"] == "Any Promotion"){                        //if the value of "location" is "Any location", the variable $quary won't change
