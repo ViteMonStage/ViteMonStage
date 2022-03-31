@@ -61,7 +61,7 @@ function displayUser() //affichage des utilisateur correspondant a la rechèrche
 
 
         ?>
-        <p class="search-results-count small">number of results : <?php echo $rownum //outputs the number of results ?></p> 
+        <p class="search-results-count small">Number of results : <?php echo $rownum //outputs the number of results ?></p> 
         <?php
             foreach ($row as $value) {
 
