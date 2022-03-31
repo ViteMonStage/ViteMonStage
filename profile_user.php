@@ -140,9 +140,9 @@
 
                 <!-- WISHLIST MENU -->
                 <div class="wishlist">
-                    <?php if ($_SESSION['role'] != 2 || $_SESSION['role'] != 3) :    ?><p class="medium titre">Wishlist</p>
+                    <?php if ($_SESSION['role'] == 4 || $_SESSION['role'] == 1) :    ?><p class="medium titre">Wishlist</p>
                     <?php else :    ?><p class="medium titre">You do not have acces to a wishlist</p><?php endif ?>
-                    <?php if ($_SESSION['role'] != 2 || $_SESSION['role'] != 3) :    ?>
+                    <?php if ($_SESSION['role'] == 1 || $_SESSION['role'] == 4) :    ?>
                         <div class="scroller">
                             <?php loadWishlist() ?>
                             <div class="offerexample">
@@ -167,16 +167,6 @@
                             <a role="button" class="small btn" href="wishlist.php" alt="Wishlist">See more</a>
                         </div>
                     <?php endif ?>
-                    <p class="medium titre">Wishlist</p>
-                    <div class="scroller">
-                        <?php loadWishlist()?>
-                        
-                    </div>
-                    <div class="bouton">
-                        <a role="button" class="small btn" href="wishlist.php" alt="Wishlist">See more</a>
-
-                    </div>
-
                 </div>
             </div>
             <div class="col-lg-6 col-sm-12">
