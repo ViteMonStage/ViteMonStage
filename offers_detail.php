@@ -30,14 +30,20 @@
     </div>
     <!--"Apply" section-->
     <div class="off_apply">
+    <?php if(!hasAlreadySentCandidature()):?>
         <button type="button" class="small btn see smalltitle bigtitle" data-bs-toggle="modal" data-bs-target="#apply">
             Apply
         </button>
-        <a href="companies_detail.php" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
+        <?php else: ?>
+        <button type="button" class="small btn see smalltitle bigtitle disabled">
+            Already applied
+        </button>
+        <?php endif; ?>
+        <a href="companies_detail.php?id_company=<?php echo getCompanyFromOffer($_GET["id_offer"])?>" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
     </div>
     <!--Offer details-->
     </div>
-    <form action="/php/send_application.php" method="POST" enctype="multipart/form-data">
+    <form action="/php/send_application.php?id_offer=<?php echo $_GET["id_offer"] ?>" method="POST" enctype="multipart/form-data">
         <div class="modal fade" id="apply" tabindex="-1" aria-labelledby="applylabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
