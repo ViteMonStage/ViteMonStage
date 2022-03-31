@@ -29,18 +29,27 @@ $sql = $pdo->prepare("SELECT
                             LEFT JOIN promotion_type on promotion.id_promotion_type=promotion_type.id_promotion_type
                             WHERE id_user=(:id_user)");
 
-if (isset($_GET['id_user'])){
+//Checks if there is an id sent via url and if the user has permissions to see it 
+if (isset($_GET['id_user'])&& (($_SESSION['role']==4))){
     $id_user=$_GET['id_user'];
+    
 }
+elseif(isset($_GET['id_user'])&& (($_SESSION['role']==3))&& ($_GET['id_user']!=3)) {
+    $id_user=$_GET['id_user'];
+    
+}
+// elseif(isset($_GET['id_user'])&& (($_SESSION['role']==3))&& ($_GET['id_user']!=3){
+
+// }
 else{
-//Get email value stored in the session
+//Get id value stored in the session
 $id_user = $_SESSION['id_user'];
 
 }
 $sql->bindParam(':id_user', $id_user);
 $sql->execute();
 $row = $sql->fetchAll();
-$id = $row[0][8];
+$id_user = $row[0][8];
 $birthday = $row[0][11];
 }
 catch(\PDOException $e){
@@ -48,7 +57,7 @@ catch(\PDOException $e){
     echo "     ";
     echo(int)$e->getCode();
 }
-
+//Sets variables if a file is loaded
 if(isset($_FILES['file'])){
     $tmpName = $_FILES['file']['tmp_name'];
     $fname = $_FILES['file']['name'];
@@ -65,7 +74,10 @@ if(isset($_POST['postbutton'])){
     $birthday = $_POST['birthday'];
     $promotion = $_POST['promotion'];
     $campus = $_POST['campus'];
+    $id_user =$_POST['id_user'];
+    
     try{
+        //Checks if there is a missing input filled and sends an error notification to the user
         if(empty($surname)|| empty($name)|| empty($gender)|| empty($email)
         || !preg_match($pattern,$birthday)|| empty($campus)){
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=1');
@@ -86,7 +98,7 @@ if(isset($_POST['postbutton'])){
 
         
 
-
+            
 $sqlu = $pdo->prepare("UPDATE user
                                 SET lastname = ?,
                                     firstname = ?,
@@ -95,7 +107,7 @@ $sqlu = $pdo->prepare("UPDATE user
                                     birthday =?,
                                     id_promotion = ?,
                                     id_campus = ?
-                                    where id_user = ? ; ");
+                                    where id_user = ? ");
 
 $sqlu->bindParam(1,$surname);
 $sqlu->bindParam(2,$name);
@@ -104,10 +116,10 @@ $sqlu->bindParam(4,$email);
 $sqlu->bindParam(5,$birthday);
 $sqlu->bindParam(6,$promotion);
 $sqlu->bindParam(7,$campus);
-$sqlu->bindParam(8,$id);
+$sqlu->bindParam(8,$id_user);
 $sqlu->execute();
-move_uploaded_file($tmpName,'../assets/user_data/avatar/'.$id.'.png');
-header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php'); //if exception , returns error code 1
+move_uploaded_file($tmpName,'../assets/user_data/avatar/'.$id_user.'.png');
+header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?id_user='.$id_user); //if exception , returns error code 1
     }
     }
 catch(\PDOException $e){
