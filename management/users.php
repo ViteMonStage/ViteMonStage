@@ -20,11 +20,20 @@ include "../php/navbar.php";
 ?>
 
 <body>
+    <?php
+    session_start();
+    if ($_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 0 && $_SESSION['create_delegate'] == 0 && $_SESSION['create_student'] == 0 && $_SESSION['delete_pilot'] == 0 && $_SESSION['delete_delegate'] == 0 && $_SESSION['delete_student'] == 0) {
+        header('HTTP/1.1 403 Unauthorized');
+        $contents = file_get_contents('../error/403.php', TRUE);
+        die($contents);
+    }
+    ?>
     <form action="../php/management/users.php" method="post">
         <div class="d-flex align-items-center justify-content-center madiv ">
             <!-- this is the white box -->
             <div class="mainbox row">
                 <!--USER CREATION-->
+                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && $_SESSION['create_user'] == 1)) : ?>
                 <div class="mantitl">
                     <h1 class="big titl">USER CREATION</h1>
                 </div>
@@ -100,8 +109,7 @@ include "../php/navbar.php";
                             include "../db.php"; //Used to get global pdo
                             if ($_SESSION['role'] == 3 || $_SESSION['role'] == 2) {
                                 $stm = $pdo->prepare('SELECT role FROM role WHERE id_role != 3 AND id_role !=4'); //query to get roles
-                            }
-                            elseif($_SESSION['role'] == 4){
+                            } elseif ($_SESSION['role'] == 4) {
                                 $stm = $pdo->prepare('SELECT role FROM role'); //query to get roles
                             }
                             $stm->execute();
@@ -149,7 +157,9 @@ include "../php/navbar.php";
                     }
                     ?>
                 </div>
+                <?php endif ?>
 
+                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && $_SESSION['delete_user'] == 1)) : ?>
                 <!--USER DELETION-->
                 <div class="mantitl">
                     <h1 class="big titl">USER DELETION</h1>
@@ -175,7 +185,6 @@ include "../php/navbar.php";
                         if ($_GET["d_error"] == "5") {
                             echo '<p class="small error">You do not have the right to delete this user.</p>';
                         }
-                        
                     }
                     if (isset($_GET["d_good"])) {
                         if ($_GET["d_good"] == "1") {
@@ -184,6 +193,7 @@ include "../php/navbar.php";
                     }
                     ?>
                 </div>
+                <?php endif ?>
             </div>
         </div>
         <?php
