@@ -58,7 +58,7 @@
             <li><input class="medium " placeholder="Name" readonly="readonly" name="name" value="<?php echo $row[0][1]; ?>"></li>
             <li><input class="small " placeholder="Gender" readonly="readonly" name="gender" value="<?php echo $row[0][2]; ?>"></li>
             <li><input class="small " placeholder="Email" readonly="readonly" name="email" value="<?php echo $row[0][3]; ?>"></li>
-            <li><input class="mini " placeholder="Age" readonly="readonly" name="age" value="<?php echo $row[0][4]; ?>"></li>
+            <li><input class="mini " placeholder="Age" readonly="readonly" name="age" value="<?php echo $row[0][4]." years old"; ?>"></li>
             <li>
                 <div id="calendar" class="md-form md-outline input-with-post-icon datepicker">
                     <input placeholder="Select date" type="date" id="birthtbx" class="form-control tbx mini" name="birthday" value="<?php echo $birthday
