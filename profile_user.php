@@ -44,7 +44,7 @@
                             //     echo'/assets/user_data/avatar/'.$id_user.'.jpg'; 
                             // }
                             else {
-                                echo "/assets/user_data/0.png";
+                                echo "/assets/user_data/avatar/0.png";
                             }
                             ?> id="avatar" alt="Profile Picture">
                 <input id="file" type="file" name="file" accept="image/png" onchange="loadFile(event)" />
