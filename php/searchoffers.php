@@ -3,10 +3,10 @@
 $name = $_POST['offer_name'];
 $location = $_POST['offer_location'];
 $minofferplace = $_POST['min_place_offer'];
-$duration = $_POST['duration_offer'];
+$duration = $_POST['duration'];
 $promotion = $_POST['promotion'];
 try {
-        header('Location: ../offers.php?offer_name='.$name.'&offer_location='.$location.'&min_place_offer='.$minofferplace.'&duration_offer='.$duration.'&promotion='.$promotion);
+        header('Location: ../offers.php?offer_name='.$name.'&offer_location='.$location.'&min_place_offer='.$minofferplace.'&duration='.$duration.'&promotion='.$promotion);
     }
 catch (\PDOException $e) {
     echo $e->getMessage();

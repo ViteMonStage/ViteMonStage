@@ -60,7 +60,7 @@ function displayDescInProgress($id_user)
                             <p class="mini">Description : <?php echo shortenString($value[7]) ?></p>
                             <h4 class="mini"><?php echo shortenString($value[8]) ?> (<?php echo shortenString($value[9]) ?>) - <?php echo shortenString($value[10]) ?> - IT</h4>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo toPercent(getStep($value[0])); ?>%">Step <?php echo getStep($value[0]) ?>/6</div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo toPercent(getStep($value[0])); ?>%"><?php echo getStep($value[0]) ?>/6</div>
                             </div>
                         </div>
                         <div class="in_logo">
