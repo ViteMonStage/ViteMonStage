@@ -119,6 +119,13 @@ catch(\PDOException $e){
 function loadWishlist(){
     try{
     include "db.php";
+    if (isset($_GET['id_user'])){
+        $id_user=$_GET['id_user'];
+    }
+    else{
+    //Get email value stored in the session
+    $id_user = $_SESSION['id_user'];
+    }
     $sqlwish = $pdo->prepare("  SELECT wish.id_user,
                                         user.email,
                                         wish.id_offer, 
@@ -137,9 +144,9 @@ function loadWishlist(){
                                 INNER JOIN address on company.id_company=address.id_company
                                 INNER JOIN city on city.id_city=address.id_city
                                 where user.id_user = (:id_user)");
-    $sqlwish->bindParam($id,':id_user');
+    $sqlwish->bindParam(':id_user',$id_user);
     $sqlwish->execute();
-    $roww = $sql ->fetchAll();
+    $roww = $sqlwish ->fetchAll();
     if (isset($roww[0])== 1){
         foreach ($roww as $value) :?>
             <div class='offerexample'>
