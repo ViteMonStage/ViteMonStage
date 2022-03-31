@@ -29,9 +29,6 @@
 
         ?>
     </header>
-
-
-
     <!-- PROFILE BANNER -->
     <div class="infos">
         <div class="profile-pic">
