@@ -34,7 +34,6 @@
 
     <!-- PROFILE BANNER -->
     <div class="infos">
-
         <div class="profile-pic">
             <form action="php/profile.php" method="post" enctype="multipart/form-data">
                 <img src=<?php
@@ -55,43 +54,43 @@
                 </label>
         </div>
         <ul id="listinfo">
-            <li><input class="medium " placeholder="Lastname" readonly="readonly" name="surname" value="<?php echo$row[0][0]; ?>"></li>
-            <li><input class="medium " placeholder="Name" readonly="readonly" name="name" value="<?php echo$row[0][1]; ?>"></li>
-            <li><input class="small " placeholder="Gender" readonly="readonly" name="gender" value="<?php echo$row[0][2]; ?>"></li>
-            <li><input class="small " placeholder="Email" readonly="readonly" name="email" value="<?php echo$row[0][3]; ?>"></li>
-            <li><input class="mini " placeholder="Age" readonly="readonly" name="age" value="<?php echo$row[0][4]; ?>"></li>
+            <li><input class="medium " placeholder="Lastname" readonly="readonly" name="surname" value="<?php echo $row[0][0]; ?>"></li>
+            <li><input class="medium " placeholder="Name" readonly="readonly" name="name" value="<?php echo $row[0][1]; ?>"></li>
+            <li><input class="small " placeholder="Gender" readonly="readonly" name="gender" value="<?php echo $row[0][2]; ?>"></li>
+            <li><input class="small " placeholder="Email" readonly="readonly" name="email" value="<?php echo $row[0][3]; ?>"></li>
+            <li><input class="mini " placeholder="Age" readonly="readonly" name="age" value="<?php echo $row[0][4]; ?>"></li>
             <li>
                 <div id="calendar" class="md-form md-outline input-with-post-icon datepicker">
-                    <input placeholder="Select date" type="date" id="birthtbx" class="form-control tbx mini" name="birthday">
+                    <input placeholder="Select date" type="date" id="birthtbx" class="form-control tbx mini" name="birthday" value="<?php echo $birthday
+                                                                                                                                    ?>">
                 </div>
             </li>
             <li><select id="listboxpromo" class="form-control tbx mini listbox" name="promotion">
                     <div class="list-content">
                         <?php
-                        
-                            if($row[0][9]==NULL){
-                                $selected="selected";
-                                echo "<option value='NULL'".$selected."> None </option>";
-                                    }
-                                    else{
-                                    echo "<option value='NULL'> None </option>";
-                                    echo '<option value="' . $row[0][9] . '"selected>' . $row[0][5] . ' - ' . $row[0][7] . '</option>';
-                                    }
+
+                        if ($row[0][9] == NULL) {
+                            $selected = "selected";
+                            echo "<option value='NULL'" . $selected . "> None </option>";
+                        } else {
+                            echo "<option value='NULL'> None </option>";
+                            echo '<option value="' . $row[0][9] . '"selected>' . $row[0][5] . ' - ' . $row[0][7] . '</option>';
+                        }
                         //include "../db.php"; //Used to get global pdo
                         $stm = $pdo->prepare("SELECT id_promotion, promotion_name, promotion_type FROM promotion INNER JOIN promotion_type ON promotion.id_promotion_type = promotion_type.id_promotion_type WHERE promotion_type != '" . $row[0][7] . "' "); //query to get promotions and their type
 
                         $stm->execute();
                         $row1 = $stm->fetchAll();
-                        
+
 
                         foreach ($row1 as $value) {
                             echo '<option value=' . "$value[0]" . '>' . $value[1] . ' - ' . $value[2] . '</option>';
                         }
                         ?>
-                        
+
                     </div>
             </li>
-            <li><input class="mini" readonly="readonly" name="promo"  value="<?php echo$row[0][5]; ?>"></li>
+            <li><input class="mini" readonly="readonly" name="promo" value="<?php echo $row[0][5]; ?>"></li>
             <li><select id="listboxcampus" class="form-control tbx mini listbox" name="campus">
                     <div class="list-content">
                         <?php
@@ -106,8 +105,8 @@
                         ?>
                     </div>
             </li>
-            <li><input class="mini " placeholder="Campus" readonly="readonly" name="camp" value="<?php echo$row[0][6]; ?>"></li>
-            <li><input class="mini " placeholder="" readonly="readonly" name="promotype" value="<?php echo$row[0][7]; ?>"></li>
+            <li><input class="mini " placeholder="Campus" readonly="readonly" name="camp" value="<?php echo $row[0][6]; ?>"></li>
+            <li><input class="mini " placeholder="" readonly="readonly" name="promotype" value="<?php echo $row[0][7]; ?>"></li>
         </ul>
         <img id="editbutton" src="assets/icons/edit-white.svg" alt="Edit" role="button" onclick="edit()">
         <input type="submit" role="button" alt="done" id="end-editing" name="postbutton" value="postbutton">
@@ -271,51 +270,53 @@
         </div>
     </div>
     <div class="row g-0">
-        <div class="col-lg-12 col-sm-12">
+        <div class="col-lg-10 col-sm-10 divcheck">
             <div class="taskbox">
-
                 <div class="useracc row">
-                    <ul class="row col-lg-12 list-group list-group-horizontal flex">
-                        <div class="col-lg-3">
-                            <li> <label class='switch mini'><input type='checkbox' id="c_search"><span></span></label><span class="mini">Search a company</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="c_modify"><span></span></label><span class="mini">Modify a company</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="c_rate"><span></span></label><span class="mini">Evaluate a company</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="c_delete"><span></span></label><span class="mini">Delete a company</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="c_stats"><span></span></label><span class="mini">See company stats</span></li>
-                        </div>
-                        <div class="col-lg-3">
-                            <li> <label class='switch mini'><input type='checkbox' id="o_search"><span></span></label><span class="mini">Search an offer</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="o_create"><span></span></label><span class="mini">Create an offer</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="o_modify"><span></span></label><span class="mini">Modify an offer</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="o_delete"><span></span></label><span class="mini">Delete an offer</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="o_stats"><span></span></label><span class="mini">See offer stats</span></li>
-                        </div>
-                        <div class="col-lg-3">
-                            <li> <label class='switch mini'><input type='checkbox' id="p_search"><span></span></label><span class="mini">Search a pilot</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="p_create"><span></span></label><span class="mini">Create a pilot</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="p_modify"><span></span></label><span class="mini">Modify pilot</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="p_delete"><span></span></label><span class="mini">Delete pilot</span></li>
-                        </div>
-                        <div class="col-lg-3">
-                            <li> <label class='switch mini'><input type='checkbox' id="d_search"><span></span></label><span class="mini">Search delegate</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="d_create"><span></span></label><span class="mini">Create a delegate</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="d_modify"><span></span></label><span class="mini">Modify delegate</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="d_delete"><span></span></label><span class="mini">Delete delegate</span></li>
-                        </div>
-                        <div class="col-lg-3">
-                            <li> <label class='switch mini'><input type='checkbox' id="st_search"><span></span></label><span class="mini">Search student</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="st_create"><span></span></label><span class="mini">Create a student</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="st_modify"><span></span></label><span class="mini">Modify a student</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="st_delete"><span></span></label><span class="mini">Delete a student</span></li>
-                            <li> <label class='switch mini'><input type='checkbox' id="st_stats"><span></span></label><span class="mini">See students stats</span></li>
-                        </div>
-
-                    </ul>
+                    <div class="mantitl">
+                        <h1 class="big titl">DELEGATE PERMISSIONS</h1>
+                    </div>
+                    <form action="../php/management/offers.php" method="post">
+                        <ul class="row col-lg-12 list-group list-group-horizontal flex divcheck">
+                            <div class="col-lg-2 chec">
+                                <li> <label class='switch mini'><input type='checkbox' id="c_search"><span></span></label><span class="mini">Search a company</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="c_modify"><span></span></label><span class="mini">Modify a company</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="c_rate"><span></span></label><span class="mini">Evaluate a company</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="c_delete"><span></span></label><span class="mini">Delete a company</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="c_stats"><span></span></label><span class="mini">See company stats</span></li>
+                            </div>
+                            <div class="col-lg-2 chec">
+                                <li> <label class='switch mini'><input type='checkbox' id="o_search"><span></span></label><span class="mini">Search an offer</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="o_create"><span></span></label><span class="mini">Create an offer</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="o_modify"><span></span></label><span class="mini">Modify an offer</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="o_delete"><span></span></label><span class="mini">Delete an offer</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="o_stats"><span></span></label><span class="mini">See offer stats</span></li>
+                            </div>
+                            <div class="col-lg-2 chec">
+                                <li> <label class='switch mini'><input type='checkbox' id="p_search"><span></span></label><span class="mini">Search a pilot</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="p_create"><span></span></label><span class="mini">Create a pilot</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="p_modify"><span></span></label><span class="mini">Modify pilot</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="p_delete"><span></span></label><span class="mini">Delete pilot</span></li>
+                            </div>
+                            <div class="col-lg-2 chec">
+                                <li> <label class='switch mini'><input type='checkbox' id="d_search"><span></span></label><span class="mini">Search delegate</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="d_create"><span></span></label><span class="mini">Create a delegate</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="d_modify"><span></span></label><span class="mini">Modify delegate</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="d_delete"><span></span></label><span class="mini">Delete delegate</span></li>
+                            </div>
+                            <div class="col-lg-2 chec">
+                                <li> <label class='switch mini'><input type='checkbox' id="st_search"><span></span></label><span class="mini">Search student</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="st_create"><span></span></label><span class="mini">Create a student</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="st_modify"><span></span></label><span class="mini">Modify a student</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="st_delete"><span></span></label><span class="mini">Delete a student</span></li>
+                                <li> <label class='switch mini'><input type='checkbox' id="st_stats"><span></span></label><span class="mini">See students stats</span></li>
+                            </div>
+                        </ul>
+                        <input type="submit" class="small btnx" alt="permissions" value="Apply permissions">
+                    </form>
                 </div>
             </div>
         </div>
-
-
     </div>
 
     <!-- FOOTER -->

@@ -3,8 +3,10 @@
 if (!isset($_SESSION)){
     session_start();
 }
-//Get email value stored in the session
-$email=$_SESSION['email']; 
+
+
+
+
 include "db.php";
 //Preparing the request to get the infos from the table with the corresponding email address
 try{
@@ -26,11 +28,20 @@ $sql = $pdo->prepare("SELECT
                             LEFT JOIN promotion on user.id_promotion = promotion.id_promotion 
                             LEFT JOIN promotion_type on promotion.id_promotion_type=promotion_type.id_promotion_type
                             WHERE email=(:email)");
+
+if (isset($_POST['e-mail'])){
+    $email=$_POST['e-mail'];
+}
+else{
+//Get email value stored in the session
 $email = $_SESSION['email'];
+
+}
 $sql->bindParam(':email', $email);
 $sql->execute();
 $row = $sql->fetchAll();
 $id = $row[0][8];
+$birthday = $row[0][11];
 }
 catch(\PDOException $e){
     echo $e->getMessage();
