@@ -75,45 +75,50 @@ body {
         display: block;
         overflow: hidden;
         float: left;
+        object-fit: cover;
+        width: 170px;
         border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px
+        border-bottom-left-radius: 4px;
     }
     
     @media (min-width:768px) {
         .search-result-item .image-link {
             display: inline-block;
+            object-fit: cover;
             margin: -20px 0 -20px -20px;
-            width: 200px
+            width: 170px;
         }
     }
     
     @media (max-width:767px) {
         .search-result-item .image-link {
-            max-height: 200px
+            max-height: 170px;
+            object-fit: cover;
         }
     }
     
     .search-result-item .image {
-        max-width: 100%
+        max-width: 170px;
+        object-fit: cover;
     }
     
     .search-result-item .info {
         margin-top: 2px;
         font-size: 12px;
-        color: #999
+        color: #999;
     }
     
     .search-result-item .description {
-        font-size: 13px
+        font-size: 13px;
     }
     
     .search-result-item+.search-result-item {
-        margin-top: 20px
+        margin-top: 20px;
     }
     
     @media (min-width:768px) {
         .search-result-item-body {
-            margin-left: 200px
+            margin-left: 200px;
         }
     }
     
