@@ -26,6 +26,10 @@ $fsize1 = $_FILES['motivationLetterFile']['size'];
 $ferror1 = $_FILES['motivationLetterFile']['error'];
 $array1 = explode('.', $fname1);
 $extension1 = end($array1);
+if ($extension1 != "pdf" || $extension1 != "docx" || $extension1 != "png" || $extension1 != "jpg") {
+    header('Location: ../offers_detail.php?id_offer='.$_GET['id_offer'].'&error=1');
+    die();
+}
 move_uploaded_file($tmpName1, '../assets/user_data/motivation_letter/' . $_GET["id_offer"] . "_" . $_SESSION["id_user"] . "." . $extension1);
 
 
@@ -34,7 +38,11 @@ $fname2 = $_FILES['resumeFile']['name'];
 $fsize2 = $_FILES['resumeFile']['size'];
 $ferror2 = $_FILES['resumeFile']['error'];
 $array2 = explode('.', $fname2);
-$extension2 = end($array1);
+$extension2 = end($array2);
+if ($extension2 != "pdf" || $extension2 != "docx" || $extension2 != "png" || $extension2 != "jpg") {
+    header('Location: ../offers_detail.php?id_offer='.$_GET['id_offer'].'&error=1');
+    die();
+}
 move_uploaded_file($tmpName2, '../assets/user_data/validation_sheet/' . $_GET["id_offer"] . "_" . $_SESSION["id_user"] . "." . $extension2);
 
 $id_progress = 0;
