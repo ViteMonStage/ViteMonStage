@@ -5,6 +5,11 @@ session_start();
 if (isset($_POST['check_sub'])) {
     $id_user = $_GET['id_user'];
     echo $_GET['id_user'];
+    $stm = $pdo->prepare('SELECT id_role FROM user WHERE id_user = ?'); //query to get company ids and their name
+    $stm -> bindParam(1, $id_user);
+    $stm->execute();
+    $row = $stm->fetchAll();
+    $id_role = $row[0][0];
     for($i = 0; $i <= 24 ; $i++)
     {
         if(isset($_POST['c'.$i]))
@@ -258,4 +263,6 @@ if (isset($_POST['check_sub'])) {
                 }
         }
     }
+    header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?id_user='.$id_user.'&id_role='.$id_role); //if textbox is left empty
+    die();
 }
