@@ -29,7 +29,15 @@
     displayCompaniedetails();?>
 
     <div class="company_btn">
-        <input type="button" class="small btn company" value="Invisible">
+    <?php  
+         
+        $sql = $pdo->prepare('SELECT invisible from company');
+        $sql->execute(); // Execution of the request 
+        $row = $sql->fetchAll(); // Retrieves the rows of the query
+        isset($_POST['invisible']); ?>
+       
+        <label for="invisbile">Invisible</label>
+        <input type="checkbox" class="small btn company" value="Invisible" name="invisible" id="invisible">
         <input type="button" class="small btn company" value="Modify">
         <input type="button" class="small btn company" value="Delete">
     </div>

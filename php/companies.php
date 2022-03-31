@@ -45,7 +45,7 @@ function displayCompanie()
         <div class="result">
             <img src="./assets/pictures/logo.jpg" alt="Logo 1" class="logoentreprise">
             <div class="in_desc">
-            <h3 class="medium"><?php  echo "$value[0]" ?></h3>
+            <h3 class="medium"><?php  echo $value[0] ?></h3>
             <p class="mini"><?php echo $value[1] ?></p>
             <h4 class="mini loca"><?php echo $value[2] ?>(<?php echo $value[3] ?>) - <?php echo $value[4] ?></h4>
             </div>

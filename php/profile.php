@@ -76,6 +76,8 @@ if(isset($_POST['postbutton'])){
     $campus = $_POST['campus'];
     $id_user =$_POST['id_user'];
     
+    
+    
     try{
         //Checks if there is a missing input filled and sends an error notification to the user
         if(empty($surname)|| empty($name)|| empty($gender)|| empty($email)
@@ -87,6 +89,18 @@ if(isset($_POST['postbutton'])){
             // one or more of the 'special characters' found in $string
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=2'); //if a character is not valid, returns error code 2
         die();
+        
+        }
+        if($_SESSION['role']==2 || $_SESSION['role']== 3){
+            $sqlid= $pdo->prepare("SELECT id_role from user where id_user = ?");
+            $sqlid->bindParam(1,$id_user);
+            $sqlid->execute();
+            $sqlid->fetchAll();
+            $rowid=$sqlid;
+            if($rowid[0][0] == 3 || $rowid[0][0] ){
+                header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=3');
+                die();
+            }
 
         }
         else{
