@@ -98,9 +98,12 @@ include "../php/navbar.php";
                         <select class="form-control tbx medium" id="roletbx" name="c_role">
                             <?php
                             include "../db.php"; //Used to get global pdo
-                            if($_SESSION['role'] == 3 || $_SESSION['role'] == 2){
-                            $stm = $pdo->prepare('SELECT role FROM role WHERE id_role != 3 AND id_role !=4'); //query to get roles
-                        }
+                            if ($_SESSION['role'] == 3 || $_SESSION['role'] == 2) {
+                                $stm = $pdo->prepare('SELECT role FROM role WHERE id_role != 3 AND id_role !=4'); //query to get roles
+                            }
+                            elseif($_SESSION['role'] == 4){
+                                $stm = $pdo->prepare('SELECT role FROM role'); //query to get roles
+                            }
                             $stm->execute();
                             $row = $stm->fetchAll();
                             foreach ($row as $value) {
@@ -118,7 +121,7 @@ include "../php/navbar.php";
                             $stm->execute();
                             $row = $stm->fetchAll();
                             foreach ($row as $value) {
-                                echo '<option value='."$value[0]".'>' . $value[1] . ' - ' . $value[2] . '</option>';
+                                echo '<option value=' . "$value[0]" . '>' . $value[1] . ' - ' . $value[2] . '</option>';
                             }
                             ?>
                         </select>
@@ -169,6 +172,10 @@ include "../php/navbar.php";
                         if ($_GET["d_error"] == "4") {
                             echo '<p class="small error">User does not exist.</p>';
                         }
+                        if ($_GET["d_error"] == "5") {
+                            echo '<p class="small error">You do not have the right to delete this user.</p>';
+                        }
+                        
                     }
                     if (isset($_GET["d_good"])) {
                         if ($_GET["d_good"] == "1") {

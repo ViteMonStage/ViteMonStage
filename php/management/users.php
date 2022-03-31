@@ -136,11 +136,19 @@ if (isset($_POST['d_user'])) {
         die();
     }
     try {
-        $stm = $pdo->prepare('SELECT id_user FROM user WHERE email=?'); //prepared statement to verify email
+        $stm = $pdo->prepare('SELECT id_user, id_role FROM user WHERE email=?'); //prepared statement to verify email
         $stm->bindParam(1, $email);
         $stm->execute();
         $row = $stm->fetchAll();
         if (isset($row[0]) == 1) {
+            if($_SESSION['role'] == 3 || $_SESSION['role'] == 2)
+            {
+                if($row[0][1] == 3 || $row[0][1] == 4)
+                {
+                    header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=5'); //if user does not have right to delete the user, return error 5
+                    die();
+                }
+            }
             $stm = $pdo->prepare('DELETE FROM user WHERE email=?'); //prepared statement to delete user
             $stm->bindParam(1, $email);
             if ($stm->execute() == FALSE) {
