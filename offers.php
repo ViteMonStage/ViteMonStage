@@ -18,8 +18,9 @@
         <?php
         include "./php/navbar.php";
         ?>
-        <?php include "./php/db.php"; //Used to get global pdo ?>
-   
+        <?php include "./php/db.php"; //Used to get global pdo 
+        ?>
+
     </header>
 
     <!-- BANNER -->
@@ -33,27 +34,26 @@
 
     <!-- SEARCH BARS -->
     <div class="row g-0 justify-content-center">
+        <div class="col-lg-2 col-sm-12 test ">
+            <label for="nametbx" class="tbxindicator small">Offer name</label>
+            <input type="text" class="tbx small" id="nametbx" placeholder="IT Engineer">
+        </div>
         <div class="col-lg-2 col-sm-12 test">
-            <label for="nametbx" class="tbxindicator small">Location</label>
-            <select class="form-control tbx small"  id="nametbx">
-                            <?php
-                            include "../db.php"; //Used to get global pdo
-                            $stm = $pdo->prepare('SELECT distinct cityname from offers
+            <label for="locatbx" class="tbxindicator small">Location</label>
+            <select class="form-control tbx small" id="locatbx">
+                <?php
+                include "../db.php"; //Used to get global pdo
+                $stm = $pdo->prepare('SELECT distinct cityname from offers
                             INNER JOIN company on offers.id_company = company.id_company
                             INNER JOIN address on company.id_company = address.id_company
                             INNER JOIN city on address.id_city = city.id_city'); //prepared statement to get the location of the offer
-                            $stm->execute();
-                            $row = $stm->fetchAll();
-                            foreach($row as $value)
-                            {
-                                echo'<option>'.$value[0].'</option>';
-                            }
-                            ?>
-                        </select>
-        </div>
-        <div class="col-lg-2 col-sm-12 test ">
-            <label for="locationtbx" class="tbxindicator small">Publication date</label>
-            <input type="text" class="tbx small" id="locationtbx">
+                $stm->execute();
+                $row = $stm->fetchAll();
+                foreach ($row as $value) {
+                    echo '<option>' . $value[0] . '</option>';
+                }
+                ?>
+            </select>
         </div>
         <div class="col-lg-2 col-sm-12 test ">
             <label for="placetbx" class="tbxindicator small">Number of places</label>
@@ -65,18 +65,17 @@
         </div>
         <div class="col-lg-2 col-sm-12 test">
             <label for="promostbx" class="tbxindicator small">Promotions</label>
-            <select class="form-control tbx small"  id="promostbx">
-                            <?php
-                            include "../db.php"; //Used to get global pdo
-                            $stm = $pdo->prepare('SELECT promotion_type FROM promotion_type '); //prepared statement to get the promotion concerned by the offer
-                            $stm->execute();
-                            $row = $stm->fetchAll();
-                            foreach($row as $value)
-                            {
-                                echo'<option>'.$value[0].'</option>';
-                            }
-                            ?>
-                        </select>
+            <select class="form-control tbx small" id="promostbx">
+                <?php
+                include "../db.php"; //Used to get global pdo
+                $stm = $pdo->prepare('SELECT promotion_type FROM promotion_type '); //prepared statement to get the promotion concerned by the offer
+                $stm->execute();
+                $row = $stm->fetchAll();
+                foreach ($row as $value) {
+                    echo '<option>' . $value[0] . '</option>';
+                }
+                ?>
+            </select>
         </div>
     </div>
     <input type="button" class="small btn search" id="searchbtn" value="Search">
@@ -92,10 +91,11 @@
     </h2>
 
     <!-- RESULTS -->
-    <?php include_once dirname(__FILE__) . "/php/offer.php";displayOffers(); ?>
+    <?php include_once dirname(__FILE__) . "/php/offer.php";
+    displayOffers(); ?>
 
 
- 
+
 
     <!-- FOOTER -->
     <?php
