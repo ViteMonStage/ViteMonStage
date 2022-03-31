@@ -129,15 +129,12 @@ ul{
 
 
 .menu {
-    display: flex;
-    flex-direction: row;
-    padding: 5%;
+    
+     padding: 3%;
 }
 
 .menu .titre {
     text-align: center;
-    margin-left: 1em;
-    margin-right: 1em;
 }
 
 .menu .small {
@@ -149,6 +146,7 @@ ul{
 .menu .bouton {
     margin-bottom: 2%;
     margin-top: 5%;
+
 }
 
 .menu .mini {
@@ -172,10 +170,10 @@ ul{
     flex-direction: column;
     justify-content: space-between;
     border-radius: 25px;
-    width: 90%;
+    width: 100%;
     height: 100%;
     margin: 3%;
-    margin-left: 5%;
+    
 }
 
 .candidatures {
@@ -184,10 +182,11 @@ ul{
     flex-direction: column;
     justify-content: space-between;
     border-radius: 25px;
-    width: 90%;
+    width: 100%;
     height: 100%;
     margin: 3%;
-    margin-left: 5%;
+    
+    
 }
 
 .candidatures .progress-bar {
@@ -234,11 +233,7 @@ body a {
 body a:hover {
     color: #036d19;
 }
-.space {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
+
 .scroller {
     width: 100%;
     height: 300px;
