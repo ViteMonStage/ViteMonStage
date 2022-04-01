@@ -9,19 +9,20 @@ if (empty($_POST['email']) == true || empty($_POST['password']) == true) { //if 
 $email = $_POST['email'];
 $password = $_POST['password'];
 try {
-    $stm = $pdo->prepare('SELECT email,id_role,password,id_user,firstname,lastname FROM user WHERE email=? AND password=?'); //prepared statement to verify email and password
+    $stm = $pdo->prepare('SELECT email,id_role,password,id_user,firstname,lastname FROM user WHERE email=?'); //prepared statement to verify email and password
     $stm->bindParam(1, $email);
-    $stm->bindParam(2, $password);
     $stm->execute();
     $row = $stm->fetchAll();
-
+    if(!isset($row[0])){
+        header('Location: ../login.php?error=1');
+    }
     if ($row[0][1] == 2) {
         $stm = $pdo->prepare('SELECT search_company, create_company, modify_company, evaluate_company, delete_company, stats_company, search_offer, create_offer, modify_offer, delete_offer, stats_offer, search_pilot, create_pilot, modify_pilot, delete_pilot, search_delegate, create_delegate, modify_delegate, delete_delegate, search_student, create_student, modify_student, delete_student, stats_student FROM permission WHERE id_user = ?'); //prepared statement to verify email and password
         $stm->bindParam(1, $row[0][3]);
         $stm->execute();
         $row1 = $stm->fetchAll();
     }
-    if (isset($row[0]) == 1 && isset($row[0]) == 1) {
+    if ($row[0][2] == $password) {
         header('Location: ../index.php');
         $_SESSION['email'] = $email; //if password and mail are a valid couple, grant access by setting session email value
         $_SESSION['role'] = $row[0][1];
