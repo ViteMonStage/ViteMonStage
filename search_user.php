@@ -18,6 +18,14 @@
 <!--  Body -->
 
 <body>
+<?php session_start();
+    if ($_SESSION['role'] == 1) {
+        header('HTTP/1.1 403 Unauthorized');
+        $contents = file_get_contents('./error/403.php', TRUE);
+        die($contents);
+    }
+        ?>
+    }
     <!--  Navbar -->
     <?php
     include "./php/db.php"; //Used to get global pdo
