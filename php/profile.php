@@ -51,7 +51,7 @@ elseif(isset($_GET['id_user'])&& (($_SESSION['role']==5))&& ($_GET['id_role']==5
 else{
 //Get id value stored in the session
 $id_user = $_SESSION['id_user'];
-
+//Checks the permission for the delegate
 if (isset($_GET['id_role']) && $_SESSION['role'] == 2){
     if ($_GET['id_role']== 2   && $_SESSION['search_delegate'] == 0 && $_SESSION['modify_delegate'] == 0) {
         header('HTTP/1.1 403 Unauthorized');
@@ -99,7 +99,8 @@ if(isset($_FILES['file'])){
     $ferror = $_FILES['file']['error'];
 }
 
-$pattern = "/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/";
+$pattern = "/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"; //Pattern to check date input format
+//
 if(isset($_POST['postbutton'])){
     $surname = $_POST['surname'];
     $name = $_POST['name'];
@@ -316,7 +317,10 @@ function loadCandidatures(){
         echo (int)$e->getCode();
     }
 
-
+function checkmail(){
+    include "db.php";
+    $sqlmail = $pdo -> prepare("SELECT email FROM user");
+}
 
 
 

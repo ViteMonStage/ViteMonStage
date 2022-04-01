@@ -58,7 +58,7 @@ function displayCompaniedetails()
 function displayRatingOptions($id_user, $id_company)
 {
     include dirname(__FILE__) . "/db.php"; //Used to get global pdo
-    if ($_SESSION["role"] == 1 || ($_SESSION['role']==2 && $_SESSION['evaluate_company'] == 1)) :
+    if ($_SESSION["role"] == 4 || $_SESSION["role"] == 1 || ($_SESSION['role']==2 && $_SESSION['evaluate_company'] == 1)) :
         $sql = $pdo->prepare('SELECT * FROM 8aah0fCXko.evaluation WHERE id_user=? AND id_company=?');
         $sql->bindParam(1, $id_user); // Assigning the id_offer parameter in the request and retrieving it from the url
         $sql->bindParam(2, $id_company); // Assigning the id_offer parameter in the request and retrieving it from the url
@@ -263,7 +263,7 @@ function displayAllRating($id_company)
             <h3 class="medium results_title">Evaluations</h3>
             <div class="profile col-md-8">
                 <div class="avatar">
-                    <img src="./assets/pictures/avatar.jpg" alt="Avatar" class="avatar_size">
+                    <img src="./assets/user_data/avatar/<?php echo $value[8]?>.png" alt="Avatar" class="avatar_size">
                 </div>
                 <div class="avatar_desc">
                     <h3 class="medium"><?php echo $value[9] ?> <?php echo $value[10] ?></h3>
