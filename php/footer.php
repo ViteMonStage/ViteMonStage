@@ -14,7 +14,7 @@
             <p class="small">Company</p>
             <p class="small">Our team</p>
             <p class="small">Careers</p>
-            <p class="small">Legal terms</p>
+            <a role="button" href="./legal_terms.php" class="small ">Legal terms</a>
         </div>
         <div class="col-lg-4 col-sm-12">
             <h2 class="big">VMS</h2>
