@@ -177,6 +177,12 @@ function alertHandler()
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     <?php endif;
+        if ($_GET["success"] == 4) : ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>You finished all steps !</strong> Have a nice internship !
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif;
     }
     if (isset($_GET["error"])) {
         if ($_GET["error"] == 1) : ?>
@@ -210,7 +216,7 @@ function getIdCandidatureFromUser()
 function displayCandidatureSteps()
 {
     include "candidature.php";
-    if (hasAlreadySentCandidature() && !hasAlreadyCanceled() && !hasAlreadyAccepted()): ?>
+    if (hasAlreadySentCandidature() && !hasAlreadyCanceled() && !hasAlreadyAccepted()) : ?>
     <?php $step = getStep(getIdCandidatureFromUser()) ?>
     <div class="off_det">
         <h3 class="medium"> Your progress in offer </h3>
@@ -219,7 +225,7 @@ function displayCandidatureSteps()
         </div>
         <?php if ($step == 1) : ?>
             <p class="small">Click if company accepted</p>
-            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=up"><button type="button" class="small btn see smalltitle bigtitle accepted">
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=up"><button type="button" class="small btn see smalltitle bigtitle accepted pulse-button">
                     Go to step 2
                 </button></a>
             <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=cancel"><button type="button" class="small btn see smalltitle bigtitle refused">
@@ -262,18 +268,18 @@ function displayCandidatureSteps()
                     Cancel
                 </button></a>
         <?php endif; ?>
-        
+
     </div>
 <?php endif;
-    if(hasAlreadyCanceled()):?>
+    if (hasAlreadyCanceled()) : ?>
     <div class="off_det">
         <h3 class="medium"> Your progress in offer </h3>
         <div class="progress">
             <div class="progress-bar progress-bar progress-bar small progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%">Canceld</div>
         </div>
     </div>
-    <?php endif;
-    if(hasAlreadyAccepted()):?>
+<?php endif;
+    if (hasAlreadyAccepted()) : ?>
     <div class="off_det">
         <h3 class="medium"> Your progress in offer </h3>
         <div class="progress">
