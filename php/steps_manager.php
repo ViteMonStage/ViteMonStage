@@ -96,9 +96,9 @@ try {
             incrementStep("step5", $row[0][0]);
         } else if (is_null($row[0][15])) {
             incrementStep("step6", $row[0][0]);
+            acceptCandidature($id_candidature);
         }
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $_GET["id_offer"] . '&success=2');
-        acceptCandidature($id_candidature);
     } else if ($_GET["operation"] == "cancel") {
         cancelCandidature($id_candidature);
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $_GET["id_offer"] . '&success=3');
