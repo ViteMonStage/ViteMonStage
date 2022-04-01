@@ -9,8 +9,6 @@ if(isset($_POST['submit'])){ //chech if submit buttun is clicked
 
 
 //include "./php/db.php"; //Used to get global pdo
-session_start();
-
 function count_user(){
     global $pdo;
     $sql = ('SELECT count(id_user) FROM 8aah0fCXko.user;');
