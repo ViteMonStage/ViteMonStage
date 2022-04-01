@@ -85,6 +85,7 @@ $sql->execute();
 $row = $sql->fetchAll();
 $id_user = $row[0][8];
 $birthday = $row[0][11];
+$gmail =$row[0][3];
 }
 catch(\PDOException $e){
     echo $e->getMessage();
@@ -125,11 +126,12 @@ if(isset($_POST['postbutton'])){
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=2'); //if a character is not valid, returns error code 2
         die();
         }
-        $sqlmail = $pdo -> prepare("SELECT email FROM user WHERE id_user=(:id_user)");
-    $sqlmail->bindParam(':id_user',$id_user);
+        $sqlmail = $pdo -> prepare("SELECT email FROM user WHERE email=?");
+    $sqlmail->bindParam(1,$email);
     $sqlmail->execute();
     $rowm = $sqlmail ->fetchAll();
-        if (!empty($rowm[0][0])&&$rowm[0][0]!=$email){
+        if (!empty($rowm[0][0])&&$rowm[0][0]!=$gmail){
+
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=4');
         return ;
         die();
