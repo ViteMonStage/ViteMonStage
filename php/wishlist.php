@@ -1,6 +1,13 @@
 <?php
 function displayWishlist($id_user)
 {
+    function shortenString($string)
+    {
+        if (strlen($string) > 150) {
+            $string = substr($string, 0, 150) . "...";
+        }
+        return $string;
+    }
     try {
         include dirname(__FILE__) . "./db.php"; //Used to get global pdo
         $stm = $pdo->prepare('SELECT offers.description, offer_name, offers.id_company, company_name, sector_activity, 
@@ -97,17 +104,6 @@ function removeFromWishlist($id_user, $id_offer)
         echo (int)$e->getCode();
     }
 }
-
-if (function_exists('shortenString')) {
-    function shortenString($string)
-    {
-        if (strlen($string) > 150) {
-            $string = substr($string, 0, 150) . "...";
-        }
-        return $string;
-    }
-}
-
 if (isset($_GET["add"])) {
 }
 

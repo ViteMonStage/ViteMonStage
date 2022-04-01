@@ -70,46 +70,46 @@ function displayDescInProgress($id_user)
                             <div>
                             <?php $step=getStep($value[0]); if ($step == 1) : ?>
                                 <p class="small">You can go to next step if company accepted :</p>
-                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
                                         Go to step 2
                                     </button></a>
-                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel"><button type="button" class="small btn step smalltitle bigtitle refused">
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle refused">
                                         Cancel
                                     </button></a>
                             <?php endif; ?>
                             <?php if ($step == 2) : ?>
                                 <p class="small">Validation sheet has been signed by company :</p>
-                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
                                         Go to step 3
                                     </button></a>
-                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel"><button type="button" class="small btn step smalltitle bigtitle refused">
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle refused">
                                         Cancel
                                     </button></a>
                             <?php endif; ?>
                             <?php if ($step == 3) : ?>
                                 <p class="small">Validation sheet has been signed by school :</p>
-                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
                                         Go to step 4
                                     </button></a>
-                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel"><button type="button" class="small btn step smalltitle bigtitle refused">
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle refused">
                                         Cancel
                                     </button></a>
                             <?php endif; ?>
                             <?php if ($step == 4) : ?>
                                 <p class="small">Internship agreement has been sent to company</p>
-                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
                                         Go to step 5
                                     </button></a>
-                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel"><button type="button" class="small btn step smalltitle bigtitle refused">
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle refused">
                                         Cancel
                                     </button></a>
                             <?php endif; ?>
                             <?php if ($step == 5) : ?>
                                 <p class="small">Internship agreement has been signed by company, all steps are done !</p>
-                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
                                         Finalize steps !
                                     </button></a>
-                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel"><button type="button" class="small btn step smalltitle bigtitle refused">
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle refused">
                                         Cancel
                                     </button></a>
                             <?php endif; ?>
