@@ -19,6 +19,11 @@
     <?php
     include "./php/navbar.php";
     include "./php/candidature.php";
+    if(!isset($_GET["id_user"])){
+      $id_user = $_SESSION["id_user"];
+    }else{
+      $id_user = $_GET["id_user"];
+    }
     ?>
   </header>
   <div class="current_candidatures">
@@ -26,12 +31,12 @@
     <div class="row g-0">
       <div class="col-lg-6 col-sm-12">
         <div class="list-group current" id="list-tab-1" role="tablist">
-          <?php displayTabInProgress($_SESSION["id_user"]) ?>
+          <?php displayTabInProgress($id_user) ?>
         </div>
       </div>
       <div class="col-lg-6 col-sm-12">
         <div class="tab-content" id="nav-tabContent-1">
-          <?php displayDescInProgress($_SESSION["id_user"]) ?>
+          <?php displayDescInProgress($id_user) ?>
         </div>
       </div>
     </div>
@@ -43,11 +48,11 @@
         <div class="row g-0">
           <div class="col-lg-6 col-sm-12">
             <div class="list-group accepted" id="list-tab-2" role="tablist">
-              <?php displayTabAccepted($_SESSION["id_user"]) ?>
+              <?php displayTabAccepted($id_user) ?>
             </div>
           </div>
           <div class="col-lg-6 col-sm-12">
-            <?php displayDescInAccepted($_SESSION["id_user"]) ?>
+            <?php displayDescInAccepted($id_user) ?>
           </div>
         </div>
       </div>
@@ -58,11 +63,11 @@
         <div class="row g-0">
           <div class="col-lg-6 col-sm-12">
             <div class="list-group refused" id="list-tab-3" role="tablist">
-              <?php displayTabRefused($_SESSION["id_user"]) ?>
+              <?php displayTabRefused($id_user) ?>
             </div>
           </div>
           <div class="col-lg-6 col-sm-12">
-          <?php displayDescInRefused($_SESSION["id_user"]) ?>
+          <?php displayDescInRefused($id_user) ?>
           </div>
         </div>
       </div>
