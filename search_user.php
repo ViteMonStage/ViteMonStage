@@ -23,6 +23,7 @@
         header('HTTP/1.1 403 Unauthorized');
         $contents = file_get_contents('./error/403.php', TRUE);
         die($contents);
+    }
         ?>
     }
     <!--  Navbar -->
