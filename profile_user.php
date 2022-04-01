@@ -182,7 +182,7 @@
                         <div class="mantitl">
                             <h1 class="big titl">DELEGATE PERMISSIONS</h1>
                         </div>
-                        <form action="../php/permissions.php?id_user=9" method="post">
+                        <form action="../php/permissions.php?id_user=<?php echo $id_user ?>" method="post">
                             <?php
                             $email = $row[0][3];
                             $stm = $pdo->prepare("SELECT search_company, create_company, modify_company, evaluate_company, delete_company, stats_company, search_offer, create_offer, modify_offer, delete_offer, stats_offer, search_pilot, create_pilot, modify_pilot, delete_pilot, search_delegate, create_delegate, modify_delegate, delete_delegate, search_student, create_student, modify_student, delete_student, stats_student FROM permission INNER JOIN user ON permission.id_user = user.id_user WHERE email = ? "); //query to get PERMISSIONS
