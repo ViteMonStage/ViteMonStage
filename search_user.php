@@ -25,7 +25,6 @@
         die($contents);
     }
         ?>
-    }
     <!--  Navbar -->
     <?php
     include "./php/db.php"; //Used to get global pdo
