@@ -116,40 +116,46 @@ if(isset($_POST['postbutton'])){
     
     try{
         //Checks if there is a missing input filled and sends an error notification to the user
-        if(empty($surname)|| empty($name)|| empty($gender)|| empty($email)
-        || !preg_match($pattern,$birthday)|| empty($campus)){
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=1');
-            die();
-        }
         if(preg_match('/[\'^}{#~><*>¬]/', $surname) || preg_match('/[\'^}{#~><*>¬]/', $name) || preg_match('/[\'^}{#~><*>¬]/',$email)){
             // one or more of the 'special characters' found in $string
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=2'); //if a character is not valid, returns error code 2
         die();
         }
-        $sqlmail = $pdo -> prepare("SELECT email FROM user WHERE email=?");
-    $sqlmail->bindParam(1,$email);
-    $sqlmail->execute();
-    $rowm = $sqlmail ->fetchAll();
-        if (!empty($rowm[0][0])&&$rowm[0][0]!=$gmail){
+    //     $sqlmail = $pdo -> prepare("SELECT email FROM user WHERE id_user=(:id_user)");
+    // $sqlmail->bindParam(':id_user',$id_user);
+    // $sqlmail->execute();
+    // $rowm = $sqlmail ->fetchAll();
+    //     if (!empty($rowm[0][0])&&$rowm[0][0]!=$email){
+    //     header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=4');
+    //     return ;
+    //     die();
+    //     $sqlmail = $pdo -> prepare("SELECT email FROM user WHERE email=?");
+    // $sqlmail->bindParam(1,$email);
+    // $sqlmail->execute();
+    // $sqlmail ->fetchAll();
+    // $rowm = $sqlmail;
+    //     if (!empty($rowm[0][0])&&$rowm[0][0]!=$gmail){
 
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=4');
-        return ;
-        die();
+    //     header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=4');
+    //     return ;
+    //     die();
         
-        }
+    //     }
+    
         
-        if($_SESSION['role']== 3 || $_SESSION['role'] == 1 || $_SESSION['role'] == 5){
-            $sqlid= $pdo->prepare("SELECT id_role from user where id_user = ?");
-            $sqlid->bindParam(1,$id_user);
-            $sqlid->execute();
-            $sqlid->fetchAll();
-            $rowid=$sqlid;
-            if($rowid[0][0] == 3  ){
-                header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=3');
-                die();
-            }
+        // if($_SESSION['role']== 3 || $_SESSION['role'] == 1 || $_SESSION['role'] == 5){
+        //     $sqlid= $pdo->prepare("SELECT id_role from user where id_user = (:id_user)");
+        //     $sqlid->bindParam(':id_user',$id_user);
+        //     $sqlid->execute();
+        //     $sqlid->fetchAll();
+        //     $rowid = $sqlid;
+            
+        //     if($rowid[0][0] == 3  ){
+        //         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=3');
+        //         die();
+        //     }
 
-        }
+        // }
         else{
             if ($_POST['promotion']=='NULL'){
                 $_POST['promotion'] =NULL;
