@@ -67,10 +67,10 @@ function displayDescInProgress($id_user)
                             <div>
                                 <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                             </div>
+                            <?php if ($_SESSION['role'] == 1) : ?>
                             <div>
 
                                 <?php $step = getStep($value[0]);
-                                if ($_SESSION['role'] == 1) :
                                     if ($step == 1) : ?>
                                         <p class="small">You can go to next step if company accepted :</p>
                                         <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
@@ -89,7 +89,6 @@ function displayDescInProgress($id_user)
                                                 Cancel
                                             </button></a>
                                     <?php endif; ?>
-                                <?php endif; ?>
                                 <?php if ($step == 3) : ?>
                                     <p class="small">Validation sheet has been signed by school :</p>
                                     <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up&id_user=<?php echo $id_user ?>"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
@@ -118,6 +117,7 @@ function displayDescInProgress($id_user)
                                         </button></a>
                                 <?php endif; ?>
                             </div>
+                            <?php endif; ?>
                             <div>
                                 <a href="offers_detail.php?id_offer=<?php echo $key + 1 ?>" role="button" class="small btn see" id="seeoff1">See Offer</a>
                             </div>
