@@ -141,9 +141,17 @@ if (isset($_POST['d_user'])) {
         $stm->execute();
         $row = $stm->fetchAll();
         if (isset($row[0]) == 1) {
-            if($_SESSION['role'] == 3 || $_SESSION['role'] == 2)
+            if($_SESSION['role'] == 3 || ($_SESSION['role'] == 2 && $_SESSION['delete_pilot'] == 1 ))
             {
                 if($row[0][1] == 3 || $row[0][1] == 4)
+                {
+                    header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=5'); //if user does not have right to delete the user, return error 5
+                    die();
+                }
+                
+            }
+            elseif ($_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 0 && $_SESSION['create_delegate'] == 0) {
+                if($row[0][1] == 3 || $row[0][1] == 4 || $row[0][1] == 2)
                 {
                     header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/users.php?d_error=5'); //if user does not have right to delete the user, return error 5
                     die();

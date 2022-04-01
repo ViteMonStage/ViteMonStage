@@ -21,7 +21,6 @@ include "../php/navbar.php";
 
 <body>
     <?php
-    session_start();
     if ($_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 0 && $_SESSION['create_delegate'] == 0 && $_SESSION['create_student'] == 0 && $_SESSION['delete_pilot'] == 0 && $_SESSION['delete_delegate'] == 0 && $_SESSION['delete_student'] == 0) {
         header('HTTP/1.1 403 Unauthorized');
         $contents = file_get_contents('../error/403.php', TRUE);
@@ -33,7 +32,7 @@ include "../php/navbar.php";
             <!-- this is the white box -->
             <div class="mainbox row">
                 <!--USER CREATION-->
-                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && $_SESSION['create_user'] == 1)) : ?>
+                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && ($_SESSION['create_pilot'] == 1 || $_SESSION['create_delegate'] == 1 || $_SESSION['create_student'] == 1))) : ?>
                 <div class="mantitl">
                     <h1 class="big titl">USER CREATION</h1>
                 </div>
@@ -107,9 +106,13 @@ include "../php/navbar.php";
                         <select class="form-control tbx medium" id="roletbx" name="c_role">
                             <?php
                             include "../db.php"; //Used to get global pdo
-                            if ($_SESSION['role'] == 3 || $_SESSION['role'] == 2) {
+                            if ($_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 0 && $_SESSION['create_delegate'] == 0 && $_SESSION['create_student'] == 1) {
+                                $stm = $pdo->prepare('SELECT role FROM role WHERE id_role != 3 AND id_role !=4 AND id_role !=2'); //query to get roles
+                            }
+                            elseif ($_SESSION['role'] == 3 || $_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 0  && $_SESSION['create_delegate = 1'] == 1) {
                                 $stm = $pdo->prepare('SELECT role FROM role WHERE id_role != 3 AND id_role !=4'); //query to get roles
-                            } elseif ($_SESSION['role'] == 4) {
+                            } 
+                            elseif ($_SESSION['role'] == 4 || $_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 1) {
                                 $stm = $pdo->prepare('SELECT role FROM role'); //query to get roles
                             }
                             $stm->execute();
@@ -159,8 +162,8 @@ include "../php/navbar.php";
                 </div>
                 <?php endif ?>
 
-                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && $_SESSION['delete_user'] == 1)) : ?>
                 <!--USER DELETION-->
+                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && $_SESSION['delete_pilot'] == 1 && $_SESSION['delete_delegate'] == 1 && $_SESSION['delete_student'] == 1) ) : ?>
                 <div class="mantitl">
                     <h1 class="big titl">USER DELETION</h1>
                 </div>

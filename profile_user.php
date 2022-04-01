@@ -17,17 +17,27 @@
 </head>
 
 <body>
-
-
-
+    <?php
+    session_start();
+    if ($_SESSION['role'] == 2 && $_SESSION['stats_student'] == 0) {
+        header('HTTP/1.1 403 Unauthorized');
+        $contents = file_get_contents('./error/403.php', TRUE);
+        die($contents);
+    }
+    ?>
     <!-- NAVBAR -->
     <header>
         <?php
         include "./php/profile.php";
         include "./php/navbar.php";
+<<<<<<< HEAD
         
         
         
+=======
+
+
+>>>>>>> dfd6e7b9904703b2ff7ec336a6ef1d4e5bf70738
 
 
         ?>
@@ -150,7 +160,7 @@
                             <?php loadWishlist() ?>
                         </div>
                         <div class="bouton">
-                            <a role="button" id="btnwish" class="small btn" href='wishlist.php?id_user=<?php echo $id_user?>' alt="Wishlist">See more</a>
+                            <a role="button" id="btnwish" class="small btn" href='wishlist.php?id_user=<?php echo $id_user ?>' alt="Wishlist">See more</a>
                         </div>
                     <?php endif ?>
                 </div>
@@ -167,7 +177,7 @@
                             <?php loadCandidatures() ?>
                         </div>
                         <div class="bouton">
-                            <a role="button" id="btncand" class="small btn" href="candidatures.php?id_user=<?php echo $id_user?>" alt="Candidatures">See more</a>
+                            <a role="button" id="btncand" class="small btn" href="candidatures.php?id_user=<?php echo $id_user ?>" alt="Candidatures">See more</a>
                         </div>
                     <?php endif ?>
                 </div>

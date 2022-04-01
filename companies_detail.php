@@ -15,6 +15,14 @@
 </head>
 
 <body>
+<?php
+session_start();
+    if ($_SESSION['role'] == 2 && $_SESSION['stats_offer'] == 0) {
+        header('HTTP/1.1 403 Unauthorized');
+        $contents = file_get_contents('./error/403.php', TRUE);
+        die($contents);
+    }
+    ?>
     <!-- Nav bar-->
     <header>
         <?php
