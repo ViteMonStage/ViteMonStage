@@ -109,10 +109,10 @@ include "../php/navbar.php";
                             if ($_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 0 && $_SESSION['create_delegate'] == 0 && $_SESSION['create_student'] == 1) {
                                 $stm = $pdo->prepare('SELECT role FROM role WHERE id_role != 3 AND id_role !=4 AND id_role !=2'); //query to get roles
                             }
-                            elseif ($_SESSION['role'] == 3 || $_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 0  && $_SESSION['create_delegate = 1'] == 1) {
+                            if ($_SESSION['role'] == 3 || ($_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 0  && $_SESSION['create_delegate'] == 1)) {
                                 $stm = $pdo->prepare('SELECT role FROM role WHERE id_role != 3 AND id_role !=4'); //query to get roles
                             } 
-                            elseif ($_SESSION['role'] == 4 || $_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 1) {
+                            if ($_SESSION['role'] == 4 || $_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 1) {
                                 $stm = $pdo->prepare('SELECT role FROM role'); //query to get roles
                             }
                             $stm->execute();
