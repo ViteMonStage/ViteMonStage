@@ -14,14 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 <header>
-    <!-- NAVBAR -->
     <?php
-    include_once "./php/offer_detail.php";
-    include_once "./php/navbar.php";
-    include_once "./php/wishlist.php";
-    ?>
-</header>
-<?php
     session_start();
     if ($_SESSION['role'] == 2 && $_SESSION['stats_offer'] == 0) {
         header('HTTP/1.1 403 Unauthorized');
@@ -29,25 +22,32 @@
         die($contents);
     }
     ?>
+    <!-- NAVBAR -->
+    <?php
+    include_once "./php/offer_detail.php";
+    include_once "./php/navbar.php";
+    include_once "./php/wishlist.php";
+    ?>
+</header>
+
 <body>
     <!--Offer description-->
     <!--Function allowing the dynamic display of the detail of an offer -->
     <?php include dirname(__FILE__) . "/php/offer.php";
     alertHandler();
-    displayOfferdetail(); ?>
-    </div>
+    displayOfferdetail(); displayCandidatureSteps();?>
     <!--"Apply" section-->
     <div class="off_apply">
-    <?php if(!hasAlreadySentCandidature()):?>
-        <button type="button" class="small btn see smalltitle bigtitle" data-bs-toggle="modal" data-bs-target="#apply">
-            Apply
-        </button>
-        <?php else: ?>
-        <button type="button" class="small btn see smalltitle bigtitle disabled">
-            Already applied
-        </button>
+        <?php if (!hasAlreadySentCandidature()) : ?>
+            <button type="button" class="small btn see smalltitle bigtitle" data-bs-toggle="modal" data-bs-target="#apply">
+                Apply
+            </button>
+        <?php else : ?>
+            <button type="button" class="small btn see smalltitle bigtitle disabled">
+                Already applied
+            </button>
         <?php endif; ?>
-        <a href="companies_detail.php?id_company=<?php echo getCompanyFromOffer($_GET["id_offer"])?>" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
+        <a href="companies_detail.php?id_company=<?php echo getCompanyFromOffer($_GET["id_offer"]) ?>" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
     </div>
     <!--Offer details-->
     </div>

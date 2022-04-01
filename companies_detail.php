@@ -55,8 +55,6 @@ session_start();
     displayRatingOptions($_SESSION["id_user"],$_GET["id_company"]); 
     displayAllRating($_GET["id_company"]);
     ?>
-
-
     <?php
     include "./php/footer.php"
     ?>
