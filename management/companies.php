@@ -161,7 +161,7 @@
 
                     <div class="col-sm-6 divg">
                         <div class="orga">
-                            <label for="nametbx" class="tbxindicator small">ID of the offer that u want to modify</label>
+                            <label for="nametbx" class="tbxindicator small">ID and name of the company that u want to modify</label>
                             <select class="form-control tbx medium" name="m_id_company" id="comptbx">
                                 <?php
                                 include "../db.php"; //Used to get global pdo
