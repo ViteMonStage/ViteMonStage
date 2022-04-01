@@ -88,17 +88,21 @@ try {
     if ($_GET["operation"] == "up") {
         if (is_null($row[0][11])) {
             incrementStep("step2", $row[0][0]);
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $_GET["id_offer"] . '&success=2');
         } else if (is_null($row[0][12])) {
             incrementStep("step3", $row[0][0]);
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $_GET["id_offer"] . '&success=2');
         } else if (is_null($row[0][13])) {
             incrementStep("step4", $row[0][0]);
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $_GET["id_offer"] . '&success=2');
         } else if (is_null($row[0][14])) {
             incrementStep("step5", $row[0][0]);
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $_GET["id_offer"] . '&success=2');
         } else if (is_null($row[0][15])) {
             incrementStep("step6", $row[0][0]);
             acceptCandidature($id_candidature);
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $_GET["id_offer"] . '&success=4');
         }
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $_GET["id_offer"] . '&success=2');
     } else if ($_GET["operation"] == "cancel") {
         cancelCandidature($id_candidature);
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/offers_detail.php?id_offer=' . $_GET["id_offer"] . '&success=3');
