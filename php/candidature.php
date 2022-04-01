@@ -165,7 +165,7 @@ function displayDescInAccepted($id_user)
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
         $stm = $pdo->prepare('SELECT candidature.id_candidature, user.id_user, progress.id_progress,candidature.id_statut,status.name,offer_name,company.company_name,offers.description,
-        city.cityname,city.zipcode,offer_date
+        city.cityname,city.zipcode,offer_date,offers.id_offer
                 FROM 8aah0fCXko.candidature
                 INNER JOIN user on candidature.id_user = user.id_user
                 INNER JOIN progress on candidature.id_candidature = progress.id_candidature
@@ -198,7 +198,7 @@ function displayDescInAccepted($id_user)
                                 <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                             </div>
                             <div>
-                                <a href="offers_detail.php?id_offer=<?php echo $key + 1 ?>" role="button" class="small btn see" id="seeoff7">See Offer</a>
+                                <a href="offers_detail.php?id_offer=<?php echo $value[11] ?>" role="button" class="small btn see" id="seeoff7">See Offer</a>
                             </div>
                         </div>
                     </div>
