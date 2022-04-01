@@ -118,6 +118,10 @@
                 case 3:
 
                     echo "Error 3 : You don't have permission to edit this user";
+                    break;
+                case 4:
+                    echo "Error 4 : This address email exists already !";
+                    break;
             }
         } ?>
 

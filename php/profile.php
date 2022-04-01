@@ -120,12 +120,22 @@ if(isset($_POST['postbutton'])){
             header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=1');
             die();
         }
-        elseif((preg_match('/[\'^}{#~><>¬]/', $surname|| $name))){
+        if(preg_match('/[\'^}{#~><*>¬]/', $surname) || preg_match('/[\'^}{#~><*>¬]/', $name) || preg_match('/[\'^}{#~><*>¬]/',$email)){
             // one or more of the 'special characters' found in $string
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=2'); //if a character is not valid, returns error code 2
         die();
+        }
+        $sqlmail = $pdo -> prepare("SELECT email FROM user WHERE id_user=(:id_user)");
+    $sqlmail->bindParam(':id_user',$id_user);
+    $sqlmail->execute();
+    $rowm = $sqlmail ->fetchAll();
+        if (!empty($rowm[0][0])&&$rowm[0][0]!=$email){
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=4');
+        return ;
+        die();
         
         }
+        
         if($_SESSION['role']== 3 || $_SESSION['role'] == 1 || $_SESSION['role'] == 5){
             $sqlid= $pdo->prepare("SELECT id_role from user where id_user = ?");
             $sqlid->bindParam(1,$id_user);
@@ -316,13 +326,28 @@ function loadCandidatures(){
         echo "  ";
         echo (int)$e->getCode();
     }
-
-function checkmail(){
+}
+function checkmail($mail,$id_user){
+    try{
     include "db.php";
-    $sqlmail = $pdo -> prepare("SELECT email FROM user");
+    $sqlmail = $pdo -> prepare("SELECT email FROM user WHERE id_user=(:id_user)");
+    $sqlmail->bindParam(':id_user',$id_user);
+    $sqlmail->execute();
+    $rowm = $sqlmail ->fetchAll();
+    if (!empty($rowm[0][0])):
+        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/profile_user.php?errorinputs=4');
+        return ;
+        die();
+        endif ; 
+    
+    }
+    catch(\PDOException $e){
+        echo $e->getMessage();
+        echo "  ";
+        echo (int)$e->getCode();
+    }
+
+
 }
 
-
-
-}
 ?>
