@@ -20,16 +20,16 @@ function displayWishlist($id_user)
                 <div class="result">
                     <img src="./assets/pictures/logo2.jpg" alt="Logo 2" class="logoentreprise">
                     <div class="in_desc">
-                        <h3 class="medium"><?php echo $value[3] ?> • <?php echo $value[1]?></h3>
-                        <p class="mini">Description : <?php echo shortenString($value[0])?></p>
-                        <h4 class="mini loca"><?php echo $value[10]?> (<?php echo $value[9] ?>) - Publication date : <?php echo $value[11] ?> - <?php echo $value[4] ?></h4>
+                        <h3 class="medium"><?php echo $value[3] ?> • <?php echo $value[1] ?></h3>
+                        <p class="mini">Description : <?php echo shortenString($value[0]) ?></p>
+                        <h4 class="mini loca"><?php echo $value[10] ?> (<?php echo $value[9] ?>) - Publication date : <?php echo $value[11] ?> - <?php echo $value[4] ?></h4>
                     </div>
-                    <a href="offers_detail.php?id_offer=<?php echo $value[12]?>" role="button" class="small btn offer">See offer</a>
-                </div>  ;
-        <?php endforeach;
-        } else {?>
+                    <a href="offers_detail.php?id_offer=<?php echo $value[12] ?>" role="button" class="small btn offer">See offer</a>
+                </div> ;
+            <?php endforeach;
+        } else { ?>
             <p class="small">No wishlist</p>
-        <?php }
+<?php }
     } catch (\PDOException $e) {
         echo $e->getMessage();
         echo "   ";
@@ -98,12 +98,14 @@ function removeFromWishlist($id_user, $id_offer)
     }
 }
 
-function shortenString($string)
-{
-    if (strlen($string) > 150) {
-        $string = substr($string, 0, 150) . "...";
+if (function_exists('shortenString')) {
+    function shortenString($string)
+    {
+        if (strlen($string) > 150) {
+            $string = substr($string, 0, 150) . "...";
+        }
+        return $string;
     }
-    return $string;
 }
 
 if (isset($_GET["add"])) {

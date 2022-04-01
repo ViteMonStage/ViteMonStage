@@ -24,9 +24,8 @@ $tmpName1 = $_FILES['motivationLetterFile']['tmp_name'];
 $fname1 = $_FILES['motivationLetterFile']['name'];
 $fsize1 = $_FILES['motivationLetterFile']['size'];
 $ferror1 = $_FILES['motivationLetterFile']['error'];
-$array1 = explode('.', $fname1);
-$extension1 = end($array1);
-if ($extension1 != "pdf" || $extension1 != "docx" || $extension1 != "png" || $extension1 != "jpg") {
+$extension1 = pathinfo($fname1, PATHINFO_EXTENSION);
+if ($extension1 != "pdf" && $extension1 != "docx" && $extension1 != "png" && $extension1 != "jpg") {
     header('Location: ../offers_detail.php?id_offer='.$_GET['id_offer'].'&error=1');
     die();
 }
@@ -37,10 +36,9 @@ $tmpName2 = $_FILES['resumeFile']['tmp_name'];
 $fname2 = $_FILES['resumeFile']['name'];
 $fsize2 = $_FILES['resumeFile']['size'];
 $ferror2 = $_FILES['resumeFile']['error'];
-$array2 = explode('.', $fname2);
-$extension2 = end($array2);
-if ($extension2 != "pdf" || $extension2 != "docx" || $extension2 != "png" || $extension2 != "jpg") {
-    header('Location: ../offers_detail.php?id_offer='.$_GET['id_offer'].'&error=1');
+$extension2 = pathinfo($fname1, PATHINFO_EXTENSION);
+if ($extension2 != "pdf" && $extension2 != "docx" && $extension2 != "png" && $extension2 != "jpg") {
+    header('Location: ../offers_detail.php?id_offer='.$_GET['id_offer'].'&error=1&'.$extension2);
     die();
 }
 move_uploaded_file($tmpName2, '../assets/user_data/validation_sheet/' . $_GET["id_offer"] . "_" . $_SESSION["id_user"] . "." . $extension2);
@@ -108,6 +106,6 @@ try {
 include "./notification.php";
 addNotification($_SESSION["id_user"],1,"You applied to a new offer !","You can check it <a href='http://". $_SERVER['HTTP_HOST'] . "/offers_detail.php?id_offer=".$_GET["id_offer"]."'>here</a>.");
 
-header('Location: ../offers_detail.php?id_offer='.$_GET['id_offer'].'&success=true');
+header('Location: ../offers_detail.php?id_offer='.$_GET['id_offer'].'&success=1');
 
 ?>

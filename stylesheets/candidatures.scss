@@ -96,6 +96,30 @@
   margin-right: 10px;
 }
 
+.btn.step.accepted {
+  color: rgb(255, 255, 255);
+  background-color: #51b700;
+  padding: none;
+  border-radius: 50px;
+  border-style: none;
+  height: 2.5em;
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.btn.step.refused {
+  color: rgb(255, 255, 255);
+  background-color: #b70000;
+  padding: none;
+  border-radius: 50px;
+  border-style: none;
+  height: 2.5em;
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
 /* Style of the result divs */
 .s_result {
   display: flex;
@@ -116,6 +140,7 @@
   width: 100px;
   height: 100px;
   margin-bottom: 10px;
+  float: right;
 }
 
 /* Offer title style */
@@ -158,4 +183,41 @@
 #navbar-candidatures-btn {
   color: #51b700;
   pointer-events: none;
+}
+
+.pulse-button {
+  width: 100px;
+  height: 100px;
+  border: none;
+  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+  border-radius: 50%;
+  background-color: #e84c3d;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@-webkit-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);
+  }
+}
+@-moz-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);
+  }
+}
+@-ms-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);
+  }
+}
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);
+  }
 }
