@@ -27,8 +27,7 @@
     <!--Function allowing the dynamic display of the detail of an offer -->
     <?php include dirname(__FILE__) . "/php/offer.php";
     alertHandler();
-    displayOfferdetail(); ?>
-    </div>
+    displayOfferdetail(); displayCandidatureSteps();?>
     <!--"Apply" section-->
     <div class="off_apply">
     <?php if(!hasAlreadySentCandidature()):?>

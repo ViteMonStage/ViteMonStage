@@ -35,7 +35,7 @@ function displayDescInProgress($id_user)
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
         $stm = $pdo->prepare('SELECT candidature.id_candidature, user.id_user, progress.id_progress,candidature.id_statut,status.name,offer_name,company.company_name,offers.description,
-        city.cityname,city.zipcode,offer_date
+        city.cityname,city.zipcode,offer_date,offers.id_offer
                 FROM 8aah0fCXko.candidature
                 INNER JOIN user on candidature.id_user = user.id_user
                 INNER JOIN progress on candidature.id_candidature = progress.id_candidature
@@ -66,6 +66,53 @@ function displayDescInProgress($id_user)
                         <div class="in_logo">
                             <div>
                                 <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
+                            </div>
+                            <div>
+                            <?php $step=getStep($value[0]); if ($step == 1) : ?>
+                                <p class="small">You can go to next step if company accepted :</p>
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
+                                        Go to step 2
+                                    </button></a>
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel"><button type="button" class="small btn step smalltitle bigtitle refused">
+                                        Cancel
+                                    </button></a>
+                            <?php endif; ?>
+                            <?php if ($step == 2) : ?>
+                                <p class="small">Validation sheet has been signed by company :</p>
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
+                                        Go to step 3
+                                    </button></a>
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel"><button type="button" class="small btn step smalltitle bigtitle refused">
+                                        Cancel
+                                    </button></a>
+                            <?php endif; ?>
+                            <?php if ($step == 3) : ?>
+                                <p class="small">Validation sheet has been signed by school :</p>
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
+                                        Go to step 4
+                                    </button></a>
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel"><button type="button" class="small btn step smalltitle bigtitle refused">
+                                        Cancel
+                                    </button></a>
+                            <?php endif; ?>
+                            <?php if ($step == 4) : ?>
+                                <p class="small">Internship agreement has been sent to company</p>
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
+                                        Go to step 5
+                                    </button></a>
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel"><button type="button" class="small btn step smalltitle bigtitle refused">
+                                        Cancel
+                                    </button></a>
+                            <?php endif; ?>
+                            <?php if ($step == 5) : ?>
+                                <p class="small">Internship agreement has been signed by company, all steps are done !</p>
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=up"><button type="button" class="small btn step smalltitle bigtitle accepted pulse-button">
+                                        Finalize steps !
+                                    </button></a>
+                                <a href="/php/steps_manager.php?id_offer=<?php echo $value[11] ?>&operation=cancel"><button type="button" class="small btn step smalltitle bigtitle refused">
+                                        Cancel
+                                    </button></a>
+                            <?php endif; ?>
                             </div>
                             <div>
                                 <a href="offers_detail.php?id_offer=<?php echo $key + 1 ?>" role="button" class="small btn see" id="seeoff1">See Offer</a>
@@ -164,14 +211,13 @@ function displayDescInAccepted($id_user)
         echo (int)$e->getCode();
     }
 }
-
-function shortenString($string)
-{
-    if (strlen($string) > 150) {
-        $string = substr($string, 0, 150) . "...";
+    function shortenString($string)
+    {
+        if (strlen($string) > 150) {
+            $string = substr($string, 0, 150) . "...";
+        }
+        return $string;
     }
-    return $string;
-}
 
 if (isset($_GET["add"])) {
 }
@@ -212,7 +258,7 @@ function displayDescInRefused($id_user)
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
         $stm = $pdo->prepare('SELECT candidature.id_candidature, user.id_user, progress.id_progress,candidature.id_statut,status.name,offer_name,company.company_name,offers.description,
-        city.cityname,city.zipcode,offer_date
+        city.cityname,city.zipcode,offer_date,offers.id_offer
         FROM 8aah0fCXko.candidature
         INNER JOIN user on candidature.id_user = user.id_user
         INNER JOIN progress on candidature.id_candidature = progress.id_candidature
@@ -245,7 +291,7 @@ function displayDescInRefused($id_user)
                                 <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
                             </div>
                             <div>
-                                <a href="offers_detail.php?id_offer=<?php echo $key + 1 ?>" role="button" class="small btn see" id="seeoff7">See Offer</a>
+                                <a href="offers_detail.php?id_offer=<?php echo $value[11] ?>" role="button" class="small btn see" id="seeoff7">See Offer</a>
                             </div>
                         </div>
                     </div>
@@ -276,17 +322,22 @@ function getStep($id_candidature)
         $stm->execute();
         $row = $stm->fetchAll();
         if (isset($row[0]) == 1) {
-            if(!is_null($row[0][11])){
+            if (!is_null($row[0][11])) {
                 return 6;
-            }if(!is_null($row[0][10])){
+            }
+            if (!is_null($row[0][10])) {
                 return 5;
-            }if(!is_null($row[0][9])){
+            }
+            if (!is_null($row[0][9])) {
                 return 4;
-            }if(!is_null($row[0][8])){
+            }
+            if (!is_null($row[0][8])) {
                 return 3;
-            }if(!is_null($row[0][7])){
+            }
+            if (!is_null($row[0][7])) {
                 return 2;
-            }if(!is_null($row[0][6])){
+            }
+            if (!is_null($row[0][6])) {
                 return 1;
             }
         } else { ?>
@@ -299,6 +350,7 @@ function getStep($id_candidature)
     }
 }
 
-function toPercent($step){
-    return floor(($step/6)*100);
+function toPercent($step)
+{
+    return floor(($step / 6) * 100);
 }
