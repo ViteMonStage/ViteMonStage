@@ -112,7 +112,10 @@ include "../php/navbar.php";
                             if ($_SESSION['role'] == 3 || ($_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 0  && $_SESSION['create_delegate'] == 1)) {
                                 $stm = $pdo->prepare('SELECT role FROM role WHERE id_role != 3 AND id_role !=4'); //query to get roles
                             } 
-                            if ($_SESSION['role'] == 4 || $_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 1) {
+                            if($_SESSION['role'] == 2 && $_SESSION['create_pilot'] == 1){
+                                $stm = $pdo->prepare('SELECT role FROM role WHERE id_role != 4'); //query to get roles
+                            }
+                            if ($_SESSION['role'] == 4) {
                                 $stm = $pdo->prepare('SELECT role FROM role'); //query to get roles
                             }
                             $stm->execute();
@@ -163,7 +166,7 @@ include "../php/navbar.php";
                 <?php endif ?>
 
                 <!--USER DELETION-->
-                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && $_SESSION['delete_pilot'] == 1 && $_SESSION['delete_delegate'] == 1 && $_SESSION['delete_student'] == 1) ) : ?>
+                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && ($_SESSION['delete_pilot'] == 1 || $_SESSION['delete_delegate'] == 1 || $_SESSION['delete_student'] == 1)) ) : ?>
                 <div class="mantitl">
                     <h1 class="big titl">USER DELETION</h1>
                 </div>
