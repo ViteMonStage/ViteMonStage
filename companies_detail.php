@@ -15,6 +15,14 @@
 </head>
 
 <body>
+<?php
+session_start();
+    if ($_SESSION['role'] == 2 && $_SESSION['stats_offer'] == 0) {
+        header('HTTP/1.1 403 Unauthorized');
+        $contents = file_get_contents('./error/403.php', TRUE);
+        die($contents);
+    }
+    ?>
     <!-- Nav bar-->
     <header>
         <?php
@@ -27,19 +35,26 @@
     <?php
     ob_start();
     displayCompaniedetails();?>
-
-    <div class="company_btn">
-        <input type="button" class="small btn company" value="Modify">
-        <input type="button" class="small btn company" value="Modify">
-        <input type="button" class="small btn company" value="Delete">
-    </div>
+    <?php if($_SESSION['role'] == 3 || $_SESSION['role'] == 4):?>
+    
+    <form class="company_btn" action="./php/visible.php?id_company=<?php echo $_GET['id_company'] ?>" method="POST"> 
+        <input type="submit" class="small btn company" value="Invisible" name="invisible">
+       <?php if (isset($_GET["isvisible"])) {
+                        if ($_GET["isvisible"] == "0") {
+                            echo '<p class="small error"> Company is now visible for all users.</p>';
+                        }
+                        if ($_GET["isvisible"] == "1") {
+                            echo '<p class="small error"> Company is now invisible for all users.</p>';
+                        }
+                    }
+                   ?>
+    </form>
+    <?php endif ?>
 
     <?php include_once dirname(__FILE__) . "/php/companies.php";
     displayRatingOptions($_SESSION["id_user"],$_GET["id_company"]); 
     displayAllRating($_GET["id_company"]);
     ?>
-
-
     <?php
     include "./php/footer.php"
     ?>
