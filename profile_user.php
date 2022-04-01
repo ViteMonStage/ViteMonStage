@@ -17,29 +17,12 @@
 </head>
 
 <body>
-    <?php
-    session_start();
-    if ($_SESSION['role'] == 2 && $_SESSION['stats_student'] == 0) {
-        header('HTTP/1.1 403 Unauthorized');
-        $contents = file_get_contents('./error/403.php', TRUE);
-        die($contents);
-    }
-    ?>
+
     <!-- NAVBAR -->
     <header>
         <?php
         include "./php/profile.php";
         include "./php/navbar.php";
-<<<<<<< HEAD
-        
-        
-        
-=======
-
-
->>>>>>> dfd6e7b9904703b2ff7ec336a6ef1d4e5bf70738
-
-
         ?>
     </header>
     <!-- PROFILE BANNER -->

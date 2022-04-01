@@ -51,23 +51,28 @@ elseif(isset($_GET['id_user'])&& (($_SESSION['role']==5))&& ($_GET['id_role']==5
 else{
 //Get id value stored in the session
 $id_user = $_SESSION['id_user'];
-if (isset($_GET['id_role'])){
-    if ($_GET['id_role']== 2 && $_SESSION['role'] == 2  && $_SESSION['search_delegate'] == 0 && $_SESSION['modify_delegate'] == 0) {
+if (isset($_GET['id_role']) && $_SESSION['role'] == 2){
+    if ($_GET['id_role']== 2   && $_SESSION['search_delegate'] == 0 && $_SESSION['modify_delegate'] == 0) {
         header('HTTP/1.1 403 Unauthorized');
         $contents = file_get_contents('./error/403.php', TRUE);
         die($contents);
     }
-    else if ($_GET['id_role']==1  && $_SESSION['role'] == 2  && $_SESSION['search_student'] == 0 && $_SESSION['modify_student'] == 0) {
+    else if ($_GET['id_role']==1    && $_SESSION['search_student'] == 0 && $_SESSION['modify_student'] == 0) {
         header('HTTP/1.1 403 Unauthorized');
         $contents = file_get_contents('./error/403.php', TRUE);
         die($contents);
     }
-    else if ($_GET['id_role']==5  && $_SESSION['role'] == 2  && $_SESSION['search_company'] == 0 && $_SESSION['modify_company'] == 0) {
+    else if ($_GET['id_role']==5    && $_SESSION['search_company'] == 0 && $_SESSION['modify_company'] == 0) {
         header('HTTP/1.1 403 Unauthorized');
         $contents = file_get_contents('./error/403.php', TRUE);
         die($contents);
     }
-    else if ($_GET['id_role']==3  && $_SESSION['role'] == 2  && $_SESSION['search_pilot'] == 0 && $_SESSION['modify_pilot'] == 0) {
+    else if ($_GET['id_role']==3    && $_SESSION['search_pilot'] == 0 && $_SESSION['modify_pilot'] == 0) {
+        header('HTTP/1.1 403 Unauthorized');
+        $contents = file_get_contents('./error/403.php', TRUE);
+        die($contents);
+    }
+    else if ($_GET['id_role']==1 && $_SESSION['stats_student'] == 0) {
         header('HTTP/1.1 403 Unauthorized');
         $contents = file_get_contents('./error/403.php', TRUE);
         die($contents);
