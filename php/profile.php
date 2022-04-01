@@ -51,6 +51,7 @@ elseif(isset($_GET['id_user'])&& (($_SESSION['role']==5))&& ($_GET['id_role']==5
 else{
 //Get id value stored in the session
 $id_user = $_SESSION['id_user'];
+
 if (isset($_GET['id_role']) && $_SESSION['role'] == 2){
     if ($_GET['id_role']== 2   && $_SESSION['search_delegate'] == 0 && $_SESSION['modify_delegate'] == 0) {
         header('HTTP/1.1 403 Unauthorized');

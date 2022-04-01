@@ -153,7 +153,7 @@
                 <!-- CANDIDATURES MENU -->
                 <div class="candidatures">
                     <?php if ($_SESSION['role'] == 4 || $_SESSION['role'] == 1) :    ?><p class="medium titre">Current candidatures </p>
-                    <?php else :    ?><p class="medium titre">You do not have access to a wishlist</p><?php endif ?>
+                    <?php else :    ?><p class="medium titre">You do not have access to candidatures</p><?php endif ?>
                     <?php if ($_SESSION['role'] == 1 || $_SESSION['role'] == 4) :    ?>
 
                         <div class="scroller">
