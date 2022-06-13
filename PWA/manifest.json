@@ -1,0 +1,17 @@
+{  
+    "name": "ViteMonStage",
+    "short_name": "VMS",
+    "start_url": "/",
+    "icons":[
+        {
+            "src": "LOGO2.png",
+            "sizes": "572x572",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "theme_color": "#000000",
+    "background_color": "#FFFFFF",
+    "display": "fullscreen",
+    "orientation": "portrait"
+}

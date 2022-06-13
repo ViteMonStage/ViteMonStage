@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./stylesheets/index.scss">
     <link rel="stylesheet" href="./stylesheets/global.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-
+    <link rel="manifest" href= "./PWA/manifest.json">
 </head>
 
 <body>
@@ -71,6 +71,13 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        if('serviceWorker' in navigator){
+            navigator.serviceWorker.register('service-worker.js')
+        }
+    </script>
+
     <?php
     include "./php/footer.php"
     ?>
