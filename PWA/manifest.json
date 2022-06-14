@@ -1,7 +1,7 @@
 {  
     "name": "ViteMonStage",
     "short_name": "VMS",
-    "start_url": "/",
+    "start_url": "../",
     "icons":[
         {
             "src": "LOGO2.png",
