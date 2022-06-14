@@ -1,9 +1,16 @@
 {  
     "name": "ViteMonStage",
     "short_name": "VMS",
-    "start_url": "/",
+    "start_url": "../",
+    "description": "Offres de stage en ligne",
     "icons":[
         {
+            "src": "LOGO.png",
+            "sizes": "193x192",
+            "type" : "image/png"
+        },
+        {
+            
             "src": "LOGO2.png",
             "sizes": "572x572",
             "type": "image/png",
