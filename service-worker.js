@@ -14,11 +14,17 @@ self.addEventListener('install', function(e) {
 
 
 
-/* Serve cached content when offline */
-self.addEventListener('fetch', function(e) {
+self.addEventListener('fetch', (e) => {
   e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
+    caches.match(e.request).then((r) => {
+          console.log('[Service Worker] Récupération de la ressource: '+e.request.url);
+      return r || fetch(e.request).then((response) => {
+                return caches.open(cacheName).then((cache) => {
+          console.log('[Service Worker] Mise en cache de la nouvelle ressource: '+e.request.url);
+          cache.put(e.request, response.clone());
+          return response;
+        });
+      });
     })
   );
 });
