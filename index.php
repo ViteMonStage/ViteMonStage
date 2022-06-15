@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title>VMS | Homepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#51b700">
+    <link rel="apple-touch-icon" href="PWA/LOGO2.png">
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">

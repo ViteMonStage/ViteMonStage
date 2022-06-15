@@ -8,6 +8,12 @@
             "sizes": "572x572",
             "type": "image/png",
             "purpose": "any"
+        },
+        {
+            "src": "MASKABLELOGO2.png",
+            "sizes": "572x572",
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ],
     "theme_color": "#000000",
