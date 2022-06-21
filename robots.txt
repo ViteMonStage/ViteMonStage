@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /profile_user.php
+
+User-agent: Googlebot
+Allow: /offers.php
+
+Sitemap: http://vms.plejeune.fr/sitemap.xml
