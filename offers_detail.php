@@ -24,7 +24,7 @@
     ?>
     <!-- NAVBAR -->
     <?php
-    include_once "./php/offer_detail.php";
+    include_once "controller/offers_detail.php";
     include_once "./php/navbar.php";
     include_once "./php/wishlist.php";
     ?>
@@ -34,8 +34,12 @@
     <!--Offer description-->
     <!--Function allowing the dynamic display of the detail of an offer -->
     <?php include dirname(__FILE__) . "/php/offer.php";
-    alertHandler();
-    displayOfferdetail(); displayCandidatureSteps();?>
+    //alertHandler();
+    $offer_details_controller = new OfferDetailsController();
+    var_dump($offer_details_controller->getOfferdetail());
+
+    //displayCandidatureSteps();
+    ?>
     <!--"Apply" section-->
     <div class="off_apply">
         <?php if (!hasAlreadySentCandidature()) : ?>
