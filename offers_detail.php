@@ -21,6 +21,7 @@
         $contents = file_get_contents('./error/403.php', TRUE);
         die($contents);
     }
+
     ?>
     <!-- NAVBAR -->
     <?php
@@ -36,13 +37,24 @@
     <?php include dirname(__FILE__) . "/php/offer.php";
     //alertHandler();
     $offer_details_controller = new OfferDetailsController();
-    var_dump($offer_details_controller->getOfferdetail());
-
-    //displayCandidatureSteps();
+    $offer_details = $offer_details_controller->getOfferdetail($_GET["id_offer"]);
     ?>
+    <div class="off_desc">
+        <img src="./assets/pictures/logo.jpg" alt="Logo" class="logoentreprise">
+        <div class="off_desc_txt">
+            <h2 class="big"> <?php echo $offer_details->OfferName ?></h2> <!-- replace the html with the value 0 (first column) of the first row the table   -->
+            <h4 class="small"><i class="fa-solid fa-tag"></i> Name of the company : <?php echo $offer_details->CompanyName ?></h4>
+            <h4 class="small"><i class="fa-solid fa-city"></i> City : <?php echo  $offer_details->City ?> (<?php echo $offer_details->ZipCode ?>)</h4>
+            <h4 class="small"><i class="fa-solid fa-graduation-cap"></i> Promotion type : <?php echo $offer_details->PromotionType ?></h4>
+            <h4 class="small"><i class="fa-solid fa-plus"></i> Skills requiered : <?php echo $offer_details->SkillsRequiered ?></h4>
+            <h4 class="small"><i class="fa-solid fa-calendar-day"></i> Offer date : <?php echo $offer_details->OfferDate ?></h4>
+            <h4 class="small"><i class="fa-solid fa-people-group"></i> Number of interns : <?php echo  $offer_details->NumberOfInterns ?></h4>
+            <h4 class="small"><i class="fa-solid fa-arrow-up"></i></i> Starting date : <?php echo  $offer_details->StartingDate ?> - <i class="fa-solid fa-arrow-down"></i> End date : <?php echo  $offer_details->EndDate ?></h4>
+            <h4 class="small"><i class="fa-solid fa-file-invoice-dollar"></i> <?php echo  $offer_details->Salary ?> €/ months</h4>
+        </div>
     <!--"Apply" section-->
     <div class="off_apply">
-        <?php if (!hasAlreadySentCandidature()) : ?>
+        <?php if (!$offer_details_controller->hasAlreadySentCandidature()) : ?>
             <button type="button" class="small btn see smalltitle bigtitle" data-bs-toggle="modal" data-bs-target="#apply">
                 Apply
             </button>
@@ -51,7 +63,7 @@
                 Already applied
             </button>
         <?php endif; ?>
-        <a href="companies_detail.php?id_company=<?php echo getCompanyFromOffer($_GET["id_offer"]) ?>" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
+        <a href="companies_detail.php?id_company=<?php echo $offer_details_controller->getCompanyFromOffer($_GET["id_offer"]) ?>" role="button" class="small btn see smalltitle bigtitle">Company detail</a>
     </div>
     <!--Offer details-->
     </div>
