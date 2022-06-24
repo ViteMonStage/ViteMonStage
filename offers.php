@@ -14,19 +14,17 @@
 </head>
 
 <body>
-    <?php
-    session_start();
-    if ($_SESSION['role'] == 2 && $_SESSION['search_offer'] == 0) {
-        header('HTTP/1.1 403 Unauthorized');
-        $contents = file_get_contents('./error/403.php', TRUE);
-        die($contents);
-    }
-    ?>
     <header>
         <?php
+         session_start();
+         if ($_SESSION['role'] == 2 && $_SESSION['search_offer'] == 0) {
+             header('HTTP/1.1 403 Unauthorized');
+             $contents = file_get_contents('./error/403.php', TRUE);
+             die($contents);
+         }
+        include_once "controller/offers.php";
         include "./php/navbar.php";
-        ?>
-        <?php include "./php/db.php"; //Used to get global pdo 
+        include "./php/db.php"; //Used to get global pdo 
         ?>
 
     </header>
@@ -93,8 +91,34 @@
     </form>
 
     <!-- RESULTS -->
-    <?php include_once dirname(__FILE__) . "/php/offer.php";
-    displayOffers(); ?>
+    <?php 
+    $offer_controller = new OffersController();
+    var_dump($offer_controller->getOffers());
+    ?>
+    <h2 class="title big results">
+            <?php echo "$count Results";?>
+    </h2>
+    <div class="s_result">
+                    <div class="in_desc">
+                        <div>
+                            <h3 class="medium off_name"><?php echo  $value[0] ?> </h3>
+                            <h4 class="small off_company"><?php echo  $value[1] ?></h4>
+                        </div>
+                        <p class="mini"><?php echo  $offer_controller->CompanyName ?></p>
+                        <h4 class="mini"><?php echo  $value[6] ?> €/ months</h4>
+                        <h4 class="mini"> <?php echo  $value[3] ?> (<?php echo  $value[4] ?>) - <?php echo  $value[5] ?> </h4>
+                        <h4class="mini"><?php echo  "Starts on the ".$value[12]." and ends on the ".$value[11]." for ".$value[13]." months" ?></h4>
+                    </div>
+                    <div class="in_logo">
+                        <div>
+                            <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
+                        </div>
+                        <div>
+                            <a href="offers_detail.php?id_offer=<?php echo  $value[7] ?>" role="button" class="small btn see">See Offer</a>
+                        </div>
+                    </div>
+                </div>
+    
 
 
     <!-- FOOTER -->
