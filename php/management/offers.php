@@ -1,9 +1,11 @@
 <?php
-include "../db.php"; //Used to get global pdo
 session_start();
 
 //CREATE OFFER
-if (isset($_POST['c_offer'])) {
+//if (isset($_POST['c_offer'])) {
+function CreateOffer()
+{
+    include "../db.php"; //Used to get global pdo
     $skills = $_POST['c_skills_offer'];
     $internship_start = $_POST['c_start_date_offer'];
     $internship_end = $_POST['c_end_date_offer'];
@@ -65,6 +67,7 @@ if (isset($_POST['c_offer'])) {
 
 
     try {
+        include "../db.php"; //Used to get global pdo
         $stm = $pdo->prepare('INSERT INTO offers (skills, intership_start, intership_end, salary, offer_date, number_interns, id_company, description, offer_name) VALUES (?,?,?,?,?,?,?,?,?)'); //prepared statement to insert values
         $stm->bindParam(1, $skills);
         $stm->bindParam(2, $internship_start);
@@ -104,7 +107,10 @@ if (isset($_POST['c_offer'])) {
 
 
 //DELETE OFFER 
-if (isset($_POST['d_offer'])) {
+//if (isset($_POST['d_offer'])) {
+function DeleteOffer()
+{
+    include "../db.php"; //Used to get global pdo
     $name = $_POST['d_name'];
     $company = $_POST['d_company'];
     if (empty($name) || empty($company)) {
@@ -137,7 +143,10 @@ if (isset($_POST['d_offer'])) {
 }
 
 //MODIFY OFFER 
-if (isset($_POST['m_offer'])) {
+//if (isset($_POST['m_offer'])) {
+function ModifyOffer()
+{
+    include "../db.php"; //Used to get global pdo
     $skills = $_POST['m_skills_offer'];
     $id_offer = $_POST['m_id_offer'];
     $internship_start = $_POST['m_start_date_offer'];
