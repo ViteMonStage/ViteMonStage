@@ -54,7 +54,7 @@
         </div>
     <!--"Apply" section-->
     <div class="off_apply">
-        <?php if (!$offer_details_controller->hasAlreadySentCandidature()) : ?>
+        <?php if (!$offer_details_controller->hasAlreadySentCandidature($_GET["id_offer"])) : ?>
             <button type="button" class="small btn see smalltitle bigtitle" data-bs-toggle="modal" data-bs-target="#apply">
                 Apply
             </button>
@@ -94,6 +94,74 @@
             </div>
         </div>
     </form>
+    <?php $candidature_status = $offer_details_controller->getCandidatureStatus($_GET["id_offer"]);
+    if($candidature_status == "Accepted"):?>
+            <div class="off_det">
+            <h3 class="medium"> Your progress in offer </h3>
+            <div class="progress">
+                <div class="progress-bar progress-bar progress-bar small progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%">Accepted</div>
+            </div>
+        </div>
+    <?php elseif($candidature_status == "Canceled"):?>
+        <div class="off_det">
+        <h3 class="medium"> Your progress in offer </h3>
+        <div class="progress">
+            <div class="progress-bar progress-bar progress-bar small progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%">Canceld</div>
+        </div>
+    </div>
+    <?php else:?>
+    <div class="off_det">
+        <h3 class="medium"> Your progress in offer </h3>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated small" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $offer_details_controller->toPercent($candidature_status); ?>%"><?php echo $candidature_status ?>/6</div>
+        </div>
+        <?php if ($candidature_status == 1) : ?>
+            <p class="small">Click if company accepted</p>
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=up"><button type="button" class="small btn see smalltitle bigtitle accepted">
+                    Go to step 2
+                </button></a>
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=cancel"><button type="button" class="small btn see smalltitle bigtitle refused">
+                    Cancel
+                </button></a>
+        <?php endif; ?>
+        <?php if ($candidature_status == 2) : ?>
+            <p class="small">Click if validation sheet has been signed by company</p>
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=up"><button type="button" class="small btn see smalltitle bigtitle accepted pulse-button">
+                    Go to step 3
+                </button></a>
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=cancel"><button type="button" class="small btn see smalltitle bigtitle refused">
+                    Cancel
+                </button></a>
+        <?php endif; ?>
+        <?php if ($candidature_status == 3) : ?>
+            <p class="small">Click if validation sheet has been signed by school</p>
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=up"><button type="button" class="small btn see smalltitle bigtitle accepted pulse-button">
+                    Go to step 4
+                </button></a>
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=cancel"><button type="button" class="small btn see smalltitle bigtitle refused">
+                    Cancel
+                </button></a>
+        <?php endif; ?>
+        <?php if ($candidature_status == 4) : ?>
+            <p class="small">Click if internship agreement has been sent to company</p>
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=up"><button type="button" class="small btn see smalltitle bigtitle accepted pulse-button">
+                    Go to step 5
+                </button></a>
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=cancel"><button type="button" class="small btn see smalltitle bigtitle refused">
+                    Cancel
+                </button></a>
+        <?php endif; ?>
+        <?php if ($candidature_status == 5) : ?>
+            <p class="small">Click if nternship agreement has been signed by company and all steps are done !</p>
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=up"><button type="button" class="small btn see smalltitle bigtitle accepted pulse-button">
+                    Finalize all steps !
+                </button></a>
+            <a href="/php/steps_manager.php?id_offer=<?php echo $_GET["id_offer"] ?>&operation=cancel"><button type="button" class="small btn see smalltitle bigtitle refused">
+                    Cancel
+                </button></a>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
     <?php
     include "./php/footer.php"
     ?>
