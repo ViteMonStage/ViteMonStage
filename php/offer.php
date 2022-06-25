@@ -81,8 +81,6 @@ public function getOffers()
 
         if (isset($row[0]) == 1)
         {
-            for ($i = 0 ; $i < $rowcount - 1; $i++)
-            {
                 foreach ($row as $value)
                 {
                     $offer = new Offer();
@@ -93,18 +91,16 @@ public function getOffers()
                     $offer->__set("ZipCode", $value[4]);
                     $offer->__set("OfferDate", $value[5]);
                     $offer->__set("Salary", $value[6]);
-                    $offer->__set("NumberOfInterns", $value[7]);
-                    $offer->__set("OfferDate", $value[8]);
+                    $offer->__set("NumberOfInterns", $value[8]);
                     $offer->__set("SkillsRequired", $value[9]);
-                    $offer->__set("StartingDate", $value[10]);
+                    $offer->__set("PromotionType", $value[10]);
+                    $offer->__set("StartingDate", $value[12]);
                     $offer->__set("EndDate", $value[11]);
-                    $offer->__set("Duration", $value[12]);
-                    $offer->__set("IdOffer", $value[13]);
+                    $offer->__set("Duration", $value[13]);
+                    $offer->__set("IdOffer", $value[7]);
                     $offer->__set("OffersCount",$rowcount);
                     array_push($array,$offer) ;
                 }
-               
-            }
             
         }
         

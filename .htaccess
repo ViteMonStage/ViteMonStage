@@ -3,6 +3,6 @@ ErrorDocument 403 /error/403.php
 ErrorDocument 401 "Authorisation Required"
 AuthType Basic
 AuthName "Veuillez entrer vos identifiants"
-AuthUserFile /Users/Paul%DESPONT/Desktop/Projet%WEB/ViteMonStage/.htpasswd
+AuthUserFile /Users/Tom/Documents/Tom/CESI/2021-2022/Rattrapages/ViteMonStage/.htpasswd
 Require user admin
 Satisfy All

@@ -93,36 +93,38 @@
     <!-- RESULTS -->
     <?php 
     $offer_controller = new OffersController();
-    var_dump($offer_controller->getOffers());
+    $offer= $offer_controller->getOffers();
+     //var_dump($offer);
     ?>
     <h2 class="title big results">
-            <?php echo "$count Results";?>
+            <?php echo $offer[0]->OffersCount." Results";?>
     </h2>
+    <?php for($i = 0; $i < sizeof($offer_controller->getOffers()) - 1; $i ++){
+             ?>
     <div class="s_result">
                     <div class="in_desc">
                         <div>
-                            <h3 class="medium off_name"><?php echo  $value[0] ?> </h3>
-                            <h4 class="small off_company"><?php echo  $value[1] ?></h4>
+                            <h3 class="medium off_name"><?php echo  $offer[$i]->OfferName ?> </h3>
+                            <h4 class="small off_company"><?php echo  $offer[$i]->CompanyName ?></h4>
                         </div>
-                        <p class="mini"><?php echo  $offer_controller->CompanyName ?></p>
-                        <h4 class="mini"><?php echo  $value[6] ?> €/ months</h4>
-                        <h4 class="mini"> <?php echo  $value[3] ?> (<?php echo  $value[4] ?>) - <?php echo  $value[5] ?> </h4>
-                        <h4class="mini"><?php echo  "Starts on the ".$value[12]." and ends on the ".$value[11]." for ".$value[13]." months" ?></h4>
+                        <p class="mini"><?php echo  $offer[$i]->Description ?></p>
+                        <h4 class="mini"><?php echo  $offer[$i]->Salary ?> €/ months</h4>
+                        <h4 class="mini"> <?php echo  $offer[$i]->City ?> (<?php echo  $offer[$i]->ZipCode ?>) - <?php echo  $offer[$i]->PromotionType ?> </h4>
+                        <h4class="mini"><?php echo  "Starts on the ".$offer[$i]->StartingDate." and ends on the ".$offer[$i]->EndDate." for ".$offer[$i]->Duration." months" ?></h4>
                     </div>
                     <div class="in_logo">
                         <div>
                             <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
                         </div>
                         <div>
-                            <a href="offers_detail.php?id_offer=<?php echo  $value[7] ?>" role="button" class="small btn see">See Offer</a>
+                            <a href="offers_detail.php?id_offer=<?php echo  $offer[$i]->NumberOfInterns ?>" role="button" class="small btn see">See Offer</a>
                         </div>
                     </div>
-                </div>
-    
+                </div> 
 
-
-    <!-- FOOTER -->
     <?php
+    }
+    // FOOTER
     include "./php/footer.php"
     ?>
 </body>
