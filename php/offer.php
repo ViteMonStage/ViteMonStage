@@ -1,4 +1,5 @@
 <?php
+class Search{}
 class Offer{
     private $OfferName;
     private $CompanyName;
@@ -101,10 +102,16 @@ public function getOffers()
                     $offer->__set("OffersCount",$rowcount);
                     array_push($array,$offer) ;
                 }
-            
+                return $array;
+                var_dump($array);
+        }
+        else{
+            $nocount = new Offer();
+            $nocount->__set("OffersCount",$rowcount);
+            array_push($array,$nocount) ;
+            return $array;
         }
         
-        return $array;
     } catch (\PDOException $e) {
         echo $e->getMessage();
         echo "   ";

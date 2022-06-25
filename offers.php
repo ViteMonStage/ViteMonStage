@@ -99,7 +99,11 @@
     <h2 class="title big results">
             <?php echo $offer[0]->OffersCount." Results";?>
     </h2>
-    <?php for($i = 0; $i < sizeof($offer_controller->getOffers()) - 1; $i ++){
+    <?php if ($offer[0]->OffersCount == 0){
+
+    } 
+    else {
+        for($i = 0; $i < sizeof($offer_controller->getOffers()); $i ++){
              ?>
     <div class="s_result">
                     <div class="in_desc">
@@ -123,6 +127,7 @@
                 </div> 
 
     <?php
+        }
     }
     // FOOTER
     include "./php/footer.php"
