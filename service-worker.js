@@ -3,7 +3,21 @@ var appShellFiles = [
   '/index.php',
   '/stylesheets/index.scss',
   '/php/footer.php',
-  '/php/navbar.php'
+  '/php/navbar.php',
+  '/offers_detail.php',
+  '/offers.php',
+  '/stylesheets/offers_detail.scss',
+  '/stylesheets/offers.scss',
+  '/stylesheets/global.scss',
+  '/php/offer.php',
+  '/php/offer_detail.php',
+  '/error/403.php',
+  '/error/403.scss',
+  '/error/404.php',
+  '/error/404.scss',
+  '/controller/offers_detail.php',
+  '/controller/offers.php'
+  
 ];
 
 self.addEventListener('install', function(e) {
@@ -17,7 +31,7 @@ self.addEventListener('install', function(e) {
 
 self.addEventListener("fetch", event => {
   // cache-First Strategy
-  console.log('[Service Worker VMS] Fetch de la ressource');
+  //console.log('[Service Worker VMS] Fetch de la ressource');
   event.respondWith(
     caches
       .match(event.request) // check if the request has already been cached
