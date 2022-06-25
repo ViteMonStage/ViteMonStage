@@ -14,19 +14,17 @@
 </head>
 
 <body>
-    <?php
-    session_start();
-    if ($_SESSION['role'] == 2 && $_SESSION['search_offer'] == 0) {
-        header('HTTP/1.1 403 Unauthorized');
-        $contents = file_get_contents('./error/403.php', TRUE);
-        die($contents);
-    }
-    ?>
     <header>
         <?php
+         session_start();
+         if ($_SESSION['role'] == 2 && $_SESSION['search_offer'] == 0) {
+             header('HTTP/1.1 403 Unauthorized');
+             $contents = file_get_contents('./error/403.php', TRUE);
+             die($contents);
+         }
+        include_once "controller/offers.php";
         include "./php/navbar.php";
-        ?>
-        <?php include "./php/db.php"; //Used to get global pdo 
+        include "./php/db.php"; //Used to get global pdo 
         ?>
 
     </header>
@@ -93,12 +91,40 @@
     </form>
 
     <!-- RESULTS -->
-    <?php include_once dirname(__FILE__) . "/php/offer.php";
-    displayOffers(); ?>
+    <?php 
+    $offer_controller = new OffersController();
+    $offer= $offer_controller->getOffers();
+     //var_dump($offer);
+    ?>
+    <h2 class="title big results">
+            <?php echo $offer[0]->OffersCount." Results";?>
+    </h2>
+    <?php for($i = 0; $i < sizeof($offer_controller->getOffers()) - 1; $i ++){
+             ?>
+    <div class="s_result">
+                    <div class="in_desc">
+                        <div>
+                            <h3 class="medium off_name"><?php echo  $offer[$i]->OfferName ?> </h3>
+                            <h4 class="small off_company"><?php echo  $offer[$i]->CompanyName ?></h4>
+                        </div>
+                        <p class="mini"><?php echo  $offer[$i]->Description ?></p>
+                        <h4 class="mini"><?php echo  $offer[$i]->Salary ?> €/ months</h4>
+                        <h4 class="mini"> <?php echo  $offer[$i]->City ?> (<?php echo  $offer[$i]->ZipCode ?>) - <?php echo  $offer[$i]->PromotionType ?> </h4>
+                        <h4class="mini"><?php echo  "Starts on the ".$offer[$i]->StartingDate." and ends on the ".$offer[$i]->EndDate." for ".$offer[$i]->Duration." months" ?></h4>
+                    </div>
+                    <div class="in_logo">
+                        <div>
+                            <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
+                        </div>
+                        <div>
+                            <a href="offers_detail.php?id_offer=<?php echo  $offer[$i]->NumberOfInterns ?>" role="button" class="small btn see">See Offer</a>
+                        </div>
+                    </div>
+                </div> 
 
-
-    <!-- FOOTER -->
     <?php
+    }
+    // FOOTER
     include "./php/footer.php"
     ?>
 </body>

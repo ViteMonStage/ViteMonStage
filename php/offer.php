@@ -1,9 +1,50 @@
 <?php
-function displayOffers()
+class Offer{
+    private $OfferName;
+    private $CompanyName;
+    private $Description;
+    private $City;
+    private $ZipCode;
+    private $OfferDate;
+    private $Salary;
+    private $NumberOfInterns;
+    private $SkillsRequired;
+    private $PromotionType;
+    private $StartingDate;
+    private $EndDate;
+    private $Duration;
+    private $IdOffer;
+    private $OffersCount;
+    
+    public function __get($property) {
+        if (property_exists($this, $property)) {
+          return $this->$property;
+        }
+      }
+    
+      public function __set($property, $value) {
+        if (property_exists($this, $property)) {
+          $this->$property = $value;
+        }
+    }
+public function getOffers()
 {
     try {
         include dirname(__FILE__) . "/db.php"; //Used to get global pdo
-        $query = 'SELECT offer_name,company.company_name,offers.description,cityname,zipcode,offer_date,offers.salary,offers.id_offer,offers.number_interns,offers.skills,promotion_type,offers.intership_end,offers.intership_start,datediff(offers.intership_end,offers.intership_start) DIV 28 as months from offers
+        $query = 'SELECT offer_name,
+        company.company_name,
+        offers.description,
+        cityname,
+        zipcode,
+        offer_date,
+        offers.salary,
+        offers.id_offer,
+        offers.number_interns,
+        offers.skills,
+        promotion_type,
+        offers.intership_end,
+        offers.intership_start,
+        datediff(offers.intership_end,offers.intership_start) DIV 28 as months from offers
         INNER JOIN company on offers.id_company = company.id_company
         INNER JOIN address on company.id_company = address.id_company
         INNER JOIN city on address.id_city = city.id_city
@@ -33,41 +74,41 @@ function displayOffers()
         $sql = $pdo->prepare($query);  
         $sql->execute();
         $row = $sql->fetchAll();
-        $count = $sql->rowCount();
+        $rowcount= $sql->rowCount();
 
-        //Result
-        ?>
-        <h2 class="title big results">
-            <?php echo "$count Results";?>
-        </h2>
-        <?php
-        if (isset($row[0]) == 1) {
-            foreach ($row as $value) : ?>
-                <div class="s_result">
-                    <div class="in_desc">
-                        <div>
-                            <h3 class="medium off_name"><?php echo  $value[0] ?> </h3>
-                            <h4 class="small off_company"><?php echo  $value[1] ?></h4>
-                        </div>
-                        <p class="mini"><?php echo  $value[2] ?></p>
-                        <h4 class="mini"><?php echo  $value[6] ?> €/ months</h4>
-                        <h4 class="mini"> <?php echo  $value[3] ?> (<?php echo  $value[4] ?>) - <?php echo  $value[5] ?> </h4>
-                        <h4class="mini"><?php echo  "Starts on the ".$value[12]." and ends on the ".$value[11]." for ".$value[13]." months" ?></h4>
-                    </div>
-                    <div class="in_logo">
-                        <div>
-                            <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
-                        </div>
-                        <div>
-                            <a href="offers_detail.php?id_offer=<?php echo  $value[7] ?>" role="button" class="small btn see">See Offer</a>
-                        </div>
-                    </div>
-                </div>
-<?php endforeach;
+
+        $array = [];
+
+        if (isset($row[0]) == 1)
+        {
+                foreach ($row as $value)
+                {
+                    $offer = new Offer();
+                    $offer->__set("OfferName", $value[0]);
+                    $offer->__set("CompanyName", $value[1]);
+                    $offer->__set("Description", $value[2]);
+                    $offer->__set("City", $value[3]);
+                    $offer->__set("ZipCode", $value[4]);
+                    $offer->__set("OfferDate", $value[5]);
+                    $offer->__set("Salary", $value[6]);
+                    $offer->__set("NumberOfInterns", $value[8]);
+                    $offer->__set("SkillsRequired", $value[9]);
+                    $offer->__set("PromotionType", $value[10]);
+                    $offer->__set("StartingDate", $value[12]);
+                    $offer->__set("EndDate", $value[11]);
+                    $offer->__set("Duration", $value[13]);
+                    $offer->__set("IdOffer", $value[7]);
+                    $offer->__set("OffersCount",$rowcount);
+                    array_push($array,$offer) ;
+                }
+            
         }
+        
+        return $array;
     } catch (\PDOException $e) {
         echo $e->getMessage();
         echo "   ";
         echo (int)$e->getCode();
     }
+}
 }
