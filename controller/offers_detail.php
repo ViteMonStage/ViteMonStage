@@ -15,10 +15,10 @@ class OfferDetailsController{
         }
     }
 
-    function hasAlreadySentCandidature(){
+    function hasAlreadySentCandidature($id_offer){
         try{
         $offer_details = new OfferDetail();
-            return $offer_details->hasAlreadySentCandidature();
+            return $offer_details->hasAlreadySentCandidature($id_offer);
         }catch(Exception $e){
             return "Error : " . $e;
         }
@@ -32,7 +32,19 @@ class OfferDetailsController{
             return "Error : " . $e;
         }
     }
-    
 
+    function getCandidatureStatus($id_offer){
+        try{
+            $offer_details = new OfferDetail();
+                return $offer_details->getCandidatureStatus($id_offer);
+            }catch(Exception $e){
+                return "Error : " . $e;
+            }
+    }
+
+    function toPercent($step)
+{
+    return floor(($step / 6) * 100);
+}
 }
 ?>
