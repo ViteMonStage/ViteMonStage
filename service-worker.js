@@ -11,64 +11,32 @@ var appShellFiles = [
   '/stylesheets/global.scss',
   '/php/offer.php',
   '/php/offer_detail.php',
-  '/error/403.php',
-  '/error/403.scss',
-  '/error/404.php',
-  '/error/404.scss',
   '/controller/offers_detail.php',
   '/controller/offers.php'
-  
 ];
 
+//On précache les ressources essentielles (l'index, les fichiers concernant les offres)
 self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open(cacheName).then(function(cache) {
       console.log('[Service Worker VMS] Installation du Service Worker');
-      return cache.addAll(appShellFiles);
+      return cache.addAll(appShellFiles); //On entre tous les fichiers tu tableau dans le cache
     })
   );
 });
 
-self.addEventListener("fetch", event => {
-  // cache-First Strategy
-  //console.log('[Service Worker VMS] Fetch de la ressource');
-  event.respondWith(
-    caches
-      .match(event.request) // check if the request has already been cached
-      .then(cached => cached || fetch(event.request)) // otherwise request network
-      .then(
-        response =>
-          cache(event.request, response) // put response in cache
-            .then(() => response ) // resolve promise with the network response
-      )
+//On fetch le cache en premier, sinon on cherche la requête sur le réseau
+self.addEventListener('fetch', (e) => {
+  e.respondWith(
+    caches.match(e.request).then((r) => { //On vérifie si la requête est déjà dans le cache
+          console.log('[Service Worker] Récupération de la ressource: '+e.request.url);
+          return r || fetch(e.request).then((response) => {  //Si on a déjà la ressource dans le cache, on l'affiche en priorité pour moins de chargement
+          return caches.open(cacheName).then((cache) => {   //Sinon, on va aller chercher la ressource sur le web
+            console.log('[Service Worker] Mise en cache de la nouvelle ressource: '+e.request.url); 
+            cache.put(e.request, response.clone()); //On met à jour le cache avec les données du web
+            return response; //On renvoit la réponse web
+        }); 
+      });
+    })
   );
 });
-
-
-self.addEventListener("activate", event => {
-  // delete any unexpected caches
-  event.waitUntil(
-    caches
-      .keys()
-      .then(keys => keys.filter(key => key !== cacheName))
-      .then(keys =>
-        Promise.all(
-          keys.map(key => {
-            console.log(`[Service Worker VMS] Supression du cache ${key}`);
-            return caches.delete(key);
-          })
-        )
-      )
-  );
-});
-
-
-function cache(request, response) {
-  if (response.type === "error" || response.type === "opaque") {
-    return Promise.resolve(); // do not put in cache network errors
-  }
-
-  return caches
-    .open(cacheName)
-    .then(cache => cache.put(request, response.clone()))
-}
