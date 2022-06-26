@@ -7,7 +7,7 @@ if (empty($_POST['email']) == true || empty($_POST['password']) == true) { //if 
     return;
 }
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = MD5($_POST['password']);
 try {
     $stm = $pdo->prepare('SELECT email,id_role,password,id_user,firstname,lastname FROM user WHERE email=?'); //prepared statement to verify email and password
     $stm->bindParam(1, $email);
