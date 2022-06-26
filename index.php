@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./stylesheets/index.scss">
     <link rel="stylesheet" href="./stylesheets/global.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-    <link rel="manifest" href= "./PWA/manifest.json">
+    <link rel="manifest" crossorigin="use-credentials" href= "./PWA/manifest.json">
 </head>
 
 <body>
