@@ -25,18 +25,44 @@ self.addEventListener('install', function(e) {
   );
 });
 
-//On fetch le cache en premier, sinon on cherche la requête sur le réseau
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request).then((r) => { //On vérifie si la requête est déjà dans le cache
-          console.log('[Service Worker] Récupération de la ressource: '+e.request.url);
-          return r || fetch(e.request).then((response) => {  //Si on a déjà la ressource dans le cache, on l'affiche en priorité pour moins de chargement
-          return caches.open(cacheName).then((cache) => {   //Sinon, on va aller chercher la ressource sur le web
-            console.log('[Service Worker] Mise en cache de la nouvelle ressource: '+e.request.url); 
-            cache.put(e.request, response.clone()); //On met à jour le cache avec les données du web
-            return response; //On renvoit la réponse web
-        }); 
-      });
-    })
+
+// On récupère la ressource depuis le network
+const fromNetwork = (request, timeout) =>
+  new Promise((fulfill, reject) => {
+    const timeoutId = setTimeout(reject, timeout);
+    fetch(request).then(response => {
+      clearTimeout(timeoutId);
+      fulfill(response);
+      update(request);
+    }, reject);
+  });
+
+// On récupère la ressource depuis le cache
+const fromCache = request =>
+  caches
+    .open(cacheName)
+    .then(cache =>
+      cache
+        .match(request)
+        .then(matching => matching || cache.match('/index.php'))
+    );
+
+// On cache la ressource si on l'a eu sur le web
+const update = request =>
+  caches
+    .open(cacheName)
+    .then(cache =>
+      fetch(request).then(response => cache.put(request, response))
+    );
+
+
+// On utilise les const créées dans le fetcher
+self.addEventListener('fetch', evt => {
+  evt.respondWith(
+    fromNetwork(evt.request, 10000).catch(() => fromCache(evt.request)) // On cherche dans le réseau, si on trouve pas => on cherche dans le cache
   );
+  evt.waitUntil(update(evt.request)); // On update le cache
 });
+
+
+
