@@ -16,12 +16,6 @@
 <body>
     <header>
         <?php
-         session_start();
-         if ($_SESSION['role'] == 2 && $_SESSION['search_offer'] == 0) {
-             header('HTTP/1.1 403 Unauthorized');
-             $contents = file_get_contents('./error/403.php', TRUE);
-             die($contents);
-         }
         include_once "controller/offers.php";
         include "./php/navbar.php";
         include "./php/db.php"; //Used to get global pdo 
@@ -48,19 +42,14 @@
             <div class="col-lg-2 col-sm-12 test">
                 <label for="locatbx" class="tbxindicator small">Location</label>
                 <select class="form-control tbx small" id="locatbx" name="offer_location">
-                    <?php
-                    include "../db.php"; //Used to get global pdo
-                    $stm = $pdo->prepare('SELECT distinct cityname from offers
-                            INNER JOIN company on offers.id_company = company.id_company
-                            INNER JOIN address on company.id_company = address.id_company
-                            INNER JOIN city on address.id_city = city.id_city'); //prepared statement to get the location of the offer
-                    $stm->execute();
-                    $row = $stm->fetchAll();
-                    echo '<option>Any Location</option>';
-                    foreach ($row as $value) {
-                        echo '<option>' . $value[0] . '</option>';
-                    }
-                    ?>
+                    <option>Any Location</option>
+                    <?php 
+                        $citysearchcontroller = new SearchCityController();
+                        $Search = $citysearchcontroller->searchCity();
+                        for($i = 0; $i < sizeof($Search); $i ++){
+                        echo '<option>' . $Search[$i]->City . '</option>';
+                        }
+                    ?> 
                 </select>
             </div>
             <div class="col-lg-2 col-sm-12 test ">
@@ -74,14 +63,12 @@
             <div class="col-lg-2 col-sm-12 test">
                 <label for="promostbx" class="tbxindicator small">Promotions</label>
                 <select class="form-control tbx small" id="promostbx" name="promotion">
-                    <?php
-                    include "../db.php"; //Used to get global pdo
-                    $stm = $pdo->prepare('SELECT promotion_type FROM promotion_type '); //prepared statement to get the promotion concerned by the offer
-                    $stm->execute();
-                    $row = $stm->fetchAll();
-                    echo '<option>Any Promotion</option>';
-                    foreach ($row as $value) {
-                        echo '<option>' . $value[0] . '</option>';
+                    <option>Any Promotion</option>
+                    <?php                   
+                    $promotionsearchcontroller = new SearchPromotionController();
+                    $Search = $promotionsearchcontroller->searchPromotion();
+                    for($i = 0; $i < sizeof($Search); $i ++){
+                        echo '<option>' . $Search[$i]->Promotion . '</option>';
                     }
                     ?>
                 </select>
@@ -94,7 +81,7 @@
     <?php 
     $offer_controller = new OffersController();
     $offer= $offer_controller->getOffers();
-     //var_dump($offer);
+    
     ?>
     <h2 class="title big results">
             <?php echo $offer[0]->OffersCount." Results";?>
@@ -103,7 +90,7 @@
 
     } 
     else {
-        for($i = 0; $i < sizeof($offer_controller->getOffers()); $i ++){
+        for($i = 0; $i < sizeof($offer); $i ++){
              ?>
     <div class="s_result">
                     <div class="in_desc">
@@ -121,7 +108,7 @@
                             <img src="./assets/pictures/logo2.jpg" alt="Logo" class="logoentreprise">
                         </div>
                         <div>
-                            <a href="offers_detail.php?id_offer=<?php echo  $offer[$i]->NumberOfInterns ?>" role="button" class="small btn see">See Offer</a>
+                            <a href="offers_detail.php?id_offer=<?php echo  $offer[$i]->IdOffer ?>" role="button" class="small btn see">See Offer</a>
                         </div>
                     </div>
                 </div> 
