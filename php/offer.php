@@ -1,5 +1,85 @@
 <?php
-class Search{}
+class City{
+    private $City;
+
+    public function __get($property) {
+        if (property_exists($this, $property)) {
+          return $this->$property;
+        }
+      }
+    
+      public function __set($property, $value) {
+        if (property_exists($this, $property)) {
+          $this->$property = $value;
+        }
+    }
+
+public function getCity(){
+        try {
+        include dirname(__FILE__) . "/db.php"; //Used to get global pdo
+        $stm = $pdo->prepare('SELECT distinct cityname from offers
+                                INNER JOIN company on offers.id_company = company.id_company
+                                INNER JOIN address on company.id_company = address.id_company
+                                INNER JOIN city on address.id_city = city.id_city'); //prepared statement to get the location of the offer
+                        $stm->execute();
+                        $row = $stm->fetchAll();
+                        $array = [];
+                        if (isset($row[0]) == 1){
+                        foreach ($row as $value)
+                         {
+                            $search = new City();
+                            $search->__set("City", $value[0]);
+                            array_push($array,$search) ;
+                        }
+                    }
+                    return $array;
+                    } 
+                    
+
+                    catch (\PDOException $e) {
+                        echo $e->getMessage();
+                        echo "   ";
+                        echo (int)$e->getCode();
+                    }
+                }
+
+}
+class Promotion{
+    private $Promotion;
+    public function __get($property) {
+        if (property_exists($this, $property)) {
+          return $this->$property;
+        }
+      }
+    
+      public function __set($property, $value) {
+        if (property_exists($this, $property)) {
+          $this->$property = $value;
+        }
+    }
+
+    public function getPromotion(){
+        try {
+        include dirname(__FILE__) . "/db.php"; //Used to get global pdo
+        $stm = $pdo->prepare('SELECT promotion_type FROM promotion_type '); //prepared statement to get the promotion concerned by the offer
+                    $stm->execute();
+                    $row = $stm->fetchAll();
+                    $array = [];
+                foreach ($row as $value)
+                {
+                    $promotion = new Promotion();
+                    $promotion->__set("Promotion", $value[0]);
+                    array_push($array,$promotion) ;
+                }
+                return $array;
+        }
+        catch (\PDOException $e) {
+            echo $e->getMessage();
+            echo "   ";
+            echo (int)$e->getCode();
+        }
+    }
+}
 class Offer{
     private $OfferName;
     private $CompanyName;
@@ -78,10 +158,11 @@ public function getOffers()
         $rowcount= $sql->rowCount();
 
 
-        $array = [];
+        
 
         if (isset($row[0]) == 1)
         {
+            $array = [];
                 foreach ($row as $value)
                 {
                     $offer = new Offer();
@@ -103,7 +184,6 @@ public function getOffers()
                     array_push($array,$offer) ;
                 }
                 return $array;
-                var_dump($array);
         }
         else{
             $nocount = new Offer();

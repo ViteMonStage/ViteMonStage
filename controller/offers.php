@@ -1,20 +1,61 @@
 <?php
+session_start();
+
+ if ($_SESSION['role'] == 2 && $_SESSION['search_offer'] == 0) {
+    header('HTTP/1.1 403 Unauthorized');
+    $contents = file_get_contents('./error/403.php', TRUE);
+    die($contents);
+    
+}
+
 
 include "./php/offer.php"; 
-include "./php/db.php"; //Used to get global pdo
+
+
+
+class SearchCityController{
+
+
+    function searchcity(){
+        try{
+            $Search = new City();
+            return $Search->getCity();
+        }catch(Exception $e){
+            return "Error : " . $e;
+        }
+    }
+    
+    
+    }
+
+class SearchPromotionController{
+
+
+        function searchPromotion(){
+            try{
+                $Search = new Promotion();
+                return $Search->getPromotion();
+            }catch(Exception $e){
+                return "Error : " . $e;
+            }
+        }
+        
+        
+    }
+    
 
 class OffersController{
 
-
-function getOffers(){
-    try{
-        $offer = new Offer();
-        return $offer->getOffers();
-    }catch(Exception $e){
-        return "Error : " . $e;
+        function getOffers(){
+            try{
+                $offer = new Offer();
+                return $offer->getOffers();
+            }catch(Exception $e){
+                return "Error : " . $e;
+            }
+        }
+        
     }
-}
 
 
-}
 ?>
