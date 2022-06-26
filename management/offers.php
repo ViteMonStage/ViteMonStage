@@ -16,27 +16,31 @@
 
 <body>
     <?php
-    session_start();
-    if ($_SESSION['role'] == 2 && $_SESSION['create_offer'] == 0 && $_SESSION['delete_offer'] == 0 && $_SESSION['modify_offer'] == 0) {
-        header('HTTP/1.1 403 Unauthorized');
-        $contents = file_get_contents('../error/403.php', TRUE);
-        die($contents);
-    }
+    
     ?>
     <header>
+        
         <?php
+
         include $_SERVER['DOCUMENT_ROOT'] . "./php/management/role_check.php"; //import role_check.php file to check has correct role. If not : redirects immediately in 403 page
         ?>
         <?php
+        include "../controller/management_offers.php";
         include "../php/navbar.php";
+        
+        
         ?>
     </header>
-    <form action="../php/management/offers.php" method="post">
+    <form action="../controller/management_offers.php" method="post">
         <div class="d-flex align-items-center justify-content-center madiv ">
             <!-- this is the white box -->
             <div class="mainbox row">
                 <!-- OFFER CREATION -->
-                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && $_SESSION['create_offer'] == 1)) : ?>
+                
+                <?php
+                    $checkoffercontroller = new ManagementOffersController;
+                    $check=$checkoffercontroller->showOfferCreation();
+                    if ($check) : ?>
                     <div class="mantitl">
                         <h1 class="big titl">OFFER CREATION</h1>
                     </div>
@@ -51,14 +55,12 @@
                         </div>
                         <div class="orga">
                             <label for="comptbx" class="tbxindicator small">Company</label>
-                            <select class="form-control tbx medium" name="c_company_offer" id="comptbx">
+                            <select class="form-control tbx medium" name="c_company_offer" id="comptbx">                        
                                 <?php
-                                include "../db.php"; //Used to get global pdo
-                                $stm = $pdo->prepare('SELECT id_company, company_name FROM company'); //query to get company ids and their name
-                                $stm->execute();
-                                $row = $stm->fetchAll();
-                                foreach ($row as $value) {
-                                    echo '<option value=' . "$value[0]" . '>' . $value[1] . '</option>';
+                                $showcompaniescontroller = new ManagementOffersController();
+                                $search = $showcompaniescontroller->showCompanies();
+                                for($i = 0; $i < sizeof($search); $i ++){
+                                     echo '<option value ='.$search[$i]->idCompany.'>'.$search[$i]->company.'</option>';
                                 }
                                 ?>
                             </select>
@@ -66,15 +68,16 @@
                         <div class="orga">
                             <label for="promotbx" class="tbxindicator small">Promotion type concerned</label>
                             <select class="form-control tbx medium" name="c_promo_offer" id="promotbx">
+                            <option>
                                 <?php
-                                include "../db.php"; //Used to get global pdo
-                                $stm = $pdo->prepare('SELECT id_promotion_type, promotion_type FROM promotion_type'); //query to get promotion types and ids
-                                $stm->execute();
-                                $row = $stm->fetchAll();
-                                foreach ($row as $value) {
-                                    echo '<option value=' . "$value[0]" . '>' . $value[1] . '</option>';
+                                $promotionsearchcontroller = new ManagementOffersController();
+                                $Search = $promotionsearchcontroller->searchPromotion();
+                                for($i = 0; $i < sizeof($Search); $i ++){
+                                
+                                    echo '<option value=' . $Search[$i]->idPromotion . '>' . $Search[$i]->Promotion . '</option>';
                                 }
                                 ?>
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -114,6 +117,7 @@
                         <!--Ci-dessous le bouton submit-->
                         <input type="submit" class="btn-primary btn Medium" id="logbtn" name="c_offer" value="NEW OFFER">
                         <?php
+                        //Mettre la valeur de l'erreur dans une variable et faire un switchcase...
                         if (isset($_GET["c_error"])) {
                             if ($_GET["c_error"] == "1") {
                                 echo '<p class="small error">Error, please try again.</p>';
@@ -135,9 +139,9 @@
                         }
                         ?>
                     </div>
-                <?php endif ?>
-
-                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && $_SESSION['delete_offer'] == 1)) : ?>
+                <?php endif;
+                $check=$checkoffercontroller->showOfferDeletion();
+                    if ($check) : ?>
                     <!-- OFFER DELETION -->
                     <div class="mantitl">
                         <h1 class="big titl">OFFER DELETION</h1>
@@ -179,9 +183,9 @@
                         }
                         ?>
                     </div>
-                <?php endif ?>
-
-                <?php if ($_SESSION['role'] != 2 || ($_SESSION['role'] == 2 && $_SESSION['modify_offer'] == 1)) : ?>
+                    <?php endif;
+                    $check=$checkoffercontroller->showOfferModification();
+                    if ($check) : ?>
                     <!-- OFFER MODIFICATION -->
                     <div class="mantitl">
                         <h1 class="big titl">OFFER MODIFICATION</h1>
@@ -192,7 +196,7 @@
                             <select class="form-control tbx medium" name="m_id_offer" id="comptbx">
                                 <?php
                                 include "../db.php"; //Used to get global pdo
-                                $stm = $pdo->prepare('SELECT id_offer,offer_name FROM offers'); //query to get company ids and their name
+                                $stm = $pdo->prepare('SELECT id_offer,offer_name FROM offers'); //query to get offer ids and their name
                                 $stm->execute();
                                 $row = $stm->fetchAll();
                                 foreach ($row as $value) {
@@ -213,12 +217,11 @@
                             <label for="promotbx" class="tbxindicator small">Promotion type concerned</label>
                             <select class="form-control tbx medium" name="m_promotion_type" id="promotbx">
                                 <?php
-                                include "../db.php"; //Used to get global pdo
-                                $stm = $pdo->prepare('SELECT * FROM promotion_type'); //query to get promotion types and ids
-                                $stm->execute();
-                                $row = $stm->fetchAll();
-                                foreach ($row as $value) {
-                                    echo '<option>' . $value[1] . '</option>';
+                                $promotionsearchcontroller = new ManagementOffersController();
+                                $Search = $promotionsearchcontroller->searchPromotion();
+                                for($i = 0; $i < sizeof($Search); $i ++){
+                                
+                                    echo '<option>' . $Search[$i]->Promotion . '</option>';
                                 }
                                 ?>
                             </select>

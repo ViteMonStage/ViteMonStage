@@ -18,7 +18,6 @@
         <?php
         include_once "controller/offers.php";
         include "./php/navbar.php";
-        include "./php/db.php"; //Used to get global pdo 
         ?>
 
     </header>
@@ -44,7 +43,7 @@
                 <select class="form-control tbx small" id="locatbx" name="offer_location">
                     <option>Any Location</option>
                     <?php 
-                        $citysearchcontroller = new SearchCityController();
+                        $citysearchcontroller = new OfferController();
                         $Search = $citysearchcontroller->searchCity();
                         for($i = 0; $i < sizeof($Search); $i ++){
                         echo '<option>' . $Search[$i]->City . '</option>';
@@ -65,7 +64,7 @@
                 <select class="form-control tbx small" id="promostbx" name="promotion">
                     <option>Any Promotion</option>
                     <?php                   
-                    $promotionsearchcontroller = new SearchPromotionController();
+                    $promotionsearchcontroller = new OfferController();
                     $Search = $promotionsearchcontroller->searchPromotion();
                     for($i = 0; $i < sizeof($Search); $i ++){
                         echo '<option>' . $Search[$i]->Promotion . '</option>';
@@ -79,7 +78,7 @@
 
     <!-- RESULTS -->
     <?php 
-    $offer_controller = new OffersController();
+    $offer_controller = new OfferController();
     $offer= $offer_controller->getOffers();
     
     ?>

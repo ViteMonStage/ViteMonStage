@@ -13,8 +13,7 @@ include "./php/offer.php";
 
 
 
-class SearchCityController{
-
+class OfferController{
 
     function searchcity(){
         try{
@@ -25,37 +24,23 @@ class SearchCityController{
         }
     }
     
-    
-    }
-
-class SearchPromotionController{
-
-
-        function searchPromotion(){
-            try{
-                $Search = new Promotion();
-                return $Search->getPromotion();
-            }catch(Exception $e){
-                return "Error : " . $e;
-            }
+    function searchPromotion(){
+        try{
+            $Search = new Promotion();
+            return $Search->getPromotion();
+        }catch(Exception $e){
+            return "Error : " . $e;
         }
-        
-        
     }
     
-
-class OffersController{
-
-        function getOffers(){
-            try{
-                $offer = new Offer();
-                return $offer->getOffers();
-            }catch(Exception $e){
-                return "Error : " . $e;
-            }
+    function getOffers(){
+        try{
+            $offer = new Offer();
+            return $offer->getOffers();
+        }catch(Exception $e){
+            return "Error : " . $e;
         }
-        
     }
-
+}
 
 ?>

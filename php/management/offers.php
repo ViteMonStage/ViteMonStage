@@ -1,11 +1,11 @@
 <?php
-session_start();
 
 //CREATE OFFER
 //if (isset($_POST['c_offer'])) {
 function CreateOffer()
 {
-    include "../db.php"; //Used to get global pdo
+    include dirname(__FILE__) . "../../db.php"; //Used to get global pdo
+
     $skills = $_POST['c_skills_offer'];
     $internship_start = $_POST['c_start_date_offer'];
     $internship_end = $_POST['c_end_date_offer'];
@@ -16,59 +16,14 @@ function CreateOffer()
     $name = $_POST['c_name_offer'];
     $id_promotion_type = $_POST['c_promo_offer'];
     $offer_date = date('Y-m-d', time());
-
-    if (preg_match('/[\'^}{#~><>¬]/', $skills)) {
-        // one or more of the 'special characters' found in $string
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=2'); //if a character is not valid, returns error code 2
-        die();
-    }
-    if (preg_match('/[\'^}{#~><>¬]/', $salary)) {
-        // one or more of the 'special characters' found in $string
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=2'); //if a character is not valid, returns error code 2
-        die();
-    }
-    if (preg_match('/[\'^}{#~><>¬]/', $number_interns)) {
-        // one or more of the 'special characters' found in $string
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=2'); //if a character is not valid, returns error code 2
-        die();
-    }
-    if (preg_match('/[\'^}{#~><>¬]/', $desc)) {
-        // one or more of the 'special characters' found in $string
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=2'); //if a character is not valid, returns error code 2
-        die();
-    }
-    if (preg_match('/[\'^}{#~><>¬]/', $name)) {
-        // one or more of the 'special characters' found in $string
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=2'); //if a character is not valid, returns error code 2
-        die();
-    }
-
-    //CHECK IF TEXTBOXES ARE FILLED
-    if (empty($skills)) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=3'); //if textbox is left empty
-        die();
-    }
-    if (empty($salary)) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=3'); //if textbox is left empty
-        die();
-    }
-    if (empty($number_interns)) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=3'); //if textbox is left empty
-        die();
-    }
-    if (empty($desc)) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=3'); //if textbox is left empty
-        die();
-    }
-    if (empty($name)) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=3'); //if textbox is left empty
-        die();
-    }
-
-
+    
+    $security_check = new ManagementOffersController();
+    $security_check->security_check();
+    
     try {
-        include "../db.php"; //Used to get global pdo
+        include dirname(__FILE__) . "../../db.php"; //Used to get global pdo
         $stm = $pdo->prepare('INSERT INTO offers (skills, intership_start, intership_end, salary, offer_date, number_interns, id_company, description, offer_name) VALUES (?,?,?,?,?,?,?,?,?)'); //prepared statement to insert values
+        //Faire boucle avec tableau et bindparam
         $stm->bindParam(1, $skills);
         $stm->bindParam(2, $internship_start);
         $stm->bindParam(3, $internship_end);
@@ -79,28 +34,24 @@ function CreateOffer()
         $stm->bindParam(8, $desc);
         $stm->bindParam(9, $name);
         if ($stm->execute() == FALSE) {
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=1'); //if a value is not valid / an error occured , returns error code 1
+            echo $e->getMessage();
+            echo "   ";
+            echo (int)$e->getCode();
             die();
         }
 
         $stm = $pdo->prepare('SELECT MAX(id_offer) FROM offers'); //We get the last offer id
-        if ($stm->execute() == FALSE) {
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=1'); //if a value is not valid / an error occured , returns error code 1
-            die();
-        }
+        $stm->execute();
         $row = $stm->fetchAll();
         $id_offer = $row[0][0];
-
         $stm = $pdo->prepare('INSERT INTO concern (id_offer, id_promotion_type) VALUES (?,?)'); //prepared statement to insert values
         $stm->bindParam(1, $id_offer);
         $stm->bindParam(2, $id_promotion_type);
-        if ($stm->execute() == FALSE) {
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=1'); //if a value is not valid / an error occured , returns error code 1
-            die();
-        }
         header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_good=1'); //if everything is good , returns good code 1
     } catch (\PDOException $e) {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . '/management/offers.php?c_error=1'); //if exception , returns error code 1
+        echo $e->getMessage();
+            echo "   ";
+            echo (int)$e->getCode();
         die();
     }
 }
@@ -110,7 +61,7 @@ function CreateOffer()
 //if (isset($_POST['d_offer'])) {
 function DeleteOffer()
 {
-    include "../db.php"; //Used to get global pdo
+    include dirname(__FILE__) . "../../db.php"; //Used to get global pdo
     $name = $_POST['d_name'];
     $company = $_POST['d_company'];
     if (empty($name) || empty($company)) {
@@ -146,7 +97,7 @@ function DeleteOffer()
 //if (isset($_POST['m_offer'])) {
 function ModifyOffer()
 {
-    include "../db.php"; //Used to get global pdo
+    include dirname(__FILE__) . "../../db.php"; //Used to get global pdo
     $skills = $_POST['m_skills_offer'];
     $id_offer = $_POST['m_id_offer'];
     $internship_start = $_POST['m_start_date_offer'];
@@ -254,3 +205,81 @@ function ModifyOffer()
     }
 }
 
+class Company{
+    private $company;
+    private $idCompany;
+
+    public function __get($property) {
+        if (property_exists($this, $property)) {
+          return $this->$property;
+        }
+      }
+    
+      public function __set($property, $value) {
+        if (property_exists($this, $property)) {
+          $this->$property = $value;
+        }
+    }
+
+    public function getCompanies(){
+        try {
+                include dirname(__FILE__) . "../../db.php"; //Used to get global pdo
+                $stm = $pdo->prepare('SELECT id_company, company_name FROM company'); //query to get company ids and their name
+                $stm->execute();
+                $row = $stm->fetchAll();
+                $array = [];
+                foreach ($row as $value)
+                {
+                    $company = new Company();
+                    $company->__set("idCompany", $value[0]);
+                    $company->__set("company", $value[1]);
+                    array_push($array,$company) ;
+                }
+                return $array;
+        }
+        catch (\PDOException $e) {
+            echo $e->getMessage();
+            echo "   ";
+            echo (int)$e->getCode();
+        }
+    }
+}
+
+class Promotion{
+    private $Promotion;
+    private $idPromotion;
+    public function __get($property) {
+        if (property_exists($this, $property)) {
+          return $this->$property;
+        }
+      }
+    
+      public function __set($property, $value) {
+        if (property_exists($this, $property)) {
+          $this->$property = $value;
+        }
+    }
+
+    public function getPromotion(){
+        try {
+        include dirname(__FILE__) . "../../db.php"; //Used to get global pdo
+        $stm = $pdo->prepare('SELECT id_promotion_type,promotion_type FROM promotion_type '); //prepared statement to get the promotion concerned by the offer
+                    $stm->execute();
+                    $row = $stm->fetchAll();
+                    $array = [];
+                foreach ($row as $value)
+                {
+                    $promotion = new Promotion();
+                    $promotion->__set("idPromotion", $value[0]);
+                    $promotion->__set("Promotion", $value[1]);
+                    array_push($array,$promotion) ;
+                }
+                return $array;
+        }
+        catch (\PDOException $e) {
+            echo $e->getMessage();
+            echo "   ";
+            echo (int)$e->getCode();
+        }
+    }
+}
